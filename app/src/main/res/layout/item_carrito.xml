@@ -7,12 +7,17 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_margin="20dp"
         app:cardBackgroundColor="@color/fondo"
+=======
+        android:layout_margin="40dp"
+>>>>>>> adbda27e63497f9073362768b122aac0146692aa
         android:elevation="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="30dp"
@@ -96,6 +101,12 @@
 
 
             </LinearLayout>
+=======
+            android:layout_height="200dp"
+            android:orientation="horizontal"
+            android:background="@drawable/shape_carrito">
+
+>>>>>>> adbda27e63497f9073362768b122aac0146692aa
 
 
 
@@ -103,4 +114,8 @@
 
     </androidx.cardview.widget.CardView>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> adbda27e63497f9073362768b122aac0146692aa
 </FrameLayout>
