@@ -4,8 +4,17 @@
     <color name="white">#FFFFFFFF</color>
     <color name="fondo">#F3FFEB</color>
     <color name="verde">#4CBC00</color>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d89dabbed2ac8e813672966db9a5d4b969de6ad3
     <color name="verde_detalles">#296600</color>
     <color name="azul_icono">#00ada4</color>
     <color name="gris_letras">#999999</color>
     <color name="verde_botones">#A8D977</color>
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> adbda27e63497f9073362768b122aac0146692aa
+>>>>>>> d89dabbed2ac8e813672966db9a5d4b969de6ad3
 </resources>

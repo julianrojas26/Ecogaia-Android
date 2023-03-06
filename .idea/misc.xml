@@ -10,10 +10,19 @@
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_carrito.xml" value="0.187" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_fondoformulario.xml" value="0.1" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/activity_main.xml" value="0.33" />
+<<<<<<< HEAD
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_perfil.xml" value="0.2" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_blog.xml" value="0.25" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_carrito.xml" value="0.18" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_favoritos.xml" value="0.20416666666666666" />
+=======
+<<<<<<< HEAD
+        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_blog.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_carrito.xml" value="0.3177083333333333" />
+=======
+        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_carrito.xml" value="0.36548223350253806" />
+>>>>>>> adbda27e63497f9073362768b122aac0146692aa
+>>>>>>> d89dabbed2ac8e813672966db9a5d4b969de6ad3
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/menu/menu.xml" value="0.20416666666666666" />
       </map>
     </option>
