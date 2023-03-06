@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Perfil_Fragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/fondo"
+        android:layout_marginTop="40dp">
+
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="600dp"
+            android:background="@drawable/shape_formulario"
+            android:layout_margin="26dp">
+
+            <LinearLayout
+                android:layout_width="320dp"
+                android:layout_height="430dp"
+                android:layout_marginTop="120dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/shape_fondoformulario">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="90dp">
+
+                    <ImageView
+                        android:layout_width="43dp"
+                        android:layout_height="43dp"
+                        android:src="@drawable/person">
+                    </ImageView>
+
+                    <View
+                        android:layout_width="260dp"
+                        android:layout_height="3dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@color/verde" />
+
+                    <ImageView
+                        android:layout_width="43dp"
+                        android:layout_height="43dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/email">
+                    </ImageView>
+
+                    <ImageView
+                        android:layout_width="43dp"
+                        android:layout_height="43dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/home">
+                    </ImageView>
+
+                    <ImageView
+                        android:layout_width="43dp"
+                        android:layout_height="43dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/lock">
+                    </ImageView>
+
+                    <ImageView
+                        android:layout_width="43dp"
+                        android:layout_height="43dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/phone">
+                    </ImageView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+</FrameLayout>
