@@ -96,21 +96,8 @@
 
 
             </LinearLayout>
-=======
-            android:layout_height="200dp"
-            android:orientation="horizontal"
-            android:background="@drawable/shape_carrito">
-
->>>>>>> adbda27e63497f9073362768b122aac0146692aa
-
-
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
-<<<<<<< HEAD
-=======
-
->>>>>>> adbda27e63497f9073362768b122aac0146692aa
 </FrameLayout>
