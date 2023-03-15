@@ -10,11 +10,18 @@
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_carrito.xml" value="0.36548223350253806" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/menu/menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_carrito.xml" value="0.1245" />
+        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_filas.xml" value="0.1585" />
+        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_table.xml" value="0.16" />
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/activity_main.xml" value="0.20717948717948717" />
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/estadisticas_fragment.xml" value="0.21041666666666667" />
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/estadisticas_layout.xml" value="0.209375" />
+        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_blank.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_categorias.xml" value="0.33" />
+        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_estadisticas.xml" value="0.21458333333333332" />
+        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_inventario.xml" value="0.2976878612716763" />
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_carrito.xml" value="0.21041666666666667" />
+        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_favoritos.xml" value="0.21458333333333332" />
+        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_inventario.xml" value="0.33" />
       </map>
     </option>
   </component>
