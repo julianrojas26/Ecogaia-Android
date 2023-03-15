@@ -9,8 +9,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/imagen_de_fonfo"
-        a>
+        android:background="@drawable/imagen_de_fonfo">
 
         <LinearLayout
             android:layout_width="360dp"
