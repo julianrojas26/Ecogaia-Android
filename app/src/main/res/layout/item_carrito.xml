@@ -4,11 +4,11 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        app:cardBackgroundColor="@color/fondo"
+
+        android:background="@drawable/imagen_de_fonfo"
         android:elevation="15dp">
 
         <LinearLayout
@@ -16,6 +16,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="30dp"
+            android:layout_margin="20dp"
             android:background="@drawable/shape_carrito">
 
             <ImageView
@@ -96,21 +97,11 @@
 
 
             </LinearLayout>
-=======
-            android:layout_height="200dp"
-            android:orientation="horizontal"
-            android:background="@drawable/shape_carrito">
-
->>>>>>> adbda27e63497f9073362768b122aac0146692aa
 
 
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> adbda27e63497f9073362768b122aac0146692aa
 </FrameLayout>
