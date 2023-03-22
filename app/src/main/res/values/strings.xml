@@ -1,8 +1,22 @@
 <resources>
     <string name="app_name">ECOGAIA</string>
+<<<<<<< HEAD
 
     <string name="descripcion">Lorem Ipsum is simply dummy text of the .</string>
     <string name="usuario">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año</string>
+=======
+    <
+    <
+    <
+    <
+    <
+    <
+    < HEAD
+    =======
+    <string name="descripcion">Lorem Ipsum is simply dummy text of the .</string>
+    <string name="usuario">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año</string>
+    >>>>>>> bba083b9fe76d30dbc4585478c3fbf8539321a4c
+>>>>>>> cc46e17580eeb8044a24ac861137f223a83baf8a
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
