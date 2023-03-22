@@ -4,11 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registrar">
+    tools:context=".Registrar"
+    android:background="@drawable/imagen_de_fonfo"
+    android:elevation="15dp">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/imagen_de_fonfo"
+        android:elevation="15dp"
+        >
 
 
         <LinearLayout
@@ -16,7 +22,7 @@
             android:layout_height="25dp"
             android:orientation="vertical"
             android:background="@drawable/shape_registrar"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="9dp"
             android:layout_marginLeft="10dp">
             <TextView
                 android:layout_width="wrap_content"
@@ -33,15 +39,25 @@
             android:layout_height="550dp"
             android:orientation="vertical"
             android:background="@drawable/shape_registrar"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="50dp"
             android:layout_marginLeft="20dp">
 
             <LinearLayout
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@drawable/shape_ususario"
-                android:layout_marginTop="2dp"
-                android:layout_marginLeft="130dp"/>
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="130dp">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/extraterrestres">
+
+                </ImageView>
+
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="340dp"
@@ -230,5 +246,5 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </FrameLayout>
