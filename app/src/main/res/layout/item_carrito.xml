@@ -97,25 +97,8 @@
 
 
             </LinearLayout>
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-
 
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
-=======
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
->>>>>>> daffa47370b33bbaba799d57f0387a1361898661
-=======
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
->>>>>>> daffa47370b33bbaba799d57f0387a1361898661
 </FrameLayout>
