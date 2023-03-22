@@ -5,21 +5,11 @@
         android:color="@color/verde"
         android:width="3dp">
     </stroke>
-<<<<<<< HEAD
     <corners android:radius="25dp"></corners>
     <solid android:color="@color/fondo"></solid>
-=======
->>>>>>> 2b59704b28916c56e7e3edc3c675388aa6c78279
-
     <corners android:radius="25dp"></corners>
     <solid android:color="@color/fondo"></solid>
-
-<<<<<<< HEAD
-=======
-
     <corners android:radius="25dp"></corners>
     <solid android:color="@color/fondo"></solid>
-
->>>>>>> 2b59704b28916c56e7e3edc3c675388aa6c78279
 
 </shape>
