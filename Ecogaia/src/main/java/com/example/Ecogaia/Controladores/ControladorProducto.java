@@ -7,10 +7,11 @@ public class ControladorProducto {
 
     ServicioProducto SP = new ServicioProducto();
 
-    @GetMapping("/AgregarProducto")
+    /*@GetMapping("/AgregarProducto")
     public AgregarProducto() {
         return AgregarProducto;
-    }
+    } */
+
     @GetMapping("/BuscarProducto")
     public BuscarProducto() {
         return BuscarProducto;
