@@ -11,5 +11,10 @@ public class ControladorProducto {
     public AgregarProducto() {
         return AgregarProducto;
     }
+    @GetMapping("/BuscarProducto")
+    public BuscarProducto() {
+        return BuscarProducto;
+    }
+
 
 }
