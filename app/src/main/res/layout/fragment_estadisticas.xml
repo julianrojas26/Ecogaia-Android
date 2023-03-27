@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment_estadisticas">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estadisticas"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textColor="@color/verde"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp">
+        </TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <SearchView
+                android:layout_width="290dp"
+                android:layout_height="35dp"
+                android:background="@drawable/shape"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp">
+            </SearchView>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="300dp"
+                android:layout_height="210dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape_carrito"
+                >
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="300dp"
+                android:layout_height="210dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape_carrito"
+                >
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="300dp"
+                android:layout_height="210dp"
+                android:background="@drawable/shape_carrito"
+                >
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
