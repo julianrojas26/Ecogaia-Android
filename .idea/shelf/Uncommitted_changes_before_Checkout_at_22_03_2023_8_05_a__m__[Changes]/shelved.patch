@@ -1,0 +1,304 @@
+Index: app/src/main/res/layout/item_carrito.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\">\r\n\r\n    <com.google.android.material.card.MaterialCardView\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n\r\n        android:background=\"@drawable/imagen_de_fonfo\"\r\n        android:elevation=\"15dp\">\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"horizontal\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:layout_margin=\"20dp\"\r\n            android:background=\"@drawable/shape_carrito\">\r\n\r\n            <ImageView\r\n                android:layout_width=\"103dp\"\r\n                android:layout_height=\"103dp\"\r\n                android:layout_marginTop=\"30dp\"\r\n                android:layout_marginLeft=\"30dp\"\r\n                android:layout_marginBottom=\"30dp\"\r\n                android:src=\"@drawable/jabon\">\r\n            </ImageView>\r\n\r\n            <LinearLayout\r\n                android:layout_width=\"122dp\"\r\n                android:layout_height=\"wrap_content\"\r\n\r\n                android:layout_marginTop=\"30dp\"\r\n                android:orientation=\"vertical\">\r\n\r\n                <TextView\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:text=\"Nombre\"\r\n                    android:textColor=\"@color/azul_icono\"></TextView>\r\n\r\n                <TextView\r\n                    android:layout_width=\"122dp\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:text=\"@string/descripcion\"></TextView>\r\n\r\n                <TextView\r\n                    android:layout_width=\"122dp\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginTop=\"10dp\"\r\n                    android:text=\"$________\"></TextView>\r\n\r\n            </LinearLayout>\r\n\r\n            <LinearLayout\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:orientation=\"vertical\">\r\n\r\n                <ImageView\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:src=\"@drawable/basura\"\r\n                    android:layout_marginLeft=\"35dp\"\r\n                    android:layout_marginTop=\"20dp\">\r\n                </ImageView>\r\n\r\n                <TextView\r\n                    android:layout_width=\"122dp\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginTop=\"15dp\"\r\n                    android:layout_marginBottom=\"15dp\"\r\n                    android:layout_marginLeft=\"25dp\"\r\n                    android:text=\"$________\">\r\n                </TextView>\r\n\r\n                <LinearLayout\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:orientation=\"horizontal\"\r\n                    android:layout_marginRight=\"0dp\">\r\n\r\n                    <ImageView\r\n                        android:layout_width=\"wrap_content\"\r\n                        android:layout_height=\"match_parent\"\r\n                        android:src=\"@drawable/menos\"></ImageView>\r\n\r\n                    <ImageView\r\n                        android:layout_width=\"wrap_content\"\r\n                        android:layout_height=\"match_parent\"\r\n                        android:layout_marginLeft=\"25dp\"\r\n                        android:src=\"@drawable/mas\"></ImageView>\r\n\r\n                </LinearLayout>\r\n\r\n\r\n            </LinearLayout>\r\n<<<<<<< HEAD\r\n<<<<<<< HEAD\r\n\r\n\r\n\r\n        </LinearLayout>\r\n\r\n    </com.google.android.material.card.MaterialCardView>\r\n\r\n=======\r\n\r\n        </LinearLayout>\r\n\r\n    </androidx.cardview.widget.CardView>\r\n>>>>>>> daffa47370b33bbaba799d57f0387a1361898661\r\n=======\r\n\r\n        </LinearLayout>\r\n\r\n    </androidx.cardview.widget.CardView>\r\n>>>>>>> daffa47370b33bbaba799d57f0387a1361898661\r\n</FrameLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/item_carrito.xml b/app/src/main/res/layout/item_carrito.xml
+--- a/app/src/main/res/layout/item_carrito.xml	
++++ b/app/src/main/res/layout/item_carrito.xml	
+@@ -97,8 +97,6 @@
+ 
+ 
+             </LinearLayout>
+-<<<<<<< HEAD
+-<<<<<<< HEAD
+ 
+ 
+ 
+@@ -106,16 +104,5 @@
+ 
+     </com.google.android.material.card.MaterialCardView>
+ 
+-=======
+-
+-        </LinearLayout>
+ 
+-    </androidx.cardview.widget.CardView>
+->>>>>>> daffa47370b33bbaba799d57f0387a1361898661
+-=======
+-
+-        </LinearLayout>
+-
+-    </androidx.cardview.widget.CardView>
+->>>>>>> daffa47370b33bbaba799d57f0387a1361898661
+ </FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".MainActivity\">\r\n\r\n    <com.google.android.material.appbar.AppBarLayout\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_width=\"match_parent\">\r\n\r\n        <Toolbar\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"90dp\"\r\n            android:background=\"@color/fondo\">\r\n\r\n            <ImageView\r\n                android:layout_width=\"230dp\"\r\n                android:layout_height=\"70dp\"\r\n                android:src=\"@drawable/logo\"\r\n                android:layout_gravity=\"center\">\r\n            </ImageView>\r\n\r\n            <ImageView\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:src=\"@drawable/menu\"\r\n                android:layout_marginLeft=\"30dp\">\r\n            </ImageView>\r\n\r\n            <ImageView\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:src=\"@drawable/trespuntos\"\r\n                android:layout_gravity=\"right\"\r\n                android:layout_marginRight=\"30dp\">\r\n            </ImageView>\r\n        </Toolbar>\r\n\r\n\r\n    </com.google.android.material.appbar.AppBarLayout>\r\n\r\n</androidx.coordinatorlayout.widget.CoordinatorLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+--- a/app/src/main/res/layout/activity_main.xml	
++++ b/app/src/main/res/layout/activity_main.xml	
+@@ -38,7 +38,33 @@
+             </ImageView>
+         </Toolbar>
+ 
+-
+     </com.google.android.material.appbar.AppBarLayout>
+ 
++    <RelativeLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
++
++        <androidx.fragment.app.FragmentContainerView
++            android:id="@+id/nav_host_fragment_container"
++            android:name="androidx.navigation.fragment.NavHostFragment"
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            app:defaultNavHost="true">
++
++        </androidx.fragment.app.FragmentContainerView>
++
++        <com.google.android.material.bottomnavigation.BottomNavigationView
++            android:id="@+id/btnMenu"
++            android:layout_width="match_parent"
++            android:layout_height="48dp"
++            android:layout_alignParentBottom="true"
++            app:itemIconSize="18dp"
++            app:itemIconTint="@color/white"
++            app:menu="@menu/menu">
++
++        </com.google.android.material.bottomnavigation.BottomNavigationView>
++
++    </RelativeLayout>
++
+ </androidx.coordinatorlayout.widget.CoordinatorLayout>
+\ No newline at end of file
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n    <color name=\"black\">#FF000000</color>\r\n    <color name=\"white\">#FFFFFFFF</color>\r\n    <color name=\"fondo\">#F3FFEB</color>\r\n    <color name=\"verde\">#4CBC00</color>\r\n    <color name=\"verde_detalles\">#296600</color>\r\n    <color name=\"azul_icono\">#00ada4</color>\r\n    <color name=\"gris_letras\">#999999</color>\r\n    <color name=\"verde_botones\">#A8D977</color>\r\n<<<<<<< HEAD\r\n<<<<<<< HEAD\r\n    <color name=\"gray\">#bababa</color>\r\n=======\r\n<<<<<<< HEAD\r\n=======\r\n>>>>>>> daffa47370b33bbaba799d57f0387a1361898661\r\n=======\r\n=======\r\n>>>>>>> daffa47370b33bbaba799d57f0387a1361898661\r\n\r\n>>>>>>> bba083b9fe76d30dbc4585478c3fbf8539321a4c\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/colors.xml b/app/src/main/res/values/colors.xml
+--- a/app/src/main/res/values/colors.xml	
++++ b/app/src/main/res/values/colors.xml	
+@@ -8,16 +8,5 @@
+     <color name="azul_icono">#00ada4</color>
+     <color name="gris_letras">#999999</color>
+     <color name="verde_botones">#A8D977</color>
+-<<<<<<< HEAD
+-<<<<<<< HEAD
+     <color name="gray">#bababa</color>
+-=======
+-<<<<<<< HEAD
+-=======
+->>>>>>> daffa47370b33bbaba799d57f0387a1361898661
+-=======
+-=======
+->>>>>>> daffa47370b33bbaba799d57f0387a1361898661
+-
+->>>>>>> bba083b9fe76d30dbc4585478c3fbf8539321a4c
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">ECOGAIA</string>\r\n<<<<<<< HEAD\r\n=======\r\n    <string name=\"descripcion\">Lorem Ipsum is simply dummy text of the .</string>\r\n    <string name=\"usuario\">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año</string>\r\n>>>>>>> bba083b9fe76d30dbc4585478c3fbf8539321a4c\r\n    <!-- TODO: Remove or change this placeholder text -->\r\n    <string name=\"hello_blank_fragment\">Hello blank fragment</string>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	
++++ b/app/src/main/res/values/strings.xml	
+@@ -1,10 +1,6 @@
+ <resources>
+     <string name="app_name">ECOGAIA</string>
+-<<<<<<< HEAD
+-=======
+     <string name="descripcion">Lorem Ipsum is simply dummy text of the .</string>
+     <string name="usuario">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año</string>
+->>>>>>> bba083b9fe76d30dbc4585478c3fbf8539321a4c
+-    <!-- TODO: Remove or change this placeholder text -->
+     <string name="hello_blank_fragment">Hello blank fragment</string>
+ </resources>
+\ No newline at end of file
+Index: gradle.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Project-wide Gradle settings.\r\n# IDE (e.g. Android Studio) users:\r\n# Gradle settings configured through the IDE *will override*\r\n# any settings specified in this file.\r\n# For more details on how to configure your build environment visit\r\n# http://www.gradle.org/docs/current/userguide/build_environment.html\r\n# Specifies the JVM arguments used for the daemon process.\r\n# The setting is particularly useful for tweaking memory settings.\r\norg.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8\r\n# When configured, Gradle will run in incubating parallel mode.\r\n# This option should only be used with decoupled projects. More details, visit\r\n# http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects\r\n# org.gradle.parallel=true\r\n# Kotlin code style for this project: \"official\" or \"obsolete\":\r\nkotlin.code.style=official\r\n# Enables namespacing of each library's R class so that its R class includes only the\r\n# resources declared in the library itself and none from the library's dependencies,\r\n# thereby reducing the size of the R class for that library\r\nandroid.nonTransitiveRClass=true
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/gradle.properties b/gradle.properties
+--- a/gradle.properties	
++++ b/gradle.properties	
+@@ -16,4 +16,6 @@
+ # Enables namespacing of each library's R class so that its R class includes only the
+ # resources declared in the library itself and none from the library's dependencies,
+ # thereby reducing the size of the R class for that library
+-android.nonTransitiveRClass=true
+\ No newline at end of file
++android.nonTransitiveRClass=true
++android.useAndroidX=true
++android.enableJetifier=true
+\ No newline at end of file
+Index: app/src/main/res/drawable/shape_carrito.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<shape xmlns:android=\"http://schemas.android.com/apk/res/android\">\r\n\r\n    <stroke\r\n        android:color=\"@color/verde\"\r\n        android:width=\"3dp\">\r\n    </stroke>\r\n<<<<<<< HEAD\r\n    <corners android:radius=\"25dp\"></corners>\r\n    <solid android:color=\"@color/fondo\"></solid>\r\n=======\r\n\r\n    <corners android:radius=\"25dp\"></corners>\r\n    <solid android:color=\"@color/fondo\"></solid>\r\n\r\n>>>>>>> bba083b9fe76d30dbc4585478c3fbf8539321a4c\r\n\r\n</shape>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/shape_carrito.xml b/app/src/main/res/drawable/shape_carrito.xml
+--- a/app/src/main/res/drawable/shape_carrito.xml	
++++ b/app/src/main/res/drawable/shape_carrito.xml	
+@@ -5,14 +5,11 @@
+         android:color="@color/verde"
+         android:width="3dp">
+     </stroke>
+-<<<<<<< HEAD
+     <corners android:radius="25dp"></corners>
+     <solid android:color="@color/fondo"></solid>
+-=======
+ 
+     <corners android:radius="25dp"></corners>
+     <solid android:color="@color/fondo"></solid>
+-
+->>>>>>> bba083b9fe76d30dbc4585478c3fbf8539321a4c
++    
+ 
+ </shape>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/ic_baseline_menu_24.xml\" value=\"0.192\" />\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/ic_launcher_background.xml\" value=\"0.192\" />\r\n<<<<<<< HEAD\r\n<<<<<<< HEAD\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/lock.xml\" value=\"0.205\" />\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/sape_formulario.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape.xml\" value=\"0.206\" />\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_boton.xml\" value=\"0.205\" />\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_botones.xml\" value=\"0.205\" />\r\n=======\r\n>>>>>>> daffa47370b33bbaba799d57f0387a1361898661\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_carrito.xml\" value=\"0.187\" />\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/activity_main.xml\" value=\"0.33\" />\r\n<<<<<<< HEAD\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_blog.xml\" value=\"0.19010416666666666\" />\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_carrito.xml\" value=\"0.20416666666666666\" />\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_favoritos.xml\" value=\"0.20416666666666666\" />\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_perfil.xml\" value=\"0.25\" />\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_blog.xml\" value=\"0.25\" />\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_carrito.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_favoritos.xml\" value=\"0.20416666666666666\" />\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/perfil.xml\" value=\"0.20416666666666666\" />\r\n=======\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_carrito.xml\" value=\"0.36548223350253806\" />\r\n>>>>>>> daffa47370b33bbaba799d57f0387a1361898661\r\n=======\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_carrito.xml\" value=\"0.187\" />\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/activity_main.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_carrito.xml\" value=\"0.36548223350253806\" />\r\n>>>>>>> daffa47370b33bbaba799d57f0387a1361898661\r\n        <entry key=\"..\\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/menu/menu.xml\" value=\"0.20416666666666666\" />\r\n        <entry key=\"..\\:/Users/acer/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_detalle_productos.xml\" value=\"0.25\" />\r\n        <entry key=\"..\\:/Users/acer/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_estadisticas.xml\" value=\"0.25\" />\r\n        <entry key=\"..\\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_carrito.xml\" value=\"0.1245\" />\r\n        <entry key=\"..\\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_filas.xml\" value=\"0.1585\" />\r\n        <entry key=\"..\\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_table.xml\" value=\"0.16\" />\r\n        <entry key=\"..\\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/activity_main.xml\" value=\"0.20717948717948717\" />\r\n        <entry key=\"..\\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/estadisticas_fragment.xml\" value=\"0.21041666666666667\" />\r\n        <entry key=\"..\\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/estadisticas_layout.xml\" value=\"0.209375\" />\r\n        <entry key=\"..\\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_blank.xml\" value=\"0.21458333333333332\" />\r\n        <entry key=\"..\\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_categorias.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_estadisticas.xml\" value=\"0.21458333333333332\" />\r\n        <entry key=\"..\\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_inventario.xml\" value=\"0.2976878612716763\" />\r\n        <entry key=\"..\\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_perfil.xml\" value=\"0.21458333333333332\" />\r\n        <entry key=\"..\\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_blog.xml\" value=\"0.21458333333333332\" />\r\n        <entry key=\"..\\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_carrito.xml\" value=\"0.21041666666666667\" />\r\n        <entry key=\"..\\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_favoritos.xml\" value=\"0.21458333333333332\" />\r\n        <entry key=\"..\\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_inventario.xml\" value=\"0.33\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"Android Studio default JDK\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -3,54 +3,29 @@
+   <component name="DesignSurface">
+     <option name="filePathToZoomLevelMap">
+       <map>
++        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/email.xml" value="0.1" />
+         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.192" />
+         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/ic_launcher_background.xml" value="0.192" />
+-<<<<<<< HEAD
+-<<<<<<< HEAD
+         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/lock.xml" value="0.205" />
+         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/sape_formulario.xml" value="0.1" />
+         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape.xml" value="0.206" />
+         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_boton.xml" value="0.205" />
+         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_botones.xml" value="0.205" />
+-=======
+->>>>>>> daffa47370b33bbaba799d57f0387a1361898661
+         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_carrito.xml" value="0.187" />
+-        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/activity_main.xml" value="0.33" />
+-<<<<<<< HEAD
++        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_fondoformulario.xml" value="0.1" />
++        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/activity_main.xml" value="0.25" />
+         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_blog.xml" value="0.19010416666666666" />
+         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_carrito.xml" value="0.20416666666666666" />
++        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_detalle_productos.xml" value="0.1" />
++        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_estadisticas.xml" value="0.1" />
+         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_favoritos.xml" value="0.20416666666666666" />
++        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_inventario.xml" value="0.1" />
+         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_perfil.xml" value="0.25" />
+         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_blog.xml" value="0.25" />
+-        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_carrito.xml" value="0.33" />
++        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_carrito.xml" value="0.18167456556082148" />
+         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_favoritos.xml" value="0.20416666666666666" />
+         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/perfil.xml" value="0.20416666666666666" />
+-=======
+-        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_carrito.xml" value="0.36548223350253806" />
+->>>>>>> daffa47370b33bbaba799d57f0387a1361898661
+-=======
+-        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_carrito.xml" value="0.187" />
+-        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/activity_main.xml" value="0.33" />
+-        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_carrito.xml" value="0.36548223350253806" />
+->>>>>>> daffa47370b33bbaba799d57f0387a1361898661
+         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/menu/menu.xml" value="0.20416666666666666" />
+-        <entry key="..\:/Users/acer/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_detalle_productos.xml" value="0.25" />
+-        <entry key="..\:/Users/acer/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_estadisticas.xml" value="0.25" />
+-        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_carrito.xml" value="0.1245" />
+-        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_filas.xml" value="0.1585" />
+-        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/shape_table.xml" value="0.16" />
+-        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/activity_main.xml" value="0.20717948717948717" />
+-        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/estadisticas_fragment.xml" value="0.21041666666666667" />
+-        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/estadisticas_layout.xml" value="0.209375" />
+-        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_blank.xml" value="0.21458333333333332" />
+-        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_categorias.xml" value="0.33" />
+-        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_estadisticas.xml" value="0.21458333333333332" />
+-        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_inventario.xml" value="0.2976878612716763" />
+-        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_perfil.xml" value="0.21458333333333332" />
+-        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_blog.xml" value="0.21458333333333332" />
+-        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_carrito.xml" value="0.21041666666666667" />
+-        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_favoritos.xml" value="0.21458333333333332" />
+-        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_inventario.xml" value="0.33" />
+       </map>
+     </option>
+   </component>
+Index: app/src/main/res/menu/menu.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<menu xmlns:android=\"http://schemas.android.com/apk/res/android\">\r\n\r\n    <item\r\n        android:id=\"\">\r\n\r\n    </item>\r\n\r\n</menu>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/menu/menu.xml b/app/src/main/res/menu/menu.xml
+--- a/app/src/main/res/menu/menu.xml	
++++ b/app/src/main/res/menu/menu.xml	
+@@ -2,8 +2,39 @@
+ <menu xmlns:android="http://schemas.android.com/apk/res/android">
+ 
+     <item
+-        android:id="">
++        android:id=""
++        android:enabled="true"
++        android:icon="@drawable/home_barra"
++        android:title="Home">
++    </item>
++
++    <item
++        android:id=""
++        android:enabled="true"
++        android:icon="@drawable/search_barra"
++        android:title="Productos">
++    </item>
+ 
++    <item
++        android:id=""
++        android:enabled="true"
++        android:icon="@drawable/icono_final"
++        android:title=" "
++        >
++    </item>
++
++    <item
++        android:id=""
++        android:enabled="true"
++        android:icon="@drawable/shopping_barra"
++        android:title="Carrito ">
++    </item>
++
++    <item
++        android:id=""
++        android:enabled="true"
++        android:icon="@drawable/person_barra"
++        android:title="Perfil">
+     </item>
+ 
+ </menu>
+\ No newline at end of file
