@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.ECOGAIA" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimary">@color/verde</item>
         <item name="colorPrimaryDark">@color/azul_icono</item>
         <item name="colorAccent">@color/verde</item>
         <!-- Customize your theme here. -->
