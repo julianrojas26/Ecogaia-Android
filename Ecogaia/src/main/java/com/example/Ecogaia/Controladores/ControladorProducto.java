@@ -11,15 +11,9 @@ import java.util.ArrayList;
 public class ControladorProducto {
 
     ServicioProducto SP = new ServicioProducto();
-
-    /*@GetMapping("/AgregarProducto")
-    public AgregarProducto() {
-        return AgregarProducto;
-    } */
-
     @GetMapping("/BuscarProducto")
-    public ArrayList<Producto> BuscarProducto() {
-        return SP.BuscarProducto;
+    public ArrayList<Producto> buscar() {
+        return SP.BuscarProducto();
     }
 
 
