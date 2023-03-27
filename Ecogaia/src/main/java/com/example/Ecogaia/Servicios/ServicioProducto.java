@@ -7,6 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class ServicioProducto {
+<<<<<<< HEAD
     ArrayList<Producto> datos = new ArrayList<Producto>();
     conexion con = new conexion();
     Connection conect = null;
@@ -30,6 +31,8 @@ public class ServicioProducto {
         }
         return datos;
     }
+=======
+>>>>>>> 22fdc24ebea927fc2f64d80720171192b6ec487a
 
 }
 
