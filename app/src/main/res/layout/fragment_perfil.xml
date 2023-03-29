@@ -3,13 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment_productos">
+    tools:context=".fragment_perfil">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Rvcperfil"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </androidx.recyclerview.widget.RecyclerView>
+
     <RelativeLayout
+        android:id="@+id/Rlperfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <View

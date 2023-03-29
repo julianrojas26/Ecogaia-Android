@@ -64,8 +64,8 @@
             app:backgroundTint="@color/verde"
             app:itemIconSize="30dp"
             app:itemIconTint="@color/white"
-            app:menu="@menu/menu"
-            app:itemPaddingBottom="30px">
+            app:itemPaddingBottom="30px"
+            app:menu="@menu/menu">
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 
@@ -80,8 +80,8 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/icono_final"
-            android:layout_marginLeft="188dp"
-            android:layout_marginBottom="15dp">
+            android:layout_marginLeft="190dp"
+            android:layout_marginBottom="10dp">
 
         </ImageView>
 

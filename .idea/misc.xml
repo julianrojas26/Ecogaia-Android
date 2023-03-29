@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/borde_buscador.xml" value="0.1915" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/email.xml" value="0.1" />
+        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/highico.xml" value="0.1915" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.192" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/ic_launcher_background.xml" value="0.192" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/drawable/lock.xml" value="0.205" />
@@ -31,6 +33,7 @@
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_detalle_productos.xml" value="0.33" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_estadisticas.xml" value="0.22" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_favoritos.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_first.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_inventario.xml" value="0.75" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_item_producto.xml" value="0.20416666666666666" />
@@ -39,10 +42,12 @@
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_perfil.xml" value="0.25" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_producto.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_productos.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_recycler_estadisticas.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_recycler_inventario.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_recylcer_estadisticas.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_recylcer_inventario.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_registrar.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_second.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_blog.xml" value="0.25" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_carrito.xml" value="0.22" />
         <entry key="..\:/Users/ANGIE LORENA/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_favoritos.xml" value="0.1" />

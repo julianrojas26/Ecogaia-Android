@@ -7,43 +7,103 @@
     tools:context=".MainActivity">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/fondo">
+        android:layout_height="match_parent">
 
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+<<<<<<< HEAD
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="30dp"
+            >
+=======
             android:background="@drawable/borde_productos"
             android:layout_marginTop="50dp">
+>>>>>>> d49d4c5344a1dd4a31f164f8047eb3d7296e6bd2
 
             <LinearLayout
                 android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_height="155dp"
                 android:background="@drawable/borde_productos"
-                android:layout_marginLeft="40dp">
+                android:layout_gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aceite Esencial"
+                    android:textColor="@color/verde"
+                    android:textSize="13dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="center">
+                </TextView>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/aceite_escencial"
+                    android:layout_gravity="center">
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ ------"
+                    android:textStyle="bold"
+                    android:textColor="@color/verde"
+                    android:textSize="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center">
+                </TextView>
 
                 <LinearLayout
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="110dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="20dp"
-                        android:background="@drawable/boton"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginLeft="25dp">
-                    </ImageView>
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/carrito">
-                    </ImageView>
-                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp">
+
+                        <LinearLayout
+                            android:layout_width="60dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@drawable/boton">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="18dp"
+                                android:text="Info"
+                                android:textColor="@color/azul_icono">
+
+                            </TextView>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="15dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="-2dp"
+                            android:layout_marginTop="8dp"
+                            android:src="@drawable/carrito"></ImageView>
+
+                    </LinearLayout>
+
+
             </LinearLayout>
+        </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </FrameLayout>
