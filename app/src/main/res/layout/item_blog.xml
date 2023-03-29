@@ -24,6 +24,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/Nombre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nombre de usuario"
@@ -34,6 +35,7 @@
                 </TextView>
 
                 <ImageView
+                    android:id="@+id/imagen_usu"
                     android:layout_width="103dp"
                     android:layout_height="103dp"
                     android:layout_marginTop="10dp"
@@ -45,6 +47,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/informacion"
                 android:layout_width="178dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"

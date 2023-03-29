@@ -7,8 +7,6 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-
         android:background="@drawable/imagen_de_fonfo"
         android:elevation="15dp">
 
@@ -21,6 +19,7 @@
             android:background="@drawable/shape_carrito">
 
             <ImageView
+                android:id="@+id/imagen_producto"
                 android:layout_width="103dp"
                 android:layout_height="103dp"
                 android:layout_marginTop="30dp"
@@ -37,17 +36,20 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/Nombre_producto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nombre"
                     android:textColor="@color/azul_icono"></TextView>
 
                 <TextView
+                    android:id="@+id/descripcion"
                     android:layout_width="122dp"
                     android:layout_height="wrap_content"
                     android:text="@string/descripcion"></TextView>
 
                 <TextView
+                    android:id="@+id/precio_cu"
                     android:layout_width="122dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -69,6 +71,7 @@
                 </ImageView>
 
                 <TextView
+                    android:id="@+id/precio_Total"
                     android:layout_width="122dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"

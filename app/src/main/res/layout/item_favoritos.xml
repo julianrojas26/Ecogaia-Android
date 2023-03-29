@@ -65,6 +65,7 @@
                 android:padding="2dp">
 
                 <ImageView
+                    android:id="@+id/imagen_producto_favoritos"
                     android:layout_width="66dp"
                     android:layout_height="66dp"
                     android:src="@drawable/jabon"
@@ -78,22 +79,24 @@
                     android:layout_gravity="center">
 
                     <TextView
+                        android:id="@+id/nombre_produ_favoritos"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="Nombre Producto"
-                        android:layout_marginTop="5dp"
-                        />
+                        android:layout_marginTop="5dp" />
 
                     <TextView
+                        android:id="@+id/descripcion_favoritos"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="Descripcion del producto"
                         android:layout_marginTop="5dp"/>
 
                     <TextView
+                        android:id="@+id/precio_favoritos"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="Valor"
+                        android:text="$_______"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"/>
 
