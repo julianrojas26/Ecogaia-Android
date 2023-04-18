@@ -6,7 +6,6 @@ class productos: Serializable {
     var Prod_Nombre = ""
     var Prod_Cantidad = ""
     var Prod_Categoria = ""
-    var Prod_Descripcion = ""
     var Prod_image = ""
 
 

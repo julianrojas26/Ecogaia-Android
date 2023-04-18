@@ -4,7 +4,16 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/fondo</item>
         <item name="colorPrimaryDark">@color/verde</item>
-        <item name="colorAccent">@color/verde_detalles</item>
+        <item name="colorAccent">@color/white</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.ECOGAIA.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.ECOGAIA.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ECOGAIA.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

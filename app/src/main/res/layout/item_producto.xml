@@ -17,14 +17,15 @@
             android:layout_marginTop="50dp"
             android:layout_marginLeft="30dp"
             >
-
             <LinearLayout
                 android:layout_width="150dp"
                 android:layout_height="155dp"
                 android:background="@drawable/borde_productos"
                 android:layout_gravity="center"
                 android:orientation="vertical">
+
                 <TextView
+                    android:id="@+id/nombre_produ_productos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Aceite Esencial"
@@ -33,14 +34,18 @@
                     android:layout_marginTop="8dp"
                     android:layout_gravity="center">
                 </TextView>
+
                 <ImageView
+                    android:id="@+id/imagen_producto_prductos"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_marginTop="6dp"
                     android:src="@drawable/aceite_escencial"
                     android:layout_gravity="center">
                 </ImageView>
+
                 <TextView
+                    android:id="@+id/precio_produ_productos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="$ ------"
