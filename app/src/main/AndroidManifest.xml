@@ -15,7 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ECOGAIA"
         tools:targetApi="31">
+<<<<<<< HEAD
 
+=======
+        <activity
+            android:name=".Activity_agregarProducto"
+            android:exported="false" />
+>>>>>>> 778b452d4c16f3e0c1785841683dd6e0f855c8de
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -28,4 +28,6 @@ class MainActivity : AppCompatActivity() {
         val bottonNav = findViewById<BottomNavigationView>(R.id.btnMenu)
         bottonNav.setupWithNavController(navController)
     }
+
+
 }
