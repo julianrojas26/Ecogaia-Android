@@ -1,0 +1,48 @@
+Index: Ecogaia/src/main/java/com/example/Ecogaia/conexion.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.Ecogaia;\r\n\r\nimport java.sql.Connection;\r\nimport java.sql.DriverManager;\r\nimport java.sql.SQLException;\r\n\r\npublic class conexion {\r\n    private String db = \"ecogaia\";\r\n    private String user = \"root\";\r\n    private String pass = \"123456\";\r\n    private String url = \"jdbc:mysql://localhost:3306/\" + db;\r\n\r\n    Connection conect = null;\r\n\r\n    public Connection conecta() {\r\n        try {\r\n            conect = DriverManager.getConnection(url, user, pass);\r\n        } catch (SQLException ex) {\r\n            System.out.println(\"Error al conectar \" + ex);\r\n        }\r\n        return conect;\r\n    }\r\n\r\n\r\n}
+===================================================================
+diff --git a/Ecogaia/src/main/java/com/example/Ecogaia/conexion.java b/Ecogaia/src/main/java/com/example/Ecogaia/conexion.java
+--- a/Ecogaia/src/main/java/com/example/Ecogaia/conexion.java	
++++ b/Ecogaia/src/main/java/com/example/Ecogaia/conexion.java	
+@@ -15,6 +15,7 @@
+     public Connection conecta() {
+         try {
+             conect = DriverManager.getConnection(url, user, pass);
++            System.out.println("bien");
+         } catch (SQLException ex) {
+             System.out.println("Error al conectar " + ex);
+         }
+Index: Ecogaia/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n\t<modelVersion>4.0.0</modelVersion>\r\n\t<parent>\r\n\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t<artifactId>spring-boot-starter-parent</artifactId>\r\n\t\t<version>3.0.5</version>\r\n\t\t<relativePath/> <!-- lookup parent from repository -->\r\n\t</parent>\r\n\t<groupId>com.example</groupId>\r\n\t<artifactId>Ecogaia</artifactId>\r\n\t<version>0.0.1-SNAPSHOT</version>\r\n\t<packaging>war</packaging>\r\n\t<name>Ecogaia</name>\r\n\t<description>Demo project for Spring Boot</description>\r\n    <properties>\r\n        <java.version>17</java.version>\r\n        <maven.compiler.source>17</maven.compiler.source>\r\n        <maven.compiler.target>17</maven.compiler.target>\r\n    </properties>\r\n\t<dependencies>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-web</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-websocket</artifactId>\r\n\t\t</dependency>\r\n\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-tomcat</artifactId>\r\n\t\t\t<scope>provided</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-test</artifactId>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n\t</dependencies>\r\n\r\n\t<build>\r\n\t\t<plugins>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>\r\n\t\t\t\t<version>3.0.3</version>\r\n\t\t\t</plugin>\r\n\t\t</plugins>\r\n\t</build>\r\n\r\n</project>\r\n
+===================================================================
+diff --git a/Ecogaia/pom.xml b/Ecogaia/pom.xml
+--- a/Ecogaia/pom.xml	
++++ b/Ecogaia/pom.xml	
+@@ -25,15 +25,21 @@
+ 			<artifactId>spring-boot-starter-web</artifactId>
+ 		</dependency>
+ 		<dependency>
++			<groupId>com.mysql</groupId>
++			<artifactId>mysql-connector-j</artifactId>
++			<version>8.0.32</version>
++		</dependency>
++		<dependency>
+ 			<groupId>org.springframework.boot</groupId>
+ 			<artifactId>spring-boot-starter-websocket</artifactId>
+ 		</dependency>
+ 
+-		<dependency>
++		<!--<dependency>
+ 			<groupId>org.springframework.boot</groupId>
+ 			<artifactId>spring-boot-starter-tomcat</artifactId>
+ 			<scope>provided</scope>
+-		</dependency>
++		</dependency>-->
++
+ 		<dependency>
+ 			<groupId>org.springframework.boot</groupId>
+ 			<artifactId>spring-boot-starter-test</artifactId>

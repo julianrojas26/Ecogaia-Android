@@ -2,10 +2,8 @@ package com.example.Ecogaia.Servicios;
 
 import com.example.Ecogaia.Entidades.Comprador;
 import com.example.Ecogaia.conexion;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+
+import java.sql.*;
 import java.util.ArrayList;
 
 public class ServicioComprador {
@@ -14,6 +12,7 @@ public class ServicioComprador {
     Connection conect = null;
     Statement st = null;
     ResultSet res = null;
+    PreparedStatement ps = null;
 
     public ArrayList<Comprador> BuscarComprador() {
         try {
@@ -30,5 +29,18 @@ public class ServicioComprador {
             System.out.println("Error al consultar comprador " + ex);
         }
         return datos;
+    }
+
+    public Boolean IngresarComprador() {
+        Boolean res = false;
+        try {
+            conect = con.conecta();
+            String sql = "insert into comprador (Comp_nombre, Comp_Telefono, Comp_Direccion, Comp_Correo, Comp_Contraseña)";
+            ps = conect.prepareStatement(sql);
+
+        }catch (SQLException ex) {
+            System.out.println("Error al ingresar comprador " + ex);
+        }
+         return  res;
     }
 }
