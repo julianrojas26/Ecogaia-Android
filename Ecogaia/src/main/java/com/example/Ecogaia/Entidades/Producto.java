@@ -5,12 +5,14 @@ public class Producto {
     private int Prod_Precio;
     private String Prod_Nombre;
     private int Prod_Cantidad;
+    private String Prod_Categoria;
 
-    public Producto(int prod_Codigo, int prod_Precio, String prod_Nombre, int prod_Cantidad) {
+    public Producto(int prod_Codigo, int prod_Precio, String prod_Nombre, int prod_Cantidad,String prod_Categoria) {
         Prod_Codigo = prod_Codigo;
         Prod_Precio = prod_Precio;
         Prod_Nombre = prod_Nombre;
         Prod_Cantidad = prod_Cantidad;
+        Prod_Categoria = prod_Categoria;
     }
 
     public Producto() {
@@ -46,6 +48,14 @@ public class Producto {
 
     public void setProd_Cantidad(int prod_Cantidad) {
         Prod_Cantidad = prod_Cantidad;
+    }
+
+    public String getProd_Categoria() {
+        return Prod_Categoria;
+    }
+
+    public void setProd_Categoria(String prod_Categoria) {
+        Prod_Categoria = prod_Categoria;
     }
 
     @Override

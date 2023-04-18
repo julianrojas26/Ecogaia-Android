@@ -3,31 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Frangment_Home">
+    tools:context=".fragment_productos">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/Rvconferencia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <RelativeLayout
-        android:id="@+id/Rlconferencia"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+    </androidx.recyclerview.widget.RecyclerView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0.4"
-            android:background="@color/verde_botones">
-
+            android:background="@color/verde_botones"
+            >
         </View>
         <ProgressBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:indeterminateTint="@color/verde"
-            android:layout_centerInParent="true">
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/verde">
         </ProgressBar>
     </RelativeLayout>
 

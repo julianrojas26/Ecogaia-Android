@@ -55,17 +55,35 @@
 
         </androidx.fragment.app.FragmentContainerView>
 
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/btnMenu"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_alignParentBottom="true"
             app:backgroundTint="@color/verde"
-            app:itemIconSize="18dp"
+            app:itemIconSize="30dp"
             app:itemIconTint="@color/white"
+            app:itemPaddingBottom="30px"
             app:menu="@menu/menu">
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/icono_final"
+            android:layout_marginLeft="190dp"
+            android:layout_marginBottom="10dp">
+
+        </ImageView>
 
     </RelativeLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

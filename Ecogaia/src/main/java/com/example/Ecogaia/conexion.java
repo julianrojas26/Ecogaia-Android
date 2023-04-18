@@ -9,7 +9,6 @@ public class conexion {
     private String user = "root";
     private String pass = "123456";
     private String url = "jdbc:mysql://localhost:3306/" + db;
-
     Connection conect = null;
 
     public Connection conecta() {
