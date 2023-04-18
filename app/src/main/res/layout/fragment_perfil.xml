@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/imagen_de_fonfo">
+
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="600dp"
+            android:background="@drawable/shape_formulario"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="25dp"
+
+            >
+
+            <LinearLayout
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center"
+                android:background="@drawable/shape"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="center"
+                    android:src="@drawable/extraterrestres">
+
+                </ImageView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="320dp"
+                android:layout_height="400dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/shape_fondoformulario"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/shape_botones"
+                    android:text="Favoritos"
+                    android:textColor="@color/white"
+                    android:layout_margin="20dp"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:layout_gravity="right">
+
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:src="@drawable/person">
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Usuario"
+                            android:textColor="@color/gris_letras"
+                            android:layout_gravity="center"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="10dp">
+
+                        </TextView>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="260dp"
+                        android:layout_height="3dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@color/verde" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="37dp"
+                            android:layout_height="37dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/email">
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Correo"
+                            android:textColor="@color/gris_letras"
+                            android:layout_gravity="center"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="10dp">
+
+                        </TextView>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="260dp"
+                        android:layout_height="3dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@color/verde" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/home">
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Direccion"
+                            android:textColor="@color/gris_letras"
+                            android:layout_gravity="center"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="10dp">
+
+                        </TextView>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="260dp"
+                        android:layout_height="3dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@color/verde" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_marginTop="10dp"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:src="@drawable/lock">
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Contraseña"
+                            android:textColor="@color/gris_letras"
+                            android:layout_gravity="center"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="10dp">
+
+                        </TextView>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="260dp"
+                        android:layout_height="3dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@color/verde" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="38dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/phone">
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Telofono"
+                            android:textColor="@color/gris_letras"
+                            android:layout_gravity="center"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="10dp">
+
+                        </TextView>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="260dp"
+                        android:layout_height="3dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@color/verde" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="40dp"
+                        android:text="Actrualizar"
+                        android:textColor="@color/black"
+                        android:background="@drawable/shape_boton"
+                        android:gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="30dp">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="40dp"
+                        android:text="Cerrar Sesion"
+                        android:textColor="@color/black"
+                        android:background="@drawable/shape_boton"
+                        android:gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="30dp">
+                    </TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>
