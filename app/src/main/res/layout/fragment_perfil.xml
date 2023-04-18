@@ -12,25 +12,23 @@
         <LinearLayout
             android:layout_width="360dp"
             android:layout_height="600dp"
-            android:background="@drawable/shape_formulario"
-            android:orientation="vertical"
-            android:layout_marginTop="50dp"
             android:layout_marginLeft="25dp"
-
-            >
+            android:layout_marginTop="50dp"
+            android:background="@drawable/shape_formulario"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_gravity="center"
-                android:background="@drawable/shape"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="30dp"
+                android:background="@drawable/shape">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
                     android:gravity="center"
                     android:src="@drawable/extraterrestres">
 
@@ -38,33 +36,32 @@
 
             </LinearLayout>
 
-
             <LinearLayout
                 android:layout_width="320dp"
                 android:layout_height="400dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/shape_fondoformulario"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="110dp"
                     android:layout_height="40dp"
-                    android:background="@drawable/shape_botones"
-                    android:text="Favoritos"
-                    android:textColor="@color/white"
+                    android:layout_gravity="right"
                     android:layout_margin="20dp"
-                    android:padding="10dp"
+                    android:background="@drawable/shape_botones"
                     android:gravity="center"
-                    android:layout_gravity="right">
+                    android:padding="10dp"
+                    android:text="Favoritos"
+                    android:textColor="@color/white">
 
                 </TextView>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="20dp">
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -74,17 +71,16 @@
                         <ImageView
                             android:layout_width="38dp"
                             android:layout_height="38dp"
-                            android:src="@drawable/person">
-                        </ImageView>
+                            android:src="@drawable/person"></ImageView>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
                             android:text="Usuario"
                             android:textColor="@color/gris_letras"
-                            android:layout_gravity="center"
-                            android:textSize="15dp"
-                            android:layout_marginLeft="10dp">
+                            android:textSize="15dp">
 
                         </TextView>
                     </LinearLayout>
@@ -105,17 +101,16 @@
                             android:layout_width="37dp"
                             android:layout_height="37dp"
                             android:layout_marginTop="10dp"
-                            android:src="@drawable/email">
-                        </ImageView>
+                            android:src="@drawable/email"></ImageView>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
                             android:text="Correo"
                             android:textColor="@color/gris_letras"
-                            android:layout_gravity="center"
-                            android:textSize="15dp"
-                            android:layout_marginLeft="10dp">
+                            android:textSize="15dp">
 
                         </TextView>
                     </LinearLayout>
@@ -136,17 +131,16 @@
                             android:layout_width="38dp"
                             android:layout_height="38dp"
                             android:layout_marginTop="10dp"
-                            android:src="@drawable/home">
-                        </ImageView>
+                            android:src="@drawable/home"></ImageView>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
                             android:text="Direccion"
                             android:textColor="@color/gris_letras"
-                            android:layout_gravity="center"
-                            android:textSize="15dp"
-                            android:layout_marginLeft="10dp">
+                            android:textSize="15dp">
 
                         </TextView>
                     </LinearLayout>
@@ -164,20 +158,19 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_marginTop="10dp"
                             android:layout_width="38dp"
                             android:layout_height="38dp"
-                            android:src="@drawable/lock">
-                        </ImageView>
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/lock"></ImageView>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
                             android:text="Contraseña"
                             android:textColor="@color/gris_letras"
-                            android:layout_gravity="center"
-                            android:textSize="15dp"
-                            android:layout_marginLeft="10dp">
+                            android:textSize="15dp">
 
                         </TextView>
                     </LinearLayout>
@@ -198,17 +191,16 @@
                             android:layout_width="30dp"
                             android:layout_height="38dp"
                             android:layout_marginTop="10dp"
-                            android:src="@drawable/phone">
-                        </ImageView>
+                            android:src="@drawable/phone"></ImageView>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
                             android:text="Telofono"
                             android:textColor="@color/gris_letras"
-                            android:layout_gravity="center"
-                            android:textSize="15dp"
-                            android:layout_marginLeft="10dp">
+                            android:textSize="15dp">
 
                         </TextView>
                     </LinearLayout>
@@ -230,24 +222,22 @@
                     <TextView
                         android:layout_width="110dp"
                         android:layout_height="40dp"
-                        android:text="Actrualizar"
-                        android:textColor="@color/black"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="20dp"
                         android:background="@drawable/shape_boton"
                         android:gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="30dp">
-                    </TextView>
+                        android:text="Actrualizar"
+                        android:textColor="@color/black"></TextView>
 
                     <TextView
                         android:layout_width="110dp"
                         android:layout_height="40dp"
-                        android:text="Cerrar Sesion"
-                        android:textColor="@color/black"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="20dp"
                         android:background="@drawable/shape_boton"
                         android:gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="30dp">
-                    </TextView>
+                        android:text="Cerrar Sesion"
+                        android:textColor="@color/black"></TextView>
 
                 </LinearLayout>
 

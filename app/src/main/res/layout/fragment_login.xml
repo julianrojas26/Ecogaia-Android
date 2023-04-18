@@ -15,7 +15,6 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/shape_form"
         android:paddingLeft="15dp"
-
         android:paddingTop="40dp"
         android:paddingRight="15dp"
         android:paddingBottom="40dp">
