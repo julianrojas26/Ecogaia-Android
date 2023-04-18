@@ -36,7 +36,7 @@
         android:id="@+id/fragment_blog"
         android:name="com.example.ecogaia.fragment_blog"
         android:label="fragment_blog"
-        tools:layout="@layout/fragment_blog" >
+        tools:layout="@layout/fragment_recycler_blog" >
         <action
             android:id="@+id/action_fragment_blog_to_fragment_perfil2"
             app:destination="@id/fragment_perfil2" />
