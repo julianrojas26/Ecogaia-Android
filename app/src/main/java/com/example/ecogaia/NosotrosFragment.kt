@@ -35,7 +35,7 @@ class NosotrosFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_nosotros, container, false)
+        return inflater.inflate(R.layout.fragment_nosotros, container, false)
     }
 
     companion object {

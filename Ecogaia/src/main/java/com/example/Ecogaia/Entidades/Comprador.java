@@ -6,15 +6,15 @@ public class Comprador {
     private String Comp_Telefono;
     private String Comp_Direccion;
     private String Comp_Correo;
-    private String Comp_Contraseña;
+    private String Comp_Contrasenia;
 
-    public Comprador(int id_comprador, String comp_Nombre, String comp_Telefono, String comp_Direccion, String comp_Correo, String comp_Contraseña) {
+    public Comprador(int id_comprador, String comp_Nombre, String comp_Telefono, String comp_Direccion, String comp_Correo, String comp_Contrasenia) {
         this.id_comprador = id_comprador;
         Comp_Nombre = comp_Nombre;
         Comp_Telefono = comp_Telefono;
         Comp_Direccion = comp_Direccion;
         Comp_Correo = comp_Correo;
-        Comp_Contraseña = comp_Contraseña;
+        Comp_Contrasenia = comp_Contrasenia;
     }
 
     public Comprador() {
@@ -60,12 +60,12 @@ public class Comprador {
         Comp_Correo = comp_Correo;
     }
 
-    public String getComp_Contraseña() {
-        return Comp_Contraseña;
+    public String getComp_Contrasenia() {
+        return Comp_Contrasenia;
     }
 
-    public void setComp_Contraseña(String comp_Contraseña) {
-        Comp_Contraseña = comp_Contraseña;
+    public void setComp_Contrasenia(String comp_Contrasenia) {
+        Comp_Contrasenia = comp_Contrasenia;
     }
 
     @Override
@@ -76,7 +76,7 @@ public class Comprador {
                 ", Comp_Telefono='" + Comp_Telefono + '\'' +
                 ", Comp_Direccion='" + Comp_Direccion + '\'' +
                 ", Comp_Correo='" + Comp_Correo + '\'' +
-                ", Comp_Contraseña='" + Comp_Contraseña + '\'' +
+                ", Comp_Contraseña='" + Comp_Contrasenia + '\'' +
                 '}';
     }
 }

@@ -1,14 +1,25 @@
 package com.example.Ecogaia.Entidades;
 
+import jakarta.persistence.*;
+
+
+@Entity
+@Table (name = "Producto")
 public class Producto {
-    private int Prod_Codigo;
-    private int Prod_Precio;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer Prod_Codigo;
+    @Column(name = "Prod_Precio", length = 100, nullable = false)
+    private String Prod_Precio;
+    @Column(name = "Prod_Nombre", length = 100, nullable = false)
     private String Prod_Nombre;
+    @Column(name = "Prod_Cantidad", length = 100, nullable = false)
     private int Prod_Cantidad;
+    @Column(name = "Prod_Categoria", length = 100, nullable = false)
     private String Prod_Categoria;
 
-    public Producto(int prod_Codigo, int prod_Precio, String prod_Nombre, int prod_Cantidad,String prod_Categoria) {
-        Prod_Codigo = prod_Codigo;
+    public Producto(String prod_Precio, String prod_Nombre, int prod_Cantidad,String prod_Categoria) {
+        Prod_Codigo = null;
         Prod_Precio = prod_Precio;
         Prod_Nombre = prod_Nombre;
         Prod_Cantidad = prod_Cantidad;
@@ -26,11 +37,11 @@ public class Producto {
         Prod_Codigo = prod_Codigo;
     }
 
-    public int getProd_Precio() {
+    public String getProd_Precio() {
         return Prod_Precio;
     }
 
-    public void setProd_Precio(int prod_Precio) {
+    public void setProd_Precio(String prod_Precio) {
         Prod_Precio = prod_Precio;
     }
 

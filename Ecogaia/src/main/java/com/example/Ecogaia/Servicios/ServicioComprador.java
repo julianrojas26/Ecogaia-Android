@@ -1,6 +1,7 @@
 package com.example.Ecogaia.Servicios;
 
 import com.example.Ecogaia.Entidades.Comprador;
+import com.example.Ecogaia.Entidades.Producto;
 import com.example.Ecogaia.conexion;
 
 import java.sql.*;
@@ -31,12 +32,18 @@ public class ServicioComprador {
         return datos;
     }
 
-    public Boolean IngresarComprador() {
+    public Boolean IngresarComprador(Comprador c) {
         Boolean res = false;
         try {
             conect = con.conecta();
-            String sql = "insert into comprador (Comp_nombre, Comp_Telefono, Comp_Direccion, Comp_Correo, Comp_Contraseña)";
+            String sql = "insert into comprador (Comp_Nombre, Comp_Telefono, Comp_Direccion, Comp_Correo, Comp_Contraseña) values (?,?,?,?,?)";
             ps = conect.prepareStatement(sql);
+            ps.setString(1, c.getComp_Nombre());
+            ps.setString(2, c.getComp_Telefono());
+            ps.setString(3, c.getComp_Direccion());
+            ps.setString(4, c.getComp_Correo());
+            ps.setString(5, c.getComp_Contrasenia());
+            res = ps.executeUpdate() > 0;
 
         }catch (SQLException ex) {
             System.out.println("Error al ingresar comprador " + ex);

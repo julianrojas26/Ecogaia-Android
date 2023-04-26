@@ -1,10 +1,9 @@
 package com.example.Ecogaia.Controladores;
 
 import com.example.Ecogaia.Entidades.Comprador;
+import com.example.Ecogaia.Entidades.Producto;
 import com.example.Ecogaia.Servicios.ServicioComprador;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -16,5 +15,10 @@ public class ControladorComprador {
     @GetMapping("/BuscarComprador")
     public ArrayList<Comprador> buscar() {
         return sc.BuscarComprador();
+    }
+
+    @PostMapping("/IngresarComprador")
+    public Boolean ingresar(@RequestBody Comprador c){
+        return sc.IngresarComprador(c);
     }
 }

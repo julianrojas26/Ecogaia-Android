@@ -2,6 +2,7 @@ package com.example.ecogaia
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         appBarCondiguration = AppBarConfiguration(navController.graph)
         setupActionBar(navController, appBarCondiguration)
         setupBottonNavMenu(navController)
+
+
     }
     private fun setupActionBar(navController:NavController, appBarConfiguration: AppBarConfiguration){
         setupActionBarWithNavController(navController,appBarConfiguration)
@@ -29,5 +32,8 @@ class MainActivity : AppCompatActivity() {
         bottonNav.setupWithNavController(navController)
     }
 
-
+    fun addproducto(view: View){
+        val i= Intent(this, Activity_agregarProducto::class.java).apply {  }
+        startActivity(i)
+    }
 }

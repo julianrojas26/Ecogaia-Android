@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/homeActivity"
-        android:name="com.example.ecogaia.HomeActivity"
-        android:label="activity_home"
-        tools:layout="@layout/activity_home" >
+        android:name="com.example.ecogaia.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
 
         <action
             android:id="@+id/action_homeActivity_to_fragment_productos2"
-            app:destination="@id/fragment_productos2" />
+            app:destination="@id/fragment_productos" />
     </fragment>
     <fragment
-        android:id="@+id/fragment_productos2"
-        android:name="com.example.ecogaia.fragment_productos"
-        android:label="fragment_productos"
-        tools:layout="@layout/fragment_productos" >
+        android:id="@+id/fragment_productos"
+        android:name="com.example.ecogaia.fragment_recycler_productos"
+        android:label="fragment_recycler_productos"
+        tools:layout="@layout/fragment_recycler_productos" >
         <action
             android:id="@+id/action_fragment_productos2_to_fragment_detalleProductos"
             app:destination="@id/fragment_detalleProductos" />
         <action
-            android:id="@+id/action_fragment_productos2_to_fragment_blog"
-            app:destination="@id/fragment_blog" />
+            android:id="@+id/action_fragment_productos_to_fragment_inventario"
+            app:destination="@id/fragment_inventario" />
     </fragment>
     <fragment
         android:id="@+id/fragment_detalleProductos"
@@ -33,27 +33,10 @@
         android:label="fragment_detalle_productos"
         tools:layout="@layout/fragment_detalle_productos" />
     <fragment
-        android:id="@+id/fragment_blog"
-        android:name="com.example.ecogaia.fragment_blog"
-        android:label="fragment_blog"
-        tools:layout="@layout/fragment_recycler_blog" >
-        <action
-            android:id="@+id/action_fragment_blog_to_fragment_perfil2"
-            app:destination="@id/fragment_perfil2" />
-    </fragment>
-    <fragment
-        android:id="@+id/fragment_perfil2"
-        android:name="com.example.ecogaia.fragment_perfil"
-        android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil" >
-        <action
-            android:id="@+id/action_fragment_perfil2_to_perfil_Fragment2"
-            app:destination="@id/perfil_Fragment2" />
-    </fragment>
-    <fragment
-        android:id="@+id/perfil_Fragment2"
-        android:name="com.example.ecogaia.Perfil_Fragment"
-        android:label="perfil"
-        tools:layout="@layout/perfil" />
+        android:id="@+id/fragment_inventario"
+        android:name="com.example.ecogaia.inventario"
+        android:label="fragment_inventario"
+        tools:layout="@layout/fragment_inventario"
+        />
 
 </navigation>

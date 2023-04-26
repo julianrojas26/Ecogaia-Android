@@ -2,26 +2,29 @@ package com.example.Ecogaia.Controladores;
 
 import com.example.Ecogaia.Entidades.Producto;
 import com.example.Ecogaia.Servicios.ServicioProducto;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
 @RestController
 public class ControladorProducto {
-
-    ServicioProducto SP = new ServicioProducto();
-    @GetMapping("/BuscarProducto")
-    public ArrayList<Producto> buscar() {
-        return SP.BuscarProducto();
+    ServicioProducto SP;
+    public ControladorProducto(ServicioProducto s){
+        this.SP = s;
     }
-
     @PostMapping("/IngresarProducto")
-    public Boolean ingresar(@RequestBody Producto p) {
-        return SP.IngresarProducto(p);
+    public void ingresar(@RequestBody Producto p) {
+        System.out.println(p);
     }
 
+    @GetMapping("/listar")
+    public ArrayList<Producto> mostrar(){
+        return SP.listar();
+    }
+
+    @DeleteMapping("/eliminar/{id}")
+    public String eliminar(@PathVariable("id") int id){
+        return SP.eliminar(id);
+    }
 
 }
