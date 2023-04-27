@@ -2,4 +2,45 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+<<<<<<< HEAD
     android:id="@+id/nav_graph" />
+=======
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeActivity">
+
+    <fragment
+        android:id="@+id/homeActivity"
+        android:name="com.example.ecogaia.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+
+        <action
+            android:id="@+id/action_homeActivity_to_fragment_productos2"
+            app:destination="@id/fragment_productos" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_productos"
+        android:name="com.example.ecogaia.fragment_recycler_productos"
+        android:label="fragment_recycler_productos"
+        tools:layout="@layout/fragment_recycler_productos" >
+        <action
+            android:id="@+id/action_fragment_productos2_to_fragment_detalleProductos"
+            app:destination="@id/fragment_detalleProductos" />
+        <action
+            android:id="@+id/action_fragment_productos_to_fragment_inventario"
+            app:destination="@id/fragment_inventario" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_detalleProductos"
+        android:name="com.example.ecogaia.fragment_detalleProductos"
+        android:label="fragment_detalle_productos"
+        tools:layout="@layout/fragment_detalle_productos" />
+    <fragment
+        android:id="@+id/fragment_inventario"
+        android:name="com.example.ecogaia.inventario"
+        android:label="fragment_inventario"
+        tools:layout="@layout/fragment_inventario"
+        />
+
+</navigation>
+>>>>>>> 2e5c9748394baa5a010ae2ad7be0e89b2b4b85c9

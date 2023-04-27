@@ -2,14 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+<<<<<<< HEAD
         android:id="@+id/homeFragment"
+=======
+        android:id="@+id/homeActivity"
+>>>>>>> 2e5c9748394baa5a010ae2ad7be0e89b2b4b85c9
         android:enabled="true"
         android:icon="@drawable/home_barra"
         android:title="Home">
     </item>
 
     <item
+<<<<<<< HEAD
         android:id="@+id/productoFragment"
+=======
+        android:id="@+id/fragment_detalleProductos"
+>>>>>>> 2e5c9748394baa5a010ae2ad7be0e89b2b4b85c9
         android:enabled="true"
         android:icon="@drawable/hands"
         android:title="Productos">

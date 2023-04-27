@@ -1,0 +1,6 @@
+com\example\Ecogaia\Controladores\ControladorProducto.class
+com\example\Ecogaia\Servicios\ServicioProducto.class
+com\example\Ecogaia\conexion.class
+com\example\Ecogaia\EcogaiaApplication.class
+com\example\Ecogaia\ServletInitializer.class
+com\example\Ecogaia\Entidades\Producto.class

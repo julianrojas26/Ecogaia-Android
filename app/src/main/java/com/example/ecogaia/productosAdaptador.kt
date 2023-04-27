@@ -17,10 +17,9 @@ class productosAdaptador(val productosListener: productosListener) : RecyclerVie
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.fragment_detalle_productos, parent,false))
     override fun onBindViewHolder(holder: ViewHolder,position: Int){
         val productos = listProductos[position]
-        holder.Prod_precio.text = productos.Prod_Precio
-        holder.Prod_Nombre.text = productos.Prod_Nombre
-        holder.Prod_Categoria.text = productos.Prod_Categoria
-        holder.Prod_Descripcion.text = productos.Prod_Descripcion
+        holder.Prod_precio.text = productos.prod_Precio
+        holder.Prod_Nombre.text = productos.prod_Nombre
+        holder.Prod_Categoria.text = productos.prod_Categoria
 
         holder.itemView.setOnClickListener{ productosListener.onProductosCliked(productos,position)
         }

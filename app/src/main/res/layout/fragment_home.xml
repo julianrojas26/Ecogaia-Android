@@ -91,7 +91,11 @@
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
+<<<<<<< HEAD
                         android:src="@drawable/maquillajelg"
+=======
+                        android:src="@drawable/maquillaje_img"
+>>>>>>> 2e5c9748394baa5a010ae2ad7be0e89b2b4b85c9
                         android:padding="15dp"
                         android:background="@drawable/shape"
                         android:layout_gravity="center">
