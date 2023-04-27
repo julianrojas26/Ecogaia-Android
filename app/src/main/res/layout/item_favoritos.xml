@@ -1,118 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- item -->
+
     <LinearLayout
-
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/shape_formulario"
-        android:layout_margin="30dp"
-        android:orientation="vertical">
+        android:layout_height="120dp"
+        android:background="@drawable/shape_carrito"
+        android:layout_margin="14dp"
+        android:orientation="horizontal"
+        android:padding="2dp">
 
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_boton"
-            android:padding="10dp"
-            android:layout_gravity="end"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cerrar Sesion"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape"
-            android:layout_margin="20dp"
-            android:layout_gravity="center">
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/extraterrestres"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/shape_carrito"
+        <ImageView
+            android:id="@+id/imagen_producto_favoritos"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:src="@drawable/jabon"
             android:layout_margin="10dp"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            >
+            android:layout_gravity="center">
 
-            <ImageView
+            <TextView
+                android:id="@+id/nombre_produ_favoritos"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/close"
-                android:layout_gravity="end"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="18dp"/>
+                android:layout_height="match_parent"
+                android:text="Nombre Producto"
+                android:layout_marginTop="5dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="@drawable/shape_carrito"
-                android:layout_margin="14dp"
-                android:orientation="horizontal"
-                android:padding="2dp">
+            <TextView
+                android:id="@+id/descripcion_favoritos"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Descripcion del producto"
+                android:layout_marginTop="5dp"/>
 
-                <ImageView
-                    android:id="@+id/imagen_producto_favoritos"
-                    android:layout_width="66dp"
-                    android:layout_height="66dp"
-                    android:src="@drawable/jabon"
-                    android:layout_margin="10dp"
-                    android:layout_gravity="center"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_gravity="center">
-
-                    <TextView
-                        android:id="@+id/nombre_produ_favoritos"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="Nombre Producto"
-                        android:layout_marginTop="5dp" />
-
-                    <TextView
-                        android:id="@+id/descripcion_favoritos"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="Descripcion del producto"
-                        android:layout_marginTop="5dp"/>
-
-                    <TextView
-                        android:id="@+id/precio_favoritos"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="$_______"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"/>
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/favoritos"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="16dp"/>
-            </LinearLayout>
+            <TextView
+                android:id="@+id/precio_favoritos"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="$_______"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
 
         </LinearLayout>
 
-
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/favoritos"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"/>
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
