@@ -3,32 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD:app/src/main/res/layout/fragment_recycler_producto.xml
-    tools:context=".ProductoFragment">
-
-=======
     tools:context=".fragment_recycler_productos">
->>>>>>> 2e5c9748394baa5a010ae2ad7be0e89b2b4b85c9:app/src/main/res/layout/fragment_recycler_productos.xml
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
     </androidx.recyclerview.widget.RecyclerView>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
+
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0.4"
-            android:background="@color/verde_botones"
-            >
+            android:background="@color/verde_botones">
+
         </View>
         <ProgressBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:indeterminateTint="@color/verde">
+            android:indeterminateTint="@color/verde"
+            android:layout_centerInParent="true">
         </ProgressBar>
     </RelativeLayout>
 

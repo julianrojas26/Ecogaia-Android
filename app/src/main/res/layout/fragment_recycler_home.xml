@@ -3,12 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     tools:context=".RecyclerHomeFragment">
-
-=======
-    tools:context=".fragment_recycler_home">
->>>>>>> 2e5c9748394baa5a010ae2ad7be0e89b2b4b85c9
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
