@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/imagen_de_fonfo">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/shape_carrito"
+            >
+            <LinearLayout
+                android:background="@drawable/borde_productos"
+                android:layout_width="150dp"
+                android:layout_height="155dp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nombre_produ_productos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aceite Esencial"
+                    android:textColor="@color/verde"
+                    android:textSize="13sp"
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="center">
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/imagen_producto_prductos"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/aceite_escencial"
+                    android:layout_gravity="center">
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/precio_produ_productos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ ------"
+                    android:textStyle="bold"
+                    android:textColor="@color/verde"
+                    android:textSize="11sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center">
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="20dp">
+
+                        <LinearLayout
+                            android:layout_width="60dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginStart="22dp"
+                            android:background="@drawable/boton">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="18dp"
+                                android:text="Info"
+                                android:textColor="@color/azul_icono">
+
+                            </TextView>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="15dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="8dp"
+                            android:src="@drawable/carrito"/>
+
+                    </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>

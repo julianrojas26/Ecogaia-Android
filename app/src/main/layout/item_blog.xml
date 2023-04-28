@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/imagen_de_fonfo"
+        android:elevation="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/shape_carrito">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Nombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre de usuario"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:textColor="@color/verde"
+                    android:textSize="15dp">
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/imagen_usu"
+                    android:layout_width="103dp"
+                    android:layout_height="103dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="30dp"
+                    android:src="@drawable/extraterrestres">
+                </ImageView>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/informacion"
+                android:layout_width="178dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/usuario"></TextView>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+    
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

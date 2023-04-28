@@ -2,7 +2,11 @@ package com.example.ecogaia
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.ContextMenu
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -16,7 +20,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val host: NavHostFragment = supportFragmentManager.findFragmentById(R.id.homeActivity) as NavHostFragment? ?: return
+
+        val host: NavHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment? ?: return
         val navController = host.navController
         appBarCondiguration = AppBarConfiguration(navController.graph)
         setupActionBar(navController, appBarCondiguration)
@@ -35,5 +40,24 @@ class MainActivity : AppCompatActivity() {
     fun addproducto(view: View){
         val i= Intent(this, Activity_agregarProducto::class.java).apply {  }
         startActivity(i)
+    }
+
+
+
+    /*conexion overflow*/
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.overflow, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.item1 -> Toast.makeText(this, "item1", Toast.LENGTH_SHORT).show()
+            R.id.item2 -> Toast.makeText(this, "item1", Toast.LENGTH_SHORT).show()
+            R.id.item3 -> Toast.makeText(this, "item1", Toast.LENGTH_SHORT).show()
+
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
