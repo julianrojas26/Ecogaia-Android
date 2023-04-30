@@ -68,11 +68,12 @@
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_categorias.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_detalle_productos.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_estadisticas.xml" value="0.21458333333333332" />
-        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_home.xml" value="0.21458333333333332" />
+        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_inventario.xml" value="0.25" />
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_login.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_nosotros.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_perfil.xml" value="0.21458333333333332" />
+        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_producto.xml" value="0.25" />
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_productos.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_recycler_blog.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/fragment_recycler_home.xml" value="0.21458333333333332" />
@@ -84,8 +85,10 @@
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_blog.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_carrito.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_favoritos.xml" value="0.1" />
-        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_producto.xml" value="0.33" />
+        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/layout/item_producto.xml" value="0.4" />
         <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/menu/menu.xml" value="0.21458333333333332" />
+        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1655" />
+        <entry key="..\:/Users/julir/AndroidStudioProjects/ECOGAIA/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1655" />
       </map>
     </option>
   </component>
