@@ -1,11 +1,10 @@
-package com.example.ecogaia.UI
+package com.example.ecogaia
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.ecogaia.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,7 +16,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [fragment_blog.newInstance] factory method to
  * create an instance of this fragment.
  */
-class fragment_blog : Fragment() {
+class fragment_recycler_blog : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -50,7 +49,7 @@ class fragment_blog : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            fragment_blog().apply {
+            fragment_recycler_blog().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

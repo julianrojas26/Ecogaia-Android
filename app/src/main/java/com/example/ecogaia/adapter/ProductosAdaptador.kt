@@ -19,8 +19,8 @@ class ProductosAdaptador(private val productList: ArrayList<JSONObject>, private
         var prod_Imagen: ImageView = view.findViewById(R.id.imagen_produ_productos)
 
         fun bind(productos: JSONObject) {
-            prod_Precio.text = productos.getString("Prod_Precio")
-            prod_Nombre.text = productos.getString("Prod_Nombre")
+            prod_Precio.text = productos.getString("prod_Precio")
+            prod_Nombre.text = productos.getString("prod_Nombre")
         }
     }
 
@@ -35,7 +35,7 @@ class ProductosAdaptador(private val productList: ArrayList<JSONObject>, private
 
         try {
             Glide.with(holder.itemView.context)
-                .load(productos.get("Prod_Imagen"))
+                .load(productos.get("prod_Imagen"))
                 .into(holder.prod_Imagen)
             holder.bind(productos)
 

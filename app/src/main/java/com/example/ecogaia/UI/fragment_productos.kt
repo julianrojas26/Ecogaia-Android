@@ -21,7 +21,7 @@ import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 
-class fragment_producto : Fragment(), ProductosListener {
+class fragment_productos : Fragment(), ProductosListener {
    private lateinit var recycler: RecyclerView
    private lateinit var viewAlpha: View
    private lateinit var pgbar: ProgressBar
@@ -34,8 +34,8 @@ class fragment_producto : Fragment(), ProductosListener {
         savedInstanceState: Bundle?
     ): View? {
         Log.d("ProductosFragment", "Entered to onCreateView")
-        val ll = inflater.inflate(R.layout.fragment_producto, container, false)
-        val url = "https://192.168.0.11/listar"
+        val ll = inflater.inflate(R.layout.fragment_productos, container, false)
+        val url = "http://192.168.123.2:8080/listar"
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->

@@ -50,6 +50,8 @@ class Activity_agregarProducto : AppCompatActivity() {
 
             }
         }
+        val con = resultadoPost.bodyContentType
+        Log.e("a","$con")
         queue.add(resultadoPost)
     }
 }

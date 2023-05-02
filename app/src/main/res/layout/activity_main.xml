@@ -51,10 +51,10 @@
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:defaultNavHost="true">
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph">
 
         </androidx.fragment.app.FragmentContainerView>
-
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/btnMenu"
@@ -64,25 +64,11 @@
             app:backgroundTint="@color/verde"
             app:itemIconSize="30dp"
             app:itemIconTint="@color/white"
-            app:itemPaddingBottom="30px"
+
             app:menu="@menu/menu">
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
-        <LinearLayout
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:orientation="vertical">
-
-            <Button
-                android:onClick="addproducto"
-                android:id="@+id/addProduct"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/shape_boton2"
-                android:text="Agregar"
-                android:textSize="13dp"></Button>
-        </LinearLayout>
+ 0'
     </RelativeLayout>
 
     <RelativeLayout
@@ -93,9 +79,9 @@
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/icono_final"
-            android:layout_marginLeft="190dp"
-            android:layout_marginBottom="10dp">
+            android:layout_marginLeft="210dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/icono_final">
 
         </ImageView>
 

@@ -1,12 +1,12 @@
 package com.example.ecogaia.Models
 import java.io.Serializable
 class productos: Serializable {
-    var Prod_Codigo = ""
-    var Prod_Precio = ""
-    var Prod_Nombre = ""
-    var Prod_Cantidad = ""
-    var Prod_Categoria = ""
-    var Prod_image = ""
+    var prod_Codigo = ""
+    var prod_Precio = ""
+    var prod_Nombre = ""
+    var prod_Cantidad = ""
+    var prod_Categoria = ""
+    var prod_Imagen = ""
 
 
 }
