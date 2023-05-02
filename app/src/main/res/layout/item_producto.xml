@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools2="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_10"
+    android:layout_marginEnd="@dimen/margin_10"
+    android:layout_marginTop="@dimen/margin_20">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/imagen_de_fonfo">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/shape_carrito"
             >
             <LinearLayout
+                android:background="@drawable/borde_productos"
                 android:layout_width="150dp"
                 android:layout_height="155dp"
-                android:background="@drawable/borde_productos"
                 android:layout_gravity="center"
                 android:orientation="vertical">
 
@@ -30,13 +35,13 @@
                     android:layout_height="wrap_content"
                     android:text="Aceite Esencial"
                     android:textColor="@color/verde"
-                    android:textSize="13dp"
+                    android:textSize="13sp"
                     android:layout_marginTop="8dp"
                     android:layout_gravity="center">
                 </TextView>
 
                 <ImageView
-                    android:id="@+id/imagen_producto_prductos"
+                    android:id="@+id/imagen_produ_productos"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_marginTop="6dp"
@@ -51,7 +56,7 @@
                     android:text="$ ------"
                     android:textStyle="bold"
                     android:textColor="@color/verde"
-                    android:textSize="10dp"
+                    android:textSize="11sp"
                     android:layout_marginTop="5dp"
                     android:layout_gravity="center">
                 </TextView>
@@ -62,22 +67,22 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layoñut_width="wrap_content"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_marginLeft="20dp">
+                        android:layout_marginStart="20dp">
 
                         <LinearLayout
                             android:layout_width="60dp"
                             android:layout_height="20dp"
                             android:layout_marginTop="12dp"
-                            android:layout_marginLeft="22dp"
+                            android:layout_marginStart="22dp"
                             android:background="@drawable/boton">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="18dp"
+                                android:layout_marginStart="18dp"
                                 android:text="Info"
                                 android:textColor="@color/azul_icono">
 
@@ -90,14 +95,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_marginLeft="15dp">
+                        android:layout_marginStart="15dp">
 
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="30dp"
-                            android:layout_marginLeft="-2dp"
+                            android:layout_marginStart="2dp"
                             android:layout_marginTop="8dp"
-                            android:src="@drawable/carrito"></ImageView>
+                            android:src="@drawable/carrito"/>
 
                     </LinearLayout>
 

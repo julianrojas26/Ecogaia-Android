@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/Home_general"
+        android:id="@+id/homeFragment"
         android:enabled="true"
         android:icon="@drawable/home_barra"
         android:title="Home">
     </item>
 
     <item
-        android:id="@+id/productos"
+        android:id="@+id/recycler_productos"
         android:enabled="true"
         android:icon="@drawable/hands"
         android:title="Productos">
@@ -23,14 +23,14 @@
     </item>
 
     <item
-        android:id="@+id/blog"
+        android:id="@+id/recycler_blog"
         android:enabled="true"
         android:icon="@drawable/book"
         android:title="Blog">
     </item>
 
     <item
-        android:id="@+id/perfil"
+        android:id="@+id/recycler_perfil"
         android:enabled="true"
         android:icon="@drawable/person_barra"
         android:title="Perfil">

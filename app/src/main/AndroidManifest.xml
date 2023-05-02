@@ -4,6 +4,7 @@
     package="com.example.ecogaia">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -13,24 +14,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.ECOGAIA"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
-=======
             android:name=".Activity_agregarProducto"
             android:exported="false" />
         <activity
-            android:name=".Main_agregarProducto"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity2"
-            android:exported="false"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.ECOGAIA.NoActionBar" />
-
-        <activity
->>>>>>> 630156c964de32ec9296571fd364b6cf5af08cab
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
