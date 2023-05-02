@@ -6,7 +6,7 @@
 
         <fragment
             android:id="@+id/homeFragment"
-            android:name="com.example.ecogaia.UI.fragment_productos"
+            android:name="com.example.ecogaia.fragment_home"
             android:label="fragment_home"
             tools:layout="@layout/fragment_productos" >
 
@@ -40,7 +40,7 @@
 
         <fragment
             android:id="@+id/recycler_blog"
-            android:name="com.example.ecogaia.UI.fragment_blog"
+            android:name="com.example.ecogaia.fragment_recycler_blog"
             android:label="fragment_recycler_blog"
             tools:layout="@layout/fragment_recycler_blog" >
 
