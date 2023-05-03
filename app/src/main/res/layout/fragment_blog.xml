@@ -40,19 +40,19 @@
         </ImageView>
     </LinearLayout>
     <RelativeLayout
-        android:id="@+id/rl_ProductsList"
+        android:id="@+id/rl_BlogList"
         android:layout_width="match_parent"
         android:layout_height="800dp"  >
 
         <View
-            android:id="@+id/view_productsList"
+            android:id="@+id/view_blogList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0.5"
             android:background="@color/verde_botones" />
 
         <ProgressBar
-            android:id="@+id/pgbar_productsList"
+            android:id="@+id/pgbar_blogsList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
