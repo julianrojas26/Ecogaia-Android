@@ -40,7 +40,7 @@
 
         <fragment
             android:id="@+id/recycler_blog"
-            android:name="com.example.ecogaia.fragment_recycler_blog"
+            android:name="com.example.ecogaia.UI.fragment_blog"
             android:label="fragment_recycler_blog"
             tools:layout="@layout/fragment_recycler_blog" >
 
