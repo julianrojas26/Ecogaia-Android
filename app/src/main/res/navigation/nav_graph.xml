@@ -9,11 +9,9 @@
             android:name="com.example.ecogaia.fragment_home"
             android:label="fragment_home"
             tools:layout="@layout/fragment_productos" >
-
             <action
-                android:id="@+id/action_homeFragment4_to_fragment_recycler_productos"
+                android:id="@+id/action_homeFragment_to_recycler_productos"
                 app:destination="@id/recycler_productos" />
-
         </fragment>
 
         <fragment
@@ -21,15 +19,12 @@
             android:name="com.example.ecogaia.UI.fragment_recycler_productos"
             android:label="fragment_recycler_productos"
             tools:layout="@layout/fragment_recycler_productos" >
-
             <action
-                android:id="@+id/action_fragment_recycler_productos_to_fragment_detalleProductos"
+                android:id="@+id/action_recycler_productos_to_fragment_detalleProductos"
                 app:destination="@id/fragment_detalleProductos" />
-
             <action
-                android:id="@+id/action_fragment_recycler_productos_to_fragment_blog2"
+                android:id="@+id/action_recycler_productos_to_recycler_blog"
                 app:destination="@id/recycler_blog" />
-
         </fragment>
 
         <dialog
@@ -62,12 +57,12 @@
 
             <action
                 android:id="@+id/action_fragment_recycler_perfil_to_perfil_Fragment2"
-                app:destination="@id/perfil_Fragment2" />
+                app:destination="@id/perfil_Fragment" />
 
         </fragment>
 
         <fragment
-            android:id="@+id/perfil_Fragment2"
+            android:id="@+id/perfil_Fragment"
             android:name="com.example.ecogaia.fragment_perfil"
             android:label="fragment_perfil"
             tools:layout="@layout/fragment_perfil" />
