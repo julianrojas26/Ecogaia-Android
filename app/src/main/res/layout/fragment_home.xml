@@ -159,11 +159,11 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="80dp"
-                        android:layout_height="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="19dp"
-                        android:orientation="vertical"
+                        android:orientation="horizontal"
                         >
 
                         <Button
@@ -172,9 +172,20 @@
                             android:layout_height="40dp"
                             android:layout_marginRight="15dp"
                             android:background="@drawable/shape_boton2"
-                            android:onClick="addproducto"
+                            android:onClick="addProduct"
                             android:text="Agregar"
                             android:textSize="13dp"></Button>
+                        <Button
+                            android:id="@+id/addUsuario"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="15dp"
+                            android:background="@drawable/shape_boton2"
+                            android:onClick="addusuario"
+                            android:text="Agregar Usuario"
+                            android:textSize="13dp"></Button>
+
+
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

@@ -6,13 +6,12 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
-import com.android.volley.*
-import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.Request
+import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import kotlin.collections.HashMap
 
-class Activity_agregarProducto : AppCompatActivity() {
+class activity_agregar_blog : AppCompatActivity() {
     var txtNombre : EditText?= null
     var txtPrecio : EditText?= null
     var txtCantidad : EditText? = null
@@ -20,7 +19,7 @@ class Activity_agregarProducto : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_agregar_producto)
+        setContentView(R.layout.activity_agregar_blog)
 
         txtNombre = findViewById(R.id.txtNom)
         txtPrecio = findViewById(R.id.txtPrecio)
@@ -28,13 +27,13 @@ class Activity_agregarProducto : AppCompatActivity() {
         txtCategoria = findViewById(R.id.txtCategoria)
     }
 
-    fun clickAddProducts(view:View){
+    fun clickAddProducts(view: View){
         val url="http://192.168.141.2:8080/insertarProducto"
-        val queue =Volley.newRequestQueue(this)
-        val resultadoPost = object :StringRequest(Request.Method.POST, url,
-            Response.Listener<String> {response->
+        val queue = Volley.newRequestQueue(this)
+        val resultadoPost = object : StringRequest(Request.Method.POST, url,
+            Response.Listener<String> { response->
                 Toast.makeText(this, "Producto Creado exitosamente", Toast.LENGTH_LONG).show()
-            }, Response.ErrorListener{error ->
+            }, Response.ErrorListener{ error ->
                 Toast.makeText(this, "Producto No Credo $error", Toast.LENGTH_LONG).show()
             }
         ){

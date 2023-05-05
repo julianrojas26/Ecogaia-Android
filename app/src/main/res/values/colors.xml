@@ -9,5 +9,6 @@
     <color name="gris_letras">#999999</color>
     <color name="verde_botones">#A8D977</color>
     <color name="fondorecylcer">#C2FF99</color>
+    <color name="transparent">#00FFFFFF</color>
     <color name="gray">#bababa</color>
 </resources>

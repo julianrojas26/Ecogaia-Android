@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".UI.fragment_productos"
-    >
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="730dp">
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_producto"
-            android:id="@+id/products_recycler"/>
-    </ScrollView>
+    android:background="@drawable/imagen_de_fonfo"
+    tools:context=".UI.fragment_productos">
+
+    <GridView
+        android:id="@+id/products_recycler"
+        android:layout_width="wrap_content"
+        android:layout_height="670dp"
+        android:layout_marginTop="80dp"
+        android:columnWidth="150dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:numColumns="2"
+        android:verticalSpacing="15dp"
+        tools:listitem="@layout/item_producto" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_carrito"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
+        android:background="@drawable/shape_carrito"
         android:padding="5dp">
+
         <EditText
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="Buscar"
             android:inputType="text"
             android:textColor="@color/verde_detalles" />
+
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -39,10 +42,11 @@
 
         </ImageView>
     </LinearLayout>
+
     <RelativeLayout
         android:id="@+id/rl_ProductsList"
         android:layout_width="match_parent"
-        android:layout_height="800dp"  >
+        android:layout_height="800dp">
 
         <View
             android:id="@+id/view_productsList"
@@ -56,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:indeterminateTint="@color/verde"/>
+            android:indeterminateTint="@color/verde" />
 
     </RelativeLayout>
 

@@ -15,8 +15,14 @@ class BlogAdaptador(private val blogList: ArrayList<JSONObject>, private val Blo
         var cuerpo: TextView = view.findViewById(R.id.informacion)
 
         fun bind(tips: JSONObject) {
-            comp_Usuario.text = tips.getString("comp_Usuario")
-            cuerpo.text = tips.getString("cuerpo")
+            var info: String = tips.getString("cuerpo")
+
+            if (info.length > 150) {
+                cuerpo.text = info.slice(0..150) + "..."
+            } else {
+                cuerpo.text = info
+            }
+            comp_Usuario.text = tips.getString("comp_usuario")
         }
     }
 
