@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".UI.fragment_blog"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="730dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_blog"
+            android:id="@+id/recycler_blog"/>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_carrito"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:padding="5dp">
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Buscar"
+            android:inputType="text"
+            android:textColor="@color/verde_detalles" />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/buscar">
+
+        </ImageView>
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rl_BlogList"
+        android:layout_width="match_parent"
+        android:layout_height="800dp"  >
+
+        <View
+            android:id="@+id/view_blogList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="@color/verde_botones" />
+
+        <ProgressBar
+            android:id="@+id/pgbar_blogsList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/verde"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

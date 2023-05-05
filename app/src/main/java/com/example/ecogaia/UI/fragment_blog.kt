@@ -15,18 +15,19 @@ import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.ecogaia.R
-import com.example.ecogaia.adapter.ProductosAdaptador
-import com.example.ecogaia.adapter.ProductosListener
+import com.example.ecogaia.adapter.BlogAdaptador
+import com.example.ecogaia.adapter.BlogListener
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 
-class fragment_productos : Fragment(), ProductosListener {
-   private lateinit var recycler: RecyclerView
-   private lateinit var viewAlpha: View
-   private lateinit var pgbar: ProgressBar
-   private lateinit var rlProductList: RelativeLayout
-   private lateinit var productos: ArrayList<JSONObject>
+
+class fragment_blog : Fragment(), BlogListener {
+    private lateinit var recycler: RecyclerView
+    private lateinit var viewAlpha: View
+    private lateinit var pgbar: ProgressBar
+    private lateinit var rlProductList: RelativeLayout
+    private lateinit var blog: ArrayList<JSONObject>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,41 +35,41 @@ class fragment_productos : Fragment(), ProductosListener {
         savedInstanceState: Bundle?
     ): View? {
         Log.d("ProductosFragment", "Entered to onCreateView")
-        val ll = inflater.inflate(R.layout.fragment_productos, container, false)
-        val url = "http://192.168.1.10:8080/listarProducto"
+        val ll = inflater.inflate(R.layout.fragment_blog, container, false)
+        val url = "http://192.168.2.2:8080/listarblog"
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
             val jsonArray = JSONArray(response)
-            this.productos = ArrayList()
+            this.blog = ArrayList()
             try {
                 var i = 0
                 val l = jsonArray.length()
                 while (i < l) {
-                    productos.add(jsonArray[i] as JSONObject)
+                    blog.add(jsonArray[i] as JSONObject)
                     i++
                 }
-                Log.d("ProductFragment", this.productos.toString())
-                this.recycler.adapter= ProductosAdaptador(this.productos, this)
+                Log.d("BLOG", this.blog.toString())
+                this.recycler.adapter= BlogAdaptador(this.blog, this)
                 this.viewAlpha.visibility= View.INVISIBLE
                 this.pgbar.visibility = View.INVISIBLE
-            }catch (e:JSONException) {
+            }catch (e: JSONException) {
             }
         }, { error ->
             Log.w("jsonError", error)
         })
         queue.add(stringRequest)
-        this.recycler = ll.findViewById(R.id.products_recycler)
-        this.viewAlpha = ll.findViewById(R.id.view_productsList)
-        this.pgbar = ll.findViewById(R.id.pgbar_productsList)
-        this.rlProductList = ll.findViewById(R.id.rl_ProductsList)
+        this.recycler = ll.findViewById(R.id.recycler_blog)
+        this.viewAlpha = ll.findViewById(R.id.view_blogList)
+        this.pgbar = ll.findViewById(R.id.pgbar_blogsList)
+        this.rlProductList = ll.findViewById(R.id.rl_BlogList)
         return ll
     }
 
-    override fun onProductosCliked(productos: JSONObject, position: Int) {
-        val bundle = bundleOf("productos" to productos.toString())
+    override fun onBlogListener(blog: JSONObject, position: Int) {
+        val bundle = bundleOf("blog" to blog.toString())
         findNavController().navigate(
-            R.id.fragment_detalleProductos, bundle
+            R.id.fragment_detalle_blog, bundle
         )
     }
 }
