@@ -172,7 +172,7 @@
                             android:layout_height="40dp"
                             android:layout_marginRight="15dp"
                             android:background="@drawable/shape_boton2"
-                            android:onClick="addproducto"
+                            android:onClick="addProduct"
                             android:text="Agregar"
                             android:textSize="13dp"></Button>
                         <Button

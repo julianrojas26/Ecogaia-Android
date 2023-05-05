@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".UI.fragment_detalle_blog">
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -15,14 +17,19 @@
             android:background="@drawable/shape_productos"
             android:layout_gravity="center"
             android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/close"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="300dp">
-            </ImageView>
+                android:layout_marginTop="10dp"
+                android:background="@color/transparent"
+                app:elevation="0dp">
+                <Toolbar
+                    android:id="@+id/tbBlogDets"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="end">
+                </Toolbar>
+            </com.google.android.material.appbar.AppBarLayout>
 
             <TextView
                 android:id = "@+id/fecha_tip"
@@ -33,7 +40,8 @@
                 android:textColor="@color/gray"
                 android:textSize="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="16dp">
+                android:layout_marginRight="20dp"
+                android:layout_gravity="end">
 
             </TextView>
 

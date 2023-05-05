@@ -13,10 +13,10 @@ import com.android.volley.toolbox.Volley
 import kotlin.collections.HashMap
 
 class Activity_agregarProducto : AppCompatActivity() {
-    var txtNombre: EditText? = null
-    var txtPrecio: EditText? = null
-    var txtCantidad: EditText? = null
-    var txtCategoria: EditText? = null
+    var txtNombre : EditText?= null
+    var txtPrecio : EditText?= null
+    var txtCantidad : EditText? = null
+    var txtCategoria : EditText? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,30 +28,32 @@ class Activity_agregarProducto : AppCompatActivity() {
         txtCategoria = findViewById(R.id.txtCategoria)
     }
 
-    fun clickAddProducts(view: View) {
-        val url = "http://192.168.160.2:8080/IngresarProducto"
-        val queue = Volley.newRequestQueue(this)
-        val resultadoPost = object : StringRequest(Request.Method.POST, url,
-            Response.Listener<String> { response ->
+    fun clickAddProducts(view:View){
+        val url="http://192.168.141.2:8080/insertarProducto"
+        val queue =Volley.newRequestQueue(this)
+        val resultadoPost = object :StringRequest(Request.Method.POST, url,
+            Response.Listener<String> {response->
                 Toast.makeText(this, "Producto Creado exitosamente", Toast.LENGTH_LONG).show()
-            }, Response.ErrorListener { error ->
+            }, Response.ErrorListener{error ->
                 Toast.makeText(this, "Producto No Credo $error", Toast.LENGTH_LONG).show()
             }
-        ) {
+        ){
             override fun getParams(): MutableMap<String, String>? {
                 val params = HashMap<String, String>()
 
-                params.put("prod_Precio", txtPrecio?.text.toString())
-                params.put("prod_Nombre", txtNombre?.text.toString())
-                params.put("prod_Cantidad", txtCantidad?.text.toString())
-                params.put("prod_Categoria", txtCategoria?.text.toString())
+                params.put("prod_Precio",txtPrecio?.text.toString())
+                params.put("prod_Nombre",txtNombre?.text.toString())
+                params.put("prod_Cantidad",txtCantidad?.text.toString())
+                params.put("prod_Categoria",txtCategoria?.text.toString())
                 return params
-                Log.e("params", "$params")
+                Log.e("params","$params")
 
             }
         }
         val con = resultadoPost.bodyContentType
-        Log.e("a", "$con")
+        Log.e("a","$con")
         queue.add(resultadoPost)
     }
+
+
 }

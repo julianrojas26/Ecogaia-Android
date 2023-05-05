@@ -8,6 +8,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -26,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         setupBottonNavMenu(navController)
     }
 
+
+
     private fun setupActionBar(navController:NavController, appBarConfiguration: AppBarConfiguration){
         setupActionBarWithNavController(navController,appBarConfiguration)
     }
@@ -34,16 +38,14 @@ class MainActivity : AppCompatActivity() {
         bottonNav.setupWithNavController(navController)
     }
 
-    fun addproducto(view: View){
-        val i= Intent(this, Activity_agregarProducto::class.java).apply {  }
+    fun addProduct() {
+        val i = Intent(this, Activity_agregarProducto::class.java).apply {  }
         startActivity(i)
     }
     fun addusuario(view: View){
         val i= Intent(this, activity_usuario::class.java).apply {  }
         startActivity(i)
     }
-
-
 
     /*conexion overflow*/
 
@@ -54,10 +56,20 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.item1 -> Toast.makeText(this, "item1", Toast.LENGTH_SHORT).show()
-            R.id.item2 -> Toast.makeText(this, "item1", Toast.LENGTH_SHORT).show()
+            R.id.item1 -> registro()
+            R.id.item2 -> login()
 
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    fun registro() {
+        val i = Intent(this, activity_usuario::class.java).apply {  }
+        startActivity(i)
+    }
+
+    fun login () {
+        val navController = Navigation.findNavController(this,R.id.nav_host_fragment_container)
+        navController.navigate(R.id.fragment_login)
     }
 }

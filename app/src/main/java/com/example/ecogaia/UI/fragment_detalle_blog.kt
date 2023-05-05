@@ -1,34 +1,28 @@
 package com.example.ecogaia.UI
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
+import com.bumptech.glide.Glide
 import com.example.ecogaia.R
+import org.json.JSONObject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [fragment_detalle_blog.newInstance] factory method to
- * create an instance of this fragment.
- */
-class fragment_detalle_blog : DialogFragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class fragment_detalle_blog: DialogFragment() {
+    private lateinit var tbBlogDets : Toolbar
+    private lateinit var comp_usu : TextView
+    private lateinit var titulo : TextView
+    private lateinit var cuerpo : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        setStyle(STYLE_NORMAL, R.style.FullScreenDialogStyle)
     }
 
     override fun onCreateView(
@@ -36,26 +30,34 @@ class fragment_detalle_blog : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detalle_blog, container, false)
+        val ll = inflater.inflate(R.layout.fragment_detalle_blog, container, false)
+        this.tbBlogDets = ll.findViewById(R.id.tbBlogDets)
+
+        this.comp_usu = ll.findViewById(R.id.nombre_tip)
+        this.titulo = ll.findViewById(R.id.titulo)
+        this.cuerpo = ll.findViewById(R.id.descripcion_tip)
+        return ll
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment fragment_detalle_blog.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            fragment_detalle_blog().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        this.tbBlogDets.navigationIcon = ContextCompat.getDrawable(view.context, R.drawable.close)
+        this.tbBlogDets.setNavigationOnClickListener{
+            dismiss()
+        }
+
+        val tips = JSONObject(arguments?.getString("tips"))
+
+        this.titulo.text = tips.getString("titulo")
+        this.comp_usu.text = tips.getString("comp_usuario")
+        this.cuerpo.text = tips.getString("cuerpo")
+
     }
+
+    override fun onStart() {
+        super.onStart()
+        dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+    }
+
 }

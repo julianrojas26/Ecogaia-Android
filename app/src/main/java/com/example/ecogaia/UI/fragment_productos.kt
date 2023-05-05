@@ -1,16 +1,17 @@
 package com.example.ecogaia.UI
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridView
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
@@ -22,7 +23,7 @@ import org.json.JSONException
 import org.json.JSONObject
 
 class fragment_productos : Fragment(), ProductosListener {
-   private lateinit var recycler: RecyclerView
+   private lateinit var recycler: GridView
    private lateinit var viewAlpha: View
    private lateinit var pgbar: ProgressBar
    private lateinit var rlProductList: RelativeLayout
@@ -35,7 +36,7 @@ class fragment_productos : Fragment(), ProductosListener {
     ): View? {
         Log.d("ProductosFragment", "Entered to onCreateView")
         val ll = inflater.inflate(R.layout.fragment_productos, container, false)
-        val url = "http://192.168.2.2:8080/listar"
+        val url = "http://192.168.141.2:8080/listarProducto"
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
@@ -45,11 +46,11 @@ class fragment_productos : Fragment(), ProductosListener {
                 var i = 0
                 val l = jsonArray.length()
                 while (i < l) {
-                    productos.add(jsonArray[i] as JSONObject)
+                    productos += (jsonArray[i] as JSONObject)
                     i++
                 }
                 Log.d("ProductFragment", this.productos.toString())
-                this.recycler.adapter= ProductosAdaptador(this.productos, this)
+                this.recycler.adapter= ProductosAdaptador( this.context, this.productos)
                 this.viewAlpha.visibility= View.INVISIBLE
                 this.pgbar.visibility = View.INVISIBLE
             }catch (e:JSONException) {
@@ -66,6 +67,7 @@ class fragment_productos : Fragment(), ProductosListener {
     }
 
     override fun onProductosCliked(productos: JSONObject, position: Int) {
+        Log.w("AAAAAAA",position.toString()+productos.toString())
         val bundle = bundleOf("productos" to productos.toString())
         findNavController().navigate(
             R.id.fragment_detalleProductos, bundle

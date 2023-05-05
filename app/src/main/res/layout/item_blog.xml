@@ -2,58 +2,55 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="@dimen/margin_10"
+    android:layout_marginStart="@dimen/margin_20"
     android:layout_marginEnd="@dimen/margin_20"
     android:layout_marginTop="@dimen/margin_20">
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:elevation="15dp">
+        android:elevation="12dp">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_marginTop="30dp"
             android:layout_margin="20dp"
             android:background="@drawable/shape_carrito">
-
+            <TextView
+                android:id="@+id/Nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre de usuario"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="35dp"
+                android:textColor="@color/verde"
+                android:textSize="17dp">
+            </TextView>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/Nombre"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nombre de usuario"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginLeft="30dp"
-                    android:textColor="@color/verde"
-                    android:textSize="15dp">
-                </TextView>
+                android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/imagen_usu"
-                    android:layout_width="103dp"
+                    android:layout_width="100dp"
                     android:layout_height="103dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="40dp"
                     android:layout_marginBottom="30dp"
                     android:src="@drawable/extraterrestres">
                 </ImageView>
+                <TextView
+                    android:id="@+id/informacion"
+                    android:layout_width="178dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/usuario"></TextView>
 
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/informacion"
-                android:layout_width="178dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="40dp"
-                android:text="@string/usuario"></TextView>
 
         </LinearLayout>
 

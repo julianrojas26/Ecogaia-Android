@@ -1,50 +1,48 @@
 package com.example.ecogaia.adapter
 
+import android.content.Context
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.BaseAdapter
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import com.example.ecogaia.R
 import org.json.JSONObject
 
-
-class ProductosAdaptador(private val productList: ArrayList<JSONObject>, private val ProductosListener: ProductosListener): RecyclerView.Adapter<ProductosAdaptador.ViewHolder>() {
-    inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        var prod_Precio: TextView = view.findViewById(R.id.precio_produ_productos)
-        var prod_Nombre: TextView = view.findViewById(R.id.nombre_produ_productos)
-        var prod_Imagen: ImageView = view.findViewById(R.id.imagen_produ_productos)
-
-        fun bind(productos: JSONObject) {
-            prod_Precio.text = productos.getString("prod_Precio")
-            prod_Nombre.text = productos.getString("prod_Nombre")
-        }
+class ProductosAdaptador(var context: Context?, var list: ArrayList<JSONObject>): BaseAdapter() {
+    override fun getCount(): Int {
+        return list.size
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder (
-        LayoutInflater.from(parent.context).inflate(R.layout.item_producto, parent, false)
-    )
+    override fun getItem(p0: Int): Any {
+        return list.get(p0)
+    }
 
-    override fun getItemCount() = this.productList.size
+    override fun getItemId(p0: Int): Long {
+        return p0.toLong()
+    }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val productos = productList[position]
+    override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
+        var view:View = View.inflate(context, R.layout.item_producto, null)
 
-        try {
-            Glide.with(holder.itemView.context)
-                .load(productos.get("prod_Imagen"))
-                .into(holder.prod_Imagen)
-            holder.bind(productos)
+        var prod_nombre:TextView = view.findViewById(R.id.nombre_produ_productos)
+        var prod_precio:TextView = view.findViewById(R.id.precio_produ_productos)
 
-            holder.itemView.setOnClickListener{
-                ProductosListener.onProductosCliked(productos, position)
-            }
-        } catch (e: Exception) {
-            Log.w("ProductImagen", "No se cargo la imagen")
+        var producto: JSONObject = list.get(p0)
+
+
+        var nombres: String = producto.getString("prod_Nombre")
+
+        if (nombres.length>18) {
+            prod_nombre.text = nombres.slice(0..18) + "..."
+        } else {
+            prod_nombre.text = nombres
         }
+        prod_precio.text = producto.getString("prod_Precio")
+
+        return view
     }
 
 }

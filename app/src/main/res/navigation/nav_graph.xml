@@ -56,26 +56,19 @@
 
     <fragment
         android:id="@+id/recycler_perfil"
-        android:name="com.example.ecogaia.fragment_recycler_perfil"
-        android:label="fragment_recycler_perfil"
-        tools:layout="@layout/fragment_recycler_perfil">
-
-        <action
-            android:id="@+id/action_fragment_recycler_perfil_to_perfil_Fragment2"
-            app:destination="@id/perfil_Fragment2" />
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/perfil_Fragment2"
-        android:name="com.example.ecogaia.fragment_perfil"
+        android:name="com.example.ecogaia.UI.fragment_perfil"
         android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil" />
+        tools:layout="@layout/fragment_recycler_perfil"/>
 
     <dialog
         android:id="@+id/fragment_detalle_blog"
         android:name="com.example.ecogaia.UI.fragment_detalle_blog"
         android:label="fragment_detalle_blog"
         tools:layout="@layout/fragment_detalle_blog" />
+    <fragment
+        android:id="@+id/fragment_login"
+        android:name="com.example.ecogaia.fragment_login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
 
 </navigation>

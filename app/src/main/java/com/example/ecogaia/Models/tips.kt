@@ -1,7 +1,7 @@
 package com.example.ecogaia.Models
 
 class tips {
-    var comp_Usuario = ""
+    var comp_usuario = ""
     var id_usuario = ""
     var usu_nombre = ""
     var titulo = ""
