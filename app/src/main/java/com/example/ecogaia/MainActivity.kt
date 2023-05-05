@@ -56,8 +56,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.item1 -> registro()
-            R.id.item2 -> login()
+            R.id.item1 -> login()
+            R.id.item2 -> registro()
 
         }
         return super.onOptionsItemSelected(item)

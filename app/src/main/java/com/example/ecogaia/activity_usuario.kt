@@ -32,7 +32,7 @@ class activity_usuario : AppCompatActivity() {
     }
 
     fun clickAddUsuario(view: View) {
-        val url = "http://192.168.1.66:8080/insertarUsuario"
+        val url = "http://192.168.141.2:8080/insertarUsuario"
         val queue = Volley.newRequestQueue(this)
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response ->

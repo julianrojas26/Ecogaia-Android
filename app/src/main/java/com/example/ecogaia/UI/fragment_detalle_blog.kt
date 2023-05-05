@@ -43,9 +43,7 @@ class fragment_detalle_blog: DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         this.tbBlogDets.navigationIcon = ContextCompat.getDrawable(view.context, R.drawable.close)
-        this.tbBlogDets.setNavigationOnClickListener{
-            dismiss()
-        }
+
 
         val tips = JSONObject(arguments?.getString("tips"))
 
