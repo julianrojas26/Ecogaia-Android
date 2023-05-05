@@ -4,79 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     app:startDestination="@+id/homeFragment">
 
-        <fragment
-            android:id="@+id/homeFragment"
-            android:name="com.example.ecogaia.fragment_home"
-            android:label="fragment_home"
-            tools:layout="@layout/fragment_productos" >
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.ecogaia.fragment_home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
 
-            <action
-                android:id="@+id/action_homeFragment4_to_fragment_recycler_productos"
-                app:destination="@id/recycler_productos" />
+        <action
+            android:id="@+id/action_homeFragment4_to_fragment_recycler_productos"
+            app:destination="@id/recycler_productos" />
 
-        </fragment>
+    </fragment>
 
-        <fragment
-            android:id="@+id/recycler_productos"
-            android:name="com.example.ecogaia.UI.fragment_recycler_productos"
-            android:label="fragment_recycler_productos"
-            tools:layout="@layout/fragment_recycler_productos" >
+    <fragment
+        android:id="@+id/recycler_productos"
+        android:name="com.example.ecogaia.UI.fragment_productos"
+        android:label="fragment_productos"
+        tools:layout="@layout/fragment_recycler_productos">
 
-            <action
-                android:id="@+id/action_fragment_recycler_productos_to_fragment_detalleProductos"
-                app:destination="@id/fragment_detalleProductos" />
+        <action
+            android:id="@+id/action_fragment_recycler_productos_to_fragment_detalleProductos"
+            app:destination="@id/fragment_detalleProductos" />
 
-            <action
-                android:id="@+id/action_fragment_recycler_productos_to_fragment_blog2"
-                app:destination="@id/recycler_blog" />
+        <action
+            android:id="@+id/action_fragment_recycler_productos_to_fragment_blog2"
+            app:destination="@id/recycler_blog" />
 
-        </fragment>
+    </fragment>
 
-        <dialog
-            android:id="@+id/fragment_detalleProductos"
-            android:name="com.example.ecogaia.fragment_detalleProductos"
-            android:label="fragment_detalle_productos"
-            tools:layout="@layout/fragment_detalle_productos" />
+    <dialog
+        android:id="@+id/fragment_detalleProductos"
+        android:name="com.example.ecogaia.UI.fragment_detalleProductos"
+        android:label="fragment_detalle_productos"
+        tools:layout="@layout/fragment_detalle_productos" />
 
-        <fragment
-            android:id="@+id/recycler_blog"
-            android:name="com.example.ecogaia.UI.fragment_blog"
-            android:label="fragment_recycler_blog"
-            tools:layout="@layout/fragment_recycler_blog" >
+    <fragment
+        android:id="@+id/recycler_blog"
+        android:name="com.example.ecogaia.UI.fragment_blog"
+        android:label="fragment_blog"
+        tools:layout="@layout/fragment_recycler_blog">
 
-            <action
-                android:id="@+id/action_fragment_blog2_to_fragment_recycler_perfil"
-                app:destination="@id/recycler_perfil" />
+        <action
+            android:id="@+id/action_fragment_blog2_to_fragment_recycler_perfil"
+            app:destination="@id/recycler_perfil" />
 
-            <action
-                android:id="@+id/action_fragment_blog2_to_fragment_detalle_blog"
-                app:destination="@id/fragment_detalle_blog" />
+        <action
+            android:id="@+id/action_fragment_blog2_to_fragment_detalle_blog"
+            app:destination="@id/fragment_detalle_blog" />
 
-        </fragment>
+    </fragment>
 
-        <fragment
-            android:id="@+id/recycler_perfil"
-            android:name="com.example.ecogaia.fragment_recycler_perfil"
-            android:label="fragment_recycler_perfil"
-            tools:layout="@layout/fragment_recycler_perfil" >
+    <fragment
+        android:id="@+id/recycler_perfil"
+        android:name="com.example.ecogaia.fragment_recycler_perfil"
+        android:label="fragment_recycler_perfil"
+        tools:layout="@layout/fragment_recycler_perfil">
 
-            <action
-                android:id="@+id/action_fragment_recycler_perfil_to_perfil_Fragment2"
-                app:destination="@id/perfil_Fragment2" />
+        <action
+            android:id="@+id/action_fragment_recycler_perfil_to_perfil_Fragment2"
+            app:destination="@id/perfil_Fragment2" />
 
-        </fragment>
+    </fragment>
 
-        <fragment
-            android:id="@+id/perfil_Fragment2"
-            android:name="com.example.ecogaia.fragment_perfil"
-            android:label="fragment_perfil"
-            tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/perfil_Fragment2"
+        android:name="com.example.ecogaia.fragment_perfil"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
 
-        <dialog
-            android:id="@+id/fragment_detalle_blog"
-            android:name="com.example.ecogaia.UI.fragment_detalle_blog"
-            android:label="fragment_detalle_blog"
-            tools:layout="@layout/fragment_detalle_blog" />
+    <dialog
+        android:id="@+id/fragment_detalle_blog"
+        android:name="com.example.ecogaia.UI.fragment_detalle_blog"
+        android:label="fragment_detalle_blog"
+        tools:layout="@layout/fragment_detalle_blog" />
 
 </navigation>
-

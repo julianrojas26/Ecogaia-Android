@@ -37,7 +37,7 @@ class fragment_blog : Fragment(), BlogListener {
     ): View? {
         Log.d("ProductosFragment", "Entered to onCreateView")
         val ll = inflater.inflate(R.layout.fragment_blog, container, false)
-        val url = "http:// 192.168.0.11:8080/listarblog"
+        val url = "http://192.168.2.2:8080/listarblog"
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
@@ -61,9 +61,9 @@ class fragment_blog : Fragment(), BlogListener {
         })
         queue.add(stringRequest)
         this.recycler = ll.findViewById(R.id.recycler_blog)
-        this.viewAlpha = ll.findViewById(R.id.view_productsList)
-        this.pgbar = ll.findViewById(R.id.pgbar_productsList)
-        this.rlProductList = ll.findViewById(R.id.rl_ProductsList)
+        this.viewAlpha = ll.findViewById(R.id.view_blogList)
+        this.pgbar = ll.findViewById(R.id.pgbar_blogsList)
+        this.rlProductList = ll.findViewById(R.id.rl_BlogList)
         return ll
     }
 
