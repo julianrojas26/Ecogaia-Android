@@ -4,7 +4,7 @@
     package="com.example.ecogaia">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -14,9 +14,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.ECOGAIA"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".Activity_Insertarblog"
+            android:exported="false" />
+        <activity
+            android:name=".activity_usuario"
+            android:exported="false" />
         <activity
             android:name=".Activity_agregarProducto"
             android:exported="false" />

@@ -38,6 +38,10 @@ class MainActivity : AppCompatActivity() {
         val i= Intent(this, Activity_agregarProducto::class.java).apply {  }
         startActivity(i)
     }
+    fun addusuario(view: View){
+        val i= Intent(this, activity_usuario::class.java).apply {  }
+        startActivity(i)
+    }
 
 
 
