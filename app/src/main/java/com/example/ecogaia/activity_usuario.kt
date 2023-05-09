@@ -58,4 +58,5 @@ class activity_usuario : AppCompatActivity() {
         Log.e("a", "$con")
         queue.add(resultadoPost)
     }
+
 }

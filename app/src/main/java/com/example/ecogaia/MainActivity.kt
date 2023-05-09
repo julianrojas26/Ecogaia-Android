@@ -115,4 +115,9 @@ class MainActivity : AppCompatActivity() {
         val navController = Navigation.findNavController(this,R.id.nav_host_fragment_container)
         navController.navigate(R.id.fragment_login)
     }
+    fun Favoritos(view: View){
+        val i = Intent(this, fragment_favoritos::class.java).apply{ }
+        startActivity(i)
+    }
+
 }
