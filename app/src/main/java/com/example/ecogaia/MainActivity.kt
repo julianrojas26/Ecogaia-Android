@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
             R.id.item1 -> login()
             R.id.item2 -> registro()
             R.id.item3 -> nosotros()
-            R.id.item4 -> Toast.makeText(this, "favoritos", Toast.LENGTH_SHORT).show()
+            R.id.item4 -> favoritos(null)
             R.id.item5 -> categorias()
             R.id.item6 -> carrito()
         }
@@ -84,9 +84,10 @@ class MainActivity : AppCompatActivity() {
         val navController = Navigation.findNavController(this,R.id.nav_host_fragment_container)
         navController.navigate(R.id.fragment_login)
     }
-    fun Favoritos(view: View){
-        val i = Intent(this, fragment_favoritos::class.java).apply{ }
-        startActivity(i)
+
+    fun favoritos(view: View?){
+        val navController = Navigation.findNavController(this, R.id.nav_host_fragment_container)
+        navController.navigate(R.id.fragment_favoritos)
     }
 
 

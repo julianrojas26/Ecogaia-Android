@@ -12,21 +12,6 @@
         android:background="@drawable/shape_formulario"
         android:layout_margin="30dp"
         android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_boton"
-            android:padding="10dp"
-            android:layout_gravity="end"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cerrar Sesion"/>
-        </LinearLayout>
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
