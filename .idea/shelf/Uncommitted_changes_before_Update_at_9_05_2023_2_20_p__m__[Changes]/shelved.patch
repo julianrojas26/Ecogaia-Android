@@ -1,0 +1,454 @@
+Index: app/src/main/res/layout/activity_usuario.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".activity_usuario\">\r\n\r\n    <androidx.cardview.widget.CardView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:background=\"@drawable/imagen_de_fonfo\"\r\n        android:elevation=\"15dp\"\r\n        >\r\n\r\n        <Button\r\n            android:background=\"@drawable/shape_formulario\"\r\n            android:id=\"@+id/btninicio\"\r\n            android:layout_width=\"65dp\"\r\n            android:textColor=\"@color/white\"\r\n            android:layout_height=\"30dp\"\r\n            android:layout_marginTop=\"20dp\"\r\n            android:layout_marginLeft=\"20dp\"\r\n            android:text=\"Inicio\">\r\n        </Button>\r\n\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"340dp\"\r\n            android:layout_height=\"555dp\"\r\n            android:orientation=\"vertical\"\r\n            android:background=\"@drawable/shape_registrar\"\r\n            android:layout_marginTop=\"70dp\"\r\n            android:layout_marginLeft=\"20dp\">\r\n\r\n            <LinearLayout\r\n                android:layout_width=\"80dp\"\r\n                android:layout_height=\"80dp\"\r\n                android:background=\"@drawable/shape_ususario\"\r\n                android:layout_marginTop=\"10dp\"\r\n                android:layout_marginLeft=\"130dp\">\r\n\r\n                <ImageView\r\n                    android:layout_width=\"80dp\"\r\n                    android:layout_height=\"80dp\"\r\n                    android:src=\"@drawable/extraterrestres\">\r\n\r\n                </ImageView>\r\n\r\n            </LinearLayout>\r\n\r\n\r\n            <LinearLayout\r\n                android:layout_height=\"420dp\"\r\n                android:layout_width=\"307dp\"\r\n                android:layout_marginLeft=\"15dp\"\r\n                android:layout_marginTop=\"10dp\"\r\n                android:background=\"@drawable/shape_registrararcontenido\"\r\n                android:orientation=\"vertical\"\r\n                android:padding=\"20dp\">\r\n\r\n                <EditText\r\n                    android:id=\"@+id/txtNombre\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginTop=\"5dp\"\r\n                    android:ems=\"10\"\r\n                    android:inputType=\"text\"\r\n                    android:text=\"Ingrese su Nombre\"></EditText>\r\n\r\n                <EditText\r\n                    android:id=\"@+id/txtCorreo\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginTop=\"10dp\"\r\n                    android:ems=\"10\"\r\n                    android:hint=\"Ingrese su correo\"\r\n                    android:inputType=\"text\"></EditText>\r\n\r\n                <EditText\r\n                    android:id=\"@+id/txtDireccion\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginTop=\"10dp\"\r\n                    android:ems=\"10\"\r\n                    android:hint=\"Direccion de residencia\"\r\n                    android:inputType=\"text\"></EditText>\r\n\r\n                <EditText\r\n                    android:id=\"@+id/txtContra\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginTop=\"10dp\"\r\n                    android:ems=\"10\"\r\n                    android:hint=\"Ingrese una Contraseña\"\r\n                    android:inputType=\"number\"></EditText>\r\n\r\n                <EditText\r\n                    android:id=\"@+id/txtConfirmacion\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginTop=\"10dp\"\r\n                    android:ems=\"10\"\r\n                    android:hint=\"Confirme su Contraseña\"\r\n                    android:inputType=\"number\"></EditText>\r\n\r\n                <EditText\r\n                    android:id=\"@+id/txtTelefono\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginTop=\"10dp\"\r\n                    android:ems=\"10\"\r\n                    android:hint=\"Ingrese su Telefono\"\r\n                    android:inputType=\"number\"></EditText>\r\n\r\n                <Button\r\n                    android:id=\"@+id/btnReg\"\r\n                    android:layout_width=\"100dp\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginTop=\"20dp\"\r\n                    android:background=\"@drawable/shape_formulario\"\r\n                    android:onClick=\"clickAddUsuario\"\r\n                    android:text=\"Registrarse\"\r\n                    android:textColor=\"@color/white\"/>\r\n\r\n            </LinearLayout>\r\n        </LinearLayout>\r\n    </androidx.cardview.widget.CardView>\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_usuario.xml b/app/src/main/res/layout/activity_usuario.xml
+--- a/app/src/main/res/layout/activity_usuario.xml	(revision 9ab7876ad49d4cbc1bbbcb2df649c8b648055721)
++++ b/app/src/main/res/layout/activity_usuario.xml	(date 1683321486378)
+@@ -21,7 +21,8 @@
+             android:layout_height="30dp"
+             android:layout_marginTop="20dp"
+             android:layout_marginLeft="20dp"
+-            android:text="Inicio">
++            android:text="Inicio"
++            android:onClick="inicio">
+         </Button>
+ 
+ 
+@@ -59,65 +60,133 @@
+                 android:orientation="vertical"
+                 android:padding="20dp">
+ 
+-                <EditText
+-                    android:id="@+id/txtNombre"
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="5dp"
+-                    android:ems="10"
+-                    android:inputType="text"
+-                    android:text="Ingrese su Nombre"></EditText>
++                <LinearLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:layout_marginBottom="3dp"
++                    android:orientation="horizontal">
++
++                    <ImageView
++                        android:layout_width="40dp"
++                        android:layout_height="40dp"
++                        android:background="@drawable/person_form"></ImageView>
++
++                    <EditText
++                        android:id="@+id/txtNombre"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:layout_marginTop="5dp"
++                        android:ems="10"
++                        android:inputType="text"
++                        android:text="Ingrese su Nombre"></EditText>
++                </LinearLayout>
++
++                <LinearLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:layout_marginBottom="10dp"
++                    android:orientation="horizontal">
++
++                    <ImageView
++                        android:layout_width="40dp"
++                        android:layout_height="40dp"
++                        android:background="@drawable/email"></ImageView>
+ 
+-                <EditText
++                    <EditText
+                     android:id="@+id/txtCorreo"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+-                    android:layout_marginTop="10dp"
+                     android:ems="10"
+                     android:hint="Ingrese su correo"
+                     android:inputType="text"></EditText>
++                </LinearLayout>
++
++                <LinearLayout
++                    android:layout_marginBottom="10dp"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:orientation="horizontal">
++
++                    <ImageView
++                        android:layout_width="40dp"
++                        android:layout_height="40dp"
++                        android:background="@drawable/house"></ImageView>
+ 
+-                <EditText
+-                    android:id="@+id/txtDireccion"
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="10dp"
+-                    android:ems="10"
+-                    android:hint="Direccion de residencia"
+-                    android:inputType="text"></EditText>
++                    <EditText
++                        android:id="@+id/txtDireccion"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:ems="10"
++                        android:hint="Direccion de residencia"
++                        android:inputType="text"></EditText>
++                </LinearLayout>
++
+ 
+-                <EditText
+-                    android:id="@+id/txtContra"
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="10dp"
+-                    android:ems="10"
+-                    android:hint="Ingrese una Contraseña"
+-                    android:inputType="number"></EditText>
++                <LinearLayout
++                    android:layout_marginBottom="10dp"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:orientation="horizontal">
++
++                    <ImageView
++                        android:layout_width="40dp"
++                        android:layout_height="40dp"
++                        android:background="@drawable/lock_form"></ImageView>
++                    <EditText
++                        android:id="@+id/txtContra"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:layout_marginTop="1dp"
++                        android:ems="10"
++                        android:hint="Ingrese una Contraseña"
++                        android:inputType="number"></EditText>
++                </LinearLayout>
++
++                <LinearLayout
++                    android:layout_marginBottom="10dp"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:orientation="horizontal">
++
++                    <ImageView
++                        android:layout_width="40dp"
++                        android:layout_height="40dp"
++                        android:background="@drawable/lock_form"></ImageView>
+ 
+-                <EditText
+-                    android:id="@+id/txtConfirmacion"
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="10dp"
+-                    android:ems="10"
+-                    android:hint="Confirme su Contraseña"
+-                    android:inputType="number"></EditText>
++                    <EditText
++                        android:id="@+id/txtConfirmacion"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:ems="10"
++                        android:hint="Confirme su Contraseña"
++                        android:inputType="number"></EditText>
++                </LinearLayout>
++
++                <LinearLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:orientation="horizontal">
++
++                    <ImageView
++                        android:layout_width="40dp"
++                        android:layout_height="40dp"
++                        android:background="@drawable/phone"></ImageView>
+ 
+-                <EditText
+-                    android:id="@+id/txtTelefono"
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="10dp"
+-                    android:ems="10"
+-                    android:hint="Ingrese su Telefono"
+-                    android:inputType="number"></EditText>
++                    <EditText
++                        android:id="@+id/txtTelefono"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:ems="10"
++                        android:hint="Ingrese su Telefono"
++                        android:inputType="number"></EditText>
++                </LinearLayout>
+ 
+                 <Button
+                     android:id="@+id/btnReg"
+-                    android:layout_width="100dp"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="20dp"
++                    android:layout_marginLeft="60dp"
++                    android:layout_width="150dp"
++                    android:layout_height="40dp"
++                    android:layout_marginTop="10dp"
+                     android:background="@drawable/shape_formulario"
+                     android:onClick="clickAddUsuario"
+                     android:text="Registrarse"
+Index: app/src/main/java/com/example/ecogaia/activity_usuario.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ecogaia\r\n\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport android.view.View\r\nimport android.widget.EditText\r\nimport android.widget.Toast\r\nimport com.android.volley.Request\r\nimport com.android.volley.Response\r\nimport com.android.volley.toolbox.StringRequest\r\nimport com.android.volley.toolbox.Volley\r\n\r\nclass activity_usuario : AppCompatActivity() {\r\n    var txtNombre: EditText? = null\r\n    var txtCorreo: EditText? = null\r\n    var txtDireccion: EditText? = null\r\n    var txtContra: EditText? = null\r\n    var txtConfirmacion: EditText? = null\r\n    var txtTelefono: EditText? = null\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_usuario)\r\n\r\n        txtNombre = findViewById(R.id.txtNombre)\r\n        txtCorreo = findViewById(R.id.txtCorreo)\r\n        txtDireccion = findViewById(R.id.txtDireccion)\r\n        txtContra = findViewById(R.id.txtContra)\r\n        txtConfirmacion = findViewById(R.id.txtConfirmacion)\r\n        txtTelefono = findViewById(R.id.txtTelefono)\r\n    }\r\n\r\n    fun clickAddUsuario(view: View) {\r\n        val url = \"http://192.168.141.2:8080/insertarUsuario\"\r\n        val queue = Volley.newRequestQueue(this)\r\n        val resultadoPost = object : StringRequest(Request.Method.POST, url,\r\n            Response.Listener<String> { response ->\r\n                Toast.makeText(this, \"Usuario Creado exitosamente\", Toast.LENGTH_LONG).show()\r\n            }, Response.ErrorListener { error ->\r\n                Toast.makeText(this, \"Usuario No Creado $error\", Toast.LENGTH_LONG).show()\r\n            }\r\n        ) {\r\n            override fun getParams(): MutableMap<String, String>? {\r\n                val params = HashMap<String, String>()\r\n\r\n                params.put(\"usu_nombre\", txtNombre?.text.toString())\r\n                params.put(\"usu_contraseña\", txtContra?.text.toString())\r\n                params.put(\"usu_correo\", txtCorreo?.text.toString())\r\n                params.put(\"usu_direccion\", txtDireccion?.text.toString())\r\n                params.put(\"usu_telefono\", txtTelefono?.text.toString())\r\n                return params\r\n                Log.e(\"params\", \"$params\")\r\n\r\n            }\r\n        }\r\n        val con = resultadoPost.bodyContentType\r\n        Log.e(\"a\", \"$con\")\r\n        queue.add(resultadoPost)\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/activity_usuario.kt b/app/src/main/java/com/example/ecogaia/activity_usuario.kt
+--- a/app/src/main/java/com/example/ecogaia/activity_usuario.kt	(revision 9ab7876ad49d4cbc1bbbcb2df649c8b648055721)
++++ b/app/src/main/java/com/example/ecogaia/activity_usuario.kt	(date 1683331161521)
+@@ -1,5 +1,6 @@
+ package com.example.ecogaia
+ 
++import android.content.Intent
+ import androidx.appcompat.app.AppCompatActivity
+ import android.os.Bundle
+ import android.util.Log
+@@ -32,7 +33,7 @@
+     }
+ 
+     fun clickAddUsuario(view: View) {
+-        val url = "http://192.168.141.2:8080/insertarUsuario"
++        val url = "http://192.168.1.6:8080/insertarUsuario"
+         val queue = Volley.newRequestQueue(this)
+         val resultadoPost = object : StringRequest(Request.Method.POST, url,
+             Response.Listener<String> { response ->
+@@ -58,4 +59,9 @@
+         Log.e("a", "$con")
+         queue.add(resultadoPost)
+     }
++
++    fun inicio(view: View) {
++        val i = Intent(this, MainActivity::class.java).apply {  }
++        startActivity(i)
++    }
+ }
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_insertarblog.xml
+===================================================================
+diff --git a/app/src/main/res/layout/activity_insertarblog.xml b/app/src/main/res/layout/activity_insertarblog.xml
+deleted file mode 100644
+--- a/app/src/main/res/layout/activity_insertarblog.xml	(revision 9ab7876ad49d4cbc1bbbcb2df649c8b648055721)
++++ /dev/null	(revision 9ab7876ad49d4cbc1bbbcb2df649c8b648055721)
+@@ -1,81 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".Activity_Insertarblog">
+-
+-    <androidx.cardview.widget.CardView
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:background="@drawable/imagen_de_fonfo"
+-        android:elevation="15dp"
+-        >
+-
+-        <Button
+-            android:background="@drawable/shape_formulario"
+-            android:id="@+id/btninicio"
+-            android:layout_width="65dp"
+-            android:textColor="@color/white"
+-            android:layout_height="30dp"
+-            android:layout_marginTop="20dp"
+-            android:layout_marginLeft="20dp"
+-            android:text="Inicio">
+-        </Button>
+-
+-        <LinearLayout
+-            android:layout_width="340dp"
+-            android:layout_height="350dp"
+-            android:orientation="vertical"
+-            android:background="@drawable/shape_registrar"
+-            android:layout_marginTop="70dp"
+-            android:layout_marginLeft="20dp">
+-
+-
+-
+-
+-            <LinearLayout
+-                android:layout_height="300dp"
+-                android:layout_width="310dp"
+-                android:layout_marginLeft="15dp"
+-                android:layout_marginTop="20dp"
+-                android:background="@drawable/shape_registrararcontenido"
+-                android:orientation="vertical"
+-                android:padding="20dp">
+-
+-                <EditText
+-                    android:id="@+id/txtTitulo"
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="50dp"
+-                    android:ems="10"
+-                    android:inputType="text"
+-                    android:text="Ingrese el nombre"></EditText>
+-
+-                <EditText
+-                    android:id="@+id/txtCorreo"
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="10dp"
+-                    android:ems="100"
+-                    android:hint="Ingrese la descripcion"
+-                    android:inputType="text"></EditText>
+-
+-
+-
+-                <Button
+-                    android:id="@+id/btnReg"
+-                    android:layout_width="100dp"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="20dp"
+-                    android:background="@drawable/shape_formulario"
+-                    android:onClick="clickAddUsuario"
+-                    android:text="Agregar"
+-                    android:textColor="@color/white"/>
+-
+-            </LinearLayout>
+-        </LinearLayout>
+-    </androidx.cardview.widget.CardView>
+-
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/ecogaia/Activity_agregarProducto.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ecogaia\r\n\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport android.view.View\r\nimport android.widget.EditText\r\nimport android.widget.Toast\r\nimport com.android.volley.*\r\nimport com.android.volley.toolbox.JsonObjectRequest\r\nimport com.android.volley.toolbox.StringRequest\r\nimport com.android.volley.toolbox.Volley\r\nimport kotlin.collections.HashMap\r\n\r\nclass Activity_agregarProducto : AppCompatActivity() {\r\n    var txtNombre : EditText?= null\r\n    var txtPrecio : EditText?= null\r\n    var txtCantidad : EditText? = null\r\n    var txtCategoria : EditText? = null\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_agregar_producto)\r\n\r\n        txtNombre = findViewById(R.id.txtNom)\r\n        txtPrecio = findViewById(R.id.txtPrecio)\r\n        txtCantidad = findViewById(R.id.txtCant)\r\n        txtCategoria = findViewById(R.id.txtCategoria)\r\n    }\r\n\r\n    fun clickAddProducts(view:View){\r\n        val url=\"http://192.168.141.2:8080/insertarProducto\"\r\n        val queue =Volley.newRequestQueue(this)\r\n        val resultadoPost = object :StringRequest(Request.Method.POST, url,\r\n            Response.Listener<String> {response->\r\n                Toast.makeText(this, \"Producto Creado exitosamente\", Toast.LENGTH_LONG).show()\r\n            }, Response.ErrorListener{error ->\r\n                Toast.makeText(this, \"Producto No Credo $error\", Toast.LENGTH_LONG).show()\r\n            }\r\n        ){\r\n            override fun getParams(): MutableMap<String, String>? {\r\n                val params = HashMap<String, String>()\r\n\r\n                params.put(\"prod_Precio\",txtPrecio?.text.toString())\r\n                params.put(\"prod_Nombre\",txtNombre?.text.toString())\r\n                params.put(\"prod_Cantidad\",txtCantidad?.text.toString())\r\n                params.put(\"prod_Categoria\",txtCategoria?.text.toString())\r\n                return params\r\n                Log.e(\"params\",\"$params\")\r\n\r\n            }\r\n        }\r\n        val con = resultadoPost.bodyContentType\r\n        Log.e(\"a\",\"$con\")\r\n        queue.add(resultadoPost)\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/Activity_agregarProducto.kt b/app/src/main/java/com/example/ecogaia/Activity_agregarProducto.kt
+--- a/app/src/main/java/com/example/ecogaia/Activity_agregarProducto.kt	(revision 9ab7876ad49d4cbc1bbbcb2df649c8b648055721)
++++ b/app/src/main/java/com/example/ecogaia/Activity_agregarProducto.kt	(date 1683331161521)
+@@ -13,10 +13,10 @@
+ import kotlin.collections.HashMap
+ 
+ class Activity_agregarProducto : AppCompatActivity() {
+-    var txtNombre : EditText?= null
+-    var txtPrecio : EditText?= null
+-    var txtCantidad : EditText? = null
+-    var txtCategoria : EditText? = null
++    var txtNombre: EditText? = null
++    var txtPrecio: EditText? = null
++    var txtCantidad: EditText? = null
++    var txtCategoria: EditText? = null
+ 
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+@@ -28,32 +28,30 @@
+         txtCategoria = findViewById(R.id.txtCategoria)
+     }
+ 
+-    fun clickAddProducts(view:View){
+-        val url="http://192.168.141.2:8080/insertarProducto"
+-        val queue =Volley.newRequestQueue(this)
+-        val resultadoPost = object :StringRequest(Request.Method.POST, url,
+-            Response.Listener<String> {response->
++    fun clickAddProducts(view: View) {
++        val url = "http://192.168.1.6:8080/IngresarProducto"
++        val queue = Volley.newRequestQueue(this)
++        val resultadoPost = object : StringRequest(Request.Method.POST, url,
++            Response.Listener<String> { response ->
+                 Toast.makeText(this, "Producto Creado exitosamente", Toast.LENGTH_LONG).show()
+-            }, Response.ErrorListener{error ->
++            }, Response.ErrorListener { error ->
+                 Toast.makeText(this, "Producto No Credo $error", Toast.LENGTH_LONG).show()
+             }
+-        ){
++        ) {
+             override fun getParams(): MutableMap<String, String>? {
+                 val params = HashMap<String, String>()
+ 
+-                params.put("prod_Precio",txtPrecio?.text.toString())
+-                params.put("prod_Nombre",txtNombre?.text.toString())
+-                params.put("prod_Cantidad",txtCantidad?.text.toString())
+-                params.put("prod_Categoria",txtCategoria?.text.toString())
++                params.put("prod_Precio", txtPrecio?.text.toString())
++                params.put("prod_Nombre", txtNombre?.text.toString())
++                params.put("prod_Cantidad", txtCantidad?.text.toString())
++                params.put("prod_Categoria", txtCategoria?.text.toString())
+                 return params
+-                Log.e("params","$params")
++                Log.e("params", "$params")
+ 
+             }
+         }
+         val con = resultadoPost.bodyContentType
+-        Log.e("a","$con")
++        Log.e("a", "$con")
+         queue.add(resultadoPost)
+     }
+-
+-
+-}
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_blog.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    tools:context=\".UI.fragment_blog\"\r\n    >\r\n    <ScrollView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:background=\"@drawable/imagen_de_fonfo\"\r\n        >\r\n        <androidx.recyclerview.widget.RecyclerView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"70dp\"\r\n            app:layoutManager=\"androidx.recyclerview.widget.LinearLayoutManager\"\r\n            tools:listitem=\"@layout/item_blog\"\r\n            android:id=\"@+id/recycler_blog\"/>\r\n    </ScrollView>\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:background=\"@drawable/shape_carrito\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:layout_marginLeft=\"30dp\"\r\n        android:layout_marginRight=\"30dp\"\r\n        android:padding=\"5dp\">\r\n        <EditText\r\n            android:layout_width=\"300dp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:hint=\"Buscar\"\r\n            android:inputType=\"text\"\r\n            android:textColor=\"@color/verde_detalles\" />\r\n        <ImageView\r\n            android:layout_width=\"30dp\"\r\n            android:layout_height=\"30dp\"\r\n            android:layout_marginTop=\"8dp\"\r\n            android:background=\"@drawable/buscar\">\r\n\r\n        </ImageView>\r\n    </LinearLayout>\r\n    <RelativeLayout\r\n        android:id=\"@+id/rl_BlogList\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"800dp\"  >\r\n\r\n        <View\r\n            android:id=\"@+id/view_blogList\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:alpha=\"0.5\"\r\n            android:background=\"@color/verde_botones\" />\r\n\r\n        <ProgressBar\r\n            android:id=\"@+id/pgbar_blogsList\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:indeterminateTint=\"@color/verde\"/>\r\n\r\n    </RelativeLayout>\r\n    <com.google.android.material.floatingactionbutton.FloatingActionButton\r\n        android:id=\"@+id/fab\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_gravity=\"end|bottom\"\r\n        android:src=\"@drawable/\"\r\n        android:contentDescription=\"@string/submit\"\r\n        android:layout_margin=\"16dp\" />\r\n\r\n</FrameLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_blog.xml b/app/src/main/res/layout/fragment_blog.xml
+--- a/app/src/main/res/layout/fragment_blog.xml	(revision 9ab7876ad49d4cbc1bbbcb2df649c8b648055721)
++++ b/app/src/main/res/layout/fragment_blog.xml	(date 1683318871894)
+@@ -66,8 +66,6 @@
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="end|bottom"
+-        android:src="@drawable/"
+-        android:contentDescription="@string/submit"
+         android:layout_margin="16dp" />
+ 
+ </FrameLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/ecogaia/UI/fragment_login.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ecogaia\r\n\r\nimport android.os.Bundle\r\nimport androidx.fragment.app.Fragment\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\n\r\n// TODO: Rename parameter arguments, choose names that match\r\n// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER\r\nprivate const val ARG_PARAM1 = \"param1\"\r\nprivate const val ARG_PARAM2 = \"param2\"\r\n\r\n/**\r\n * A simple [Fragment] subclass.\r\n * Use the [LoginFragment.newInstance] factory method to\r\n * create an instance of this fragment.\r\n */\r\nclass fragment_login : Fragment() {\r\n    // TODO: Rename and change types of parameters\r\n    private var param1: String? = null\r\n    private var param2: String? = null\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        arguments?.let {\r\n            param1 = it.getString(ARG_PARAM1)\r\n            param2 = it.getString(ARG_PARAM2)\r\n        }\r\n    }\r\n\r\n    override fun onCreateView(\r\n        inflater: LayoutInflater, container: ViewGroup?,\r\n        savedInstanceState: Bundle?\r\n    ): View? {\r\n        // Inflate the layout for this fragment\r\n        return inflater.inflate(R.layout.fragment_login, container, false)\r\n    }\r\n\r\n    companion object {\r\n        /**\r\n         * Use this factory method to create a new instance of\r\n         * this fragment using the provided parameters.\r\n         *\r\n         * @param param1 Parameter 1.\r\n         * @param param2 Parameter 2.\r\n         * @return A new instance of fragment LoginFragment.\r\n         */\r\n        // TODO: Rename and change types and number of parameters\r\n        @JvmStatic\r\n        fun newInstance(param1: String, param2: String) =\r\n            fragment_login().apply {\r\n                arguments = Bundle().apply {\r\n                    putString(ARG_PARAM1, param1)\r\n                    putString(ARG_PARAM2, param2)\r\n                }\r\n            }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/UI/fragment_login.kt b/app/src/main/java/com/example/ecogaia/UI/fragment_login.kt
+--- a/app/src/main/java/com/example/ecogaia/UI/fragment_login.kt	(revision 9ab7876ad49d4cbc1bbbcb2df649c8b648055721)
++++ b/app/src/main/java/com/example/ecogaia/UI/fragment_login.kt	(date 1683321183815)
+@@ -1,22 +1,16 @@
+ package com.example.ecogaia
+ 
+ import android.os.Bundle
+-import androidx.fragment.app.Fragment
+ import android.view.LayoutInflater
+ import android.view.View
+ import android.view.ViewGroup
++import androidx.fragment.app.Fragment
++import com.example.ecogaia.R
+ 
+-// TODO: Rename parameter arguments, choose names that match
+-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+ private const val ARG_PARAM1 = "param1"
+ private const val ARG_PARAM2 = "param2"
+ 
+-/**
+- * A simple [Fragment] subclass.
+- * Use the [LoginFragment.newInstance] factory method to
+- * create an instance of this fragment.
+- */
+-class fragment_login : Fragment() {
++class fragment_login: Fragment() {
+     // TODO: Rename and change types of parameters
+     private var param1: String? = null
+     private var param2: String? = null

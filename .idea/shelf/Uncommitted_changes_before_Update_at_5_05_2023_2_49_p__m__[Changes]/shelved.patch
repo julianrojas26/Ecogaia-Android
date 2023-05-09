@@ -1,0 +1,639 @@
+Index: app/src/main/java/com/example/ecogaia/Activity_agregarProducto.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ecogaia\r\n\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport android.view.View\r\nimport android.widget.EditText\r\nimport android.widget.Toast\r\nimport com.android.volley.*\r\nimport com.android.volley.toolbox.JsonObjectRequest\r\nimport com.android.volley.toolbox.StringRequest\r\nimport com.android.volley.toolbox.Volley\r\nimport kotlin.collections.HashMap\r\n\r\nclass Activity_agregarProducto : AppCompatActivity() {\r\n    var txtNombre: EditText? = null\r\n    var txtPrecio: EditText? = null\r\n    var txtCantidad: EditText? = null\r\n    var txtCategoria: EditText? = null\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_agregar_producto)\r\n\r\n        txtNombre = findViewById(R.id.txtNom)\r\n        txtPrecio = findViewById(R.id.txtPrecio)\r\n        txtCantidad = findViewById(R.id.txtCant)\r\n        txtCategoria = findViewById(R.id.txtCategoria)\r\n    }\r\n\r\n    fun clickAddProducts(view: View) {\r\n        val url = \"http://192.168.160.2:8080/IngresarProducto\"\r\n        val queue = Volley.newRequestQueue(this)\r\n        val resultadoPost = object : StringRequest(Request.Method.POST, url,\r\n            Response.Listener<String> { response ->\r\n                Toast.makeText(this, \"Producto Creado exitosamente\", Toast.LENGTH_LONG).show()\r\n            }, Response.ErrorListener { error ->\r\n                Toast.makeText(this, \"Producto No Credo $error\", Toast.LENGTH_LONG).show()\r\n            }\r\n        ) {\r\n            override fun getParams(): MutableMap<String, String>? {\r\n                val params = HashMap<String, String>()\r\n\r\n                params.put(\"prod_Precio\", txtPrecio?.text.toString())\r\n                params.put(\"prod_Nombre\", txtNombre?.text.toString())\r\n                params.put(\"prod_Cantidad\", txtCantidad?.text.toString())\r\n                params.put(\"prod_Categoria\", txtCategoria?.text.toString())\r\n                return params\r\n                Log.e(\"params\", \"$params\")\r\n\r\n            }\r\n        }\r\n        val con = resultadoPost.bodyContentType\r\n        Log.e(\"a\", \"$con\")\r\n        queue.add(resultadoPost)\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/Activity_agregarProducto.kt b/app/src/main/java/com/example/ecogaia/Activity_agregarProducto.kt
+--- a/app/src/main/java/com/example/ecogaia/Activity_agregarProducto.kt	(revision a340098bfb3e84f7344648a6eb441ad8c885b716)
++++ b/app/src/main/java/com/example/ecogaia/Activity_agregarProducto.kt	(date 1683315681469)
+@@ -29,7 +29,7 @@
+     }
+ 
+     fun clickAddProducts(view: View) {
+-        val url = "http://192.168.160.2:8080/IngresarProducto"
++        val url = "http://192.168.141.131:8080/IngresarProducto"
+         val queue = Volley.newRequestQueue(this)
+         val resultadoPost = object : StringRequest(Request.Method.POST, url,
+             Response.Listener<String> { response ->
+Index: app/src/main/res/layout/activity_usuario.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".activity_usuario\">\r\n\r\n    <androidx.cardview.widget.CardView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:background=\"@drawable/imagen_de_fonfo\"\r\n        android:elevation=\"15dp\"\r\n        >\r\n\r\n        <Button\r\n            android:background=\"@drawable/shape_formulario\"\r\n            android:id=\"@+id/btninicio\"\r\n            android:layout_width=\"65dp\"\r\n            android:textColor=\"@color/white\"\r\n            android:layout_height=\"30dp\"\r\n            android:layout_marginTop=\"20dp\"\r\n            android:layout_marginLeft=\"20dp\"\r\n            android:text=\"Inicio\">\r\n        </Button>\r\n\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"340dp\"\r\n            android:layout_height=\"555dp\"\r\n            android:orientation=\"vertical\"\r\n            android:background=\"@drawable/shape_registrar\"\r\n            android:layout_marginTop=\"70dp\"\r\n            android:layout_marginLeft=\"20dp\">\r\n\r\n            <LinearLayout\r\n                android:layout_width=\"80dp\"\r\n                android:layout_height=\"80dp\"\r\n                android:background=\"@drawable/shape_ususario\"\r\n                android:layout_marginTop=\"10dp\"\r\n                android:layout_marginLeft=\"130dp\">\r\n\r\n                <ImageView\r\n                    android:layout_width=\"80dp\"\r\n                    android:layout_height=\"80dp\"\r\n                    android:src=\"@drawable/extraterrestres\">\r\n\r\n                </ImageView>\r\n\r\n            </LinearLayout>\r\n\r\n\r\n            <LinearLayout\r\n                android:layout_height=\"420dp\"\r\n                android:layout_width=\"307dp\"\r\n                android:layout_marginLeft=\"15dp\"\r\n                android:layout_marginTop=\"10dp\"\r\n                android:background=\"@drawable/shape_registrararcontenido\"\r\n                android:orientation=\"vertical\"\r\n                android:padding=\"20dp\">\r\n\r\n                <EditText\r\n                    android:id=\"@+id/txtNombre\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginTop=\"5dp\"\r\n                    android:ems=\"10\"\r\n                    android:inputType=\"text\"\r\n                    android:text=\"Ingrese su Nombre\"></EditText>\r\n\r\n                <EditText\r\n                    android:id=\"@+id/txtCorreo\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginTop=\"10dp\"\r\n                    android:ems=\"10\"\r\n                    android:hint=\"Ingrese su correo\"\r\n                    android:inputType=\"text\"></EditText>\r\n\r\n                <EditText\r\n                    android:id=\"@+id/txtDireccion\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginTop=\"10dp\"\r\n                    android:ems=\"10\"\r\n                    android:hint=\"Direccion de residencia\"\r\n                    android:inputType=\"text\"></EditText>\r\n\r\n                <EditText\r\n                    android:id=\"@+id/txtContra\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginTop=\"10dp\"\r\n                    android:ems=\"10\"\r\n                    android:hint=\"Ingrese una Contraseña\"\r\n                    android:inputType=\"number\"></EditText>\r\n\r\n                <EditText\r\n                    android:id=\"@+id/txtConfirmacion\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginTop=\"10dp\"\r\n                    android:ems=\"10\"\r\n                    android:hint=\"Confirme su Contraseña\"\r\n                    android:inputType=\"number\"></EditText>\r\n\r\n                <EditText\r\n                    android:id=\"@+id/txtTelefono\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginTop=\"10dp\"\r\n                    android:ems=\"10\"\r\n                    android:hint=\"Ingrese su Telefono\"\r\n                    android:inputType=\"number\"></EditText>\r\n\r\n                <Button\r\n                    android:id=\"@+id/btnReg\"\r\n                    android:layout_width=\"100dp\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginTop=\"20dp\"\r\n                    android:background=\"@drawable/shape_formulario\"\r\n                    android:onClick=\"clickAddUsuario\"\r\n                    android:text=\"Registrarse\"\r\n                    android:textColor=\"@color/white\"/>\r\n\r\n            </LinearLayout>\r\n        </LinearLayout>\r\n    </androidx.cardview.widget.CardView>\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_usuario.xml b/app/src/main/res/layout/activity_usuario.xml
+--- a/app/src/main/res/layout/activity_usuario.xml	(revision a340098bfb3e84f7344648a6eb441ad8c885b716)
++++ b/app/src/main/res/layout/activity_usuario.xml	(date 1683315620071)
+@@ -59,62 +59,130 @@
+                 android:orientation="vertical"
+                 android:padding="20dp">
+ 
+-                <EditText
+-                    android:id="@+id/txtNombre"
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="5dp"
+-                    android:ems="10"
+-                    android:inputType="text"
+-                    android:text="Ingrese su Nombre"></EditText>
++                <LinearLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:layout_marginBottom="3dp"
++                    android:orientation="horizontal">
++
++                    <ImageView
++                        android:layout_width="40dp"
++                        android:layout_height="40dp"
++                        android:background="@drawable/person_form"></ImageView>
++
++                    <EditText
++                        android:id="@+id/txtNombre"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:layout_marginTop="5dp"
++                        android:ems="10"
++                        android:inputType="text"
++                        android:text="Ingrese su Nombre"></EditText>
++                </LinearLayout>
++
++                <LinearLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:layout_marginBottom="10dp"
++                    android:orientation="horizontal">
++
++                    <ImageView
++                        android:layout_width="40dp"
++                        android:layout_height="40dp"
++                        android:background="@drawable/email"></ImageView>
+ 
+-                <EditText
++                    <EditText
+                     android:id="@+id/txtCorreo"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+-                    android:layout_marginTop="10dp"
+                     android:ems="10"
+                     android:hint="Ingrese su correo"
+                     android:inputType="text"></EditText>
++                </LinearLayout>
++
++                <LinearLayout
++                    android:layout_marginBottom="10dp"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:orientation="horizontal">
++
++                    <ImageView
++                        android:layout_width="40dp"
++                        android:layout_height="40dp"
++                        android:background="@drawable/house"></ImageView>
+ 
+-                <EditText
+-                    android:id="@+id/txtDireccion"
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="10dp"
+-                    android:ems="10"
+-                    android:hint="Direccion de residencia"
+-                    android:inputType="text"></EditText>
++                    <EditText
++                        android:id="@+id/txtDireccion"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:ems="10"
++                        android:hint="Direccion de residencia"
++                        android:inputType="text"></EditText>
++                </LinearLayout>
++
+ 
+-                <EditText
+-                    android:id="@+id/txtContra"
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="10dp"
+-                    android:ems="10"
+-                    android:hint="Ingrese una Contraseña"
+-                    android:inputType="number"></EditText>
++                <LinearLayout
++                    android:layout_marginBottom="10dp"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:orientation="horizontal">
++
++                    <ImageView
++                        android:layout_width="40dp"
++                        android:layout_height="40dp"
++                        android:background="@drawable/lock_form"></ImageView>
++                    <EditText
++                        android:id="@+id/txtContra"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:layout_marginTop="1dp"
++                        android:ems="10"
++                        android:hint="Ingrese una Contraseña"
++                        android:inputType="number"></EditText>
++                </LinearLayout>
++
++                <LinearLayout
++                    android:layout_marginBottom="10dp"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:orientation="horizontal">
++
++                    <ImageView
++                        android:layout_width="40dp"
++                        android:layout_height="40dp"
++                        android:background="@drawable/lock_form"></ImageView>
+ 
+-                <EditText
+-                    android:id="@+id/txtConfirmacion"
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="10dp"
+-                    android:ems="10"
+-                    android:hint="Confirme su Contraseña"
+-                    android:inputType="number"></EditText>
++                    <EditText
++                        android:id="@+id/txtConfirmacion"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:ems="10"
++                        android:hint="Confirme su Contraseña"
++                        android:inputType="number"></EditText>
++                </LinearLayout>
++
++                <LinearLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:orientation="horizontal">
++
++                    <ImageView
++                        android:layout_width="40dp"
++                        android:layout_height="40dp"
++                        android:background="@drawable/phone"></ImageView>
+ 
+-                <EditText
+-                    android:id="@+id/txtTelefono"
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="10dp"
+-                    android:ems="10"
+-                    android:hint="Ingrese su Telefono"
+-                    android:inputType="number"></EditText>
++                    <EditText
++                        android:id="@+id/txtTelefono"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:ems="10"
++                        android:hint="Ingrese su Telefono"
++                        android:inputType="number"></EditText>
++                </LinearLayout>
+ 
+                 <Button
+                     android:id="@+id/btnReg"
++                    android:layout_marginLeft="75dp"
+                     android:layout_width="100dp"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="20dp"
+Index: app/src/main/java/com/example/ecogaia/activity_usuario.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ecogaia\r\n\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport android.view.View\r\nimport android.widget.EditText\r\nimport android.widget.Toast\r\nimport com.android.volley.Request\r\nimport com.android.volley.Response\r\nimport com.android.volley.toolbox.StringRequest\r\nimport com.android.volley.toolbox.Volley\r\n\r\nclass activity_usuario : AppCompatActivity() {\r\n    var txtNombre: EditText? = null\r\n    var txtCorreo: EditText? = null\r\n    var txtDireccion: EditText? = null\r\n    var txtContra: EditText? = null\r\n    var txtConfirmacion: EditText? = null\r\n    var txtTelefono: EditText? = null\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_usuario)\r\n\r\n        txtNombre = findViewById(R.id.txtNombre)\r\n        txtCorreo = findViewById(R.id.txtCorreo)\r\n        txtDireccion = findViewById(R.id.txtDireccion)\r\n        txtContra = findViewById(R.id.txtContra)\r\n        txtConfirmacion = findViewById(R.id.txtConfirmacion)\r\n        txtTelefono = findViewById(R.id.txtTelefono)\r\n    }\r\n\r\n    fun clickAddUsuario(view: View) {\r\n        val url = \"http://192.168.1.66:8080/insertarUsuario\"\r\n        val queue = Volley.newRequestQueue(this)\r\n        val resultadoPost = object : StringRequest(Request.Method.POST, url,\r\n            Response.Listener<String> { response ->\r\n                Toast.makeText(this, \"Usuario Creado exitosamente\", Toast.LENGTH_LONG).show()\r\n            }, Response.ErrorListener { error ->\r\n                Toast.makeText(this, \"Usuario No Creado $error\", Toast.LENGTH_LONG).show()\r\n            }\r\n        ) {\r\n            override fun getParams(): MutableMap<String, String>? {\r\n                val params = HashMap<String, String>()\r\n\r\n                params.put(\"usu_nombre\", txtNombre?.text.toString())\r\n                params.put(\"usu_contraseña\", txtContra?.text.toString())\r\n                params.put(\"usu_correo\", txtCorreo?.text.toString())\r\n                params.put(\"usu_direccion\", txtDireccion?.text.toString())\r\n                params.put(\"usu_telefono\", txtTelefono?.text.toString())\r\n                return params\r\n                Log.e(\"params\", \"$params\")\r\n\r\n            }\r\n        }\r\n        val con = resultadoPost.bodyContentType\r\n        Log.e(\"a\", \"$con\")\r\n        queue.add(resultadoPost)\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/activity_usuario.kt b/app/src/main/java/com/example/ecogaia/activity_usuario.kt
+--- a/app/src/main/java/com/example/ecogaia/activity_usuario.kt	(revision a340098bfb3e84f7344648a6eb441ad8c885b716)
++++ b/app/src/main/java/com/example/ecogaia/activity_usuario.kt	(date 1683316153602)
+@@ -12,6 +12,8 @@
+ import com.android.volley.toolbox.Volley
+ 
+ class activity_usuario : AppCompatActivity() {
++
++
+     var txtNombre: EditText? = null
+     var txtCorreo: EditText? = null
+     var txtDireccion: EditText? = null
+@@ -32,7 +34,7 @@
+     }
+ 
+     fun clickAddUsuario(view: View) {
+-        val url = "http://192.168.1.66:8080/insertarUsuario"
++        val url = "http://192.168.141.131:8080/insertarUsuario"
+         val queue = Volley.newRequestQueue(this)
+         val resultadoPost = object : StringRequest(Request.Method.POST, url,
+             Response.Listener<String> { response ->
+Index: app/src/main/res/layout/fragment_login.xml
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_login.xml b/app/src/main/res/layout/fragment_login.xml
+deleted file mode 100644
+--- a/app/src/main/res/layout/fragment_login.xml	(revision a340098bfb3e84f7344648a6eb441ad8c885b716)
++++ /dev/null	(revision a340098bfb3e84f7344648a6eb441ad8c885b716)
+@@ -1,119 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".fragment_login">
+-
+-    <com.google.android.material.card.MaterialCardView
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:background="@drawable/imagen_de_fonfo"
+-        android:elevation="15dp">
+-
+-        <LinearLayout
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content"
+-            android:layout_marginLeft="15dp"
+-            android:layout_marginTop="110dp"
+-            android:layout_marginRight="15dp"
+-            android:layout_marginBottom="10dp"
+-            android:background="@drawable/shape_form"
+-            android:paddingLeft="15dp"
+-            android:paddingTop="40dp"
+-            android:paddingRight="15dp"
+-            android:paddingBottom="40dp">
+-
+-            <LinearLayout
+-                android:layout_width="match_parent"
+-                android:layout_height="match_parent"
+-                android:layout_marginTop="30dp"
+-                android:background="@drawable/shape_form3"
+-                android:orientation="vertical"
+-                android:padding="60dp">
+-
+-                <LinearLayout
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="30dp"
+-                    android:layout_marginBottom="30dp"
+-                    android:orientation="horizontal"
+-
+-                    >
+-
+-                    <ImageView
+-                        android:layout_width="40dp"
+-                        android:layout_height="40dp"
+-                        android:background="@drawable/person_form"></ImageView>
+-
+-                    <EditText
+-                        android:layout_width="match_parent"
+-                        android:layout_height="wrap_content"
+-                        android:hint="Ingresa tu usuario"
+-                        android:inputType="text"
+-                        android:textColor="@color/verde_detalles" />
+-                </LinearLayout>
+-
+-                <LinearLayout
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="30dp"
+-                    android:orientation="horizontal">
+-
+-                    <ImageView
+-                        android:layout_width="40dp"
+-                        android:layout_height="40dp"
+-                        android:background="@drawable/lock_form"></ImageView>
+-
+-                    <EditText
+-                        android:layout_width="match_parent"
+-                        android:layout_height="wrap_content"
+-                        android:hint="Ingresa tu contraseña"
+-                        android:inputType="textPassword" />
+-                </LinearLayout>
+-
+-
+-                <TextView
+-                    android:layout_width="wrap_content"
+-                    android:layout_height="wrap_content"
+-                    android:layout_gravity="right"
+-                    android:layout_marginBottom="20dp"
+-                    android:text="Recuperar contraseña"
+-                    android:textColor="@color/verde_detalles"
+-                    android:textSize="10dp">
+-
+-                </TextView>
+-
+-                <Button
+-                    android:layout_width="wrap_content"
+-                    android:layout_height="wrap_content"
+-                    android:layout_gravity="center"
+-                    android:background="@drawable/shape_form2"
+-                    android:paddingLeft="20dp"
+-                    android:paddingRight="20dp"
+-                    android:text="Inicia sesion"
+-                    android:textColor="@color/verde_detalles"></Button>
+-            </LinearLayout>
+-        </LinearLayout>
+-
+-        <LinearLayout
+-            android:layout_width="170dp"
+-            android:layout_height="170dp"
+-            android:layout_marginLeft="120dp"
+-            android:layout_marginTop="10dp"
+-
+-            android:background="@drawable/highico">
+-            <ImageView
+-                android:layout_width="110dp"
+-                android:layout_height="110dp"
+-                android:layout_gravity="center"
+-                android:layout_marginLeft="30dp"
+-                android:background="@drawable/extraterrestres"></ImageView>
+-
+-        </LinearLayout>
+-
+-
+-    </com.google.android.material.card.MaterialCardView>
+-
+-
+-</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/ecogaia/UI/fragment_login.kt
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/UI/fragment_login.kt b/app/src/main/java/com/example/ecogaia/UI/fragment_login.kt
+deleted file mode 100644
+--- a/app/src/main/java/com/example/ecogaia/UI/fragment_login.kt	(revision a340098bfb3e84f7344648a6eb441ad8c885b716)
++++ /dev/null	(revision a340098bfb3e84f7344648a6eb441ad8c885b716)
+@@ -1,59 +0,0 @@
+-package com.example.ecogaia
+-
+-import android.os.Bundle
+-import androidx.fragment.app.Fragment
+-import android.view.LayoutInflater
+-import android.view.View
+-import android.view.ViewGroup
+-
+-// TODO: Rename parameter arguments, choose names that match
+-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+-private const val ARG_PARAM1 = "param1"
+-private const val ARG_PARAM2 = "param2"
+-
+-/**
+- * A simple [Fragment] subclass.
+- * Use the [LoginFragment.newInstance] factory method to
+- * create an instance of this fragment.
+- */
+-class fragment_login : Fragment() {
+-    // TODO: Rename and change types of parameters
+-    private var param1: String? = null
+-    private var param2: String? = null
+-
+-    override fun onCreate(savedInstanceState: Bundle?) {
+-        super.onCreate(savedInstanceState)
+-        arguments?.let {
+-            param1 = it.getString(ARG_PARAM1)
+-            param2 = it.getString(ARG_PARAM2)
+-        }
+-    }
+-
+-    override fun onCreateView(
+-        inflater: LayoutInflater, container: ViewGroup?,
+-        savedInstanceState: Bundle?
+-    ): View? {
+-        // Inflate the layout for this fragment
+-        return inflater.inflate(R.layout.fragment_login, container, false)
+-    }
+-
+-    companion object {
+-        /**
+-         * Use this factory method to create a new instance of
+-         * this fragment using the provided parameters.
+-         *
+-         * @param param1 Parameter 1.
+-         * @param param2 Parameter 2.
+-         * @return A new instance of fragment LoginFragment.
+-         */
+-        // TODO: Rename and change types and number of parameters
+-        @JvmStatic
+-        fun newInstance(param1: String, param2: String) =
+-            fragment_login().apply {
+-                arguments = Bundle().apply {
+-                    putString(ARG_PARAM1, param1)
+-                    putString(ARG_PARAM2, param2)
+-                }
+-            }
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/example/ecogaia/Activity_Login.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/Activity_Login.kt b/app/src/main/java/com/example/ecogaia/Activity_Login.kt
+new file mode 100644
+--- /dev/null	(date 1683315620054)
++++ b/app/src/main/java/com/example/ecogaia/Activity_Login.kt	(date 1683315620054)
+@@ -0,0 +1,52 @@
++package com.example.ecogaia
++
++import androidx.appcompat.app.AppCompatActivity
++import android.os.Bundle
++import android.util.Log
++import android.view.View
++import android.widget.EditText
++import android.widget.Toast
++import com.android.volley.Request
++import com.android.volley.Response
++import com.android.volley.toolbox.StringRequest
++import com.android.volley.toolbox.Volley
++
++class Activity_Login : AppCompatActivity() {
++
++    var txtUsuario: EditText? = null
++    var txtContraseña: EditText? = null
++
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_login)
++
++        txtUsuario = findViewById(R.id.txtUsuario)
++        txtContraseña = findViewById(R.id.txtContraseña)
++    }
++
++    fun clickConfirmacion(view: View) {
++        val url = "http://192.168.78.131:8080/insertarUsuario"
++        val queue = Volley.newRequestQueue(this)
++        val resultadoPost = object : StringRequest(Request.Method.GET, url,
++            Response.Listener<String> { response ->
++                Toast.makeText(this, "Usuario Confirmado", Toast.LENGTH_LONG).show()
++            }, Response.ErrorListener { error ->
++                Toast.makeText(this, "Usuario No Encontrado $error", Toast.LENGTH_LONG).show()
++            }
++        ) {
++            override fun getParams(): MutableMap<String, String>? {
++                val params = HashMap<String, String>()
++
++                params.put("usu_nombre", txtUsuario?.text.toString())
++                params.put("usu_contraseña", txtContraseña?.text.toString())
++
++                return params
++                Log.e("params", "$params")
++
++            }
++        }
++        val con = resultadoPost.bodyContentType
++        Log.e("a", "$con")
++        queue.add(resultadoPost)
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_login.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_login.xml b/app/src/main/res/layout/activity_login.xml
+new file mode 100644
+--- /dev/null	(date 1683314250032)
++++ b/app/src/main/res/layout/activity_login.xml	(date 1683314250032)
+@@ -0,0 +1,121 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".Activity_Login">
++
++    <com.google.android.material.card.MaterialCardView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:background="@drawable/imagen_de_fonfo"
++        android:elevation="15dp">
++
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:layout_marginLeft="15dp"
++            android:layout_marginTop="110dp"
++            android:layout_marginRight="15dp"
++            android:layout_marginBottom="10dp"
++            android:background="@drawable/shape_form"
++            android:paddingLeft="15dp"
++            android:paddingTop="40dp"
++            android:paddingRight="15dp"
++            android:paddingBottom="40dp">
++
++            <LinearLayout
++                android:layout_width="match_parent"
++                android:layout_height="match_parent"
++                android:layout_marginTop="30dp"
++                android:background="@drawable/shape_form3"
++                android:orientation="vertical"
++                android:padding="60dp">
++
++                <LinearLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:layout_marginTop="30dp"
++                    android:layout_marginBottom="30dp"
++                    android:orientation="horizontal"
++
++                    >
++
++                    <ImageView
++                        android:layout_width="40dp"
++                        android:layout_height="40dp"
++                        android:background="@drawable/person_form"></ImageView>
++
++                    <EditText
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:hint="Ingresa tu usuario"
++                        android:id="@+id/txtUsuario"
++                        android:inputType="text"
++                        android:textColor="@color/verde_detalles" />
++                </LinearLayout>
++
++                <LinearLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:layout_marginTop="30dp"
++                    android:orientation="horizontal">
++
++                    <ImageView
++                        android:layout_width="40dp"
++                        android:layout_height="40dp"
++                        android:background="@drawable/lock_form"></ImageView>
++
++                    <EditText
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:id="@+id/txtContraseña"
++                        android:hint="Ingresa tu contraseña"
++                        android:inputType="textPassword" />
++                </LinearLayout>
++
++
++                <TextView
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_gravity="right"
++                    android:layout_marginBottom="20dp"
++                    android:text="Recuperar contraseña"
++                    android:textColor="@color/verde_detalles"
++                    android:textSize="10dp">
++
++                </TextView>
++
++                <Button
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_gravity="center"
++                    android:background="@drawable/shape_form2"
++                    android:paddingLeft="20dp"
++                    android:paddingRight="20dp"
++                    android:text="Inicia sesion"
++                    android:textColor="@color/verde_detalles"></Button>
++            </LinearLayout>
++        </LinearLayout>
++
++        <LinearLayout
++            android:layout_width="170dp"
++            android:layout_height="170dp"
++            android:layout_marginLeft="120dp"
++            android:layout_marginTop="10dp"
++
++            android:background="@drawable/highico">
++            <ImageView
++                android:layout_width="110dp"
++                android:layout_height="110dp"
++                android:layout_gravity="center"
++                android:layout_marginLeft="30dp"
++                android:background="@drawable/extraterrestres"></ImageView>
++
++        </LinearLayout>
++
++
++    </com.google.android.material.card.MaterialCardView>
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    package=\"com.example.ecogaia\">\r\n\r\n    <uses-permission android:name=\"android.permission.INTERNET\" />\r\n    <uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\r\n        android:fullBackupContent=\"@xml/backup_rules\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.ECOGAIA\"\r\n        android:usesCleartextTraffic=\"true\"\r\n        tools:targetApi=\"31\">\r\n        <activity\r\n            android:name=\".Activity_Insertarblog\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".activity_usuario\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Activity_agregarProducto\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".MainActivity\"\r\n            android:exported=\"true\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision a340098bfb3e84f7344648a6eb441ad8c885b716)
++++ b/app/src/main/AndroidManifest.xml	(date 1683313457024)
+@@ -18,6 +18,9 @@
+         android:usesCleartextTraffic="true"
+         tools:targetApi="31">
+         <activity
++            android:name=".Activity_Login"
++            android:exported="false" />
++        <activity
+             android:name=".Activity_Insertarblog"
+             android:exported="false" />
+         <activity
