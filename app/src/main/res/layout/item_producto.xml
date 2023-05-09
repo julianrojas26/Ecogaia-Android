@@ -14,6 +14,7 @@
                 android:background="@drawable/shape_carrito"
                 android:layout_height="155dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="20dp"
                 android:orientation="vertical">
 
                 <TextView

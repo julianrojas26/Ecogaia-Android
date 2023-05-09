@@ -4,12 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
-import com.bumptech.glide.Glide
 import com.example.ecogaia.R
 import org.json.JSONObject
 
@@ -19,6 +17,7 @@ class fragment_detalle_blog: DialogFragment() {
     private lateinit var comp_usu : TextView
     private lateinit var titulo : TextView
     private lateinit var cuerpo : TextView
+    private lateinit var fecha : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,13 +28,16 @@ class fragment_detalle_blog: DialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val ll = inflater.inflate(R.layout.fragment_detalle_blog, container, false)
         this.tbBlogDets = ll.findViewById(R.id.tbBlogDets)
+        this.tbBlogDets.setNavigationOnClickListener{
+            dismiss()
+        }
 
         this.comp_usu = ll.findViewById(R.id.nombre_tip)
         this.titulo = ll.findViewById(R.id.titulo)
         this.cuerpo = ll.findViewById(R.id.descripcion_tip)
+        this.fecha = ll.findViewById(R.id.fecha_tip)
         return ll
     }
 
@@ -50,6 +52,8 @@ class fragment_detalle_blog: DialogFragment() {
         this.titulo.text = tips.getString("titulo")
         this.comp_usu.text = tips.getString("comp_usuario")
         this.cuerpo.text = tips.getString("cuerpo")
+        this.fecha.text = tips.getString("fecha")
+
 
     }
 
@@ -57,5 +61,4 @@ class fragment_detalle_blog: DialogFragment() {
         super.onStart()
         dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
     }
-
 }

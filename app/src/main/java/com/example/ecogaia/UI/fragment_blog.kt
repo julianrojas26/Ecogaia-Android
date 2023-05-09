@@ -17,6 +17,7 @@ import com.android.volley.toolbox.Volley
 import com.example.ecogaia.R
 import com.example.ecogaia.adapter.BlogAdaptador
 import com.example.ecogaia.adapter.BlogListener
+import com.example.ecogaia.adapter.ProductosAdaptador
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -36,7 +37,7 @@ class fragment_blog : Fragment(), BlogListener {
     ): View? {
         Log.d("ProductosFragment", "Entered to onCreateView")
         val ll = inflater.inflate(R.layout.fragment_blog, container, false)
-        val url = "http://192.168.141.2:8080/listarTip"
+        val url = "http://192.168.90.2:8080/listarTip"
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->

@@ -1,178 +1,67 @@
-Index: app/src/main/res/layout/fragment_carrito.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".UI.fragment_carrito\"\r\n    android:background=\"@drawable/imagen_de_fonfo\"\r\n    >\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"vertical\">\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:background=\"@drawable/shape_carrito\"\r\n            android:layout_margin=\"30dp\"\r\n            android:padding=\"5dp\"            >\r\n            <EditText\r\n                android:layout_width=\"300dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:hint=\"Buscar\"\r\n                android:inputType=\"text\"\r\n                android:textColor=\"@color/verde_detalles\" />\r\n            <ImageView\r\n                android:layout_width=\"30dp\"\r\n                android:layout_height=\"30dp\"\r\n                android:layout_marginTop=\"8dp\"\r\n                android:background=\"@drawable/buscar\">\r\n\r\n            </ImageView>\r\n        </LinearLayout>\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"horizontal\"\r\n            >\r\n            <TextView\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:textColor=\"@color/black\"\r\n                android:textAlignment=\"center\"\r\n                android:textSize=\"30dp\"\r\n                android:text=\"Total:    $_______\"\r\n                android:layout_marginLeft=\"30dp\"\r\n                >\r\n\r\n            </TextView>\r\n            <View\r\n                android:layout_width=\"120dp\"\r\n                android:layout_height=\"50dp\"\r\n                android:layout_marginLeft=\"15dp\"\r\n                android:background=\"@drawable/shape\">\r\n\r\n            </View>\r\n        </LinearLayout>\r\n\r\n    </LinearLayout>\r\n\r\n\r\n</FrameLayout>
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/app/src/main/res/layout/fragment_carrito.xml b/app/src/main/res/layout/fragment_carrito.xml
---- a/app/src/main/res/layout/fragment_carrito.xml	(revision 1fd57e0eb9e842c6e1a105d2d2ee2550b928f8f3)
-+++ b/app/src/main/res/layout/fragment_carrito.xml	(date 1683318289179)
-@@ -3,6 +3,7 @@
-     xmlns:tools="http://schemas.android.com/tools"
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"
-+    xmlns:app="http://schemas.android.com/apk/res-auto"
-     tools:context=".UI.fragment_carrito"
-     android:background="@drawable/imagen_de_fonfo"
-     >
-@@ -15,13 +16,18 @@
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:background="@drawable/shape_carrito"
--            android:layout_margin="30dp"
-+            android:layout_marginLeft="30dp"
-+            android:layout_marginRight="30dp"
-+            android:layout_marginTop="30dp"
-+            android:layout_marginBottom="15dp"
-             android:padding="5dp"            >
-             <EditText
--                android:layout_width="300dp"
-+                android:layout_width="270dp"
-                 android:layout_height="wrap_content"
-                 android:hint="Buscar"
-+                android:layout_marginLeft="10dp"
-                 android:inputType="text"
-+
-                 android:textColor="@color/verde_detalles" />
-             <ImageView
-                 android:layout_width="30dp"
-@@ -42,22 +48,50 @@
-                 android:layout_height="wrap_content"
-                 android:textColor="@color/black"
-                 android:textAlignment="center"
--                android:textSize="30dp"
-+                android:textSize="20dp"
-                 android:text="Total:    $_______"
--                android:layout_marginLeft="30dp"
-+                android:layout_marginLeft="110dp"
-                 >
- 
-             </TextView>
--            <View
--                android:layout_width="120dp"
--                android:layout_height="50dp"
--                android:layout_marginLeft="15dp"
--                android:background="@drawable/shape">
- 
--            </View>
-         </LinearLayout>
- 
-     </LinearLayout>
-+    <ScrollView
-+        android:layout_width="match_parent"
-+        android:layout_height="match_parent"
-+        android:layout_marginTop="60dp"
-+        >
-+        <androidx.recyclerview.widget.RecyclerView
-+            android:layout_width="match_parent"
-+            android:layout_height="wrap_content"
-+            android:layout_marginTop="70dp"
-+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-+            tools:listitem="@layout/item_carrito"
-+            android:id="@+id/carrito_recycler"/>
-+    </ScrollView>
-+
-+    <RelativeLayout
-+        android:id="@+id/rl_CarritoList"
-+        android:layout_width="match_parent"
-+        android:layout_height="match_parent"  >
-+
-+        <View
-+            android:id="@+id/view_carritoList"
-+            android:layout_width="match_parent"
-+            android:layout_height="match_parent"
-+            android:alpha="0.5"
-+            android:background="@color/verde_botones" />
-+
-+        <ProgressBar
-+            android:id="@+id/pgbar_carritoList"
-+            android:layout_width="wrap_content"
-+            android:layout_height="wrap_content"
-+            android:layout_centerInParent="true"
-+            android:indeterminateTint="@color/verde"/>
-+
-+    </RelativeLayout>
- 
- 
- </FrameLayout>
-\ No newline at end of file
 Index: app/src/main/java/com/example/ecogaia/MainActivity.kt
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
-<+>package com.example.ecogaia\r\n\r\nimport android.content.Intent\r\nimport android.os.Bundle\r\nimport android.view.Menu\r\nimport android.view.MenuItem\r\nimport android.view.View\r\nimport android.widget.Toast\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport androidx.navigation.NavController\r\nimport androidx.navigation.Navigation\r\nimport androidx.navigation.findNavController\r\nimport androidx.navigation.fragment.NavHostFragment\r\nimport androidx.navigation.ui.AppBarConfiguration\r\nimport androidx.navigation.ui.setupActionBarWithNavController\r\nimport androidx.navigation.ui.setupWithNavController\r\nimport com.google.android.material.bottomnavigation.BottomNavigationView\r\n\r\nclass MainActivity : AppCompatActivity() {\r\n    private lateinit var appBarCondiguration: AppBarConfiguration\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_main)\r\n        val host: NavHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment? ?: return\r\n        val navController = host.navController\r\n        appBarCondiguration = AppBarConfiguration(navController.graph)\r\n        setupActionBar(navController, appBarCondiguration)\r\n        setupBottonNavMenu(navController)\r\n    }\r\n\r\n\r\n\r\n    private fun setupActionBar(navController:NavController, appBarConfiguration: AppBarConfiguration){\r\n        setupActionBarWithNavController(navController,appBarConfiguration)\r\n    }\r\n    private fun setupBottonNavMenu(navController: NavController){\r\n        val bottonNav = findViewById<BottomNavigationView>(R.id.btnMenu)\r\n        bottonNav.setupWithNavController(navController)\r\n    }\r\n\r\n    fun addProduct() {\r\n        val i = Intent(this, Activity_agregarProducto::class.java).apply {  }\r\n        startActivity(i)\r\n    }\r\n    fun addusuario(view: View){\r\n        val i= Intent(this, activity_usuario::class.java).apply {  }\r\n        startActivity(i)\r\n    }\r\n\r\n    /*conexion overflow*/\r\n\r\n    override fun onCreateOptionsMenu(menu: Menu?): Boolean {\r\n        menuInflater.inflate(R.menu.overflow, menu)\r\n        return super.onCreateOptionsMenu(menu)\r\n    }\r\n\r\n    override fun onOptionsItemSelected(item: MenuItem): Boolean {\r\n        when(item.itemId){\r\n            R.id.item1 -> login()\r\n            R.id.item2 -> registro()\r\n\r\n        }\r\n        return super.onOptionsItemSelected(item)\r\n    }\r\n\r\n    fun registro() {\r\n        val i = Intent(this, activity_usuario::class.java).apply {  }\r\n        startActivity(i)\r\n    }\r\n\r\n    fun login () {\r\n        val navController = Navigation.findNavController(this,R.id.nav_host_fragment_container)\r\n        navController.navigate(R.id.fragment_login)\r\n    }\r\n}
+<+>package com.example.ecogaia\r\n\r\nimport android.content.Intent\r\nimport android.os.Bundle\r\nimport android.view.Menu\r\nimport android.view.MenuItem\r\nimport android.view.View\r\nimport android.widget.Toast\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport androidx.navigation.NavController\r\nimport androidx.navigation.fragment.NavHostFragment\r\nimport androidx.navigation.ui.AppBarConfiguration\r\nimport androidx.navigation.ui.setupActionBarWithNavController\r\nimport androidx.navigation.ui.setupWithNavController\r\nimport com.google.android.material.bottomnavigation.BottomNavigationView\r\n\r\nclass MainActivity : AppCompatActivity() {\r\n    private lateinit var appBarCondiguration: AppBarConfiguration\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_main)\r\n        val host: NavHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment? ?: return\r\n        val navController = host.navController\r\n        appBarCondiguration = AppBarConfiguration(navController.graph)\r\n        setupActionBar(navController, appBarCondiguration)\r\n        setupBottonNavMenu(navController)\r\n    }\r\n\r\n    private fun setupActionBar(navController:NavController, appBarConfiguration: AppBarConfiguration){\r\n        setupActionBarWithNavController(navController,appBarConfiguration)\r\n    }\r\n    private fun setupBottonNavMenu(navController: NavController){\r\n        val bottonNav = findViewById<BottomNavigationView>(R.id.btnMenu)\r\n        bottonNav.setupWithNavController(navController)\r\n    }\r\n\r\n    fun addproducto(view: View){\r\n        val i= Intent(this, Activity_agregarProducto::class.java).apply {  }\r\n        startActivity(i)\r\n    }\r\n\r\n\r\n\r\n    /*conexion overflow*/\r\n\r\n    override fun onCreateOptionsMenu(menu: Menu?): Boolean {\r\n        menuInflater.inflate(R.menu.overflow, menu)\r\n        return super.onCreateOptionsMenu(menu)\r\n    }\r\n\r\n    override fun onOptionsItemSelected(item: MenuItem): Boolean {\r\n        when(item.itemId){\r\n            R.id.item1 -> Toast.makeText(this, \"item1\", Toast.LENGTH_SHORT).show()\r\n            R.id.item2 -> Toast.makeText(this, \"item1\", Toast.LENGTH_SHORT).show()\r\n\r\n        }\r\n        return super.onOptionsItemSelected(item)\r\n    }\r\n}
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/app/src/main/java/com/example/ecogaia/MainActivity.kt b/app/src/main/java/com/example/ecogaia/MainActivity.kt
---- a/app/src/main/java/com/example/ecogaia/MainActivity.kt	(revision 1fd57e0eb9e842c6e1a105d2d2ee2550b928f8f3)
-+++ b/app/src/main/java/com/example/ecogaia/MainActivity.kt	(date 1683318888584)
-@@ -8,8 +8,6 @@
- import android.widget.Toast
- import androidx.appcompat.app.AppCompatActivity
- import androidx.navigation.NavController
--import androidx.navigation.Navigation
--import androidx.navigation.findNavController
- import androidx.navigation.fragment.NavHostFragment
- import androidx.navigation.ui.AppBarConfiguration
- import androidx.navigation.ui.setupActionBarWithNavController
-@@ -28,8 +26,6 @@
-         setupBottonNavMenu(navController)
-     }
+--- a/app/src/main/java/com/example/ecogaia/MainActivity.kt	(revision fa4d10d8915c1ecdce077b1bc68a73dc456ccd3a)
++++ b/app/src/main/java/com/example/ecogaia/MainActivity.kt	(date 1683317795751)
+@@ -1,4 +1,4 @@
+-package com.example.ecogaia
++package com.example.ecogaia;
  
--
--
-     private fun setupActionBar(navController:NavController, appBarConfiguration: AppBarConfiguration){
-         setupActionBarWithNavController(navController,appBarConfiguration)
-     }
-@@ -38,38 +34,27 @@
-         bottonNav.setupWithNavController(navController)
-     }
- 
--    fun addProduct() {
--        val i = Intent(this, Activity_agregarProducto::class.java).apply {  }
-+    fun addproducto(view: View){
-+        val i= Intent(this, Activity_agregarProducto::class.java).apply {  }
-         startActivity(i)
-     }
--    fun addusuario(view: View){
--        val i= Intent(this, activity_usuario::class.java).apply {  }
--        startActivity(i)
--    }
-+
-+
- 
+ import android.content.Intent
+ import android.os.Bundle
+@@ -44,16 +44,24 @@
      /*conexion overflow*/
  
      override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 -        menuInflater.inflate(R.menu.overflow, menu)
 +        menuInflater.inflate(R.menu.rightverflow, menu)
-+        menuInflater
++        menuInflater.inflate(R.menu.leftoverflow, menu)
          return super.onCreateOptionsMenu(menu)
      }
  
      override fun onOptionsItemSelected(item: MenuItem): Boolean {
          when(item.itemId){
--            R.id.item1 -> login()
--            R.id.item2 -> registro()
-+            R.id.item1 -> Toast.makeText(this, "item1", Toast.LENGTH_SHORT).show()
-+            R.id.item2 -> Toast.makeText(this, "item1", Toast.LENGTH_SHORT).show()
+-            R.id.item1 -> Toast.makeText(this, "item1", Toast.LENGTH_SHORT).show()
+-            R.id.item2 -> Toast.makeText(this, "item1", Toast.LENGTH_SHORT).show()
++            R.id.item1 -> Toast.makeText(this, "Inicio sesion", Toast.LENGTH_SHORT).show()
++            R.id.item2 -> Toast.makeText(this, "Registro", Toast.LENGTH_SHORT).show()
++        }
  
++        when(item.itemId){
++            R.id.item3 -> Toast.makeText(this, "Nosotros", Toast.LENGTH_SHORT).show()
++            R.id.item4 -> Toast.makeText(this, "Favoritos", Toast.LENGTH_SHORT).show()
++            R.id.item5 -> Toast.makeText(this, "Categorias", Toast.LENGTH_SHORT).show()
          }
++
          return super.onOptionsItemSelected(item)
      }
--
--    fun registro() {
--        val i = Intent(this, activity_usuario::class.java).apply {  }
--        startActivity(i)
--    }
--
--    fun login () {
--        val navController = Navigation.findNavController(this,R.id.nav_host_fragment_container)
--        navController.navigate(R.id.fragment_login)
--    }
++
  }
 \ No newline at end of file
+Index: app/src/main/java/com/example/ecogaia/UI/fragment_productos.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ecogaia.UI\r\n\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport androidx.fragment.app.Fragment\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport android.widget.ProgressBar\r\nimport android.widget.RelativeLayout\r\nimport androidx.core.os.bundleOf\r\nimport androidx.navigation.fragment.findNavController\r\nimport androidx.recyclerview.widget.RecyclerView\r\nimport com.android.volley.Request\r\nimport com.android.volley.toolbox.StringRequest\r\nimport com.android.volley.toolbox.Volley\r\nimport com.example.ecogaia.R\r\nimport com.example.ecogaia.adapter.ProductosAdaptador\r\nimport com.example.ecogaia.adapter.ProductosListener\r\nimport org.json.JSONArray\r\nimport org.json.JSONException\r\nimport org.json.JSONObject\r\n\r\nclass fragment_productos : Fragment(), ProductosListener {\r\n   private lateinit var recycler: RecyclerView\r\n   private lateinit var viewAlpha: View\r\n   private lateinit var pgbar: ProgressBar\r\n   private lateinit var rlProductList: RelativeLayout\r\n   private lateinit var productos: ArrayList<JSONObject>\r\n\r\n    override fun onCreateView(\r\n        inflater: LayoutInflater,\r\n        container: ViewGroup?,\r\n        savedInstanceState: Bundle?\r\n    ): View? {\r\n        Log.d(\"ProductosFragment\", \"Entered to onCreateView\")\r\n        val ll = inflater.inflate(R.layout.fragment_productos, container, false)\r\n        val url = \"http://192.168.2.2:8080/listar\"\r\n        val queue = Volley.newRequestQueue(this.context)\r\n\r\n        val stringRequest = StringRequest(Request.Method.GET, url, { response ->\r\n            val jsonArray = JSONArray(response)\r\n            this.productos = ArrayList()\r\n            try {\r\n                var i = 0\r\n                val l = jsonArray.length()\r\n                while (i < l) {\r\n                    productos.add(jsonArray[i] as JSONObject)\r\n                    i++\r\n                }\r\n                Log.d(\"ProductFragment\", this.productos.toString())\r\n                this.recycler.adapter= ProductosAdaptador(this.productos, this)\r\n                this.viewAlpha.visibility= View.INVISIBLE\r\n                this.pgbar.visibility = View.INVISIBLE\r\n            }catch (e:JSONException) {\r\n            }\r\n        }, { error ->\r\n            Log.w(\"jsonError\", error)\r\n        })\r\n        queue.add(stringRequest)\r\n        this.recycler = ll.findViewById(R.id.products_recycler)\r\n        this.viewAlpha = ll.findViewById(R.id.view_productsList)\r\n        this.pgbar = ll.findViewById(R.id.pgbar_productsList)\r\n        this.rlProductList = ll.findViewById(R.id.rl_ProductsList)\r\n        return ll\r\n    }\r\n\r\n    override fun onProductosCliked(productos: JSONObject, position: Int) {\r\n        val bundle = bundleOf(\"productos\" to productos.toString())\r\n        findNavController().navigate(\r\n            R.id.fragment_detalleProductos, bundle\r\n        )\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/UI/fragment_productos.kt b/app/src/main/java/com/example/ecogaia/UI/fragment_productos.kt
+--- a/app/src/main/java/com/example/ecogaia/UI/fragment_productos.kt	(revision fa4d10d8915c1ecdce077b1bc68a73dc456ccd3a)
++++ b/app/src/main/java/com/example/ecogaia/UI/fragment_productos.kt	(date 1683312938410)
+@@ -35,7 +35,7 @@
+     ): View? {
+         Log.d("ProductosFragment", "Entered to onCreateView")
+         val ll = inflater.inflate(R.layout.fragment_productos, container, false)
+-        val url = "http://192.168.2.2:8080/listar"
++        val url = "http://192.168.141.97:8080/listarProducto"
+         val queue = Volley.newRequestQueue(this.context)
+ 
+         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
 Index: app/src/main/res/layout/item_carrito.xml
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
@@ -181,8 +70,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/app/src/main/res/layout/item_carrito.xml b/app/src/main/res/layout/item_carrito.xml
---- a/app/src/main/res/layout/item_carrito.xml	(revision 1fd57e0eb9e842c6e1a105d2d2ee2550b928f8f3)
-+++ b/app/src/main/res/layout/item_carrito.xml	(date 1683318285192)
+--- a/app/src/main/res/layout/item_carrito.xml	(revision fa4d10d8915c1ecdce077b1bc68a73dc456ccd3a)
++++ b/app/src/main/res/layout/item_carrito.xml	(date 1683315041097)
 @@ -1,107 +1,115 @@
  <?xml version="1.0" encoding="utf-8"?>
  <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -385,108 +274,159 @@ diff --git a/app/src/main/res/layout/item_carrito.xml b/app/src/main/res/layout/
 -    </com.google.android.material.card.MaterialCardView>
  </FrameLayout>
 \ No newline at end of file
-Index: app/src/main/java/com/example/ecogaia/fragment_recycler_carrito.kt
+Index: app/src/main/res/menu/overflow.xml
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/app/src/main/java/com/example/ecogaia/fragment_recycler_carrito.kt b/app/src/main/java/com/example/ecogaia/fragment_recycler_carrito.kt
+diff --git a/app/src/main/res/menu/overflow.xml b/app/src/main/res/menu/rightverflow.xml
+rename from app/src/main/res/menu/overflow.xml
+rename to app/src/main/res/menu/rightverflow.xml
+--- a/app/src/main/res/menu/overflow.xml	(revision fa4d10d8915c1ecdce077b1bc68a73dc456ccd3a)
++++ b/app/src/main/res/menu/rightverflow.xml	(date 1683316224023)
+@@ -14,4 +14,5 @@
+         android:icon="@drawable/book"
+         app:showAsAction="never"/>
+ 
+-</menu>
+\ No newline at end of file
++</menu>
++
+Index: app/src/main/java/com/example/ecogaia/adapter/BlogAdaptador.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ecogaia.adapter\r\n\r\nimport android.util.Log\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport android.widget.TextView\r\nimport androidx.recyclerview.widget.RecyclerView\r\nimport com.example.ecogaia.R\r\nimport org.json.JSONObject\r\n\r\nclass BlogAdaptador(private val blogList: ArrayList<JSONObject>, private val BlogListener: BlogListener): RecyclerView.Adapter<BlogAdaptador.ViewHoler>() {\r\n    inner class ViewHoler(view: View): RecyclerView.ViewHolder(view) {\r\n        var comp_Usuario: TextView = view.findViewById(R.id.Nombre)\r\n        var cuerpo: TextView = view.findViewById(R.id.informacion)\r\n\r\n        fun bind(tips: JSONObject) {\r\n            comp_Usuario.text = tips.getString(\"comp_Usuario\")\r\n            cuerpo.text = tips.getString(\"cuerpo\")\r\n        }\r\n    }\r\n\r\n    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= ViewHoler (\r\n        LayoutInflater.from(parent.context).inflate(R.layout.item_blog, parent, false)\r\n        )\r\n\r\n    override fun getItemCount() = this.blogList.size\r\n\r\n    override fun onBindViewHolder(holder: ViewHoler, position: Int) {\r\n        val tips = blogList[position]\r\n\r\n        try {\r\n            holder.bind(tips)\r\n            holder.itemView.setOnClickListener{\r\n                BlogListener.onBlogListener(tips, position)\r\n            }\r\n        } catch (e: Exception) {\r\n            Log.w(\"ERROR\", \"NO\")\r\n        }\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/adapter/BlogAdaptador.kt b/app/src/main/java/com/example/ecogaia/adapter/BlogAdaptador.kt
+--- a/app/src/main/java/com/example/ecogaia/adapter/BlogAdaptador.kt	(revision fa4d10d8915c1ecdce077b1bc68a73dc456ccd3a)
++++ b/app/src/main/java/com/example/ecogaia/adapter/BlogAdaptador.kt	(date 1683248912061)
+@@ -15,7 +15,7 @@
+         var cuerpo: TextView = view.findViewById(R.id.informacion)
+ 
+         fun bind(tips: JSONObject) {
+-            comp_Usuario.text = tips.getString("comp_Usuario")
++            comp_Usuario.text = tips.getString("comp_usuario")
+             cuerpo.text = tips.getString("cuerpo")
+         }
+     }
+Index: app/src/main/java/com/example/ecogaia/adapter/CarritoListener.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/adapter/CarritoListener.kt b/app/src/main/java/com/example/ecogaia/adapter/CarritoListener.kt
 new file mode 100644
---- /dev/null	(date 1683318305182)
-+++ b/app/src/main/java/com/example/ecogaia/fragment_recycler_carrito.kt	(date 1683318305182)
-@@ -0,0 +1,59 @@
-+package com.example.ecogaia
+--- /dev/null	(date 1683239013485)
++++ b/app/src/main/java/com/example/ecogaia/adapter/CarritoListener.kt	(date 1683239013485)
+@@ -0,0 +1,7 @@
++package com.example.ecogaia.adapter
 +
-+import android.os.Bundle
-+import androidx.fragment.app.Fragment
-+import android.view.LayoutInflater
-+import android.view.View
-+import android.view.ViewGroup
++import org.json.JSONObject
 +
-+// TODO: Rename parameter arguments, choose names that match
-+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-+private const val ARG_PARAM1 = "param1"
-+private const val ARG_PARAM2 = "param2"
-+
-+/**
-+ * A simple [Fragment] subclass.
-+ * Use the [fragment_recycler_carrito.newInstance] factory method to
-+ * create an instance of this fragment.
-+ */
-+class fragment_recycler_carrito : Fragment() {
-+    // TODO: Rename and change types of parameters
-+    private var param1: String? = null
-+    private var param2: String? = null
-+
-+    override fun onCreate(savedInstanceState: Bundle?) {
-+        super.onCreate(savedInstanceState)
-+        arguments?.let {
-+            param1 = it.getString(ARG_PARAM1)
-+            param2 = it.getString(ARG_PARAM2)
-+        }
-+    }
-+
-+    override fun onCreateView(
-+        inflater: LayoutInflater, container: ViewGroup?,
-+        savedInstanceState: Bundle?
-+    ): View? {
-+        // Inflate the layout for this fragment
-+        return inflater.inflate(R.layout.fragment_recycler_carrito, container, false)
-+    }
-+
-+    companion object {
-+        /**
-+         * Use this factory method to create a new instance of
-+         * this fragment using the provided parameters.
-+         *
-+         * @param param1 Parameter 1.
-+         * @param param2 Parameter 2.
-+         * @return A new instance of fragment fragment_recycler_carrito.
-+         */
-+        // TODO: Rename and change types and number of parameters
-+        @JvmStatic
-+        fun newInstance(param1: String, param2: String) =
-+            fragment_recycler_carrito().apply {
-+                arguments = Bundle().apply {
-+                    putString(ARG_PARAM1, param1)
-+                    putString(ARG_PARAM2, param2)
-+                }
-+            }
-+    }
++interface CarritoListener {
++    fun onCarritoCliked(carrito: JSONObject, position: Int)
 +}
 \ No newline at end of file
-Index: app/src/main/res/menu/leftoverflow.xml
+Index: app/src/main/res/layout/fragment_carrito.xml
 IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".UI.fragment_carrito\"\r\n    android:background=\"@drawable/imagen_de_fonfo\"\r\n    >\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"vertical\">\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:background=\"@drawable/shape_carrito\"\r\n            android:layout_margin=\"30dp\"\r\n            android:padding=\"5dp\"            >\r\n            <EditText\r\n                android:layout_width=\"300dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:hint=\"Buscar\"\r\n                android:inputType=\"text\"\r\n                android:textColor=\"@color/verde_detalles\" />\r\n            <ImageView\r\n                android:layout_width=\"30dp\"\r\n                android:layout_height=\"30dp\"\r\n                android:layout_marginTop=\"8dp\"\r\n                android:background=\"@drawable/buscar\">\r\n\r\n            </ImageView>\r\n        </LinearLayout>\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"horizontal\"\r\n            >\r\n            <TextView\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:textColor=\"@color/black\"\r\n                android:textAlignment=\"center\"\r\n                android:textSize=\"30dp\"\r\n                android:text=\"Total:    $_______\"\r\n                android:layout_marginLeft=\"30dp\"\r\n                >\r\n\r\n            </TextView>\r\n            <View\r\n                android:layout_width=\"120dp\"\r\n                android:layout_height=\"50dp\"\r\n                android:layout_marginLeft=\"15dp\"\r\n                android:background=\"@drawable/shape\">\r\n\r\n            </View>\r\n        </LinearLayout>\r\n\r\n    </LinearLayout>\r\n\r\n\r\n</FrameLayout>
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/app/src/main/res/menu/leftoverflow.xml b/app/src/main/res/menu/leftoverflow.xml
-new file mode 100644
---- /dev/null	(date 1683318299438)
-+++ b/app/src/main/res/menu/leftoverflow.xml	(date 1683318299438)
-@@ -0,0 +1,22 @@
-+<?xml version="1.0" encoding="utf-8"?>
-+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-+    xmlns:android="http://schemas.android.com/apk/res/android">
+diff --git a/app/src/main/res/layout/fragment_carrito.xml b/app/src/main/res/layout/fragment_carrito.xml
+--- a/app/src/main/res/layout/fragment_carrito.xml	(revision fa4d10d8915c1ecdce077b1bc68a73dc456ccd3a)
++++ b/app/src/main/res/layout/fragment_carrito.xml	(date 1683315348650)
+@@ -3,6 +3,7 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
+     tools:context=".UI.fragment_carrito"
+     android:background="@drawable/imagen_de_fonfo"
+     >
+@@ -15,13 +16,18 @@
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="@drawable/shape_carrito"
+-            android:layout_margin="30dp"
++            android:layout_marginLeft="30dp"
++            android:layout_marginRight="30dp"
++            android:layout_marginTop="30dp"
++            android:layout_marginBottom="15dp"
+             android:padding="5dp"            >
+             <EditText
+-                android:layout_width="300dp"
++                android:layout_width="270dp"
+                 android:layout_height="wrap_content"
+                 android:hint="Buscar"
++                android:layout_marginLeft="10dp"
+                 android:inputType="text"
 +
+                 android:textColor="@color/verde_detalles" />
+             <ImageView
+                 android:layout_width="30dp"
+@@ -42,22 +48,50 @@
+                 android:layout_height="wrap_content"
+                 android:textColor="@color/black"
+                 android:textAlignment="center"
+-                android:textSize="30dp"
++                android:textSize="20dp"
+                 android:text="Total:    $_______"
+-                android:layout_marginLeft="30dp"
++                android:layout_marginLeft="110dp"
+                 >
+ 
+             </TextView>
+-            <View
+-                android:layout_width="120dp"
+-                android:layout_height="50dp"
+-                android:layout_marginLeft="15dp"
+-                android:background="@drawable/shape">
+ 
+-            </View>
+         </LinearLayout>
+ 
+     </LinearLayout>
++    <ScrollView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:layout_marginTop="60dp"
++        >
++        <androidx.recyclerview.widget.RecyclerView
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:layout_marginTop="70dp"
++            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
++            tools:listitem="@layout/item_carrito"
++            android:id="@+id/carrito_recycler"/>
++    </ScrollView>
 +
-+    <item
-+        android:id="@+id/item3"
-+        android:title="Nosotros"
-+        android:icon="@drawable/person"
-+        app:showAsAction="never" />
++    <RelativeLayout
++        android:id="@+id/rl_CarritoList"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"  >
 +
-+    <item
-+        android:id="@+id/item4"
-+        android:title="Favoritos"
-+        android:icon="@drawable/start"
-+        app:showAsAction="never" />
++        <View
++            android:id="@+id/view_carritoList"
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:alpha="0.5"
++            android:background="@color/verde_botones" />
 +
-+    <item android:id="@+id/item5"
-+        android:title="Categorias"
-+        android:icon="@drawable/book"
-+        app:showAsAction="never" />
-+</menu>
++        <ProgressBar
++            android:id="@+id/pgbar_carritoList"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_centerInParent="true"
++            android:indeterminateTint="@color/verde"/>
++
++    </RelativeLayout>
+ 
+ 
+ </FrameLayout>
 \ No newline at end of file
 Index: app/src/main/java/com/example/ecogaia/adapter/CarritoAdaptador.kt
 IDEA additional info:
@@ -495,8 +435,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 ===================================================================
 diff --git a/app/src/main/java/com/example/ecogaia/adapter/CarritoAdaptador.kt b/app/src/main/java/com/example/ecogaia/adapter/CarritoAdaptador.kt
 new file mode 100644
---- /dev/null	(date 1683318289190)
-+++ b/app/src/main/java/com/example/ecogaia/adapter/CarritoAdaptador.kt	(date 1683318289190)
+--- /dev/null	(date 1683248643761)
++++ b/app/src/main/java/com/example/ecogaia/adapter/CarritoAdaptador.kt	(date 1683248643761)
 @@ -0,0 +1,49 @@
 +package com.example.ecogaia.adapter
 +
@@ -548,59 +488,16 @@ new file mode 100644
 +    }
 +}
 \ No newline at end of file
-Index: app/src/main/res/layout/fragment_recycler_carrito.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/app/src/main/res/layout/fragment_recycler_carrito.xml b/app/src/main/res/layout/fragment_recycler_carrito.xml
-new file mode 100644
---- /dev/null	(date 1683318299490)
-+++ b/app/src/main/res/layout/fragment_recycler_carrito.xml	(date 1683318299490)
-@@ -0,0 +1,32 @@
-+<?xml version="1.0" encoding="utf-8"?>
-+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-+    xmlns:tools="http://schemas.android.com/tools"
-+    android:layout_width="match_parent"
-+    android:layout_height="match_parent"
-+    tools:context=".fragment_recycler_carrito">
-+
-+    <androidx.recyclerview.widget.RecyclerView
-+        android:layout_width="match_parent"
-+        android:layout_height="wrap_content">
-+    </androidx.recyclerview.widget.RecyclerView>
-+
-+    <RelativeLayout
-+        android:layout_width="match_parent"
-+        android:layout_height="match_parent">
-+
-+        <View
-+            android:layout_width="match_parent"
-+            android:layout_height="match_parent"
-+            android:alpha="0.4"
-+            android:background="@color/verde_botones">
-+
-+        </View>
-+        <ProgressBar
-+            android:layout_width="wrap_content"
-+            android:layout_height="wrap_content"
-+            android:indeterminateTint="@color/verde"
-+            android:layout_centerInParent="true">
-+        </ProgressBar>
-+    </RelativeLayout>
-+
-+</FrameLayout>
-\ No newline at end of file
 Index: app/src/main/res/navigation/nav_graph.xml
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<navigation xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    app:startDestination=\"@+id/homeFragment\">\r\n\r\n    <fragment\r\n        android:id=\"@+id/homeFragment\"\r\n        android:name=\"com.example.ecogaia.fragment_home\"\r\n        android:label=\"fragment_home\"\r\n        tools:layout=\"@layout/fragment_home\">\r\n\r\n        <action\r\n            android:id=\"@+id/action_homeFragment4_to_fragment_recycler_productos\"\r\n            app:destination=\"@id/recycler_productos\" />\r\n\r\n    </fragment>\r\n\r\n    <fragment\r\n        android:id=\"@+id/recycler_productos\"\r\n        android:name=\"com.example.ecogaia.UI.fragment_productos\"\r\n        android:label=\"fragment_productos\"\r\n        tools:layout=\"@layout/fragment_recycler_productos\">\r\n\r\n        <action\r\n            android:id=\"@+id/action_fragment_recycler_productos_to_fragment_detalleProductos\"\r\n            app:destination=\"@id/fragment_detalleProductos\" />\r\n\r\n        <action\r\n            android:id=\"@+id/action_fragment_recycler_productos_to_fragment_blog2\"\r\n            app:destination=\"@id/recycler_blog\" />\r\n\r\n    </fragment>\r\n\r\n    <dialog\r\n        android:id=\"@+id/fragment_detalleProductos\"\r\n        android:name=\"com.example.ecogaia.UI.fragment_detalleProductos\"\r\n        android:label=\"fragment_detalle_productos\"\r\n        tools:layout=\"@layout/fragment_detalle_productos\" />\r\n\r\n    <fragment\r\n        android:id=\"@+id/recycler_blog\"\r\n        android:name=\"com.example.ecogaia.UI.fragment_blog\"\r\n        android:label=\"fragment_blog\"\r\n        tools:layout=\"@layout/fragment_recycler_blog\">\r\n\r\n        <action\r\n            android:id=\"@+id/action_fragment_blog2_to_fragment_recycler_perfil\"\r\n            app:destination=\"@id/recycler_perfil\" />\r\n\r\n        <action\r\n            android:id=\"@+id/action_fragment_blog2_to_fragment_detalle_blog\"\r\n            app:destination=\"@id/fragment_detalle_blog\" />\r\n\r\n    </fragment>\r\n\r\n    <fragment\r\n        android:id=\"@+id/recycler_perfil\"\r\n        android:name=\"com.example.ecogaia.UI.fragment_perfil\"\r\n        android:label=\"fragment_perfil\"\r\n        tools:layout=\"@layout/fragment_recycler_perfil\"/>\r\n\r\n    <dialog\r\n        android:id=\"@+id/fragment_detalle_blog\"\r\n        android:name=\"com.example.ecogaia.UI.fragment_detalle_blog\"\r\n        android:label=\"fragment_detalle_blog\"\r\n        tools:layout=\"@layout/fragment_detalle_blog\" />\r\n    <fragment\r\n        android:id=\"@+id/fragment_login\"\r\n        android:name=\"com.example.ecogaia.fragment_login\"\r\n        android:label=\"fragment_login\"\r\n        tools:layout=\"@layout/fragment_login\" />\r\n\r\n</navigation>
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<navigation xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    app:startDestination=\"@+id/homeFragment\">\r\n\r\n    <fragment\r\n        android:id=\"@+id/homeFragment\"\r\n        android:name=\"com.example.ecogaia.fragment_home\"\r\n        android:label=\"fragment_home\"\r\n        tools:layout=\"@layout/fragment_home\">\r\n\r\n        <action\r\n            android:id=\"@+id/action_homeFragment4_to_fragment_recycler_productos\"\r\n            app:destination=\"@id/recycler_productos\" />\r\n\r\n    </fragment>\r\n\r\n    <fragment\r\n        android:id=\"@+id/recycler_productos\"\r\n        android:name=\"com.example.ecogaia.UI.fragment_productos\"\r\n        android:label=\"fragment_productos\"\r\n        tools:layout=\"@layout/fragment_recycler_productos\">\r\n\r\n        <action\r\n            android:id=\"@+id/action_fragment_recycler_productos_to_fragment_detalleProductos\"\r\n            app:destination=\"@id/fragment_detalleProductos\" />\r\n\r\n        <action\r\n            android:id=\"@+id/action_fragment_recycler_productos_to_fragment_blog2\"\r\n            app:destination=\"@id/recycler_blog\" />\r\n\r\n    </fragment>\r\n\r\n    <dialog\r\n        android:id=\"@+id/fragment_detalleProductos\"\r\n        android:name=\"com.example.ecogaia.UI.fragment_detalleProductos\"\r\n        android:label=\"fragment_detalle_productos\"\r\n        tools:layout=\"@layout/fragment_detalle_productos\" />\r\n\r\n    <fragment\r\n        android:id=\"@+id/recycler_blog\"\r\n        android:name=\"com.example.ecogaia.UI.fragment_blog\"\r\n        android:label=\"fragment_blog\"\r\n        tools:layout=\"@layout/fragment_recycler_blog\">\r\n\r\n        <action\r\n            android:id=\"@+id/action_fragment_blog2_to_fragment_recycler_perfil\"\r\n            app:destination=\"@id/recycler_perfil\" />\r\n\r\n        <action\r\n            android:id=\"@+id/action_fragment_blog2_to_fragment_detalle_blog\"\r\n            app:destination=\"@id/fragment_detalle_blog\" />\r\n\r\n    </fragment>\r\n\r\n    <fragment\r\n        android:id=\"@+id/recycler_perfil\"\r\n        android:name=\"com.example.ecogaia.fragment_recycler_perfil\"\r\n        android:label=\"fragment_recycler_perfil\"\r\n        tools:layout=\"@layout/fragment_recycler_perfil\">\r\n\r\n        <action\r\n            android:id=\"@+id/action_fragment_recycler_perfil_to_perfil_Fragment2\"\r\n            app:destination=\"@id/perfil_Fragment2\" />\r\n\r\n    </fragment>\r\n\r\n    <fragment\r\n        android:id=\"@+id/perfil_Fragment2\"\r\n        android:name=\"com.example.ecogaia.fragment_perfil\"\r\n        android:label=\"fragment_perfil\"\r\n        tools:layout=\"@layout/fragment_perfil\" />\r\n\r\n    <dialog\r\n        android:id=\"@+id/fragment_detalle_blog\"\r\n        android:name=\"com.example.ecogaia.UI.fragment_detalle_blog\"\r\n        android:label=\"fragment_detalle_blog\"\r\n        tools:layout=\"@layout/fragment_detalle_blog\" />\r\n\r\n</navigation>
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/app/src/main/res/navigation/nav_graph.xml b/app/src/main/res/navigation/nav_graph.xml
---- a/app/src/main/res/navigation/nav_graph.xml	(revision 1fd57e0eb9e842c6e1a105d2d2ee2550b928f8f3)
-+++ b/app/src/main/res/navigation/nav_graph.xml	(date 1683318289199)
+--- a/app/src/main/res/navigation/nav_graph.xml	(revision fa4d10d8915c1ecdce077b1bc68a73dc456ccd3a)
++++ b/app/src/main/res/navigation/nav_graph.xml	(date 1683249426422)
 @@ -40,9 +40,9 @@
  
      <fragment
@@ -614,6 +511,58 @@ diff --git a/app/src/main/res/navigation/nav_graph.xml b/app/src/main/res/naviga
  
          <action
              android:id="@+id/action_fragment_blog2_to_fragment_recycler_perfil"
+Index: app/src/main/java/com/example/ecogaia/UI/fragment_blog.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ecogaia.UI\r\n\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport androidx.fragment.app.Fragment\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport android.widget.ProgressBar\r\nimport android.widget.RelativeLayout\r\nimport androidx.core.os.bundleOf\r\nimport androidx.navigation.fragment.findNavController\r\nimport androidx.recyclerview.widget.RecyclerView\r\nimport com.android.volley.Request\r\nimport com.android.volley.toolbox.StringRequest\r\nimport com.android.volley.toolbox.Volley\r\nimport com.example.ecogaia.R\r\nimport com.example.ecogaia.adapter.BlogAdaptador\r\nimport com.example.ecogaia.adapter.BlogListener\r\nimport com.example.ecogaia.adapter.ProductosAdaptador\r\nimport org.json.JSONArray\r\nimport org.json.JSONException\r\nimport org.json.JSONObject\r\n\r\n\r\nclass fragment_blog : Fragment(), BlogListener {\r\n    private lateinit var recycler: RecyclerView\r\n    private lateinit var viewAlpha: View\r\n    private lateinit var pgbar: ProgressBar\r\n    private lateinit var rlProductList: RelativeLayout\r\n    private lateinit var blog: ArrayList<JSONObject>\r\n\r\n    override fun onCreateView(\r\n        inflater: LayoutInflater,\r\n        container: ViewGroup?,\r\n        savedInstanceState: Bundle?\r\n    ): View? {\r\n        Log.d(\"ProductosFragment\", \"Entered to onCreateView\")\r\n        val ll = inflater.inflate(R.layout.fragment_blog, container, false)\r\n        val url = \"http://192.168.2.2:8080/listarblog\"\r\n        val queue = Volley.newRequestQueue(this.context)\r\n\r\n        val stringRequest = StringRequest(Request.Method.GET, url, { response ->\r\n            val jsonArray = JSONArray(response)\r\n            this.blog = ArrayList()\r\n            try {\r\n                var i = 0\r\n                val l = jsonArray.length()\r\n                while (i < l) {\r\n                    blog.add(jsonArray[i] as JSONObject)\r\n                    i++\r\n                }\r\n                Log.d(\"BLOG\", this.blog.toString())\r\n                this.recycler.adapter= BlogAdaptador(this.blog, this)\r\n                this.viewAlpha.visibility= View.INVISIBLE\r\n                this.pgbar.visibility = View.INVISIBLE\r\n            }catch (e: JSONException) {\r\n            }\r\n        }, { error ->\r\n            Log.w(\"jsonError\", error)\r\n        })\r\n        queue.add(stringRequest)\r\n        this.recycler = ll.findViewById(R.id.recycler_blog)\r\n        this.viewAlpha = ll.findViewById(R.id.view_blogList)\r\n        this.pgbar = ll.findViewById(R.id.pgbar_blogsList)\r\n        this.rlProductList = ll.findViewById(R.id.rl_BlogList)\r\n        return ll\r\n    }\r\n\r\n    override fun onBlogListener(blog: JSONObject, position: Int) {\r\n        val bundle = bundleOf(\"blog\" to blog.toString())\r\n        findNavController().navigate(\r\n            R.id.fragment_detalle_blog, bundle\r\n        )\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/UI/fragment_blog.kt b/app/src/main/java/com/example/ecogaia/UI/fragment_blog.kt
+--- a/app/src/main/java/com/example/ecogaia/UI/fragment_blog.kt	(revision fa4d10d8915c1ecdce077b1bc68a73dc456ccd3a)
++++ b/app/src/main/java/com/example/ecogaia/UI/fragment_blog.kt	(date 1683312938382)
+@@ -37,7 +37,7 @@
+     ): View? {
+         Log.d("ProductosFragment", "Entered to onCreateView")
+         val ll = inflater.inflate(R.layout.fragment_blog, container, false)
+-        val url = "http://192.168.2.2:8080/listarblog"
++        val url = "http://192.168.141.97:8080/listarTip"
+         val queue = Volley.newRequestQueue(this.context)
+ 
+         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+Index: app/src/main/res/menu/leftoverflow.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/menu/leftoverflow.xml b/app/src/main/res/menu/leftoverflow.xml
+new file mode 100644
+--- /dev/null	(date 1683315968365)
++++ b/app/src/main/res/menu/leftoverflow.xml	(date 1683315968365)
+@@ -0,0 +1,22 @@
++<?xml version="1.0" encoding="utf-8"?>
++<menu xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:android="http://schemas.android.com/apk/res/android">
++
++
++    <item
++        android:id="@+id/item3"
++        android:title="Nosotros"
++        android:icon="@drawable/person"
++        app:showAsAction="never" />
++
++    <item
++        android:id="@+id/item4"
++        android:title="Favoritos"
++        android:icon="@drawable/start"
++        app:showAsAction="never" />
++
++    <item android:id="@+id/item5"
++        android:title="Categorias"
++        android:icon="@drawable/book"
++        app:showAsAction="never" />
++</menu>
+\ No newline at end of file
 Index: app/src/main/res/layout/switch_item.xml
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
@@ -621,8 +570,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 ===================================================================
 diff --git a/app/src/main/res/layout/switch_item.xml b/app/src/main/res/layout/switch_item.xml
 new file mode 100644
---- /dev/null	(date 1683318299451)
-+++ b/app/src/main/res/layout/switch_item.xml	(date 1683318299451)
+--- /dev/null	(date 1683311822928)
++++ b/app/src/main/res/layout/switch_item.xml	(date 1683311822928)
 @@ -0,0 +1,11 @@
 +<RelativeLayout
 +    xmlns:android="http://schemas.android.com/apk/res/android"
@@ -635,72 +584,6 @@ new file mode 100644
 +        android:layout_centerHorizontal="true"
 +        android:layout_centerVertical="true" />
 +</RelativeLayout>
-Index: app/src/main/java/com/example/ecogaia/adapter/CarritoListener.kt
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/app/src/main/java/com/example/ecogaia/adapter/CarritoListener.kt b/app/src/main/java/com/example/ecogaia/adapter/CarritoListener.kt
-new file mode 100644
---- /dev/null	(date 1683318289169)
-+++ b/app/src/main/java/com/example/ecogaia/adapter/CarritoListener.kt	(date 1683318289169)
-@@ -0,0 +1,7 @@
-+package com.example.ecogaia.adapter
-+
-+import org.json.JSONObject
-+
-+interface CarritoListener {
-+    fun onCarritoCliked(carrito: JSONObject, position: Int)
-+}
-\ No newline at end of file
-Index: app/src/main/res/menu/overflow.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/app/src/main/res/menu/overflow.xml b/app/src/main/res/menu/rightverflow.xml
-rename from app/src/main/res/menu/overflow.xml
-rename to app/src/main/res/menu/rightverflow.xml
---- a/app/src/main/res/menu/overflow.xml	(revision 1fd57e0eb9e842c6e1a105d2d2ee2550b928f8f3)
-+++ b/app/src/main/res/menu/rightverflow.xml	(date 1683318285203)
-@@ -14,4 +14,5 @@
-         android:icon="@drawable/book"
-         app:showAsAction="never"/>
- 
--</menu>
-\ No newline at end of file
-+</menu>
-+
-Index: app/src/main/java/com/example/ecogaia/UI/fragment_blog.kt
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
-<+>package com.example.ecogaia.UI\r\n\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport androidx.fragment.app.Fragment\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport android.widget.ProgressBar\r\nimport android.widget.RelativeLayout\r\nimport androidx.core.os.bundleOf\r\nimport androidx.navigation.fragment.findNavController\r\nimport androidx.recyclerview.widget.RecyclerView\r\nimport com.android.volley.Request\r\nimport com.android.volley.toolbox.StringRequest\r\nimport com.android.volley.toolbox.Volley\r\nimport com.example.ecogaia.R\r\nimport com.example.ecogaia.adapter.BlogAdaptador\r\nimport com.example.ecogaia.adapter.BlogListener\r\nimport com.example.ecogaia.adapter.ProductosAdaptador\r\nimport org.json.JSONArray\r\nimport org.json.JSONException\r\nimport org.json.JSONObject\r\n\r\n\r\nclass fragment_blog : Fragment(), BlogListener {\r\n    private lateinit var recycler: RecyclerView\r\n    private lateinit var viewAlpha: View\r\n    private lateinit var pgbar: ProgressBar\r\n    private lateinit var rlProductList: RelativeLayout\r\n    private lateinit var blog: ArrayList<JSONObject>\r\n\r\n    override fun onCreateView(\r\n        inflater: LayoutInflater,\r\n        container: ViewGroup?,\r\n        savedInstanceState: Bundle?\r\n    ): View? {\r\n        Log.d(\"ProductosFragment\", \"Entered to onCreateView\")\r\n        val ll = inflater.inflate(R.layout.fragment_blog, container, false)\r\n        val url = \"http://192.168.141.2:8080/listarTip\"\r\n        val queue = Volley.newRequestQueue(this.context)\r\n\r\n        val stringRequest = StringRequest(Request.Method.GET, url, { response ->\r\n            val jsonArray = JSONArray(response)\r\n            this.blog = ArrayList()\r\n            try {\r\n                var i = 0\r\n                val l = jsonArray.length()\r\n                while (i < l) {\r\n                    blog.add(jsonArray[i] as JSONObject)\r\n                    i++\r\n                }\r\n                Log.d(\"BLOG\", this.blog.toString())\r\n                this.recycler.adapter= BlogAdaptador(this.blog, this)\r\n                this.viewAlpha.visibility= View.INVISIBLE\r\n                this.pgbar.visibility = View.INVISIBLE\r\n            }catch (e: JSONException) {\r\n            }\r\n        }, { error ->\r\n            Log.w(\"jsonError\", error)\r\n        })\r\n        queue.add(stringRequest)\r\n        this.recycler = ll.findViewById(R.id.recycler_blog)\r\n        this.viewAlpha = ll.findViewById(R.id.view_blogList)\r\n        this.pgbar = ll.findViewById(R.id.pgbar_blogsList)\r\n        this.rlProductList = ll.findViewById(R.id.rl_BlogList)\r\n        return ll\r\n    }\r\n\r\n    override fun onBlogListener(tips: JSONObject, position: Int) {\r\n        val bundle = bundleOf(\"tips\" to tips.toString())\r\n        findNavController().navigate(\r\n            R.id.fragment_detalle_blog, bundle\r\n        )\r\n    }\r\n}
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/app/src/main/java/com/example/ecogaia/UI/fragment_blog.kt b/app/src/main/java/com/example/ecogaia/UI/fragment_blog.kt
---- a/app/src/main/java/com/example/ecogaia/UI/fragment_blog.kt	(revision 1fd57e0eb9e842c6e1a105d2d2ee2550b928f8f3)
-+++ b/app/src/main/java/com/example/ecogaia/UI/fragment_blog.kt	(date 1683318299399)
-@@ -37,7 +37,7 @@
-     ): View? {
-         Log.d("ProductosFragment", "Entered to onCreateView")
-         val ll = inflater.inflate(R.layout.fragment_blog, container, false)
--        val url = "http://192.168.141.2:8080/listarTip"
-+        val url = "http://192.168.141.97:8080/listarTip"
-         val queue = Volley.newRequestQueue(this.context)
- 
-         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
-@@ -67,8 +67,8 @@
-         return ll
-     }
- 
--    override fun onBlogListener(tips: JSONObject, position: Int) {
--        val bundle = bundleOf("tips" to tips.toString())
-+    override fun onBlogListener(blog: JSONObject, position: Int) {
-+        val bundle = bundleOf("blog" to blog.toString())
-         findNavController().navigate(
-             R.id.fragment_detalle_blog, bundle
-         )
 Index: app/src/main/res/layout/fragment_recycler_blog.xml
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
@@ -709,8 +592,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/app/src/main/res/layout/fragment_recycler_blog.xml b/app/src/main/res/layout/fragment_recycler_blog.xml
---- a/app/src/main/res/layout/fragment_recycler_blog.xml	(revision 1fd57e0eb9e842c6e1a105d2d2ee2550b928f8f3)
-+++ b/app/src/main/res/layout/fragment_recycler_blog.xml	(date 1683318299460)
+--- a/app/src/main/res/layout/fragment_recycler_blog.xml	(revision fa4d10d8915c1ecdce077b1bc68a73dc456ccd3a)
++++ b/app/src/main/res/layout/fragment_recycler_blog.xml	(date 1683244179159)
 @@ -3,7 +3,7 @@
      xmlns:tools="http://schemas.android.com/tools"
      android:layout_width="match_parent"
@@ -728,8 +611,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/app/src/main/res/drawable/shape_carrito.xml b/app/src/main/res/drawable/shape_carrito.xml
---- a/app/src/main/res/drawable/shape_carrito.xml	(revision 1fd57e0eb9e842c6e1a105d2d2ee2550b928f8f3)
-+++ b/app/src/main/res/drawable/shape_carrito.xml	(date 1683318299472)
+--- a/app/src/main/res/drawable/shape_carrito.xml	(revision fa4d10d8915c1ecdce077b1bc68a73dc456ccd3a)
++++ b/app/src/main/res/drawable/shape_carrito.xml	(date 1683314031415)
 @@ -6,9 +6,7 @@
          android:width="3dp">
      </stroke>
@@ -748,8 +631,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/app/src/main/java/com/example/ecogaia/UI/fragment_carrito.kt b/app/src/main/java/com/example/ecogaia/UI/fragment_carrito.kt
---- a/app/src/main/java/com/example/ecogaia/UI/fragment_carrito.kt	(revision 1fd57e0eb9e842c6e1a105d2d2ee2550b928f8f3)
-+++ b/app/src/main/java/com/example/ecogaia/UI/fragment_carrito.kt	(date 1683318299480)
+--- a/app/src/main/java/com/example/ecogaia/UI/fragment_carrito.kt	(revision fa4d10d8915c1ecdce077b1bc68a73dc456ccd3a)
++++ b/app/src/main/java/com/example/ecogaia/UI/fragment_carrito.kt	(date 1683312938402)
 @@ -1,60 +1,78 @@
  package com.example.ecogaia.UI
  
@@ -875,6 +758,49 @@ diff --git a/app/src/main/java/com/example/ecogaia/UI/fragment_carrito.kt b/app/
 +    }
  }
 \ No newline at end of file
+Index: app/src/main/res/layout/fragment_recycler_carrito.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_recycler_carrito.xml b/app/src/main/res/layout/fragment_recycler_carrito.xml
+new file mode 100644
+--- /dev/null	(date 1683244179167)
++++ b/app/src/main/res/layout/fragment_recycler_carrito.xml	(date 1683244179167)
+@@ -0,0 +1,32 @@
++<?xml version="1.0" encoding="utf-8"?>
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".fragment_recycler_carrito">
++
++    <androidx.recyclerview.widget.RecyclerView
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content">
++    </androidx.recyclerview.widget.RecyclerView>
++
++    <RelativeLayout
++        android:layout_width="match_parent"
++        android:layout_height="match_parent">
++
++        <View
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:alpha="0.4"
++            android:background="@color/verde_botones">
++
++        </View>
++        <ProgressBar
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:indeterminateTint="@color/verde"
++            android:layout_centerInParent="true">
++        </ProgressBar>
++    </RelativeLayout>
++
++</FrameLayout>
+\ No newline at end of file
 Index: app/src/main/res/layout/fragment_detalle_productos.xml
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
@@ -883,8 +809,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/app/src/main/res/layout/fragment_detalle_productos.xml b/app/src/main/res/layout/fragment_detalle_productos.xml
---- a/app/src/main/res/layout/fragment_detalle_productos.xml	(revision 1fd57e0eb9e842c6e1a105d2d2ee2550b928f8f3)
-+++ b/app/src/main/res/layout/fragment_detalle_productos.xml	(date 1683318299498)
+--- a/app/src/main/res/layout/fragment_detalle_productos.xml	(revision fa4d10d8915c1ecdce077b1bc68a73dc456ccd3a)
++++ b/app/src/main/res/layout/fragment_detalle_productos.xml	(date 1683250103368)
 @@ -129,7 +129,8 @@
                  <ImageView
                      android:layout_width="50dp"
@@ -895,3 +821,92 @@ diff --git a/app/src/main/res/layout/fragment_detalle_productos.xml b/app/src/ma
                  </ImageView>
  
                  <ImageView
+Index: app/src/main/java/com/example/ecogaia/Activity_agregarProducto.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ecogaia\r\n\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport android.view.View\r\nimport android.widget.EditText\r\nimport android.widget.Toast\r\nimport com.android.volley.*\r\nimport com.android.volley.toolbox.JsonObjectRequest\r\nimport com.android.volley.toolbox.StringRequest\r\nimport com.android.volley.toolbox.Volley\r\nimport kotlin.collections.HashMap\r\n\r\nclass Activity_agregarProducto : AppCompatActivity() {\r\n    var txtNombre : EditText?= null\r\n    var txtPrecio : EditText?= null\r\n    var txtCantidad : EditText? = null\r\n    var txtCategoria : EditText? = null\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_agregar_producto)\r\n\r\n        txtNombre = findViewById(R.id.txtNom)\r\n        txtPrecio = findViewById(R.id.txtPrecio)\r\n        txtCantidad = findViewById(R.id.txtCant)\r\n        txtCategoria = findViewById(R.id.txtCategoria)\r\n    }\r\n\r\n    fun clickAddProducts(view:View){\r\n        val url=\"http://192.168.160.2:8080/IngresarProducto\"\r\n        val queue =Volley.newRequestQueue(this)\r\n        val resultadoPost = object :StringRequest(Request.Method.POST, url,\r\n            Response.Listener<String> {response->\r\n                Toast.makeText(this, \"Producto Creado exitosamente\", Toast.LENGTH_LONG).show()\r\n            }, Response.ErrorListener{error ->\r\n                Toast.makeText(this, \"Producto No Credo $error\", Toast.LENGTH_LONG).show()\r\n            }\r\n        ){\r\n            override fun getParams(): MutableMap<String, String>? {\r\n                val params = HashMap<String, String>()\r\n\r\n                params.put(\"prod_Precio\",txtPrecio?.text.toString())\r\n                params.put(\"prod_Nombre\",txtNombre?.text.toString())\r\n                params.put(\"prod_Cantidad\",txtCantidad?.text.toString())\r\n                params.put(\"prod_Categoria\",txtCategoria?.text.toString())\r\n                return params\r\n                Log.e(\"params\",\"$params\")\r\n\r\n            }\r\n        }\r\n        val con = resultadoPost.bodyContentType\r\n        Log.e(\"a\",\"$con\")\r\n        queue.add(resultadoPost)\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/Activity_agregarProducto.kt b/app/src/main/java/com/example/ecogaia/Activity_agregarProducto.kt
+--- a/app/src/main/java/com/example/ecogaia/Activity_agregarProducto.kt	(revision fa4d10d8915c1ecdce077b1bc68a73dc456ccd3a)
++++ b/app/src/main/java/com/example/ecogaia/Activity_agregarProducto.kt	(date 1683312938391)
+@@ -29,7 +29,7 @@
+     }
+ 
+     fun clickAddProducts(view:View){
+-        val url="http://192.168.160.2:8080/IngresarProducto"
++        val url="http://192.168.141.97:8080/IngresarProducto"
+         val queue =Volley.newRequestQueue(this)
+         val resultadoPost = object :StringRequest(Request.Method.POST, url,
+             Response.Listener<String> {response->
+Index: app/src/main/java/com/example/ecogaia/fragment_recycler_carrito.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/fragment_recycler_carrito.kt b/app/src/main/java/com/example/ecogaia/fragment_recycler_carrito.kt
+new file mode 100644
+--- /dev/null	(date 1683244012653)
++++ b/app/src/main/java/com/example/ecogaia/fragment_recycler_carrito.kt	(date 1683244012653)
+@@ -0,0 +1,59 @@
++package com.example.ecogaia
++
++import android.os.Bundle
++import androidx.fragment.app.Fragment
++import android.view.LayoutInflater
++import android.view.View
++import android.view.ViewGroup
++
++// TODO: Rename parameter arguments, choose names that match
++// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
++private const val ARG_PARAM1 = "param1"
++private const val ARG_PARAM2 = "param2"
++
++/**
++ * A simple [Fragment] subclass.
++ * Use the [fragment_recycler_carrito.newInstance] factory method to
++ * create an instance of this fragment.
++ */
++class fragment_recycler_carrito : Fragment() {
++    // TODO: Rename and change types of parameters
++    private var param1: String? = null
++    private var param2: String? = null
++
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        arguments?.let {
++            param1 = it.getString(ARG_PARAM1)
++            param2 = it.getString(ARG_PARAM2)
++        }
++    }
++
++    override fun onCreateView(
++        inflater: LayoutInflater, container: ViewGroup?,
++        savedInstanceState: Bundle?
++    ): View? {
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.fragment_recycler_carrito, container, false)
++    }
++
++    companion object {
++        /**
++         * Use this factory method to create a new instance of
++         * this fragment using the provided parameters.
++         *
++         * @param param1 Parameter 1.
++         * @param param2 Parameter 2.
++         * @return A new instance of fragment fragment_recycler_carrito.
++         */
++        // TODO: Rename and change types and number of parameters
++        @JvmStatic
++        fun newInstance(param1: String, param2: String) =
++            fragment_recycler_carrito().apply {
++                arguments = Bundle().apply {
++                    putString(ARG_PARAM1, param1)
++                    putString(ARG_PARAM2, param2)
++                }
++            }
++    }
++}
+\ No newline at end of file

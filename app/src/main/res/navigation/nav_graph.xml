@@ -40,8 +40,8 @@
 
     <fragment
         android:id="@+id/recycler_blog"
-        android:name="com.example.ecogaia.UI.fragment_favoritos"
-        android:label="fragment_favoritos"
+        android:name="com.example.ecogaia.UI.fragment_blog"
+        android:label="fragment_blog"
         tools:layout="@layout/fragment_recycler_blog">
 
         <action
@@ -70,6 +70,19 @@
         android:name="com.example.ecogaia.fragment_login"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
-
-
+    <fragment
+        android:id="@+id/fragment_carrito"
+        android:name="com.example.ecogaia.UI.fragment_carrito"
+        android:label="fragment_carrito"
+        tools:layout="@layout/fragment_carrito" />
+    <fragment
+        android:id="@+id/fragment_categorias"
+        android:name="com.example.ecogaia.fragment_categorias"
+        android:label="fragment_categorias"
+        tools:layout="@layout/fragment_categorias" />
+    <fragment
+        android:id="@+id/fragment_nosotros"
+        android:name="com.example.ecogaia.fragment_nosotros"
+        android:label="fragment_nosotros"
+        tools:layout="@layout/fragment_nosotros" />
 </navigation>
