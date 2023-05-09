@@ -12,54 +12,50 @@
         <LinearLayout
             android:layout_width="350dp"
             android:layout_height="400dp"
-            android:background="@drawable/shape_productos"
             android:layout_gravity="center"
+            android:background="@drawable/shape_productos"
             android:orientation="vertical">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/close"
+                android:layout_marginLeft="300dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="300dp">
-            </ImageView>
+                android:src="@drawable/close"></ImageView>
 
             <ImageView
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:src="@drawable/aceite_escencial"
-                android:layout_gravity="center">
-            </ImageView>
+                android:layout_gravity="center"
+                android:src="@drawable/aceite_escencial"></ImageView>
 
             <TextView
-                android:id = "@+id/nombre_produ"
+                android:id="@+id/nombre_produ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
                 android:text="Aceite Esencial"
                 android:textColor="@color/verde"
                 android:textSize="23dp"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center">
-            </TextView>
+                android:textStyle="bold"></TextView>
 
             <TextView
-                android:id = "@+id/descripcion_produ"
+                android:id="@+id/descripcion_produ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Descripcion de producto"
-                android:textSize="20dp"
-                android:textColor="@color/black"
+                android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_gravity="center">
-            </TextView>
+                android:text="Descripcion de producto"
+                android:textColor="@color/black"
+                android:textSize="20dp"></TextView>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_gravity="center"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -71,20 +67,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Categoria"
-                        android:textStyle="bold"
                         android:textColor="@color/verde"
-                        android:textSize="22dp">
-                    </TextView>
+                        android:textSize="22dp"
+                        android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id = "@+id/categoria_produ"
+                        android:id="@+id/categoria_produ"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:text="Hogar"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
-                        android:layout_gravity="center">
-                    </TextView>
+                        android:textSize="20dp"></TextView>
 
                 </LinearLayout>
 
@@ -92,28 +86,26 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="80dp"
-                    android:layout_gravity="center">
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Precio"
-                        android:textStyle="bold"
                         android:textColor="@color/verde"
-                        android:textSize="22dp">
-                    </TextView>
+                        android:textSize="22dp"
+                        android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id = "@+id/precio_produ"
+                        android:id="@+id/precio_produ"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:text="$___"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
-                        android:layout_gravity="center">
-                    </TextView>
+                        android:textSize="20dp"></TextView>
 
                 </LinearLayout>
 
@@ -122,23 +114,27 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/start"
+<<<<<<< HEAD
                     android:onClick="addproducto">
                 </ImageView>
+=======
+                    android:onClick="addfavoritos"></ImageView>
+>>>>>>> 9ab7876ad49d4cbc1bbbcb2df649c8b648055721
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/carrito_pro"
-                    android:layout_marginLeft="90dp">
-                </ImageView>
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="90dp"
+                        android:src="@drawable/carrito_pro"
+                        ></ImageView>
 
 
             </LinearLayout>
