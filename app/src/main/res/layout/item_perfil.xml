@@ -12,13 +12,13 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/imagen_de_fonfo">
+        app:cardBackgroundColor="@color/transparent"
+        app:cardElevation="0dp">
 
         <LinearLayout
             android:layout_width="360dp"
             android:layout_height="600dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
             android:background="@drawable/shape_formulario"
             android:orientation="vertical">
 
@@ -49,18 +49,21 @@
                 android:background="@drawable/shape_fondoformulario"
                 android:orientation="vertical">
 
-                <TextView
+                <Button
                     android:layout_width="110dp"
                     android:layout_height="40dp"
                     android:layout_gravity="right"
                     android:layout_margin="20dp"
+                    android:id="@+id/btnFavoritos"
                     android:background="@drawable/shape_botones"
                     android:gravity="center"
                     android:padding="10dp"
                     android:text="Favoritos"
-                    android:textColor="@color/white">
+                    android:textColor="@color/white"
+                    android:onClick="favoritos"
+                    >
 
-                </TextView>
+                </Button>
 
                 <LinearLayout
                     android:layout_width="wrap_content"

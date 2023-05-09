@@ -14,6 +14,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.ecogaia.UI.fragment_favoritos
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -66,7 +67,7 @@ class MainActivity : AppCompatActivity() {
             R.id.item1 -> login()
             R.id.item2 -> registro()
             R.id.item3 -> nosotros()
-            R.id.item4 -> Toast.makeText(this, "favoritos", Toast.LENGTH_SHORT).show()
+            R.id.item4 -> favoritos(null)
             R.id.item5 -> categorias()
             R.id.item6 -> carrito()
         }
@@ -83,6 +84,12 @@ class MainActivity : AppCompatActivity() {
         val navController = Navigation.findNavController(this,R.id.nav_host_fragment_container)
         navController.navigate(R.id.fragment_login)
     }
+
+    fun favoritos(view: View?){
+        val navController = Navigation.findNavController(this, R.id.nav_host_fragment_container)
+        navController.navigate(R.id.fragment_favoritos)
+    }
+
 
     fun nosotros () {
         val navController = Navigation.findNavController(this,R.id.nav_host_fragment_container)

@@ -1,5 +1,6 @@
 package com.example.ecogaia
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +19,7 @@ class activity_usuario : AppCompatActivity() {
     var txtContra: EditText? = null
     var txtConfirmacion: EditText? = null
     var txtTelefono: EditText? = null
+    var txtRol: EditText? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,8 +29,8 @@ class activity_usuario : AppCompatActivity() {
         txtCorreo = findViewById(R.id.txtCorreo)
         txtDireccion = findViewById(R.id.txtDireccion)
         txtContra = findViewById(R.id.txtContra)
-        txtConfirmacion = findViewById(R.id.txtConfirmacion)
         txtTelefono = findViewById(R.id.txtTelefono)
+        txtRol = findViewById(R.id.txtrol)
     }
 
     fun clickAddUsuario(view: View) {
@@ -45,10 +47,11 @@ class activity_usuario : AppCompatActivity() {
                 val params = HashMap<String, String>()
 
                 params.put("usu_nombre", txtNombre?.text.toString())
-                params.put("usu_contraseña", txtContra?.text.toString())
+                params.put("usu_contrasenia", txtContra?.text.toString())
                 params.put("usu_correo", txtCorreo?.text.toString())
                 params.put("usu_direccion", txtDireccion?.text.toString())
                 params.put("usu_telefono", txtTelefono?.text.toString())
+                params.put("rol", txtRol?.text.toString())
                 return params
                 Log.e("params", "$params")
 
@@ -58,4 +61,10 @@ class activity_usuario : AppCompatActivity() {
         Log.e("a", "$con")
         queue.add(resultadoPost)
     }
+
+    fun inicio(view: View) {
+        val i = Intent(this, MainActivity::class.java).apply {  }
+        startActivity(i)
+    }
+
 }
