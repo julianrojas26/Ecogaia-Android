@@ -55,11 +55,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 9ab7876ad49d4cbc1bbbcb2df649c8b648055721
     /*conexion overflow*/
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -115,7 +110,6 @@ class MainActivity : AppCompatActivity() {
         val navController = Navigation.findNavController(this,R.id.nav_host_fragment_container)
         navController.navigate(R.id.fragment_login)
     }
-<<<<<<< HEAD
 
     fun nosotros () {
         val navController = Navigation.findNavController(this,R.id.nav_host_fragment_container)
@@ -132,6 +126,4 @@ class MainActivity : AppCompatActivity() {
         navController.navigate(R.id.fragment_carrito)
     }
 }
-=======
-}
->>>>>>> 9ab7876ad49d4cbc1bbbcb2df649c8b648055721
+
