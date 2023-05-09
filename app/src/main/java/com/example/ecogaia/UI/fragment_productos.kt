@@ -12,6 +12,7 @@ import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
@@ -36,7 +37,7 @@ class fragment_productos : Fragment(), ProductosListener {
     ): View? {
         Log.d("ProductosFragment", "Entered to onCreateView")
         val ll = inflater.inflate(R.layout.fragment_productos, container, false)
-        val url = "http://192.168.1.10:8080/listarProducto"
+        val url = "http://192.168.90.2:8080/listarProducto"
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
@@ -50,7 +51,7 @@ class fragment_productos : Fragment(), ProductosListener {
                     i++
                 }
                 Log.d("ProductFragment", this.productos.toString())
-                this.recycler.adapter= ProductosAdaptador( this.context, this.productos)
+                this.recycler.adapter= ProductosAdaptador(this.context,this.productos, this)
                 this.viewAlpha.visibility= View.INVISIBLE
                 this.pgbar.visibility = View.INVISIBLE
             }catch (e:JSONException) {

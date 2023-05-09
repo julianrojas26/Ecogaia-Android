@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -42,95 +41,7 @@
     <fragment
         android:id="@+id/recycler_blog"
         android:name="com.example.ecogaia.UI.fragment_blog"
-        android:label="fragment_carrito"
-        tools:layout="@layout/fragment_recycler_carrito">
-
-        <action
-            android:id="@+id/action_fragment_blog2_to_fragment_detalle_blog"
-            app:destination="@id/fragment_detalle_blog" />
-        <action
-            android:id="@+id/action_recycler_blog_to_fragment_recycler_perfil"
-            app:destination="@id/fragment_recycler_perfil" />
-
-    </fragment>
-
-    <dialog
-        android:id="@+id/fragment_detalle_blog"
-        android:name="com.example.ecogaia.UI.fragment_detalle_blog"
-        android:label="fragment_detalle_blog"
-        tools:layout="@layout/fragment_detalle_blog" />
-    <fragment
-        android:id="@+id/fragment_login"
-        android:name="com.example.ecogaia.fragment_login"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
-    <fragment
-        android:id="@+id/fragment_nosotros"
-        android:name="com.example.ecogaia.fragment_nosotros"
-        android:label="fragment_nosotros"
-        tools:layout="@layout/fragment_nosotros" />
-    <fragment
-        android:id="@+id/fragment_categorias"
-        android:name="com.example.ecogaia.fragment_categorias"
-        android:label="fragment_categorias"
-        tools:layout="@layout/fragment_categorias" />
-
-    <fragment
-        android:id="@+id/fragment_carrito"
-        android:name="com.example.ecogaia.UI.fragment_carrito"
-        android:label="fragment_carrito"
-        tools:layout="@layout/fragment_carrito" />
-    <fragment
-        android:id="@+id/fragment_recycler_perfil"
-        android:name="com.example.ecogaia.fragment_recycler_perfil"
-        android:label="fragment_recycler_perfil"
-        tools:layout="@layout/fragment_recycler_perfil" />
-
-=======
-<?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@+id/homeFragment">
-
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.ecogaia.fragment_home"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home">
-
-        <action
-            android:id="@+id/action_homeFragment4_to_fragment_recycler_productos"
-            app:destination="@id/recycler_productos" />
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/recycler_productos"
-        android:name="com.example.ecogaia.UI.fragment_productos"
-        android:label="fragment_productos"
-        tools:layout="@layout/fragment_recycler_productos">
-
-        <action
-            android:id="@+id/action_fragment_recycler_productos_to_fragment_detalleProductos"
-            app:destination="@id/fragment_detalleProductos" />
-
-        <action
-            android:id="@+id/action_fragment_recycler_productos_to_fragment_blog2"
-            app:destination="@id/recycler_blog" />
-
-    </fragment>
-
-    <dialog
-        android:id="@+id/fragment_detalleProductos"
-        android:name="com.example.ecogaia.UI.fragment_detalleProductos"
-        android:label="fragment_detalle_productos"
-        tools:layout="@layout/fragment_detalle_productos" />
-
-    <fragment
-        android:id="@+id/recycler_blog"
-        android:name="com.example.ecogaia.UI.fragment_favoritos"
-        android:label="fragment_favoritos"
+        android:label="fragment_blog"
         tools:layout="@layout/fragment_recycler_blog">
 
         <action
@@ -159,7 +70,19 @@
         android:name="com.example.ecogaia.fragment_login"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
-
-
->>>>>>> 9ab7876ad49d4cbc1bbbcb2df649c8b648055721
+    <fragment
+        android:id="@+id/fragment_carrito"
+        android:name="com.example.ecogaia.UI.fragment_carrito"
+        android:label="fragment_carrito"
+        tools:layout="@layout/fragment_carrito" />
+    <fragment
+        android:id="@+id/fragment_categorias"
+        android:name="com.example.ecogaia.fragment_categorias"
+        android:label="fragment_categorias"
+        tools:layout="@layout/fragment_categorias" />
+    <fragment
+        android:id="@+id/fragment_nosotros"
+        android:name="com.example.ecogaia.fragment_nosotros"
+        android:label="fragment_nosotros"
+        tools:layout="@layout/fragment_nosotros" />
 </navigation>

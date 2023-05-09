@@ -1,5 +1,6 @@
 package com.example.ecogaia
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,40 +11,47 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.ecogaia.UI.fragment_blog
+import java.sql.Date
+import java.sql.Time
+import java.time.Instant
+import java.time.LocalDate
+import java.time.LocalDateTime
 
 class activity_agregar_blog : AppCompatActivity() {
-    var txtNombre : EditText?= null
-    var txtPrecio : EditText?= null
-    var txtCantidad : EditText? = null
-    var txtCategoria : EditText? = null
+    var id : EditText? = null
+    var nombre: EditText? = null
+    var titulo : EditText?= null
+    var cuerpo : EditText?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_blog)
 
-        txtNombre = findViewById(R.id.txtNom)
-        txtPrecio = findViewById(R.id.txtPrecio)
-        txtCantidad = findViewById(R.id.txtCant)
-        txtCategoria = findViewById(R.id.txtCategoria)
+        id = findViewById(R.id.id)
+        nombre = findViewById(R.id.textNombre)
+        titulo = findViewById(R.id.texttitulo)
+        cuerpo = findViewById(R.id.textcuerpo)
     }
 
     fun clickAddProducts(view: View){
-        val url="http://192.168.141.2:8080/insertarProducto"
+        val url="http://192.168.90.2:8080/insertarTip"
         val queue = Volley.newRequestQueue(this)
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
-                Toast.makeText(this, "Producto Creado exitosamente", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Tip Creado exitosamente", Toast.LENGTH_LONG).show()
             }, Response.ErrorListener{ error ->
-                Toast.makeText(this, "Producto No Credo $error", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Tip No Credo $error", Toast.LENGTH_LONG).show()
             }
         ){
             override fun getParams(): MutableMap<String, String>? {
                 val params = HashMap<String, String>()
 
-                params.put("prod_Precio",txtPrecio?.text.toString())
-                params.put("prod_Nombre",txtNombre?.text.toString())
-                params.put("prod_Cantidad",txtCantidad?.text.toString())
-                params.put("prod_Categoria",txtCategoria?.text.toString())
+                params.put("comp_usuario",nombre?.text.toString())
+                params.put("titulo",titulo?.text.toString())
+                params.put("cuerpo",cuerpo?.text.toString())
+                params.put("usuario",id?.text.toString())
+
                 return params
                 Log.e("params","$params")
 
@@ -52,7 +60,8 @@ class activity_agregar_blog : AppCompatActivity() {
         val con = resultadoPost.bodyContentType
         Log.e("a","$con")
         queue.add(resultadoPost)
+
+        val i = Intent(this, MainActivity::class.java).apply {  }
+        startActivity(i)
     }
-
-
 }

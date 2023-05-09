@@ -63,7 +63,8 @@
                 android:textColor="@color/verde"
                 android:textSize="23dp"
                 android:layout_marginTop="10dp"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:textAlignment="center">
             </TextView>
 
             <TextView
@@ -75,22 +76,24 @@
                 android:textColor="@color/verde"
                 android:textSize="23dp"
                 android:layout_marginTop="10dp"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:textAlignment="center">
             </TextView>
 
-            <TextView
-                android:id = "@+id/descripcion_tip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/usuario"
-                android:paddingLeft="12dp"
-                android:paddingRight="12dp"
-                android:textSize="20dp"
-                android:textColor="@color/black"
-                android:layout_marginTop="10dp"
-                android:textAlignment="center"
-                android:layout_gravity="center">
-            </TextView>
+           <ScrollView
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"
+               android:layout_gravity="center">
+               <TextView
+                   android:id = "@+id/descripcion_tip"
+                   android:layout_width="300dp"
+                   android:layout_height="match_parent"
+                   android:text="@string/usuario"
+                   android:textSize="20dp"
+                   android:textColor="@color/black"
+                   android:textAlignment="center">
+               </TextView>
+           </ScrollView>
 
 
         </LinearLayout>
