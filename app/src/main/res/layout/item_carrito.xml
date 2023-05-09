@@ -1,107 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools2="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="wrap_content"
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/imagen_de_fonfo"
-        android:elevation="15dp">
+    android:layout_marginEnd="@dimen/margin_10"
+    android:layout_marginTop="@dimen/margin_10">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="30dp"
-            android:layout_margin="20dp"
-            android:background="@drawable/shape_carrito">
-
-            <ImageView
-                android:id="@+id/imagen_producto"
-                android:layout_width="103dp"
-                android:layout_height="103dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginBottom="30dp"
-                android:src="@drawable/jabon">
-            </ImageView>
-
-            <LinearLayout
-                android:layout_width="122dp"
-                android:layout_height="wrap_content"
-
-                android:layout_marginTop="30dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/Nombre_producto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nombre"
-                    android:textColor="@color/azul_icono"></TextView>
-
-                <TextView
-                    android:id="@+id/descripcion"
-                    android:layout_width="122dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/descripcion"></TextView>
-
-                <TextView
-                    android:id="@+id/precio_cu"
-                    android:layout_width="122dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="$________"></TextView>
-
-            </LinearLayout>
+            android:layout_width="340dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_carrito"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/basura"
-                    android:layout_marginLeft="35dp"
-                    android:layout_marginTop="20dp">
-                </ImageView>
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/precio_Total"
-                    android:layout_width="122dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginLeft="25dp"
-                    android:text="$________">
-                </TextView>
-
-                <LinearLayout
+                    android:id="@+id/carrito_fecha"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginRight="0dp">
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="18dp"
+                    android:text="20 de julio del 2023"
+                    android:textSize="15dp">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/menos"></ImageView>
+                </TextView>
 
-                    <ImageView
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imagen_producto"
+                    android:layout_width="103dp"
+                    android:layout_height="103dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:src="@drawable/jabon"></ImageView>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="25dp"
-                        android:src="@drawable/mas"></ImageView>
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/Nombre_producto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nombre"
+                            android:textColor="@color/azul_icono"></TextView>
+
+                        <TextView
+                            android:id="@+id/descripcion"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/descripcion"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/mas"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/mas"></ImageView>
+
+                        <TextView
+                            android:id="@+id/cantidad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="20dp"
+                            android:text="_____"></TextView>
+
+                        <ImageView
+                            android:id="@+id/menos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="13dp"
+                            android:src="@drawable/menos"></ImageView>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-
             </LinearLayout>
+
         </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
 </FrameLayout>

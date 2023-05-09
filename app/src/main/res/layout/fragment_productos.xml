@@ -28,9 +28,10 @@
         android:padding="5dp">
 
         <EditText
-            android:layout_width="300dp"
+            android:layout_width="266dp"
             android:layout_height="wrap_content"
             android:hint="Buscar"
+            android:layout_marginLeft="10dp"
             android:inputType="text"
             android:textColor="@color/verde_detalles" />
 
