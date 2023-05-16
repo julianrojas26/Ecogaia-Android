@@ -14,11 +14,6 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-<<<<<<< HEAD
-import com.denzcoskun.imageslider.ImageSlider
-=======
-import com.example.ecogaia.UI.fragment_favoritos
->>>>>>> f50b66b07ba8e3822747cc2f43fe0c27f3cffe6f
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
