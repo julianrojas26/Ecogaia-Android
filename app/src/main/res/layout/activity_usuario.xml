@@ -17,7 +17,8 @@
             android:layout_height="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="Inicio">
+            android:text="Inicio"
+            android:onClick="inicio">
         </Button>
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
@@ -28,7 +29,7 @@
             app:cardBackgroundColor="@color/transparent">
             <LinearLayout
                 android:layout_width="340dp"
-                android:layout_height="555dp"
+                android:layout_height="600dp"
                 android:orientation="vertical"
                 android:background="@drawable/shape_registrar">
                 <LinearLayout
@@ -46,7 +47,7 @@
 
 
                 <LinearLayout
-                    android:layout_height="420dp"
+                    android:layout_height="460dp"
                     android:layout_width="307dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="10dp"
@@ -61,7 +62,7 @@
                         android:layout_marginTop="5dp"
                         android:ems="10"
                         android:inputType="text"
-                        android:text="Ingrese su Nombre"></EditText>
+                        android:hint="Ingrese su Nombre"></EditText>
 
                     <EditText
                         android:id="@+id/txtCorreo"
@@ -88,16 +89,7 @@
                         android:layout_marginTop="10dp"
                         android:ems="10"
                         android:hint="Ingrese una Contraseña"
-                        android:inputType="number"></EditText>
-
-                    <EditText
-                        android:id="@+id/txtConfirmacion"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:ems="10"
-                        android:hint="Confirme su Contraseña"
-                        android:inputType="number"></EditText>
+                        android:inputType="text"></EditText>
 
                     <EditText
                         android:id="@+id/txtTelefono"
@@ -107,11 +99,19 @@
                         android:ems="10"
                         android:hint="Ingrese su Telefono"
                         android:inputType="number"></EditText>
+                    <EditText
+                        android:id="@+id/txtrol"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:ems="10"
+                        android:hint="rol"
+                        android:inputType="text"></EditText>
 
                     <Button
                         android:id="@+id/btnReg"
                         android:layout_width="100dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:layout_marginTop="20dp"
                         android:layout_gravity="center"
                         android:background="@drawable/shape_formulario"

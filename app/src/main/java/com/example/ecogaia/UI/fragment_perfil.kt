@@ -1,5 +1,6 @@
 package com.example.ecogaia.UI
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.ecogaia.MainActivity
 import com.example.ecogaia.R
 import com.example.ecogaia.adapter.PerfilAdapter
 import com.example.ecogaia.adapter.ProductosAdaptador
@@ -63,4 +65,6 @@ class fragment_perfil : Fragment() {
         this.rlPerfilList = ll.findViewById(R.id.rl_perfilList)
         return ll
     }
+
+
 }
