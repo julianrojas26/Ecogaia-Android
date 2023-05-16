@@ -11,21 +11,18 @@ import com.bumptech.glide.Glide
 import com.example.ecogaia.R
 import org.json.JSONObject
 
-class FavoritosAdaptador(private val favoritosList: ArrayList<JSONObject>, private val FavoritosListener: FavoritosListener): RecyclerView.Adapter<FavoritosAdaptador.ViewHoler>() {
+class FavoritosAdaptador(
+    private val favoritosList: ArrayList<JSONObject>,
+    private val FavoritosListener: FavoritosListener
+) : RecyclerView.Adapter<FavoritosAdaptador.ViewHoler>() {
     inner class ViewHoler(view: View) : RecyclerView.ViewHolder(view) {
-        var Fav_img: ImageView = view.findViewById(R.id.imagen_producto_favoritos)
         var Fav_nombre: TextView = view.findViewById(R.id.nombre_produ_favoritos)
-        var Fav_descripcion: TextView = view.findViewById(R.id.descripcion_favoritos)
-        var Fav_precio: TextView = view.findViewById(R.id.precio_favoritos)
-
-
         fun bind(favoritos: JSONObject) {
             Fav_nombre.text = favoritos.getString("codigo_favoritos")
-            Fav_descripcion.text = favoritos.getString("codigo_prod")
-            Fav_precio.text = favoritos.getString("id_admin")
         }
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= ViewHoler (
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHoler(
         LayoutInflater.from(parent.context).inflate(R.layout.item_favoritos, parent, false)
     )
 
@@ -35,9 +32,6 @@ class FavoritosAdaptador(private val favoritosList: ArrayList<JSONObject>, priva
         val favoritos = favoritosList[position]
 
         try {
-            Glide.with(holder.itemView.context)
-                .load(favoritos.get("Fav_img"))
-                .into(holder.Fav_img)
             holder.bind(favoritos)
             holder.itemView.setOnClickListener {
                 FavoritosListener.onFavoritosClicked(favoritos, position)

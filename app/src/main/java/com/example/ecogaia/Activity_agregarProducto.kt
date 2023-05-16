@@ -29,7 +29,7 @@ class Activity_agregarProducto : AppCompatActivity() {
     }
 
     fun clickAddProducts(view:View){
-        val url="http://192.168.90.2:8080/insertarProducto"
+        val url="http://192.168.252.170:8080/insertarProducto"
         val queue =Volley.newRequestQueue(this)
         val resultadoPost = object :StringRequest(Request.Method.POST, url,
             Response.Listener<String> {response->

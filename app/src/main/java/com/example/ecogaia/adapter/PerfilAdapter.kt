@@ -21,7 +21,7 @@ class PerfilAdapter(private val perfilList: ArrayList<JSONObject>): RecyclerView
             usu_nombre.text = usuario.getString("usu_nombre")
             usu_correo.text = usuario.getString("usu_correo")
             usu_direccion.text = usuario.getString("usu_direccion")
-            usu_contraseña.text = usuario.getString("usu_contraseÃ±a")
+            usu_contraseña.text = usuario.getString("usu_contrasenia")
             usu_telefono.text = usuario.getString("usu_telefono")
         }
     }

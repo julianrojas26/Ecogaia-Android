@@ -37,7 +37,7 @@ class fragment_productos : Fragment(), ProductosListener {
     ): View? {
         Log.d("ProductosFragment", "Entered to onCreateView")
         val ll = inflater.inflate(R.layout.fragment_productos, container, false)
-        val url = "http://192.168.90.2:8080/listarProducto"
+        val url = "http://192.168.252.170:8080/listarProducto"
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
@@ -67,11 +67,14 @@ class fragment_productos : Fragment(), ProductosListener {
         return ll
     }
 
+
+
     override fun onProductosCliked(productos: JSONObject, position: Int) {
         Log.w("AAAAAAA",position.toString()+productos.toString())
         val bundle = bundleOf("productos" to productos.toString())
         findNavController().navigate(
             R.id.fragment_detalleProductos, bundle
         )
+
     }
 }
