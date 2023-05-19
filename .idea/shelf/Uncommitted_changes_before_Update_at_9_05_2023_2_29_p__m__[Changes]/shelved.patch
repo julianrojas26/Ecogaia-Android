@@ -1,0 +1,25 @@
+Index: app/src/main/java/com/example/ecogaia/activity_usuario.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ecogaia\r\n\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport android.view.View\r\nimport android.widget.EditText\r\nimport android.widget.Toast\r\nimport com.android.volley.Request\r\nimport com.android.volley.Response\r\nimport com.android.volley.toolbox.StringRequest\r\nimport com.android.volley.toolbox.Volley\r\n\r\nclass activity_usuario : AppCompatActivity() {\r\n    var txtNombre: EditText? = null\r\n    var txtCorreo: EditText? = null\r\n    var txtDireccion: EditText? = null\r\n    var txtContra: EditText? = null\r\n    var txtConfirmacion: EditText? = null\r\n    var txtTelefono: EditText? = null\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_usuario)\r\n\r\n        txtNombre = findViewById(R.id.txtNombre)\r\n        txtCorreo = findViewById(R.id.txtCorreo)\r\n        txtDireccion = findViewById(R.id.txtDireccion)\r\n        txtContra = findViewById(R.id.txtContra)\r\n        txtConfirmacion = findViewById(R.id.txtConfirmacion)\r\n        txtTelefono = findViewById(R.id.txtTelefono)\r\n    }\r\n\r\n    fun clickAddUsuario(view: View) {\r\n        val url = \"http://192.168.141.2:8080/insertarUsuario\"\r\n        val queue = Volley.newRequestQueue(this)\r\n        val resultadoPost = object : StringRequest(Request.Method.POST, url,\r\n            Response.Listener<String> { response ->\r\n                Toast.makeText(this, \"Usuario Creado exitosamente\", Toast.LENGTH_LONG).show()\r\n            }, Response.ErrorListener { error ->\r\n                Toast.makeText(this, \"Usuario No Creado $error\", Toast.LENGTH_LONG).show()\r\n            }\r\n        ) {\r\n            override fun getParams(): MutableMap<String, String>? {\r\n                val params = HashMap<String, String>()\r\n\r\n                params.put(\"usu_nombre\", txtNombre?.text.toString())\r\n                params.put(\"usu_contraseña\", txtContra?.text.toString())\r\n                params.put(\"usu_correo\", txtCorreo?.text.toString())\r\n                params.put(\"usu_direccion\", txtDireccion?.text.toString())\r\n                params.put(\"usu_telefono\", txtTelefono?.text.toString())\r\n                return params\r\n                Log.e(\"params\", \"$params\")\r\n\r\n            }\r\n        }\r\n        val con = resultadoPost.bodyContentType\r\n        Log.e(\"a\", \"$con\")\r\n        queue.add(resultadoPost)\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/activity_usuario.kt b/app/src/main/java/com/example/ecogaia/activity_usuario.kt
+--- a/app/src/main/java/com/example/ecogaia/activity_usuario.kt	(revision 9ab7876ad49d4cbc1bbbcb2df649c8b648055721)
++++ b/app/src/main/java/com/example/ecogaia/activity_usuario.kt	(date 1683660538706)
+@@ -1,5 +1,6 @@
+ package com.example.ecogaia
+ 
++import android.content.Intent
+ import androidx.appcompat.app.AppCompatActivity
+ import android.os.Bundle
+ import android.util.Log
+@@ -57,5 +58,6 @@
+         val con = resultadoPost.bodyContentType
+         Log.e("a", "$con")
+         queue.add(resultadoPost)
++
+     }
+ }
+\ No newline at end of file

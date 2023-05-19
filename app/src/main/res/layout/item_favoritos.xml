@@ -16,7 +16,7 @@
             android:layout_width="310dp"
             android:layout_height="120dp"
             android:layout_margin="8dp"
-            android:background="@drawable/shape_carrito"
+            android:background="@drawable/shape_form2"
             android:orientation="horizontal"
             android:padding="1dp"
             android:layout_gravity="center">
@@ -27,7 +27,7 @@
                 android:layout_height="66dp"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:src="@drawable/jabon" />
+                android:src="@drawable/hands" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

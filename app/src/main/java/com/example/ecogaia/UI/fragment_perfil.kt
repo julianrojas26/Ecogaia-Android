@@ -36,7 +36,7 @@ class fragment_perfil : Fragment() {
     ): View? {
         Log.d("ProductosFragment", "Entered to onCreateView")
         val ll = inflater.inflate(R.layout.fragment_perfil, container, false)
-        val url = "http://192.168.252.170:8080/listarUsuario"
+        val url = "http:// 192.168.110.131:8080/listarUsuario"
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
@@ -65,8 +65,6 @@ class fragment_perfil : Fragment() {
         this.rlPerfilList = ll.findViewById(R.id.rl_perfilList)
         return ll
     }
-
-
 
 
 }

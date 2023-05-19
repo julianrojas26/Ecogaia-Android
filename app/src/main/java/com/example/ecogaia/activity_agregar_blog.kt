@@ -35,7 +35,7 @@ class activity_agregar_blog : AppCompatActivity() {
     }
 
     fun clickAddProducts(view: View){
-        val url="http://192.168.252.170:8080/insertarTip"
+        val url="http://192.168.110.131:8080/insertarTip"
         val queue = Volley.newRequestQueue(this)
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
