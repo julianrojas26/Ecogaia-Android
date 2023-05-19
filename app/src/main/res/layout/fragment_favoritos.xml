@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="700dp"
         android:background="@drawable/shape_formulario"
         android:layout_margin="30dp"
         android:orientation="vertical">
@@ -34,50 +34,37 @@
             >
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="730dp">
+                android:layout_height="470dp">
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="30dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/item_favoritos"
                     android:id="@+id/favoritos_recycler"/>
             </ScrollView>
-
-            <RelativeLayout
-                android:id="@+id/rl_FavoritosList"
-                android:layout_width="match_parent"
-                android:layout_height="800dp"  >
-
-                <View
-                    android:id="@+id/view_favoritosList"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:alpha="0.5"
-                    android:background="@color/verde_botones" />
-
-                <ProgressBar
-                    android:id="@+id/pgbar_favoritosList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:indeterminateTint="@color/verde"/>
-
-            </RelativeLayout>
-
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/close"
-                android:layout_gravity="end"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="18dp"/>
-
-
-
         </LinearLayout>
-
-
     </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rl_FavoritosList"
+        android:layout_width="match_parent"
+        android:layout_height="800dp"  >
+
+        <View
+            android:id="@+id/view_favoritosList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="@color/verde_botones" />
+
+        <ProgressBar
+            android:id="@+id/pgbar_favoritosList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/verde"/>
+
+    </RelativeLayout>
+
 </FrameLayout>
