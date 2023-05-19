@@ -1,0 +1,107 @@
+Index: app/src/main/java/com/example/ecogaia/UI/fragment_favoritos.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ecogaia.UI\r\n\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport androidx.fragment.app.Fragment\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport android.widget.ProgressBar\r\nimport android.widget.RelativeLayout\r\nimport androidx.recyclerview.widget.RecyclerView\r\nimport com.android.volley.Request\r\nimport com.android.volley.toolbox.StringRequest\r\nimport com.android.volley.toolbox.Volley\r\nimport com.example.ecogaia.R\r\nimport com.example.ecogaia.adapter.FavoritosAdaptador\r\nimport com.example.ecogaia.adapter.FavoritosListener\r\nimport org.json.JSONArray\r\nimport org.json.JSONException\r\nimport org.json.JSONObject\r\n\r\n\r\nclass fragment_favoritos : Fragment(), FavoritosListener {\r\n    private lateinit var recycler: RecyclerView\r\n    private lateinit var viewAlpha: View\r\n    private lateinit var pgbar: ProgressBar\r\n    private lateinit var rlProductList: RelativeLayout\r\n    private lateinit var favoritos: ArrayList<JSONObject>\r\n\r\n    override fun onCreateView(\r\n        inflater: LayoutInflater,\r\n        container: ViewGroup?,\r\n        savedInstanceState: Bundle?\r\n    ): View? {\r\n        Log.d(\"FavoritosFragment\", \"Entered to onCreateView\")\r\n        val ll = inflater.inflate(R.layout.fragment_favoritos, container, false)\r\n        val url = \"http://192.168.90.2:8080/listarFavoritos\"\r\n        val queue = Volley.newRequestQueue(this.context)\r\n\r\n        val stringRequest = StringRequest(Request.Method.GET, url, { response ->\r\n            val jsonArray = JSONArray(response)\r\n            this.favoritos = ArrayList()\r\n            try {\r\n                var i = 0\r\n                val l = jsonArray.length()\r\n                while (i < l) {\r\n                    favoritos.add(jsonArray[i] as JSONObject)\r\n                    i++\r\n                }\r\n                Log.d(\"FavoritosFragment\", this.favoritos.toString())\r\n                this.recycler.adapter= FavoritosAdaptador(this.favoritos, this)\r\n                this.viewAlpha.visibility= View.INVISIBLE\r\n                this.pgbar.visibility = View.INVISIBLE\r\n            }catch (e:JSONException) {\r\n            }\r\n        }, { error ->\r\n            Log.w(\"jsonError\", error)\r\n        })\r\n        queue.add(stringRequest)\r\n        this.recycler = ll.findViewById(R.id.favoritos_recycler)\r\n        this.viewAlpha = ll.findViewById(R.id.view_favoritosList)\r\n        this.pgbar = ll.findViewById(R.id.pgbar_favoritosList)\r\n        this.rlProductList = ll.findViewById(R.id.rl_FavoritosList)\r\n        return ll\r\n    }\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/UI/fragment_favoritos.kt b/app/src/main/java/com/example/ecogaia/UI/fragment_favoritos.kt
+--- a/app/src/main/java/com/example/ecogaia/UI/fragment_favoritos.kt	(revision 5cadee87ba7b28d67e57c0b4b918ff9bda9c51f9)
++++ b/app/src/main/java/com/example/ecogaia/UI/fragment_favoritos.kt	(date 1684523981379)
+@@ -6,6 +6,7 @@
+ import android.view.LayoutInflater
+ import android.view.View
+ import android.view.ViewGroup
++import android.widget.ImageView
+ import android.widget.ProgressBar
+ import android.widget.RelativeLayout
+ import androidx.recyclerview.widget.RecyclerView
+@@ -34,7 +35,7 @@
+     ): View? {
+         Log.d("FavoritosFragment", "Entered to onCreateView")
+         val ll = inflater.inflate(R.layout.fragment_favoritos, container, false)
+-        val url = "http://192.168.90.2:8080/listarFavoritos"
++        val url = "http://192.168.43.209:8080/listarFavoritos"
+         val queue = Volley.newRequestQueue(this.context)
+ 
+         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+@@ -61,6 +62,8 @@
+         this.viewAlpha = ll.findViewById(R.id.view_favoritosList)
+         this.pgbar = ll.findViewById(R.id.pgbar_favoritosList)
+         this.rlProductList = ll.findViewById(R.id.rl_FavoritosList)
++
++
+         return ll
+     }
+ 
+Index: app/src/main/res/layout/item_favoritos.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    android:layout_marginStart=\"@dimen/margin_10\"\r\n    android:layout_marginEnd=\"@dimen/margin_5\"\r\n    android:layout_marginTop=\"@dimen/margin_5\">\r\n\r\n    <androidx.cardview.widget.CardView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        app:cardBackgroundColor=\"@color/transparent\"\r\n        app:cardElevation=\"0dp\">\r\n        <LinearLayout\r\n            android:layout_width=\"310dp\"\r\n            android:layout_height=\"120dp\"\r\n            android:layout_margin=\"8dp\"\r\n            android:background=\"@drawable/shape_carrito\"\r\n            android:orientation=\"horizontal\"\r\n            android:padding=\"1dp\"\r\n            android:layout_gravity=\"center\">\r\n\r\n            <ImageView\r\n                android:id=\"@+id/imagen_producto_favoritos\"\r\n                android:layout_width=\"66dp\"\r\n                android:layout_height=\"66dp\"\r\n                android:layout_gravity=\"center\"\r\n                android:layout_margin=\"10dp\"\r\n                android:src=\"@drawable/jabon\" />\r\n\r\n            <LinearLayout\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_gravity=\"center\"\r\n                android:orientation=\"vertical\">\r\n\r\n                <TextView\r\n                    android:id=\"@+id/nombre_produ_favoritos\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"match_parent\"\r\n                    android:layout_marginTop=\"5dp\"\r\n                    android:text=\"Nombre Producto\" />\r\n\r\n                <TextView\r\n                    android:id=\"@+id/descripcion_favoritos\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"match_parent\"\r\n                    android:layout_marginTop=\"5dp\"\r\n                    android:text=\"Descripcion del producto\" />\r\n\r\n                <TextView\r\n                    android:id=\"@+id/precio_favoritos\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"match_parent\"\r\n                    android:layout_marginTop=\"5dp\"\r\n                    android:layout_marginBottom=\"5dp\"\r\n                    android:text=\"$_______\" />\r\n\r\n            </LinearLayout>\r\n\r\n            <ImageView\r\n                android:layout_width=\"30dp\"\r\n                android:layout_height=\"30dp\"\r\n                android:layout_gravity=\"center\"\r\n                android:layout_marginLeft=\"12dp\"\r\n                android:src=\"@drawable/favoritos\" />\r\n        </LinearLayout>\r\n\r\n    </androidx.cardview.widget.CardView>\r\n\r\n</FrameLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/item_favoritos.xml b/app/src/main/res/layout/item_favoritos.xml
+--- a/app/src/main/res/layout/item_favoritos.xml	(revision 5cadee87ba7b28d67e57c0b4b918ff9bda9c51f9)
++++ b/app/src/main/res/layout/item_favoritos.xml	(date 1684523981390)
+@@ -59,7 +59,8 @@
+ 
+             </LinearLayout>
+ 
+-            <ImageView
++            <ImageButton
++                android:onClick="del_fav"
+                 android:layout_width="30dp"
+                 android:layout_height="30dp"
+                 android:layout_gravity="center"
+Index: app/src/main/java/com/example/ecogaia/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ecogaia\r\n\r\nimport android.content.Intent\r\nimport android.os.Bundle\r\nimport android.view.Menu\r\nimport android.view.MenuItem\r\nimport android.view.View\r\nimport android.widget.Toast\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport androidx.navigation.NavController\r\nimport androidx.navigation.Navigation\r\nimport androidx.navigation.findNavController\r\nimport androidx.navigation.fragment.NavHostFragment\r\nimport androidx.navigation.ui.AppBarConfiguration\r\nimport androidx.navigation.ui.setupActionBarWithNavController\r\nimport androidx.navigation.ui.setupWithNavController\r\n<<<<<<< HEAD\r\nimport com.denzcoskun.imageslider.ImageSlider\r\n=======\r\nimport com.example.ecogaia.UI.fragment_favoritos\r\n>>>>>>> f50b66b07ba8e3822747cc2f43fe0c27f3cffe6f\r\nimport com.google.android.material.bottomnavigation.BottomNavigationView\r\n\r\nclass MainActivity : AppCompatActivity() {\r\n\r\n    private lateinit var appBarCondiguration: AppBarConfiguration\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_main)\r\n        val host: NavHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment? ?: return\r\n        val navController = host.navController\r\n        appBarCondiguration = AppBarConfiguration(navController.graph)\r\n        setupActionBar(navController, appBarCondiguration)\r\n        setupBottonNavMenu(navController)\r\n    }\r\n\r\n\r\n\r\n    private fun setupActionBar(navController:NavController, appBarConfiguration: AppBarConfiguration){\r\n        setupActionBarWithNavController(navController,appBarConfiguration)\r\n    }\r\n    private fun setupBottonNavMenu(navController: NavController){\r\n        val bottonNav = findViewById<BottomNavigationView>(R.id.btnMenu)\r\n        bottonNav.setupWithNavController(navController)\r\n    }\r\n\r\n    fun addProduct() {\r\n        val i = Intent(this, Activity_agregarProducto::class.java).apply {  }\r\n        startActivity(i)\r\n    }\r\n    fun addusuario(view: View){\r\n        val i= Intent(this, activity_usuario::class.java).apply {  }\r\n        startActivity(i)\r\n    }\r\n\r\n    fun addBlog(view: View) {\r\n        val i = Intent(this,activity_agregar_blog::class.java).apply {  }\r\n        startActivity(i)\r\n    }\r\n\r\n\r\n    /*conexion overflow*/\r\n\r\n    override fun onCreateOptionsMenu(menu: Menu?): Boolean {\r\n        menuInflater.inflate(R.menu.leftoverflow, menu)\r\n        menuInflater.inflate(R.menu.rightverflow, menu)\r\n        return super.onCreateOptionsMenu(menu)\r\n    }\r\n\r\n    override fun onOptionsItemSelected(item: MenuItem): Boolean {\r\n        when(item.itemId){\r\n            R.id.item1 -> login()\r\n            R.id.item2 -> registro()\r\n            R.id.item3 -> nosotros()\r\n            R.id.item4 -> favoritos(null)\r\n            R.id.item5 -> categorias()\r\n            R.id.item6 -> carrito()\r\n        }\r\n        return super.onOptionsItemSelected(item)\r\n    }\r\n\r\n    fun registro() {\r\n        val i = Intent(this, activity_usuario::class.java).apply {  }\r\n        startActivity(i)\r\n    }\r\n\r\n\r\n    fun login () {\r\n        val navController = Navigation.findNavController(this,R.id.nav_host_fragment_container)\r\n        navController.navigate(R.id.fragment_login)\r\n    }\r\n\r\n    fun favoritos(view: View?){\r\n        val navController = Navigation.findNavController(this, R.id.nav_host_fragment_container)\r\n        navController.navigate(R.id.fragment_favoritos)\r\n    }\r\n\r\n\r\n    fun nosotros () {\r\n        val navController = Navigation.findNavController(this,R.id.nav_host_fragment_container)\r\n        navController.navigate(R.id.fragment_nosotros)\r\n    }\r\n\r\n    fun categorias () {\r\n        val navController = Navigation.findNavController(this,R.id.nav_host_fragment_container)\r\n        navController.navigate(R.id.fragment_categorias)\r\n    }\r\n\r\n    fun carrito () {\r\n        val navController = Navigation.findNavController(this,R.id.nav_host_fragment_container)\r\n        navController.navigate(R.id.fragment_carrito)\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/MainActivity.kt b/app/src/main/java/com/example/ecogaia/MainActivity.kt
+--- a/app/src/main/java/com/example/ecogaia/MainActivity.kt	(revision 5cadee87ba7b28d67e57c0b4b918ff9bda9c51f9)
++++ b/app/src/main/java/com/example/ecogaia/MainActivity.kt	(date 1684523981366)
+@@ -2,6 +2,7 @@
+ 
+ import android.content.Intent
+ import android.os.Bundle
++import android.util.Log
+ import android.view.Menu
+ import android.view.MenuItem
+ import android.view.View
+@@ -14,11 +15,11 @@
+ import androidx.navigation.ui.AppBarConfiguration
+ import androidx.navigation.ui.setupActionBarWithNavController
+ import androidx.navigation.ui.setupWithNavController
+-<<<<<<< HEAD
++import com.android.volley.Request
++import com.android.volley.toolbox.StringRequest
++import com.android.volley.toolbox.Volley
+ import com.denzcoskun.imageslider.ImageSlider
+-=======
+ import com.example.ecogaia.UI.fragment_favoritos
+->>>>>>> f50b66b07ba8e3822747cc2f43fe0c27f3cffe6f
+ import com.google.android.material.bottomnavigation.BottomNavigationView
+ 
+ class MainActivity : AppCompatActivity() {
+@@ -110,5 +111,17 @@
+         val navController = Navigation.findNavController(this,R.id.nav_host_fragment_container)
+         navController.navigate(R.id.fragment_carrito)
+     }
++
++    fun del_fav (view: View){
++        val codigo : Int = 1
++        val url = "http://192.168.43.209:8080/eliminarFavoritos/$codigo"
++        val queue = Volley.newRequestQueue(this)
++        val stringRequest = StringRequest(Request.Method.DELETE, url, { response ->
++            Log.w("RES",response.toString())
++        }, { error ->
++            Log.w("jsonError", error)
++        })
++        queue.add(stringRequest)
++    }
+ }
+ 
