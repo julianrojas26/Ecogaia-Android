@@ -15,7 +15,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/shape"
+            android:background="@drawable/shape_form2"
             android:layout_margin="20dp"
             android:layout_gravity="center">
             <ImageView
@@ -61,7 +61,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:indeterminateTint="@color/verde"/>
+                    android:indeterminateTint="@color/beige"/>
 
             </RelativeLayout>
 

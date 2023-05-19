@@ -3,14 +3,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="fondo">#B4DBBB</color>
-    <color name="verde">#EEF2E6</color>
-    <color name="verde_detalles">#296600</color>
+    <color name="beige">#EEF2E6</color>
+    <color name="verde_iconos">#296600</color>
     <color name="azul_icono">#00ada4</color>
     <color name="gris_letras">#999999</color>
     <color name="verde_botones">#A8D977</color>
     <color name="fondorecylcer">#C2FF99</color>
     <color name="transparent">#00FFFFFF</color>
-    <color name="gris">#609966</color>
+    <color name="verde_claro">#609966</color>
     <color name="gray">#bababa</color>
 
 </resources>

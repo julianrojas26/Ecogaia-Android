@@ -19,7 +19,7 @@
             <Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
-                android:background="@color/verde">
+                android:background="@color/beige">
 
                 <ImageView
                     android:layout_width="230dp"
@@ -99,7 +99,7 @@
                 android:background="@drawable/shape_form2"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:textColor="@color/verde_detalles"
+                android:textColor="@color/verde_claro"
                 android:layout_marginTop="20dp"
                 android:onClick="clickAddProducts"
                 android:text="Agregar"></Button>

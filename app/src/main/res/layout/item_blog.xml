@@ -29,7 +29,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="35dp"
-                android:textColor="@color/gris"
+                android:textColor="@color/verde_claro"
                 android:textSize="17dp">
             </TextView>
             <LinearLayout

@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:hint="Buscar"
             android:inputType="text"
-            android:textColor="@color/verde_detalles" />
+            android:textColor="@color/verde_claro" />
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -54,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:indeterminateTint="@color/verde"/>
+            android:indeterminateTint="@color/verde_claro"/>
 
     </RelativeLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton

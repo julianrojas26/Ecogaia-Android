@@ -18,7 +18,7 @@
             android:background="@drawable/shape_form"
             android:id="@+id/btninicio"
             android:layout_width="65dp"
-            android:textColor="@color/gris"
+            android:textColor="@color/verde_claro"
             android:layout_height="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
@@ -73,7 +73,7 @@
                     android:background="@drawable/shape_form"
                     android:onClick="clickAddUsuario"
                     android:text="Agregar"
-                    android:textColor="@color/gris"/>
+                    android:textColor="@color/verde_claro"/>
 
             </LinearLayout>
         </LinearLayout>

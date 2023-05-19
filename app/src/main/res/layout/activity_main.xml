@@ -13,7 +13,7 @@
         <Toolbar
             android:layout_width="match_parent"
             android:layout_height="90dp"
-            android:background="@color/verde">
+            android:background="@color/beige">
 
             <ImageView
                 android:layout_width="230dp"
@@ -62,10 +62,9 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_alignParentBottom="true"
-            app:backgroundTint="@color/verde"
+            app:backgroundTint="@color/beige"
             app:itemIconSize="30dp"
-            app:itemIconTint="@color/gris"
-
+            app:itemIconTint="@color/verde_claro"
             app:menu="@menu/menu">
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>

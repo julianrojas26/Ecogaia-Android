@@ -28,7 +28,7 @@
                 android:layout_marginLeft="10dp"
                 android:inputType="text"
 
-                android:textColor="@color/verde_detalles" />
+                android:textColor="@color/verde_iconos" />
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -89,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:indeterminateTint="@color/verde"/>
+            android:indeterminateTint="@color/verde_iconos"/>
 
     </RelativeLayout>
 

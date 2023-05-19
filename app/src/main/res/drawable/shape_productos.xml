@@ -3,7 +3,7 @@
 
    <stroke
 
-       android:color="@color/verde_detalles"
+       android:color="@color/verde_iconos"
        android:width="1dp">
    </stroke>
 

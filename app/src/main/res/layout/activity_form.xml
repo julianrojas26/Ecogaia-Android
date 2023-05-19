@@ -15,7 +15,6 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/shape_form"
         android:paddingLeft="15dp"
-
         android:paddingTop="40dp"
         android:paddingRight="15dp"
         android:paddingBottom="40dp">
@@ -47,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Ingresa tu usuario"
                     android:inputType="text"
-                    android:textColor="@color/verde_detalles" />
+                    android:textColor="@color/verde_claro" />
             </LinearLayout>
 
             <LinearLayout
@@ -75,7 +74,7 @@
                 android:layout_gravity="right"
                 android:layout_marginBottom="20dp"
                 android:text="Recuperar contraseña"
-                android:textColor="@color/verde_detalles"
+                android:textColor="@color/verde_claro"
                 android:textSize="10dp">
 
             </TextView>
@@ -84,12 +83,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@drawable/shape_form2"
+                android:background="@drawable/shape_form"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:text="Inicia sesion"
-                android:textColor="@color/verde_detalles"></Button>
+                android:textColor="@color/verde_claro"></Button>
         </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout

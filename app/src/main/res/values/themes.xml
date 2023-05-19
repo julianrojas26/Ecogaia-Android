@@ -3,7 +3,7 @@
     <style name="Theme.ECOGAIA" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/fondo</item>
-        <item name="colorPrimaryDark">@color/verde</item>
+        <item name="colorPrimaryDark">@color/beige</item>
         <item name="colorAccent">@color/white</item>
         <!-- Customize your theme here. -->
     </style>
@@ -20,10 +20,10 @@
     <style name="FullScreenDialogStyle" parent="Theme.MaterialComponents.DayNight.Dialog">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/fondo</item>
-        <item name="colorPrimaryVariant">@color/verde</item>
+        <item name="colorPrimaryVariant">@color/beige</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/verde</item>
+        <item name="colorSecondary">@color/beige</item>
         <item name="colorSecondaryVariant">@color/fondo</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
