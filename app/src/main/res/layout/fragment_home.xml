@@ -45,11 +45,12 @@
                     android:layout_centerHorizontal="true">
 
                     <ImageButton
-                        android:id="@+id/imagebutton"
+                        android:id="@+id/btnMascotas"
                         android:layout_width="350dp"
                         android:layout_height="250dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/puppy"></ImageButton>
+                        android:src="@drawable/puppy"
+                        android:onClick="clickAddUsuario"/>
 
                     <TextView
                         android:layout_width="350dp"
@@ -79,12 +80,11 @@
                     android:layout_centerHorizontal="true">
 
                     <ImageButton
+                        android:id="@+id/btnMaquillaje"
                         android:layout_width="350dp"
                         android:layout_height="250dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/makeup" >
-
-                    </ImageButton>
+                        android:src="@drawable/makeup" />
 
                     <TextView
                         android:layout_width="350dp"
@@ -114,12 +114,11 @@
                     android:layout_centerHorizontal="true">
 
                     <ImageButton
+                        android:id="@+id/btnHogar"
                         android:layout_width="350dp"
                         android:layout_height="250dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/soap" >
-
-                    </ImageButton>
+                        android:src="@drawable/soap"/>
 
                     <TextView
                         android:layout_width="350dp"
@@ -149,12 +148,11 @@
                     android:layout_centerHorizontal="true">
 
                     <ImageButton
+                        android:id="@+id/btnPersonal"
                         android:layout_width="350dp"
                         android:layout_height="250dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/hygiene" >
-
-                    </ImageButton>
+                        android:src="@drawable/hygiene"/>
 
                     <TextView
                         android:layout_width="350dp"

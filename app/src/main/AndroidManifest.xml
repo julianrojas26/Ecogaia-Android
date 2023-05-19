@@ -27,6 +27,9 @@
             android:name=".Activity_agregarProducto"
             android:exported="false" />
         <activity
+            android:name=".fragment_categorias"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

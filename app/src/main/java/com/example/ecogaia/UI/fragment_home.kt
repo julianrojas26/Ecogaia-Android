@@ -1,39 +1,24 @@
 package com.example.ecogaia
-
-import android.media.Image
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.models.SlideModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class fragment_home : Fragment() {
-
-
+    private lateinit var intent: Intent;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val imageList = ArrayList<SlideModel>()
 
         imageList.add(SlideModel("https://cdn.pixabay.com/photo/2017/03/27/14/09/black-cat-2178983_1280.jpg", "Gato negro"))
@@ -45,29 +30,39 @@ class fragment_home : Fragment() {
         val imageSlider = ll.findViewById<ImageSlider>(R.id.image_slider)
         imageSlider.setImageList(imageList)
 
+        val categoryMascotas = ll.findViewById<ImageButton>(R.id.btnMascotas)
+        val categoryMaquillaje = ll.findViewById<ImageButton>(R.id.btnMaquillaje)
+        val categoryHogar = ll.findViewById<ImageButton>(R.id.btnHogar)
+        val categoryPersonal = ll.findViewById<ImageButton>(R.id.btnPersonal)
+
+
+        categoryMascotas.setOnClickListener(){
+            intent = Intent(this.context, fragment_categorias::class.java)
+            intent.putExtra("Categoria", "Mascotas")
+            startActivity(intent)
+        }
+
+        categoryMaquillaje.setOnClickListener(){
+            intent = Intent(this.context, fragment_categorias::class.java)
+            intent.putExtra("Categoria", "Maquillaje")
+            startActivity(intent)
+        }
+
+        categoryHogar.setOnClickListener(){
+            intent = Intent(this.context, fragment_categorias::class.java)
+            intent.putExtra("Categoria", "Hogar")
+            startActivity(intent)
+        }
+
+        categoryMascotas.setOnClickListener(){
+            intent = Intent(this.context, fragment_categorias::class.java)
+            intent.putExtra("Categoria", "Personal")
+            startActivity(intent)
+        }
+
+
         return ll
     }
 
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            fragment_home().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-
-
-    }
 }
