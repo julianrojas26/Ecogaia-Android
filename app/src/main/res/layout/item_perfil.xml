@@ -19,7 +19,7 @@
             android:layout_width="360dp"
             android:layout_height="600dp"
             android:layout_gravity="center"
-            android:background="@drawable/shape_formulario"
+            android:background="@drawable/shape_form"
             android:orientation="vertical">
 
             <LinearLayout
@@ -27,7 +27,7 @@
                 android:layout_height="130dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/shape">
+                android:background="@drawable/highico">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -141,7 +141,7 @@
                             android:layout_width="38dp"
                             android:layout_height="38dp"
                             android:layout_marginTop="10dp"
-                            android:src="@drawable/home"></ImageView>
+                            android:src="@drawable/house"></ImageView>
 
                         <TextView
                             android:id="@+id/usu_direccion"
@@ -237,7 +237,7 @@
                         android:layout_height="40dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginTop="20dp"
-                        android:background="@drawable/shape_boton"
+                        android:background="@drawable/shape_form2"
                         android:gravity="center"
                         android:text="Actualizar"
                         android:textColor="@color/black"></TextView>
@@ -247,7 +247,7 @@
                         android:layout_height="40dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginTop="20dp"
-                        android:background="@drawable/shape_boton"
+                        android:background="@drawable/shape_form2"
                         android:gravity="center"
                         android:text="Cerrar Sesion"
                         android:textColor="@color/black"></TextView>

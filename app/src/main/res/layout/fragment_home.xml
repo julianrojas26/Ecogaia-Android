@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/imagen_de_fonfo"
+    android:background="@drawable/fondo5"
     tools:context=".fragment_home">
 
     <ScrollView

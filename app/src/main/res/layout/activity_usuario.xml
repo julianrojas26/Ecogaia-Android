@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo7"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activity_usuario">
     <LinearLayout
@@ -10,16 +11,17 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <Button
-            android:background="@drawable/shape_formulario"
+            android:background="@drawable/shape_form"
             android:id="@+id/btninicio"
             android:layout_width="65dp"
-            android:textColor="@color/white"
+            android:textColor="@color/gris"
             android:layout_height="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:text="Inicio"
             android:onClick="inicio">
         </Button>
+
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,77 +49,128 @@
 
 
                 <LinearLayout
-                    android:layout_height="460dp"
-                    android:layout_width="307dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/shape_registrararcontenido"
+                    android:layout_width="300dp"
+                    android:layout_height="450dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/shape_form3"
                     android:orientation="vertical"
+                    android:layout_gravity="center"
                     android:padding="20dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/person_form"></ImageView>
+                        <EditText
+                            android:id="@+id/txtNombre"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="text"
+                            android:hint="Ingrese su Nombre"></EditText>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:background="@drawable/email"></ImageView>
+                        <EditText
+                            android:id="@+id/txtCorreo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="Ingrese su correo"
+                            android:inputType="text"></EditText>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/house"></ImageView>
+                        <EditText
+                            android:id="@+id/txtDireccion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="Direccion de residencia"
+                            android:inputType="text"></EditText>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/lock_form"></ImageView>
+                        <EditText
+                            android:id="@+id/txtContra"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="Ingrese una Contraseña"
+                            android:inputType="text"></EditText>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:background="@drawable/phone"></ImageView>
+                        <EditText
+                            android:id="@+id/txtTelefono"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="Ingrese su Telefono"
+                            android:inputType="number"></EditText>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:background="@drawable/book"></ImageView>
+                        <EditText
+                            android:id="@+id/txtrol"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="Ingrese su Rol"
+                            android:inputType="text"></EditText>
+                    </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/txtNombre"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:ems="10"
-                        android:inputType="text"
-                        android:hint="Ingrese su Nombre"></EditText>
 
-                    <EditText
-                        android:id="@+id/txtCorreo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:ems="10"
-                        android:hint="Ingrese su correo"
-                        android:inputType="text"></EditText>
-
-                    <EditText
-                        android:id="@+id/txtDireccion"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:ems="10"
-                        android:hint="Direccion de residencia"
-                        android:inputType="text"></EditText>
-
-                    <EditText
-                        android:id="@+id/txtContra"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:ems="10"
-                        android:hint="Ingrese una Contraseña"
-                        android:inputType="text"></EditText>
-
-                    <EditText
-                        android:id="@+id/txtTelefono"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:ems="10"
-                        android:hint="Ingrese su Telefono"
-                        android:inputType="number"></EditText>
-                    <EditText
-                        android:id="@+id/txtrol"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:ems="10"
-                        android:hint="rol"
-                        android:inputType="text"></EditText>
 
                     <Button
                         android:id="@+id/btnReg"
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
+                        android:layout_width="120dp"
+                        android:layout_height="35dp"
                         android:layout_marginTop="20dp"
                         android:layout_gravity="center"
-                        android:background="@drawable/shape_formulario"
+                        android:background="@drawable/shape_form2"
                         android:onClick="clickAddUsuario"
                         android:text="Registrarse"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/gris"/>
 
                 </LinearLayout>
             </LinearLayout>

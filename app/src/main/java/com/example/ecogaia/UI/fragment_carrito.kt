@@ -35,7 +35,7 @@ class fragment_carrito : Fragment(), CarritoListener {
     ): View? {
         Log.d("CarritoFragment", "Entered to onCreateView")
         val ll = inflater.inflate(R.layout.fragment_carrito, container, false)
-        val url = "http://192.168.90.2:8080/listarCotizacion"
+        val url = "http:// 192.168.110.131:8080/listarCotizacion"
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->

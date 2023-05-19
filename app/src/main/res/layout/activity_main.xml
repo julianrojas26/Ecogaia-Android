@@ -13,7 +13,7 @@
         <Toolbar
             android:layout_width="match_parent"
             android:layout_height="90dp"
-            android:background="@color/fondo">
+            android:background="@color/verde">
 
             <ImageView
                 android:layout_width="230dp"
@@ -26,6 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/menu"
+
                 android:layout_marginLeft="30dp">
             </ImageView>
 
@@ -63,7 +64,7 @@
             android:layout_alignParentBottom="true"
             app:backgroundTint="@color/verde"
             app:itemIconSize="30dp"
-            app:itemIconTint="@color/white"
+            app:itemIconTint="@color/gris"
 
             app:menu="@menu/menu">
 

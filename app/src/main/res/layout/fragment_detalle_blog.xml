@@ -14,7 +14,7 @@
         <LinearLayout
             android:layout_width="350dp"
             android:layout_height="450dp"
-            android:background="@drawable/shape_productos"
+            android:background="@drawable/shape_form2"
             android:layout_gravity="center"
             android:orientation="vertical">
             <com.google.android.material.appbar.AppBarLayout
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:text="Nombre Usuario"
-                android:textColor="@color/verde"
+                android:textColor="@color/gris"
                 android:textSize="23dp"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center"
@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:text="Titulo"
-                android:textColor="@color/verde"
+                android:textColor="@color/gris"
                 android:textSize="23dp"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center"
@@ -86,6 +86,7 @@
                android:layout_gravity="center">
                <TextView
                    android:id = "@+id/descripcion_tip"
+                   android:layout_marginTop="15dp"
                    android:layout_width="300dp"
                    android:layout_height="match_parent"
                    android:text="@string/usuario"
