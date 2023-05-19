@@ -34,7 +34,7 @@ class activity_usuario : AppCompatActivity() {
     }
 
     fun clickAddUsuario(view: View) {
-        val url = "http://192.168.90.2:8080/insertarUsuario"
+        val url = "http://192.168.252.170:8080/insertarUsuario"
         val queue = Volley.newRequestQueue(this)
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response ->
@@ -54,7 +54,6 @@ class activity_usuario : AppCompatActivity() {
                 params.put("rol", txtRol?.text.toString())
                 return params
                 Log.e("params", "$params")
-
             }
         }
         val con = resultadoPost.bodyContentType
@@ -62,7 +61,7 @@ class activity_usuario : AppCompatActivity() {
         queue.add(resultadoPost)
     }
 
-    fun inicio(view: View) {
+    fun inicio(view: View?) {
         val i = Intent(this, MainActivity::class.java).apply {  }
         startActivity(i)
     }

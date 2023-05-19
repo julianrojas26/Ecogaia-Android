@@ -49,7 +49,7 @@ class fragment_detalleProductos : DialogFragment() {
 
         this.nombre_prod.text = tips.getString("prod_Nombre")
         this.categoria_prod.text = tips.getString("prod_Categoria")
-        this.precio_prod.text = tips.getString("prod_Precio")
+        this.precio_prod.text = tips.getString("favoritos")
     }
 
     override fun onStart() {

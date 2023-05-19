@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         bottonNav.setupWithNavController(navController)
     }
 
-    fun addProduct() {
+    fun addProduct(view: View?) {
         val i = Intent(this, Activity_agregarProducto::class.java).apply {  }
         startActivity(i)
     }
@@ -90,7 +90,6 @@ class MainActivity : AppCompatActivity() {
         navController.navigate(R.id.fragment_favoritos)
     }
 
-
     fun nosotros () {
         val navController = Navigation.findNavController(this,R.id.nav_host_fragment_container)
         navController.navigate(R.id.fragment_nosotros)
@@ -105,5 +104,6 @@ class MainActivity : AppCompatActivity() {
         val navController = Navigation.findNavController(this,R.id.nav_host_fragment_container)
         navController.navigate(R.id.fragment_carrito)
     }
+
 }
 
