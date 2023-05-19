@@ -1,0 +1,16 @@
+Index: app/src/main/res/menu/overflow.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<menu xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\">\r\n\r\n    <item\r\n        android:id=\"@+id/item1\"\r\n        android:icon=\"@drawable/carrito_pro\"\r\n        android:title=\"Inicio de sesion\"\r\n        app:showAsAction=\"never\" />\r\n\r\n    <item\r\n        android:id=\"@+id/item2\"\r\n        android:title=\"Registro\"\r\n        android:icon=\"@drawable/book\"\r\n        app:showAsAction=\"never\"/>\r\n\r\n</menu>
+===================================================================
+diff --git a/app/src/main/res/menu/overflow.xml b/app/src/main/res/menu/overflow.xml
+--- a/app/src/main/res/menu/overflow.xml	
++++ b/app/src/main/res/menu/overflow.xml	
+@@ -1,7 +1,6 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <menu xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:android="http://schemas.android.com/apk/res/android">
+-
+     <item
+         android:id="@+id/item1"
+         android:icon="@drawable/carrito_pro"
