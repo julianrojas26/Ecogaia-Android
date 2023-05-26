@@ -1,6 +1,5 @@
 package com.example.ecogaia
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -12,47 +11,45 @@ import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 
-class activity_agregar_blog : AppCompatActivity() {
-    var id: EditText? = null
-    var nombre: EditText? = null
-    var titulo: EditText? = null
-    var cuerpo: EditText? = null
+class activity_agregar_producto : AppCompatActivity() {
+    var txtNombre: EditText? = null
+    var txtPrecio: EditText? = null
+    var txtCantidad: EditText? = null
+    var txtCategoria: EditText? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_agregar_blog)
+        setContentView(R.layout.activity_agregar_producto)
 
-        id = findViewById(R.id.id)
-        nombre = findViewById(R.id.textNombre)
-        titulo = findViewById(R.id.texttitulo)
-        cuerpo = findViewById(R.id.textcuerpo)
+        txtNombre = findViewById(R.id.txtNom)
+        txtPrecio = findViewById(R.id.txtPrecio)
+        txtCantidad = findViewById(R.id.txtCant)
+        txtCategoria = findViewById(R.id.txtCategoria)
     }
 
     fun clickAddProducts(view: View) {
-        val url = "http://192.168.0.11:8080/insertarTip"
+        val url = "http://192.168.0.11:8080/insertarProducto"
         val queue = Volley.newRequestQueue(this)
         val resultPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response ->
-                Toast.makeText(this, "Tip Creado exitosamente", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Producto Creado exitosamente", Toast.LENGTH_LONG).show()
             }, Response.ErrorListener { error ->
-                Toast.makeText(this, "Tip No Creado $error", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Producto No Creado $error", Toast.LENGTH_LONG).show()
             }
         ) {
             override fun getParams(): MutableMap<String, String>? {
                 val params = HashMap<String, String>()
 
-                params.put("comp_usuario", nombre?.text.toString())
-                params.put("titulo", titulo?.text.toString())
-                params.put("cuerpo", cuerpo?.text.toString())
-                params.put("usuario", id?.text.toString())
+                params.put("prod_Precio", txtPrecio?.text.toString())
+                params.put("prod_Nombre", txtNombre?.text.toString())
+                params.put("prod_Cantidad", txtCantidad?.text.toString())
+                params.put("prod_Categoria", txtCategoria?.text.toString())
                 Log.e("params", "$params")
                 return params
-
             }
         }
         queue.add(resultPost)
-
-        val i = Intent(this, MainActivity::class.java).apply { }
-        startActivity(i)
     }
+
+
 }

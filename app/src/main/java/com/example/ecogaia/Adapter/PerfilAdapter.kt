@@ -1,4 +1,4 @@
-package com.example.ecogaia.adapter
+package com.example.ecogaia.Adapter
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ecogaia.R
 import org.json.JSONObject
 
-class PerfilAdapter(private val perfilList: ArrayList<JSONObject>): RecyclerView.Adapter<PerfilAdapter.ViewHoler>() {
-    inner class ViewHoler(view: View): RecyclerView.ViewHolder(view) {
+class PerfilAdapter(private val perfilList: ArrayList<JSONObject>) :
+    RecyclerView.Adapter<PerfilAdapter.ViewHoler>() {
+    inner class ViewHoler(view: View) : RecyclerView.ViewHolder(view) {
         var usu_nombre: TextView = view.findViewById(R.id.usu_nombre)
         var usu_correo: TextView = view.findViewById(R.id.usu_correo)
         var usu_direccion: TextView = view.findViewById(R.id.usu_direccion)
@@ -26,7 +27,7 @@ class PerfilAdapter(private val perfilList: ArrayList<JSONObject>): RecyclerView
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= ViewHoler (
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHoler(
         LayoutInflater.from(parent.context).inflate(R.layout.item_perfil, parent, false)
     )
 
@@ -34,11 +35,10 @@ class PerfilAdapter(private val perfilList: ArrayList<JSONObject>): RecyclerView
 
     override fun onBindViewHolder(holder: ViewHoler, position: Int) {
         val tips = perfilList[position]
-
         try {
             holder.bind(tips)
         } catch (e: Exception) {
-            Log.w("ERROR", "NO")
+            Log.w("ERROR", e)
         }
     }
 

@@ -19,7 +19,7 @@
         android:id="@+id/logo"
         android:enabled="false"
         android:icon="@drawable/icono_final"
-        android:title="i">
+        android:title="">
     </item>
 
     <item
