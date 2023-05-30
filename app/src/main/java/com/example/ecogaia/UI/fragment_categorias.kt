@@ -25,7 +25,7 @@ class fragment_categorias : Fragment(), ProductosListener {
     private lateinit var viewAlpha: View
     private lateinit var pgbar: ProgressBar
     private lateinit var rlProductList: RelativeLayout
-    private lateinit var productos: ArrayList<JSONObject>
+    private lateinit var producto: ArrayList<JSONObject>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,16 +39,16 @@ class fragment_categorias : Fragment(), ProductosListener {
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
             val jsonArray = JSONArray(response)
-            this.productos = ArrayList()
+            this.producto = ArrayList()
             try {
                 var i = 0
                 val l = jsonArray.length()
                 while (i < l) {
-                    productos += (jsonArray[i] as JSONObject)
+                    producto += (jsonArray[i] as JSONObject)
                     i++
                 }
-                Log.d("CATEGORIAS", this.productos.toString())
-                this.recycler.adapter= ProductosAdaptador(this.context,this.productos, this)
+                Log.d("CATEGORIAS", this.producto.toString())
+                this.recycler.adapter= ProductosAdaptador(this.context,this.producto, this)
                 this.viewAlpha.visibility= View.INVISIBLE
                 this.pgbar.visibility = View.INVISIBLE
             }catch (e:JSONException) {
