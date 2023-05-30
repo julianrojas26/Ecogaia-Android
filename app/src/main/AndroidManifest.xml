@@ -24,10 +24,7 @@
             android:name=".activity_usuario"
             android:exported="false" />
         <activity
-            android:name=".Activity_agregarProducto"
-            android:exported="false" />
-        <activity
-            android:name=".fragment_categorias"
+            android:name=".activity_agregar_producto"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

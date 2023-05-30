@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools2="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/margin_20"
-    android:layout_marginEnd="@dimen/margin_20"
-    android:layout_marginTop="@dimen/margin_20">
+    android:layout_marginTop="@dimen/margin_20"
+    android:layout_marginEnd="@dimen/margin_20">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -40,19 +38,19 @@
                 </ImageView>
 
             </LinearLayout>
+
             <Button
+                android:id="@+id/btnFavoritos"
                 android:layout_width="110dp"
                 android:layout_height="40dp"
                 android:layout_gravity="right"
                 android:layout_margin="20dp"
-                android:id="@+id/btnFavoritos"
                 android:background="@drawable/shape_form"
                 android:gravity="center"
+                android:onClick="favoritos"
                 android:padding="10dp"
                 android:text="Favoritos"
-                android:textColor="@color/verde_claro"
-                android:onClick="favoritos"
-                >
+                android:textColor="@color/verde_claro">
 
             </Button>
 
@@ -72,14 +70,13 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="25dp">
-
+                        android:layout_marginTop="25dp"
+                        android:orientation="horizontal">
 
                         <ImageView
                             android:layout_width="38dp"
                             android:layout_height="38dp"
-                            android:src="@drawable/person"></ImageView>
+                            android:src="@drawable/person_form"></ImageView>
 
                         <TextView
                             android:id="@+id/usu_nombre"
@@ -228,8 +225,8 @@
                 </LinearLayout>
 
 
-
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -243,7 +240,7 @@
                     android:background="@drawable/shape_form"
                     android:gravity="center"
                     android:text="Actualizar"
-                    android:textColor="@color/verde_claro"></TextView>
+                    android:textColor="@color/verde_claro" />
 
                 <TextView
                     android:layout_width="110dp"
