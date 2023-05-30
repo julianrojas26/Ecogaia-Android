@@ -10,7 +10,7 @@
     <GridView
         android:id="@+id/categoria_recycler"
         android:layout_width="wrap_content"
-        android:layout_height="670dp"
+        android:layout_height="669dp"
         android:layout_marginTop="80dp"
         android:columnWidth="150dp"
         android:numColumns="2"
