@@ -4,6 +4,17 @@
 
 
     <item
+        android:id="@+id/item1"
+        android:icon="@drawable/carrito_pro"
+        android:title="Inicio de sesion"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/item2"
+        android:title="Registro"
+        android:icon="@drawable/book"
+        app:showAsAction="never"/>
+    <item
         android:id="@+id/item3"
         android:title="Nosotros"
         android:icon="@drawable/person"

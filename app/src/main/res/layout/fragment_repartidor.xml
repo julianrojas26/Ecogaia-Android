@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.fragment_repartidor"
+    android:background="@drawable/fondo7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_carrito"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="15dp"
+            android:padding="5dp"            >
+            <EditText
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:hint="Buscar"
+                android:layout_marginLeft="10dp"
+                android:inputType="text"
+
+                android:textColor="@color/verde_detalles" />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/buscar">
+
+            </ImageView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
