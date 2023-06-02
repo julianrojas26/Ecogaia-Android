@@ -57,7 +57,7 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="144dp"
                         android:alpha="0.8"
-                        android:background="@color/verde"
+                        android:background="@color/beige"
                         android:gravity="center"
                         android:text="Mascotas"
                         android:textColor="@color/black"
@@ -88,14 +88,14 @@
                     <TextView
                         android:layout_width="300dp"
                         android:layout_height="50dp"
-                        android:alpha="0.8"
-                        android:gravity="center"
                         android:layout_gravity="center"
+                        android:layout_marginTop="144dp"
+                        android:alpha="0.8"
+                        android:background="@color/beige"
+                        android:gravity="center"
                         android:text="Maquillaje"
                         android:textColor="@color/black"
-                        android:background="@color/verde"
-                        android:textSize="30sp"
-                        android:layout_marginTop="144dp"/>
+                        android:textSize="30sp" />
 
                 </RelativeLayout>
 
@@ -127,7 +127,7 @@
                         android:layout_gravity="center"
                         android:text="Aseo Hogar"
                         android:textColor="@color/black"
-                        android:background="@color/verde"
+                        android:background="@color/beige"
                         android:textSize="30sp"
                         android:layout_marginTop="144dp"/>
 
@@ -162,7 +162,7 @@
                         android:layout_gravity="center"
                         android:text="Higiene Personal"
                         android:textColor="@color/black"
-                        android:background="@color/verde"
+                        android:background="@color/beige"
                         android:textSize="30sp"
                         android:layout_marginTop="144dp"/>
 

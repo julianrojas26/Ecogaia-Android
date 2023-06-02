@@ -26,14 +26,14 @@
         android:icon="@drawable/start"
         app:showAsAction="never" />
 
-    <item android:id="@+id/item5"
-        android:title="Categorias"
-        android:icon="@drawable/book"
-        app:showAsAction="never" />
-
     <item android:id="@+id/item6"
         android:title="Carrito"
         android:icon="@drawable/carrito"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/item7"
+        android:title="Repartidor"
+        android:icon="@drawable/person"
         app:showAsAction="never" />
 
 </menu>

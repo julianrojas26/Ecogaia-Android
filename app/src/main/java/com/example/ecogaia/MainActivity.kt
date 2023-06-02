@@ -14,7 +14,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MainActivity : AppCompatActivity() {|
+class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarCondiguration: AppBarConfiguration
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,7 +67,6 @@ class MainActivity : AppCompatActivity() {|
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.leftoverflow, menu)
-        menuInflater.inflate(R.menu.rightverflow, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -90,16 +89,18 @@ class MainActivity : AppCompatActivity() {|
                 navController.navigate(R.id.fragment_nosotros)
             }
             R.id.item4 -> favoritos(null)
-            R.id.item5 -> {
-                val navController =
-                    Navigation.findNavController(this, R.id.nav_host_fragment_container)
-                navController.navigate(R.id.fragment_categorias)
-            }
+
             R.id.item6 -> {
                 val navController =
                     Navigation.findNavController(this, R.id.nav_host_fragment_container)
                 navController.navigate(R.id.fragment_carrito)
             }
+            R.id.item7 -> {
+                val navController =
+                    Navigation.findNavController(this, R.id.nav_host_fragment_container)
+                navController.navigate(R.id.fragment_repartidor)
+            }
+
         }
         return super.onOptionsItemSelected(item)
     }
