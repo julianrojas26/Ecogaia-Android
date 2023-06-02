@@ -11,7 +11,7 @@ import androidx.fragment.app.DialogFragment
 import com.example.ecogaia.R
 import org.json.JSONObject
 
-class fragment_detalleProductos : DialogFragment() {
+class fragment_detalle_productos : DialogFragment() {
     private lateinit var tbProdDets: Toolbar
     private lateinit var nombre_prod: TextView
     private lateinit var categoria_prod: TextView
@@ -44,6 +44,7 @@ class fragment_detalleProductos : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val Usuario: String = "7"
         this.tbProdDets.navigationIcon = ContextCompat.getDrawable(view.context, R.drawable.close)
 
         val tips = JSONObject(arguments?.getString("productos"))
