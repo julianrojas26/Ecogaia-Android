@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import androidx.core.os.bundleOf
@@ -36,7 +37,7 @@ class fragment_blog : Fragment(), BlogListener {
     ): View? {
         val ll = inflater.inflate(R.layout.fragment_blog, container, false)
 
-        val url = "http://192.168.0.11:8080/listarTip"
+        val url = "http://192.168.51.2:8080/listarTip"
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->

@@ -34,7 +34,7 @@
 
     <dialog
         android:id="@+id/fragment_detalleProductos"
-        android:name="com.example.ecogaia.UI.fragment_detalleProductos"
+        android:name="com.example.ecogaia.UI.fragment_detalle_productos"
         android:label="fragment_detalle_productos"
         tools:layout="@layout/fragment_detalle_productos" />
 
