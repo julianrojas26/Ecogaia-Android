@@ -34,9 +34,12 @@ class fragment_favoritos : Fragment(), FavoritosListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
+        val bundle = activity?.intent?.extras
+        val ip = bundle!!.getString("url").toString()
+        val user = JSONObject(bundle!!.getString("user"))
+
         val ll = inflater.inflate(R.layout.fragment_favoritos, container, false)
-        val id_Usuario = "17"
-        val url = "http://192.168.51.2:8080/favoritosUsuario/"+id_Usuario
+        val url = ip +"favoritosUsuario/"+ user.getString("res")
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->

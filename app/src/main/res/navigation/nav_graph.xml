@@ -69,7 +69,7 @@
         android:id="@+id/fragment_login"
         android:name="com.example.ecogaia.fragment_login"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login"/>
     <fragment
         android:id="@+id/fragment_carrito"
         android:name="com.example.ecogaia.UI.fragment_carrito"

@@ -2,6 +2,7 @@ package com.example.ecogaia
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -13,9 +14,13 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarCondiguration: AppBarConfiguration
+    private lateinit var user: JSONObject
+    private lateinit var url: String
+    private lateinit var bundle: Bundle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,6 +31,13 @@ class MainActivity : AppCompatActivity() {
         appBarCondiguration = AppBarConfiguration(navController.graph)
         setupActionBar(navController, appBarCondiguration)
         setupBottonNavMenu(navController)
+        /// Session
+        bundle = Bundle()
+        this.user = JSONObject(intent.getStringExtra("user").toString())
+        this.url = "http://192.168.0.11:8080/"
+        bundle.putString("user", this.user.toString())
+        bundle.putString("url", this.url)
+        intent.putExtras(bundle)
     }
 
     private fun setupActionBar(
@@ -54,6 +66,7 @@ class MainActivity : AppCompatActivity() {
 
     fun addBlog(view: View) {
         val i = Intent(this, activity_agregar_blog::class.java).apply { }
+        i.putExtras(bundle)
         startActivity(i)
     }
 
@@ -66,7 +79,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.leftoverflow, menu)
-        menuInflater.inflate(R.menu.rightverflow, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -74,15 +86,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.item1 -> {
-                val navController =
-                    Navigation.findNavController(this, R.id.nav_host_fragment_container)
-                navController.navigate(R.id.fragment_login)
-            }
-            R.id.item2 -> {
-                val i = Intent(this, activity_usuario::class.java).apply { }
-                startActivity(i)
-            }
             R.id.item3 -> {
                 val navController =
                     Navigation.findNavController(this, R.id.nav_host_fragment_container)
