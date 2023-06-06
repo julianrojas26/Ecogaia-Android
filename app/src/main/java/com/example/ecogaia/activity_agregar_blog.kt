@@ -1,6 +1,5 @@
 package com.example.ecogaia
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -11,9 +10,9 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import org.json.JSONObject
 
 class activity_agregar_blog : AppCompatActivity() {
-    var id: EditText? = null
     var nombre: EditText? = null
     var titulo: EditText? = null
     var cuerpo: EditText? = null
@@ -21,15 +20,20 @@ class activity_agregar_blog : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_blog)
-
-        id = findViewById(R.id.id)
         nombre = findViewById(R.id.textNombre)
         titulo = findViewById(R.id.texttitulo)
         cuerpo = findViewById(R.id.textcuerpo)
     }
 
     fun clickAddProducts(view: View) {
-        val url = "http://192.168.51.2:8080/insertarTip"
+        val bundle = intent.extras
+        val ip = bundle!!.getString("url").toString()
+        val user = JSONObject(bundle!!.getString("user"))
+
+        Log.w("user", user.toString())
+        Log.w("url", ip)
+
+        val url = ip +"insertarTip/" + user.getString("res")
         val queue = Volley.newRequestQueue(this)
         val resultPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response ->
@@ -40,19 +44,14 @@ class activity_agregar_blog : AppCompatActivity() {
         ) {
             override fun getParams(): MutableMap<String, String>? {
                 val params = HashMap<String, String>()
-
                 params.put("comp_usuario", nombre?.text.toString())
                 params.put("titulo", titulo?.text.toString())
                 params.put("cuerpo", cuerpo?.text.toString())
-                params.put("usuario", id?.text.toString())
+                params.put("usuario", "0")
                 Log.e("params", "$params")
                 return params
-
             }
         }
         queue.add(resultPost)
-
-        val i = Intent(this, MainActivity::class.java).apply { }
-        startActivity(i)
     }
 }
