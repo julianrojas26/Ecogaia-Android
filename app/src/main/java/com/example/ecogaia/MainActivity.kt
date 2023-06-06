@@ -17,6 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var appBarCondiguration: AppBarConfiguration
     private lateinit var user: JSONObject
     private lateinit var url: String
@@ -34,7 +35,11 @@ class MainActivity : AppCompatActivity() {
         /// Session
         bundle = Bundle()
         this.user = JSONObject(intent.getStringExtra("user").toString())
+<<<<<<< HEAD
         this.url = "http://192.168.215.131:8080/"
+=======
+        this.url = "http://192.168.215.97:8080/"
+>>>>>>> 4ce9fac5b1684548835585d063a40ef1a4d95b7a
         bundle.putString("user", this.user.toString())
         bundle.putString("url", this.url)
         intent.putExtras(bundle)
@@ -92,16 +97,18 @@ class MainActivity : AppCompatActivity() {
                 navController.navigate(R.id.fragment_nosotros)
             }
             R.id.item4 -> favoritos(null)
-            R.id.item5 -> {
-                val navController =
-                    Navigation.findNavController(this, R.id.nav_host_fragment_container)
-                navController.navigate(R.id.fragment_categorias)
-            }
+
             R.id.item6 -> {
                 val navController =
                     Navigation.findNavController(this, R.id.nav_host_fragment_container)
                 navController.navigate(R.id.fragment_carrito)
             }
+            R.id.item7 -> {
+                val navController =
+                    Navigation.findNavController(this, R.id.nav_host_fragment_container)
+                navController.navigate(R.id.fragment_repartidor)
+            }
+
         }
         return super.onOptionsItemSelected(item)
     }
