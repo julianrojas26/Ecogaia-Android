@@ -14,12 +14,6 @@ import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.ecogaia.R
-<<<<<<< HEAD
-import com.example.ecogaia.adapter.PerfilAdapter
-import org.json.JSONArray
-import org.json.JSONException
-=======
->>>>>>> de9b055d9973715ce5de3e0d0a3c4c17a3146b50
 import org.json.JSONObject
 
 class fragment_perfil : Fragment() {
@@ -39,9 +33,7 @@ class fragment_perfil : Fragment() {
         val ip = bundle!!.getString("url")
 
         val ll = inflater.inflate(R.layout.fragment_perfil, container, false)
-<<<<<<< HEAD
-        val url = "http://192.168.136.131:8080/listarUsuario"
-=======
+
         this.nombre = ll.findViewById(R.id.usu_nombre)
         this.correo = ll.findViewById(R.id.usu_correo)
         this.direccion = ll.findViewById(R.id.usu_direccion)
@@ -49,7 +41,6 @@ class fragment_perfil : Fragment() {
         this.telefono = ll.findViewById(R.id.usu_telefono)
 
         val url = ip + "usuario/"+user.getString("res")
->>>>>>> de9b055d9973715ce5de3e0d0a3c4c17a3146b50
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->

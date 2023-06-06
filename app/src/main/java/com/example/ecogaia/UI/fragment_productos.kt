@@ -34,13 +34,11 @@ class fragment_productos : Fragment(), ProductosListener {
         savedInstanceState: Bundle?
     ): View? {
         val ll = inflater.inflate(R.layout.fragment_productos, container, false)
-<<<<<<< HEAD
-        val url = "http://192.168.136.131:8080/listarProducto"
-=======
+
         val bundle = activity?.intent?.extras
         val ip = bundle!!.getString("url")
         val url = ip + "listarProducto"
->>>>>>> de9b055d9973715ce5de3e0d0a3c4c17a3146b50
+
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
