@@ -4,12 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/fondo7"
     tools:context=".UI.fragment_favoritos">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="700dp"
-        android:background="@drawable/shape_formulario"
+        android:background="@drawable/shape_form"
         android:layout_margin="30dp"
         android:orientation="vertical">
         <LinearLayout
@@ -27,7 +28,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="500dp"
             android:background="@drawable/shape_carrito"
             android:layout_margin="10dp"
             android:orientation="vertical"
@@ -37,7 +38,7 @@
                 android:layout_height="470dp">
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="30dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -63,7 +64,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+<<<<<<< HEAD
             android:indeterminateTint="@color/verde_iconos"/>
+=======
+            android:indeterminateTint="@color/verde_claro"/>
+>>>>>>> de9b055d9973715ce5de3e0d0a3c4c17a3146b50
 
     </RelativeLayout>
 

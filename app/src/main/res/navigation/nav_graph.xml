@@ -34,7 +34,7 @@
 
     <dialog
         android:id="@+id/fragment_detalleProductos"
-        android:name="com.example.ecogaia.UI.fragment_detalleProductos"
+        android:name="com.example.ecogaia.UI.fragment_detalle_productos"
         android:label="fragment_detalle_productos"
         tools:layout="@layout/fragment_detalle_productos" />
 
@@ -69,7 +69,7 @@
         android:id="@+id/fragment_login"
         android:name="com.example.ecogaia.fragment_login"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login"/>
     <fragment
         android:id="@+id/fragment_carrito"
         android:name="com.example.ecogaia.UI.fragment_carrito"
