@@ -34,7 +34,7 @@ class fragment_favoritos : Fragment(), FavoritosListener {
     ): View? {
         Log.d("FavoritosFragment", "Entered to onCreateView")
         val ll = inflater.inflate(R.layout.fragment_favoritos, container, false)
-        val url = "http://192.168.212.2:8080/listarFavoritos"
+        val url = "http://192.168.136.131:8080/listarFavoritos"
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->

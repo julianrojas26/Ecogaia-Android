@@ -44,42 +44,6 @@
                     tools:listitem="@layout/item_favoritos"
                     android:id="@+id/favoritos_recycler"/>
             </ScrollView>
-<<<<<<< HEAD
-
-            <RelativeLayout
-                android:id="@+id/rl_FavoritosList"
-                android:layout_width="match_parent"
-                android:layout_height="800dp"  >
-
-                <View
-                    android:id="@+id/view_favoritosList"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:alpha="0.5"
-                    android:background="@color/verde_botones" />
-
-                <ProgressBar
-                    android:id="@+id/pgbar_favoritosList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:indeterminateTint="@color/beige"/>
-
-            </RelativeLayout>
-
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/close"
-                android:layout_gravity="end"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="18dp"/>
-
-
-
-=======
->>>>>>> 6d1977a334b19950acfa71db2774c6f0c1be50ab
         </LinearLayout>
     </LinearLayout>
     <RelativeLayout
@@ -99,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:indeterminateTint="@color/verde"/>
+            android:indeterminateTint="@color/verde_iconos"/>
 
     </RelativeLayout>
 

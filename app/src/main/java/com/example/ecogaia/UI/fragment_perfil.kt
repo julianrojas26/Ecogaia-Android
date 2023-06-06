@@ -1,12 +1,10 @@
 package com.example.ecogaia.UI
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridView
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import androidx.fragment.app.Fragment
@@ -14,10 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.ecogaia.MainActivity
 import com.example.ecogaia.R
 import com.example.ecogaia.adapter.PerfilAdapter
-import com.example.ecogaia.adapter.ProductosAdaptador
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -36,7 +32,7 @@ class fragment_perfil : Fragment() {
     ): View? {
         Log.d("ProductosFragment", "Entered to onCreateView")
         val ll = inflater.inflate(R.layout.fragment_perfil, container, false)
-        val url = "http:// 192.168.110.131:8080/listarUsuario"
+        val url = "http://192.168.136.131:8080/listarUsuario"
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
@@ -65,6 +61,7 @@ class fragment_perfil : Fragment() {
         this.rlPerfilList = ll.findViewById(R.id.rl_perfilList)
         return ll
     }
+
 
 
 }
