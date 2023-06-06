@@ -40,8 +40,12 @@ class fragment_favoritos : Fragment(), FavoritosListener {
 
         val ll = inflater.inflate(R.layout.fragment_favoritos, container, false)
 <<<<<<< HEAD
+<<<<<<< HEAD
         val id_Usuario = "17"
         val url = "http://10.190.80.156:8080/favoritosUsuario/"+id_Usuario
+=======
+        val url = "http://192.168.136.131:8080/listarFavoritos"
+>>>>>>> 06ec976461bde049ac7b595018326d6f097bb49d
 =======
         val url = ip +"favoritosUsuario/"+ user.getString("res")
 >>>>>>> de9b055d9973715ce5de3e0d0a3c4c17a3146b50

@@ -34,6 +34,9 @@ class fragment_carrito : Fragment(), CarritoListener {
         savedInstanceState: Bundle?
     ): View? {
         val ll = inflater.inflate(R.layout.fragment_carrito, container, false)
+<<<<<<< HEAD
+        val url = "http://192.168.136.131:8080/listarCotizacion"
+=======
         val id_Usuario = 9;
 <<<<<<< HEAD
         val url = "http://10.190.80.156:8080/cotizacionesUsuario/"+id_Usuario

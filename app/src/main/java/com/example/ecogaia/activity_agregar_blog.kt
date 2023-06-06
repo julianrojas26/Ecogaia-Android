@@ -25,6 +25,10 @@ class activity_agregar_blog : AppCompatActivity() {
         cuerpo = findViewById(R.id.textcuerpo)
     }
 
+<<<<<<< HEAD
+    fun clickAddProducts(view: View){
+        val url="http://192.168.136.131:8080/insertarTip"
+=======
     fun clickAddProducts(view: View) {
         val bundle = intent.extras
         val ip = bundle!!.getString("url").toString()
@@ -34,6 +38,7 @@ class activity_agregar_blog : AppCompatActivity() {
         Log.w("url", ip)
 
         val url = ip +"insertarTip/" + user.getString("res")
+>>>>>>> de9b055d9973715ce5de3e0d0a3c4c17a3146b50
         val queue = Volley.newRequestQueue(this)
         val resultPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response ->
