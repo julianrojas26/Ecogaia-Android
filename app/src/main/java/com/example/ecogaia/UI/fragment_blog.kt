@@ -40,15 +40,9 @@ class fragment_blog : Fragment(), BlogListener {
 
         val ll = inflater.inflate(R.layout.fragment_blog, container, false)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        val url = "http://10.190.80.156:8080/listarTip"
-=======
-        val url = "http://192.168.136.131:8080/listarTip"
->>>>>>> 06ec976461bde049ac7b595018326d6f097bb49d
-=======
+
         val url = ip + "listarTip"
->>>>>>> de9b055d9973715ce5de3e0d0a3c4c17a3146b50
+
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->

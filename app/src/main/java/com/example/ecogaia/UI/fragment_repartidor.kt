@@ -35,9 +35,12 @@ class fragment_repartidor : Fragment(), BlogListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val bundle = activity?.intent?.extras
+        val ip = bundle!!.getString("url")
+
         val ll = inflater.inflate(R.layout.fragment_repartidor, container, false)
 
-        val url = "http://10.190.80.156:8080//listarRepartidor"
+        val url = ip + "listarRepartidor"
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->

@@ -14,34 +14,32 @@ class RepartidorAdaptador(
     private val repartidorListener: RepartidorListener,
 ) : RecyclerView.Adapter<RepartidorAdaptador.ViewHoler>() {
     inner class ViewHoler(view: View) : RecyclerView.ViewHolder(view) {
-        var comp_Usuario: TextView = view.findViewById(R.id.Nombre)
-        var cuerpo: TextView = view.findViewById(R.id.informacion)
+
+        var dis_nombre: TextView = view.findViewById(R.id.distribuir_usuario)
+        var dis_direccion: TextView = view.findViewById(R.id.distribuir_direcion)
+        var dis_telefono: TextView = view.findViewById(R.id.distribuir_telefono)
 
 
-        fun bind(tips: JSONObject) {
-            var info: String = tips.getString("cuerpo")
+        fun bind(dis: JSONObject) {
 
-            if (info.length > 150) {
-                cuerpo.text = info.slice(0..150) + "..."
-            } else {
-                cuerpo.text = info
-            }
-            comp_Usuario.text = tips.getString("comp_usuario")
+            dis_nombre.text = dis.getString("dis_nombre")
+            dis_direccion.text = dis.getString("dis_direccion")
+            dis_telefono.text = dis.getString("dis_telefono")
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHoler(
-        LayoutInflater.from(parent.context).inflate(R.layout.item_blog, parent, false)
+        LayoutInflater.from(parent.context).inflate(R.layout.item_repartidor, parent, false)
     )
 
-    override fun getItemCount() = this.blogList.size
+    override fun getItemCount() = this.repList.size
 
     override fun onBindViewHolder(holder: ViewHoler, position: Int) {
-        val tips = blogList[position]
+        val dis = repList[position]
         try {
-            holder.bind(tips)
+            holder.bind(dis)
             holder.itemView.setOnClickListener {
-                BlogListener.onBlogListener(tips, position)
+                repartidorListener.onRepartidorListener(dis, position)
             }
         } catch (e: Exception) {
             Log.w("ERROR", e)

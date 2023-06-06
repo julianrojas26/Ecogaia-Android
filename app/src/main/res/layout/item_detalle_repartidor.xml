@@ -24,7 +24,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/nombre_distribuir"
+                android:id="@+id/item_dis_nombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -51,7 +51,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/categoria_distribuir"
+                    android:id="@+id/item_dis_cate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hogar"
@@ -77,7 +77,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/cantidad_distribuir"
+                    android:id="@+id/item_dis_cant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3"
@@ -103,7 +103,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/precio_distribuir"
+                    android:id="@+id/item_dis_precio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="$ _________"
