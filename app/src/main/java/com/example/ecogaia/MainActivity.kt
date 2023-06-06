@@ -15,10 +15,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
-<<<<<<< HEAD
 
-=======
->>>>>>> 993b6c6ce6e127c4998b788384906c7764bdf6be
     private lateinit var appBarCondiguration: AppBarConfiguration
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

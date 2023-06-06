@@ -9,7 +9,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="690dp">
+        android:layout_height="750dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,23 +45,24 @@
                     android:layout_centerHorizontal="true">
 
                     <ImageButton
-                        android:id="@+id/imagebutton"
-                        android:layout_width="300dp"
-                        android:layout_height="200dp"
+                        android:id="@+id/btnMascotas"
+                        android:layout_width="350dp"
+                        android:layout_height="250dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/puppy"></ImageButton>
+                        android:src="@drawable/puppy"
+                        android:onClick="clickAddUsuario"/>
 
                     <TextView
-                        android:layout_width="300dp"
+                        android:layout_width="350dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center"
-                        android:layout_marginTop="144dp"
+                        android:layout_marginTop="190dp"
                         android:alpha="0.8"
                         android:background="@color/beige"
                         android:gravity="center"
                         android:text="Mascotas"
                         android:textColor="@color/black"
-                        android:textSize="30sp" />
+                        android:textSize="30sp"/>
 
                 </RelativeLayout>
 
@@ -78,58 +79,23 @@
                     android:layout_centerHorizontal="true">
 
                     <ImageButton
-                        android:layout_width="300dp"
-                        android:layout_height="200dp"
+                        android:id="@+id/btnMaquillaje"
+                        android:layout_width="350dp"
+                        android:layout_height="250dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/makeup">
-
-                    </ImageButton>
+                        android:src="@drawable/makeup" />
 
                     <TextView
-                        android:layout_width="300dp"
+                        android:layout_width="350dp"
                         android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="144dp"
                         android:alpha="0.8"
-                        android:background="@color/beige"
                         android:gravity="center"
+                        android:layout_gravity="center"
                         android:text="Maquillaje"
-                        android:textColor="@color/black"
-                        android:textSize="30sp" />
-
-                </RelativeLayout>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
-
-                    <ImageButton
-                        android:layout_width="300dp"
-                        android:layout_height="200dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/soap" >
-
-                    </ImageButton>
-
-                    <TextView
-                        android:layout_width="300dp"
-                        android:layout_height="50dp"
-                        android:alpha="0.8"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:text="Aseo Hogar"
                         android:textColor="@color/black"
                         android:background="@color/beige"
                         android:textSize="30sp"
-                        android:layout_marginTop="144dp"/>
+                        android:layout_marginTop="190dp"/>
 
                 </RelativeLayout>
 
@@ -138,8 +104,7 @@
             <RelativeLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="70dp">
+                android:layout_height="match_parent">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -147,15 +112,47 @@
                     android:layout_centerHorizontal="true">
 
                     <ImageButton
-                        android:layout_width="300dp"
-                        android:layout_height="200dp"
+                        android:id="@+id/btnHogar"
+                        android:layout_width="350dp"
+                        android:layout_height="250dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/higiene" >
-
-                    </ImageButton>
+                        android:src="@drawable/soap"/>
 
                     <TextView
-                        android:layout_width="300dp"
+                        android:layout_width="350dp"
+                        android:layout_height="50dp"
+                        android:alpha="0.8"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="Aseo hogar"
+                        android:textColor="@color/black"
+                        android:background="@color/beige"
+                        android:textSize="30sp"
+                        android:layout_marginTop="190dp"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageButton
+                        android:id="@+id/btnPersonal"
+                        android:layout_width="350dp"
+                        android:layout_height="250dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/higiene" />
+
+                    <TextView
+                        android:layout_width="350dp"
                         android:layout_height="50dp"
                         android:alpha="0.8"
                         android:gravity="center"
@@ -164,7 +161,8 @@
                         android:textColor="@color/black"
                         android:background="@color/beige"
                         android:textSize="30sp"
-                        android:layout_marginTop="144dp"/>
+                        android:textStyle="bold"
+                        android:layout_marginTop="190dp"/>
 
                 </RelativeLayout>
 

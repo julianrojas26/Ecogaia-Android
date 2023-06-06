@@ -34,7 +34,7 @@ class fragment_categorias : Fragment(), ProductosListener {
     ): View? {
         val ll = inflater.inflate(R.layout.fragment_categorias, container, false)
         val categoria = arguments?.getString("Categoria")
-        val url = "http://192.168.51.2:8080/categoriasProducto/"+categoria
+        val url = "http://10.190.80.156:8080/categoriasProducto/"+categoria
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->

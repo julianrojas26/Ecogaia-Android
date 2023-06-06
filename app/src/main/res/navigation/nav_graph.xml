@@ -91,4 +91,9 @@
         android:name="com.example.ecogaia.UI.fragment_repartidor"
         android:label="fragment_repartidor"
         tools:layout="@layout/fragment_repartidor" />
+    <fragment
+        android:id="@+id/fragment_categorias"
+        android:name="com.example.ecogaia.fragment_categorias"
+        android:label="fragment_categorias"
+        tools:layout="@layout/fragment_categorias" />
 </navigation>

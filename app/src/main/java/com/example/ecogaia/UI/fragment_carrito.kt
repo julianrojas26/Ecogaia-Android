@@ -35,7 +35,7 @@ class fragment_carrito : Fragment(), CarritoListener {
     ): View? {
         val ll = inflater.inflate(R.layout.fragment_carrito, container, false)
         val id_Usuario = 9;
-        val url = "http://192.168.51.2:8080/cotizacionesUsuario/"+id_Usuario
+        val url = "http://10.190.80.156:8080/cotizacionesUsuario/"+id_Usuario
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
