@@ -35,11 +35,9 @@ class MainActivity : AppCompatActivity() {
         /// Session
         bundle = Bundle()
         this.user = JSONObject(intent.getStringExtra("user").toString())
-<<<<<<< HEAD
-        this.url = "http://192.168.215.131:8080/"
-=======
-        this.url = "http://192.168.215.97:8080/"
->>>>>>> 4ce9fac5b1684548835585d063a40ef1a4d95b7a
+        this.url = "http://192.168.1.66:8080/"
+
+
         bundle.putString("user", this.user.toString())
         bundle.putString("url", this.url)
         intent.putExtras(bundle)
@@ -58,6 +56,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     /* Navegacion Extra */
+
+    fun actualizar(view: View?){
+        val i = Intent(this, activity_actualizar_perfil::class.java).apply { }
+        i.putExtras(bundle)
+        startActivity(i)
+
+    }
 
     fun addProduct(view: View?) {
         val i = Intent(this, activity_agregar_producto::class.java).apply { }

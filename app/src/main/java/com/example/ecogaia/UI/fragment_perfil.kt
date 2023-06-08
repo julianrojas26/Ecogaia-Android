@@ -33,17 +33,9 @@ class fragment_perfil : Fragment() {
         val ip = bundle!!.getString("url")
 
         val ll = inflater.inflate(R.layout.fragment_perfil, container, false)
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        val url = "http://10.190.80.156:8080/listarUsuario"
-=======
-        val url = "http://192.168.136.131:8080/listarUsuario"
->>>>>>> 06ec976461bde049ac7b595018326d6f097bb49d
-=======
->>>>>>> 4ce9fac5b1684548835585d063a40ef1a4d95b7a
+
+
         this.nombre = ll.findViewById(R.id.usu_nombre)
         this.correo = ll.findViewById(R.id.usu_correo)
         this.direccion = ll.findViewById(R.id.usu_direccion)

@@ -34,17 +34,7 @@ class fragment_productos : Fragment(), ProductosListener {
         savedInstanceState: Bundle?
     ): View? {
         val ll = inflater.inflate(R.layout.fragment_productos, container, false)
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        val url = "http://10.190.80.156:8080/listarProducto"
-=======
-        val url = "http://192.168.136.131:8080/listarProducto"
->>>>>>> 06ec976461bde049ac7b595018326d6f097bb49d
-=======
->>>>>>> 4ce9fac5b1684548835585d063a40ef1a4d95b7a
         val bundle = activity?.intent?.extras
         val ip = bundle!!.getString("url")
         val url = ip + "listarProducto"

@@ -39,18 +39,8 @@ class fragment_favoritos : Fragment(), FavoritosListener {
         val user = JSONObject(bundle!!.getString("user"))
 
         val ll = inflater.inflate(R.layout.fragment_favoritos, container, false)
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
         val id_Usuario = "17"
-        val url = "http://10.190.80.156:8080/favoritosUsuario/"+id_Usuario
-=======
-        val url = "http://192.168.136.131:8080/listarFavoritos"
->>>>>>> 06ec976461bde049ac7b595018326d6f097bb49d
-=======
->>>>>>> 4ce9fac5b1684548835585d063a40ef1a4d95b7a
+
         val url = ip +"favoritosUsuario/"+ user.getString("res")
 
         val queue = Volley.newRequestQueue(this.context)
