@@ -2,37 +2,30 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-
     <item
         android:id="@+id/item1"
-        android:icon="@drawable/carrito_pro"
-        android:title="Inicio de sesion"
-        app:showAsAction="never" />
-
-    <item
-        android:id="@+id/item2"
-        android:title="Registro"
-        android:icon="@drawable/book"
-        app:showAsAction="never"/>
-    <item
-        android:id="@+id/item3"
         android:title="Nosotros"
         android:icon="@drawable/person"
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/item4"
+        android:id="@+id/item2"
         android:title="Favoritos"
         android:icon="@drawable/start"
         app:showAsAction="never" />
 
-    <item android:id="@+id/item6"
+    <item android:id="@+id/item3"
         android:title="Carrito"
         android:icon="@drawable/carrito"
         app:showAsAction="never" />
 
-    <item android:id="@+id/item7"
+    <item android:id="@+id/item4"
         android:title="Repartidor"
+        android:icon="@drawable/person"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/item5"
+        android:title="Cerrar Sesion"
         android:icon="@drawable/person"
         app:showAsAction="never" />
 

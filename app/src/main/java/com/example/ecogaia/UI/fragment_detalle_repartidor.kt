@@ -5,56 +5,53 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.DialogFragment
+import com.example.ecogaia.Models.tips
 import com.example.ecogaia.R
+import org.json.JSONObject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [fragment_detalle_repartidor.newInstance] factory method to
- * create an instance of this fragment.
- */
-class fragment_detalle_repartidor : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class fragment_detalle_repartidor : DialogFragment() {
+
+    private lateinit var  detalle_rep_usu: TextView
+    private lateinit var detale_rep_direccion: TextView
+    private lateinit var detalle_rep_telefono: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.FullScreenDialogStyle)
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detalle_repartidor, container, false)
+        val ll = inflater.inflate(R.layout.fragment_detalle_repartidor, container, false)
+
+        this.detalle_rep_usu = ll.findViewById(R.id.detalle_rep_usu)
+        this.detale_rep_direccion = ll.findViewById(R.id.distribuir_direcion)
+        this.detalle_rep_telefono = ll.findViewById(R.id.distribuir_telefono)
+
+        return ll
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment fragment_detalle_repartidor.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            fragment_detalle_repartidor().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        var dis = JSONObject(arguments?.getString("dis"))
+
+        this.detalle_rep_usu.text = dis.getString("detalle_rep_usu")
+        this.detale_rep_direccion.text = dis.getString("detale_rep_direccion")
+        this.detalle_rep_telefono.text = dis.getString("detalle_rep_telefono")
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT)
     }
 }

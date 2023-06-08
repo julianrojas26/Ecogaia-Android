@@ -87,19 +87,19 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.item3 -> {
+            R.id.item1 -> {
                 val navController =
                     Navigation.findNavController(this, R.id.nav_host_fragment_container)
                 navController.navigate(R.id.fragment_nosotros)
             }
-            R.id.item4 -> favoritos(null)
+            R.id.item2 -> favoritos(null)
 
-            R.id.item6 -> {
+            R.id.item3 -> {
                 val navController =
                     Navigation.findNavController(this, R.id.nav_host_fragment_container)
                 navController.navigate(R.id.fragment_carrito)
             }
-            R.id.item7 -> {
+            R.id.item4 -> {
                 val navController =
                     Navigation.findNavController(this, R.id.nav_host_fragment_container)
                 navController.navigate(R.id.fragment_repartidor)

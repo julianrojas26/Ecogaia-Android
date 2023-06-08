@@ -7,25 +7,27 @@
     android:background="@drawable/fondo7"
     tools:context=".UI.fragment_repartidor">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="680dp"
-        android:layout_marginTop="70dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_repartidor"
-        android:id="@+id/recycler_repartidor"/>
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
 
-    <GridView
-        android:id="@+id/categoria_recycler"
-        android:layout_width="wrap_content"
-        android:layout_height="669dp"
-        android:layout_marginTop="80dp"
-        android:columnWidth="150dp"
-        android:numColumns="2"
-        android:verticalSpacing="15dp"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:listitem="@layout/item_producto" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="680dp"
+                android:layout_marginTop="70dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_repartidor"
+                android:id="@+id/recycler_repartidor"/>
+
+        </ScrollView>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="350dp"
@@ -71,7 +73,5 @@
             android:indeterminateTint="@color/verde_claro"/>
 
     </RelativeLayout>
-
-
 
 </FrameLayout>
