@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".UI.fragment_detalleProductos">
+    tools:context=".UI.fragment_detalle_productos">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:text="Aceite Esencial"
-                android:textColor="@color/gris"
+                android:textColor="@color/verde_claro"
                 android:textSize="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center">
@@ -80,7 +80,7 @@
                         android:layout_height="wrap_content"
                         android:text="Categoria"
                         android:textStyle="bold"
-                        android:textColor="@color/gris"
+                        android:textColor="@color/verde_claro"
                         android:textSize="22dp">
                     </TextView>
 
@@ -109,7 +109,7 @@
                         android:layout_height="wrap_content"
                         android:text="Precio"
                         android:textStyle="bold"
-                        android:textColor="@color/gris"
+                        android:textColor="@color/verde_claro"
                         android:textSize="22dp">
                     </TextView>
 

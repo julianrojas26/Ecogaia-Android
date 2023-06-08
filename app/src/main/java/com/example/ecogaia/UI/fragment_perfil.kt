@@ -1,70 +1,75 @@
 package com.example.ecogaia.UI
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridView
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.ecogaia.MainActivity
 import com.example.ecogaia.R
+<<<<<<< HEAD
 import com.example.ecogaia.adapter.PerfilAdapter
-import com.example.ecogaia.adapter.ProductosAdaptador
 import org.json.JSONArray
 import org.json.JSONException
+=======
+>>>>>>> de9b055d9973715ce5de3e0d0a3c4c17a3146b50
 import org.json.JSONObject
 
 class fragment_perfil : Fragment() {
-    private lateinit var recycler: RecyclerView
-    private lateinit var viewAlpha: View
-    private lateinit var pgbar: ProgressBar
-    private lateinit var rlPerfilList: RelativeLayout
-    private lateinit var perfil: ArrayList<JSONObject>
+    private lateinit var nombre:TextView
+    private lateinit var correo:TextView
+    private lateinit var direccion:TextView
+    private lateinit var contrasenia:TextView
+    private lateinit var telefono:TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
-        Log.d("ProductosFragment", "Entered to onCreateView")
+        val bundle = activity?.intent?.extras
+        val user:JSONObject = JSONObject(bundle!!.getString("user"))
+        val ip = bundle!!.getString("url")
+
         val ll = inflater.inflate(R.layout.fragment_perfil, container, false)
-        val url = "http:// 192.168.110.131:8080/listarUsuario"
+<<<<<<< HEAD
+<<<<<<< HEAD
+        val url = "http://10.190.80.156:8080/listarUsuario"
+=======
+        val url = "http://192.168.136.131:8080/listarUsuario"
+>>>>>>> 06ec976461bde049ac7b595018326d6f097bb49d
+=======
+        this.nombre = ll.findViewById(R.id.usu_nombre)
+        this.correo = ll.findViewById(R.id.usu_correo)
+        this.direccion = ll.findViewById(R.id.usu_direccion)
+        this.contrasenia = ll.findViewById(R.id.usu_contrasenia)
+        this.telefono = ll.findViewById(R.id.usu_telefono)
+
+        val url = ip + "usuario/"+user.getString("res")
+>>>>>>> de9b055d9973715ce5de3e0d0a3c4c17a3146b50
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
-            val jsonArray = JSONArray(response)
-            this.perfil = ArrayList()
-            try {
-                var i = 0
-                val l = jsonArray.length()
-                while (i < l) {
-                    perfil += (jsonArray[i] as JSONObject)
-                    i++
-                }
-                Log.d("ProductFragment", this.perfil.toString())
-                this.recycler.adapter= PerfilAdapter(this.perfil)
-                this.viewAlpha.visibility= View.INVISIBLE
-                this.pgbar.visibility = View.INVISIBLE
-            }catch (e: JSONException) {
-            }
+            val jsonArray = JSONObject(response)
+            this.nombre.text = jsonArray.getString("usu_nombre")
+            this.correo.text = jsonArray.getString("usu_correo")
+            this.direccion.text = jsonArray.getString("usu_direccion")
+            this.contrasenia.text = jsonArray.getString("usu_contrasenia")
+            this.telefono.text = jsonArray.getString("usu_telefono")
         }, { error ->
             Log.w("jsonError", error)
         })
         queue.add(stringRequest)
-        this.recycler = ll.findViewById(R.id.recycler_perfil)
-        this.viewAlpha = ll.findViewById(R.id.view_perfilList)
-        this.pgbar = ll.findViewById(R.id.pgbar_perfilList)
-        this.rlPerfilList = ll.findViewById(R.id.rl_perfilList)
         return ll
     }
+
 
 
 }

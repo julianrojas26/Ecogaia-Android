@@ -19,7 +19,7 @@
             <Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
-                android:background="@color/verde">
+                android:background="@color/beige">
 
                 <ImageView
                     android:layout_width="230dp"
@@ -58,15 +58,6 @@
             android:paddingBottom="40dp">
 
             <EditText
-                android:id="@+id/id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="id"
-                android:inputType="number"
-                ></EditText>
-
-            <EditText
                 android:id="@+id/textNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -99,7 +90,7 @@
                 android:background="@drawable/shape_form2"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:textColor="@color/verde_detalles"
+                android:textColor="@color/verde_claro"
                 android:layout_marginTop="20dp"
                 android:onClick="clickAddProducts"
                 android:text="Agregar"></Button>

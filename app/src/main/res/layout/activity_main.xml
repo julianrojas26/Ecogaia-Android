@@ -6,14 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:background="@color/beige "/>
+
+    <!--<com.google.android.material.appbar.AppBarLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent">
 
         <Toolbar
             android:layout_width="match_parent"
             android:layout_height="90dp"
-            android:background="@color/verde">
+            android:background="@color/beige">
 
             <ImageView
                 android:layout_width="230dp"
@@ -40,11 +46,14 @@
         </Toolbar>
 
 
-    </com.google.android.material.appbar.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>-->
+
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.fragment.app.FragmentContainerView
@@ -62,14 +71,12 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_alignParentBottom="true"
-            app:backgroundTint="@color/verde"
+            app:backgroundTint="@color/beige"
             app:itemIconSize="30dp"
-            app:itemIconTint="@color/gris"
-
+            app:itemIconTint="@color/verde_claro"
             app:menu="@menu/menu">
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
- 0'
     </RelativeLayout>
 
     <RelativeLayout

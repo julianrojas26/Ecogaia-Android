@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import androidx.core.os.bundleOf
@@ -15,9 +16,8 @@ import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.ecogaia.R
-import com.example.ecogaia.adapter.BlogAdaptador
-import com.example.ecogaia.adapter.BlogListener
-import com.example.ecogaia.adapter.ProductosAdaptador
+import com.example.ecogaia.Adapter.BlogAdaptador
+import com.example.ecogaia.Adapter.BlogListener
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -35,10 +35,14 @@ class fragment_blog : Fragment(), BlogListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Log.d("ProductosFragment", "Entered to onCreateView")
+        val bundle = activity?.intent?.extras
+        val ip = bundle!!.getString("url")
+
         val ll = inflater.inflate(R.layout.fragment_blog, container, false)
 
-        val url = "http://192.168.110.131:8080/listarTip"
+
+        val url = ip + "listarTip"
+
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
@@ -56,6 +60,7 @@ class fragment_blog : Fragment(), BlogListener {
                 this.viewAlpha.visibility= View.INVISIBLE
                 this.pgbar.visibility = View.INVISIBLE
             }catch (e: JSONException) {
+                Log.w("ERROR", e)
             }
         }, { error ->
             Log.w("jsonError", error)

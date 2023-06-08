@@ -36,18 +36,18 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/nombre_produ_favoritos"
+                    android:id="@+id/nombre_favoritos"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
                     android:text="Nombre Producto" />
 
                 <TextView
-                    android:id="@+id/descripcion_favoritos"
+                    android:id="@+id/cantidad_favoritos"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
-                    android:text="Descripcion del producto" />
+                    android:text="Cantidad del producto" />
 
                 <TextView
                     android:id="@+id/precio_favoritos"

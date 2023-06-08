@@ -1,9 +1,7 @@
 package com.example.ecogaia.UI
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,14 +9,14 @@ import android.widget.GridView
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.ecogaia.Adapter.ProductosAdaptador
+import com.example.ecogaia.Adapter.ProductosListener
 import com.example.ecogaia.R
-import com.example.ecogaia.adapter.ProductosAdaptador
-import com.example.ecogaia.adapter.ProductosListener
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -35,9 +33,18 @@ class fragment_productos : Fragment(), ProductosListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Log.d("ProductosFragment", "Entered to onCreateView")
         val ll = inflater.inflate(R.layout.fragment_productos, container, false)
-        val url = "http:// 192.168.110.131:8080/listarProducto"
+<<<<<<< HEAD
+<<<<<<< HEAD
+        val url = "http://10.190.80.156:8080/listarProducto"
+=======
+        val url = "http://192.168.136.131:8080/listarProducto"
+>>>>>>> 06ec976461bde049ac7b595018326d6f097bb49d
+=======
+        val bundle = activity?.intent?.extras
+        val ip = bundle!!.getString("url")
+        val url = ip + "listarProducto"
+>>>>>>> de9b055d9973715ce5de3e0d0a3c4c17a3146b50
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
@@ -50,11 +57,12 @@ class fragment_productos : Fragment(), ProductosListener {
                     productos += (jsonArray[i] as JSONObject)
                     i++
                 }
-                Log.d("ProductFragment", this.productos.toString())
+                Log.d("PRODUCTOS", this.productos.toString())
                 this.recycler.adapter= ProductosAdaptador(this.context,this.productos, this)
                 this.viewAlpha.visibility= View.INVISIBLE
                 this.pgbar.visibility = View.INVISIBLE
             }catch (e:JSONException) {
+                Log.w("ERROR", e)
             }
         }, { error ->
             Log.w("jsonError", error)
@@ -68,7 +76,6 @@ class fragment_productos : Fragment(), ProductosListener {
     }
 
     override fun onProductosCliked(productos: JSONObject, position: Int) {
-        Log.w("AAAAAAA",position.toString()+productos.toString())
         val bundle = bundleOf("productos" to productos.toString())
         findNavController().navigate(
             R.id.fragment_detalleProductos, bundle

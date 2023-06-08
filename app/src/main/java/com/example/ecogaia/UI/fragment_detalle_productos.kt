@@ -11,9 +11,9 @@ import androidx.fragment.app.DialogFragment
 import com.example.ecogaia.R
 import org.json.JSONObject
 
-class fragment_detalleProductos : DialogFragment() {
-    private lateinit var tbProdDets : Toolbar
-    private lateinit var nombre_prod : TextView
+class fragment_detalle_productos : DialogFragment() {
+    private lateinit var tbProdDets: Toolbar
+    private lateinit var nombre_prod: TextView
     private lateinit var categoria_prod: TextView
     private lateinit var precio_prod: TextView
 
@@ -25,11 +25,12 @@ class fragment_detalleProductos : DialogFragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         val ll = inflater.inflate(R.layout.fragment_detalle_productos, container, false)
+
         this.tbProdDets = ll.findViewById(R.id.tbProdDets)
-        this.tbProdDets.setNavigationOnClickListener{
+        this.tbProdDets.setNavigationOnClickListener {
             dismiss()
         }
 
@@ -43,17 +44,19 @@ class fragment_detalleProductos : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val Usuario: String = "7"
         this.tbProdDets.navigationIcon = ContextCompat.getDrawable(view.context, R.drawable.close)
 
         val tips = JSONObject(arguments?.getString("productos"))
 
         this.nombre_prod.text = tips.getString("prod_Nombre")
         this.categoria_prod.text = tips.getString("prod_Categoria")
-        this.precio_prod.text = tips.getString("favoritos")
+        this.precio_prod.text = tips.getString("prod_Precio")
     }
 
     override fun onStart() {
         super.onStart()
-        dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+        dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT)
     }
 }
