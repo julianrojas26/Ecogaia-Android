@@ -151,7 +151,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_gravity="center"
                     android:background="@drawable/shape_form"
-                    android:onClick="actualizar"
+                    android:onClick="clickActualizarPerfil"
                     android:text="Actualizar"
                     android:textColor="@color/verde_claro"/>
             </LinearLayout>

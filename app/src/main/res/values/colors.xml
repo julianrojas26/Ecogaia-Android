@@ -12,5 +12,6 @@
     <color name="transparent">#00FFFFFF</color>
     <color name="verde_claro">#609966</color>
     <color name="gray">#bababa</color>
+    <color name="blanco">#F6FBF4</color>
 
 </resources>

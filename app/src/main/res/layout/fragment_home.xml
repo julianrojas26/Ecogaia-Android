@@ -161,7 +161,6 @@
                         android:textColor="@color/black"
                         android:background="@color/beige"
                         android:textSize="30sp"
-                        android:textStyle="bold"
                         android:layout_marginTop="190dp"/>
 
                 </RelativeLayout>

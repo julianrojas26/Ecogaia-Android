@@ -2,11 +2,11 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-
     <item
         android:id="@+id/item1"
         android:title="Nosotros"
-        android:icon="@drawable/person" />
+        android:icon="@drawable/person"
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/item2"
@@ -21,12 +21,19 @@
 
     <item android:id="@+id/item4"
         android:title="Repartidor"
-        android:icon="@drawable/add"
+        android:icon="@drawable/person"
         app:showAsAction="never" />
 
     <item android:id="@+id/item5"
-        android:title="Cerrar Sesión"
-        android:icon="@drawable/add"
+        android:title="Gestionar"
+        android:icon="@drawable/person"
         app:showAsAction="never" />
+
+    <item android:id="@+id/item6"
+        android:title="Cerrar Sesion"
+        android:icon="@drawable/person"
+        app:showAsAction="never" />
+
+
 
 </menu>

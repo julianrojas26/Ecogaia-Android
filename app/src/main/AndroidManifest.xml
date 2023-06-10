@@ -37,6 +37,9 @@
             android:name=".activity_agregar_producto"
             android:exported="false" />
         <activity
+            android:name=".activity_actualizar_perfil"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false"/>
     </application>
