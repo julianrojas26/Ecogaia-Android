@@ -17,12 +17,11 @@ import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONArray
+import org.json.JSONObject
 
 
 class fragment_login : AppCompatActivity() {
 
-     var confirUsuario: String? = null
-     var confirContraseña: String? = null
      var conUsuario: EditText? = null
      var conContraseña: EditText? = null
      var buttonLogin: Button? = null
@@ -42,15 +41,16 @@ class fragment_login : AppCompatActivity() {
             if (this.conUsuario!!.text.isEmpty() || this.conUsuario!!.text.isEmpty()){
                 Toast.makeText(this, "Debes Completar Todos Los Campos", Toast.LENGTH_LONG).show()
             } else {
-                val url = "http://192.168.215.97:8080/validarUsuario/"+this.conUsuario?.text+"/"+this.conContraseña?.text
+                val url = "http://192.168.0.11:8080/validarUsuario/"+this.conUsuario?.text+"/"+this.conContraseña?.text
                 val queue = Volley.newRequestQueue(this)
                 val resultGet = StringRequest (Request.Method.GET, url, { response ->
-                    if(response != "Usuario o contraseña incorrectos"){
+                    if(JSONObject(response).getString("error") == "null"){
                         var intent = Intent(this, MainActivity::class.java)
                         intent.putExtra("user",response)
                         startActivity(intent)
+                        finish()
                     } else {
-                        Toast.makeText(this,response, Toast.LENGTH_LONG).show()
+                        Toast.makeText(this,JSONObject(response).getString("error"), Toast.LENGTH_LONG).show()
                     }
                 }, { error ->
                     Log.w("String Error", error)

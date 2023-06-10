@@ -25,7 +25,7 @@ class BlogAdaptador(
             } else {
                 cuerpo.text = info
             }
-            comp_Usuario.text = tips.getString("comp_usuario")
+            comp_Usuario.text = tips.getString("titulo")
         }
     }
 
