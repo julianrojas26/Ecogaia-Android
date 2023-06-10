@@ -35,7 +35,8 @@ class MainActivity : AppCompatActivity() {
         /// Session
         bundle = Bundle()
         this.user = JSONObject(intent.getStringExtra("user").toString())
-        this.url = "http://192.168.215.97:8080/"
+        this.url = "http://192.168.1.67:8080/"
+        Log.w("USERR", user.toString())
         bundle.putString("user", this.user.toString())
         bundle.putString("url", this.url)
         intent.putExtras(bundle)
@@ -103,6 +104,18 @@ class MainActivity : AppCompatActivity() {
                 val navController =
                     Navigation.findNavController(this, R.id.nav_host_fragment_container)
                 navController.navigate(R.id.fragment_repartidor)
+            }
+
+            R.id.item4 -> {
+                val navController =
+                    Navigation.findNavController(this, R.id.nav_host_fragment_container)
+                navController.navigate(R.id.fragment_repartidor)
+            }
+
+            R.id.item5 -> {
+                val navController =
+                    Navigation.findNavController(this, R.id.nav_host_fragment_container)
+                navController.navigate(R.id.fragment_gestionar)
             }
 
         }

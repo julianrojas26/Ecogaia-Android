@@ -32,8 +32,8 @@ class fragment_detalle_repartidor : DialogFragment() {
         val ll = inflater.inflate(R.layout.fragment_detalle_repartidor, container, false)
 
         this.detalle_rep_usu = ll.findViewById(R.id.detalle_rep_usu)
-        this.detale_rep_direccion = ll.findViewById(R.id.distribuir_direcion)
-        this.detalle_rep_telefono = ll.findViewById(R.id.distribuir_telefono)
+        this.detale_rep_direccion = ll.findViewById(R.id.detale_rep_direccion)
+        this.detalle_rep_telefono = ll.findViewById(R.id.detalle_rep_telefono)
 
         return ll
     }
@@ -43,9 +43,9 @@ class fragment_detalle_repartidor : DialogFragment() {
 
         var dis = JSONObject(arguments?.getString("dis"))
 
-        this.detalle_rep_usu.text = dis.getString("detalle_rep_usu")
-        this.detale_rep_direccion.text = dis.getString("detale_rep_direccion")
-        this.detalle_rep_telefono.text = dis.getString("detalle_rep_telefono")
+        this.detalle_rep_usu.text = dis.getString("usu_nombre")
+        this.detale_rep_direccion.text = dis.getString("usu_direccion")
+        this.detalle_rep_telefono.text = dis.getString("usu_telefono")
 
     }
 

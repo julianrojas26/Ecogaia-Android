@@ -30,7 +30,7 @@ class fragment_perfil : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         val bundle = activity?.intent?.extras
-        val user:JSONObject = JSONObject(bundle!!.getString("user"))
+        val user = JSONObject(bundle!!.getString("user"))
         val ip = bundle!!.getString("url")
 
         val ll = inflater.inflate(R.layout.fragment_perfil, container, false)

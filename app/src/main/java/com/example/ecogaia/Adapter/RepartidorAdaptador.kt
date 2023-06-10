@@ -22,9 +22,9 @@ class RepartidorAdaptador(
 
         fun bind(dis: JSONObject) {
 
-            dis_nombre.text = dis.getString("dis_nombre")
-            dis_direccion.text = dis.getString("dis_direccion")
-            dis_telefono.text = dis.getString("dis_telefono")
+            dis_nombre.text = dis.getString("usu_nombre")
+            dis_direccion.text = dis.getString("usu_direccion")
+            dis_telefono.text = dis.getString("usu_telefono")
         }
     }
 

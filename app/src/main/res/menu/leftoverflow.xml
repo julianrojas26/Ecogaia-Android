@@ -25,8 +25,15 @@
         app:showAsAction="never" />
 
     <item android:id="@+id/item5"
+        android:title="Gestionar"
+        android:icon="@drawable/person"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/item6"
         android:title="Cerrar Sesion"
         android:icon="@drawable/person"
         app:showAsAction="never" />
+
+
 
 </menu>
