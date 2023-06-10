@@ -68,7 +68,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+<<<<<<< HEAD
             android:indeterminateTint="@color/verde_iconos" />
+=======
+
+            android:indeterminateTint="@color/verde_iconos"/>
+>>>>>>> 4d16e2deb4e8b1fd8d9c4b182a5d95e4f2f4c935
 
 
     </RelativeLayout>

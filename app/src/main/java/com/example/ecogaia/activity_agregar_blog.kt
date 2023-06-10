@@ -25,6 +25,11 @@ class activity_agregar_blog : AppCompatActivity() {
         cuerpo = findViewById(R.id.textcuerpo)
     }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 4d16e2deb4e8b1fd8d9c4b182a5d95e4f2f4c935
     fun clickAddProducts(view: View) {
         val bundle = intent.extras
         val ip = bundle!!.getString("url").toString()

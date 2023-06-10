@@ -39,6 +39,10 @@ class fragment_favoritos : Fragment(), FavoritosListener {
         val user = JSONObject(bundle!!.getString("user"))
 
         val ll = inflater.inflate(R.layout.fragment_favoritos, container, false)
+<<<<<<< HEAD
+=======
+        val id_Usuario = "17"
+>>>>>>> 4d16e2deb4e8b1fd8d9c4b182a5d95e4f2f4c935
 
         val url = ip +"favoritosUsuario/"+ user.getString("res")
 

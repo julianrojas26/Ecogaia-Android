@@ -47,8 +47,8 @@
 
             <ImageView
                 android:id = "@+id/img_usuario"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:src="@drawable/extraterrestres"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp">
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:text="Nombre Usuario"
-                android:textColor="@color/verde_claro"
+                android:textColor="@color/gray"
                 android:textSize="23dp"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center"
@@ -71,7 +71,6 @@
                 android:id = "@+id/titulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:text="Titulo"
                 android:textColor="@color/verde_claro"
                 android:textSize="23dp"
@@ -90,7 +89,7 @@
                    android:layout_width="300dp"
                    android:layout_height="match_parent"
                    android:text="@string/usuario"
-                   android:textSize="20dp"
+                   android:textSize="15dp"
                    android:textColor="@color/black"
                    android:textAlignment="center">
                </TextView>

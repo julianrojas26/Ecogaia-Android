@@ -14,7 +14,10 @@ import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.ecogaia.R
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4d16e2deb4e8b1fd8d9c4b182a5d95e4f2f4c935
 import org.json.JSONObject
 
 class fragment_perfil : Fragment() {
@@ -35,6 +38,11 @@ class fragment_perfil : Fragment() {
 
         val ll = inflater.inflate(R.layout.fragment_perfil, container, false)
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 4d16e2deb4e8b1fd8d9c4b182a5d95e4f2f4c935
         this.nombre = ll.findViewById(R.id.usu_nombre)
         this.correo = ll.findViewById(R.id.usu_correo)
         this.direccion = ll.findViewById(R.id.usu_direccion)
@@ -42,7 +50,10 @@ class fragment_perfil : Fragment() {
         this.telefono = ll.findViewById(R.id.usu_telefono)
 
         val url = ip + "usuario/"+user.getString("res")
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4d16e2deb4e8b1fd8d9c4b182a5d95e4f2f4c935
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->

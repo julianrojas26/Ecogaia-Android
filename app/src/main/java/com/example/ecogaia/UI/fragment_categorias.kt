@@ -39,6 +39,10 @@ class fragment_categorias : Fragment(), ProductosListener {
         val categoria = arguments?.getString("Categoria")
 
         val url = ip + "categoriasProducto/"+categoria
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4d16e2deb4e8b1fd8d9c4b182a5d95e4f2f4c935
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
