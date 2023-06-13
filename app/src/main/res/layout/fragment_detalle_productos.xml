@@ -134,19 +134,19 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp">
 
-                <ImageView
+                <ImageButton
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/start"
-                    android:onClick="favoritos">
-                </ImageView>
+                    android:id="@+id/btn_Star">
+                </ImageButton>
 
-                <ImageView
+                <ImageButton
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/carrito_pro"
                     android:layout_marginLeft="90dp">
-                </ImageView>
+                </ImageButton>
 
 
             </LinearLayout>

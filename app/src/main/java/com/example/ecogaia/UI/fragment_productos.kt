@@ -22,11 +22,11 @@ import org.json.JSONException
 import org.json.JSONObject
 
 class fragment_productos : Fragment(), ProductosListener {
-   private lateinit var recycler: GridView
-   private lateinit var viewAlpha: View
-   private lateinit var pgbar: ProgressBar
-   private lateinit var rlProductList: RelativeLayout
-   private lateinit var productos: ArrayList<JSONObject>
+    private lateinit var recycler: GridView
+    private lateinit var viewAlpha: View
+    private lateinit var pgbar: ProgressBar
+    private lateinit var rlProductList: RelativeLayout
+    private lateinit var productos: ArrayList<JSONObject>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,17 +34,10 @@ class fragment_productos : Fragment(), ProductosListener {
         savedInstanceState: Bundle?
     ): View? {
         val ll = inflater.inflate(R.layout.fragment_productos, container, false)
-<<<<<<< HEAD
-<<<<<<< HEAD
-        val url = "http://10.190.80.156:8080/listarProducto"
-=======
-        val url = "http://192.168.136.131:8080/listarProducto"
->>>>>>> 06ec976461bde049ac7b595018326d6f097bb49d
-=======
+
         val bundle = activity?.intent?.extras
         val ip = bundle!!.getString("url")
         val url = ip + "listarProducto"
->>>>>>> de9b055d9973715ce5de3e0d0a3c4c17a3146b50
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
@@ -72,6 +65,10 @@ class fragment_productos : Fragment(), ProductosListener {
         this.viewAlpha = ll.findViewById(R.id.view_productsList)
         this.pgbar = ll.findViewById(R.id.pgbar_productsList)
         this.rlProductList = ll.findViewById(R.id.rl_ProductsList)
+
+
+
+
         return ll
     }
 

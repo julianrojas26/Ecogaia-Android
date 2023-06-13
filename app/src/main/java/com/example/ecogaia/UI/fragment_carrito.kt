@@ -14,9 +14,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.ecogaia.R
 import com.example.ecogaia.Adapter.CarritoAdaptador
 import com.example.ecogaia.Adapter.CarritoListener
+import com.example.ecogaia.R
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -33,16 +33,12 @@ class fragment_carrito : Fragment(), CarritoListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val bundle = activity?.intent?.extras
+        val ip = bundle!!.getString("url")
+
+        Log.d("CarritoFragment", "Entered to onCreateView")
         val ll = inflater.inflate(R.layout.fragment_carrito, container, false)
-<<<<<<< HEAD
-        val url = "http://192.168.136.131:8080/listarCotizacion"
-=======
-        val id_Usuario = 9;
-<<<<<<< HEAD
-        val url = "http://10.190.80.156:8080/cotizacionesUsuario/"+id_Usuario
-=======
-        val url = activity?.intent?.getStringExtra("url") + "cotizacionesUsuario/"+id_Usuario
->>>>>>> de9b055d9973715ce5de3e0d0a3c4c17a3146b50
+        val url = ip + "listarCotizacion"
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
@@ -55,12 +51,11 @@ class fragment_carrito : Fragment(), CarritoListener {
                     carrito.add(jsonArray[i] as JSONObject)
                     i++
                 }
-                Log.d("CARRITO", this.carrito.toString())
+                Log.d("ProductFragment", this.carrito.toString())
                 this.recycler.adapter= CarritoAdaptador(this.carrito, this)
                 this.viewAlpha.visibility= View.INVISIBLE
                 this.pgbar.visibility = View.INVISIBLE
             }catch (e:JSONException) {
-                Log.w("ERROR", e)
             }
         }, { error ->
             Log.w("jsonError", error)
@@ -78,5 +73,9 @@ class fragment_carrito : Fragment(), CarritoListener {
         findNavController().navigate(
             R.id.fragment_detalleProductos, bundle
         )
+    }
+
+    fun addProducto() {
+
     }
 }

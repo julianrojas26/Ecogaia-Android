@@ -1,4 +1,4 @@
-package com.example.ecogaia.Adapter
+package com.example.ecogaia.adapter
 
 import org.json.JSONObject
 

@@ -16,8 +16,8 @@ import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.ecogaia.R
-import com.example.ecogaia.Adapter.BlogAdaptador
-import com.example.ecogaia.Adapter.BlogListener
+import com.example.ecogaia.adapter.BlogAdaptador
+import com.example.ecogaia.adapter.BlogListener
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
