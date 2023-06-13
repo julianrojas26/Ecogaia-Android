@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toolbar
 import androidx.core.content.ContextCompat
@@ -38,6 +39,11 @@ class fragment_detalle_productos : DialogFragment() {
         this.categoria_prod = ll.findViewById(R.id.categoria_produ)
         this.precio_prod = ll.findViewById(R.id.precio_produ)
 
+        var addCarrito: ImageButton = ll.findViewById(R.id.addCar)
+
+        addCarrito.setOnClickListener() {
+
+        }
         return ll
     }
 

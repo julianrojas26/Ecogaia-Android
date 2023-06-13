@@ -252,6 +252,7 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/shape_form"
                     android:gravity="center"
+                    android:onClick = "endSession"
                     android:text="Cerrar Sesion"
                     android:textColor="@color/verde_claro"></Button>
 

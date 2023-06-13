@@ -34,6 +34,25 @@ class activity_actualizar_perfil : AppCompatActivity() {
         txtContra = findViewById(R.id.txtContra)
         txtTelefono = findViewById(R.id.txtTelefono)
 
+        val bundle = intent.extras
+        val user:JSONObject = JSONObject(bundle!!.getString("user"))
+        val ip = bundle!!.getString("url")
+
+        val url = ip + "usuario/"+user.getString("res")
+        val queue = Volley.newRequestQueue(this)
+
+        val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+            val jsonArray = JSONObject(response)
+            this.txtNombre.text = jsonArray.getString("usu_nombre")
+            this.txtCorreo.text = jsonArray.getString("usu_correo")
+            this.txtDireccion.text = jsonArray.getString("usu_direccion")
+            this.txtContra.text = jsonArray.getString("usu_contrasenia")
+            this.txtTelefono.text = jsonArray.getString("usu_telefono")
+        }, { error ->
+            Log.w("jsonError", error)
+        })
+        queue.add(stringRequest)
+
     }
 
 
