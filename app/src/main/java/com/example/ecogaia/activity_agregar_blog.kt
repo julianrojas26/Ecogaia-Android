@@ -38,6 +38,7 @@ class activity_agregar_blog : AppCompatActivity() {
         val resultPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response ->
                 Toast.makeText(this, "Tip Creado exitosamente", Toast.LENGTH_LONG).show()
+                finish()
             }, Response.ErrorListener { error ->
                 Toast.makeText(this, "Tip No Creado $error", Toast.LENGTH_LONG).show()
             }
@@ -52,5 +53,6 @@ class activity_agregar_blog : AppCompatActivity() {
             }
         }
         queue.add(resultPost)
+
     }
 }

@@ -90,10 +90,24 @@
         android:id="@+id/fragment_repartidor"
         android:name="com.example.ecogaia.UI.fragment_repartidor"
         android:label="fragment_repartidor"
-        tools:layout="@layout/fragment_repartidor" />
+        tools:layout="@layout/fragment_repartidor" >
+        <action
+            android:id="@+id/action_fragment_repartidor_to_fragment_detalle_repartidor"
+            app:destination="@id/fragment_detalle_repartidor" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_categorias"
         android:name="com.example.ecogaia.fragment_categorias"
         android:label="fragment_categorias"
         tools:layout="@layout/fragment_categorias" />
+    <fragment
+        android:id="@+id/fragment_detalle_repartidor"
+        android:name="com.example.ecogaia.UI.fragment_detalle_repartidor"
+        android:label="fragment_detalle_repartidor"
+        tools:layout="@layout/fragment_detalle_repartidor" />
+    <fragment
+        android:id="@+id/fragment_gestionar"
+        android:name="com.example.ecogaia.UI.fragment_gestionar"
+        android:label="fragment_gestionar"
+        tools:layout="@layout/fragment_gestionar" />
 </navigation>

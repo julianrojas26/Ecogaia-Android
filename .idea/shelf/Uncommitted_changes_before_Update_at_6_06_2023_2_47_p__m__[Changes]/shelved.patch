@@ -1,0 +1,300 @@
+Index: app/src/main/res/menu/leftoverflow.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<menu xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\">\r\n\r\n\r\n    <item\r\n        android:id=\"@+id/item1\"\r\n        android:icon=\"@drawable/carrito_pro\"\r\n        android:title=\"Inicio de sesion\"\r\n        app:showAsAction=\"never\" />\r\n\r\n    <item\r\n        android:id=\"@+id/item2\"\r\n        android:title=\"Registro\"\r\n        android:icon=\"@drawable/book\"\r\n        app:showAsAction=\"never\"/>\r\n    <item\r\n        android:id=\"@+id/item3\"\r\n        android:title=\"Nosotros\"\r\n        android:icon=\"@drawable/person\"\r\n        app:showAsAction=\"never\" />\r\n\r\n    <item\r\n        android:id=\"@+id/item4\"\r\n        android:title=\"Favoritos\"\r\n        android:icon=\"@drawable/start\"\r\n        app:showAsAction=\"never\" />\r\n\r\n    <item android:id=\"@+id/item6\"\r\n        android:title=\"Carrito\"\r\n        android:icon=\"@drawable/carrito\"\r\n        app:showAsAction=\"never\" />\r\n\r\n    <item android:id=\"@+id/item7\"\r\n        android:title=\"Repartidor\"\r\n        android:icon=\"@drawable/person\"\r\n        app:showAsAction=\"never\" />\r\n\r\n</menu>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/menu/leftoverflow.xml b/app/src/main/res/menu/leftoverflow.xml
+--- a/app/src/main/res/menu/leftoverflow.xml	(revision 6991189c1815a3c0328482b01d209da8e6d1e25a)
++++ b/app/src/main/res/menu/leftoverflow.xml	(date 1686080566092)
+@@ -5,35 +5,28 @@
+ 
+     <item
+         android:id="@+id/item1"
+-        android:icon="@drawable/carrito_pro"
+-        android:title="Inicio de sesion"
+-        app:showAsAction="never" />
+-
+-    <item
+-        android:id="@+id/item2"
+-        android:title="Registro"
+-        android:icon="@drawable/book"
+-        app:showAsAction="never"/>
+-    <item
+-        android:id="@+id/item3"
+         android:title="Nosotros"
+-        android:icon="@drawable/person"
+-        app:showAsAction="never" />
++        android:icon="@drawable/person" />
+ 
+     <item
+-        android:id="@+id/item4"
++        android:id="@+id/item2"
+         android:title="Favoritos"
+         android:icon="@drawable/start"
+         app:showAsAction="never" />
+ 
+-    <item android:id="@+id/item6"
++    <item android:id="@+id/item3"
++        android:title="Categorias"
++        android:icon="@drawable/book"
++        app:showAsAction="never" />
++
++    <item android:id="@+id/item4"
+         android:title="Carrito"
+         android:icon="@drawable/carrito"
+         app:showAsAction="never" />
+ 
+-    <item android:id="@+id/item7"
+-        android:title="Repartidor"
+-        android:icon="@drawable/person"
++    <item android:id="@+id/item5"
++        android:title="Cerrar Sesión"
++        android:icon="@drawable/add"
+         app:showAsAction="never" />
+ 
+ </menu>
+\ No newline at end of file
+Index: app/src/main/java/com/example/ecogaia/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ecogaia\r\n\r\nimport android.content.Intent\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport android.view.Menu\r\nimport android.view.MenuItem\r\nimport android.view.View\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport androidx.navigation.NavController\r\nimport androidx.navigation.Navigation\r\nimport androidx.navigation.fragment.NavHostFragment\r\nimport androidx.navigation.ui.AppBarConfiguration\r\nimport androidx.navigation.ui.setupActionBarWithNavController\r\nimport androidx.navigation.ui.setupWithNavController\r\nimport com.google.android.material.bottomnavigation.BottomNavigationView\r\nimport org.json.JSONObject\r\n\r\nclass MainActivity : AppCompatActivity() {\r\n\r\n    private lateinit var appBarCondiguration: AppBarConfiguration\r\n    private lateinit var user: JSONObject\r\n    private lateinit var url: String\r\n    private lateinit var bundle: Bundle\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_main)\r\n        val host: NavHostFragment =\r\n            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment?\r\n                ?: return\r\n        val navController = host.navController\r\n        appBarCondiguration = AppBarConfiguration(navController.graph)\r\n        setupActionBar(navController, appBarCondiguration)\r\n        setupBottonNavMenu(navController)\r\n        /// Session\r\n        bundle = Bundle()\r\n        this.user = JSONObject(intent.getStringExtra(\"user\").toString())\r\n        this.url = \"http://192.168.251.2:8080/\"\r\n        bundle.putString(\"user\", this.user.toString())\r\n        bundle.putString(\"url\", this.url)\r\n        intent.putExtras(bundle)\r\n    }\r\n\r\n    private fun setupActionBar(\r\n        navController: NavController,\r\n        appBarConfiguration: AppBarConfiguration,\r\n    ) {\r\n        setupActionBarWithNavController(navController, appBarConfiguration)\r\n    }\r\n\r\n    private fun setupBottonNavMenu(navController: NavController) {\r\n        val bottonNav = findViewById<BottomNavigationView>(R.id.btnMenu)\r\n        bottonNav.setupWithNavController(navController)\r\n    }\r\n\r\n    /* Navegacion Extra */\r\n\r\n    fun addProduct(view: View?) {\r\n        val i = Intent(this, activity_agregar_producto::class.java).apply { }\r\n        startActivity(i)\r\n    }\r\n\r\n    fun addusuario(view: View) {\r\n        val i = Intent(this, activity_usuario::class.java).apply { }\r\n        startActivity(i)\r\n    }\r\n\r\n    fun addBlog(view: View) {\r\n        val i = Intent(this, activity_agregar_blog::class.java).apply { }\r\n        i.putExtras(bundle)\r\n        startActivity(i)\r\n    }\r\n\r\n    fun favoritos(view: View?) {\r\n        val navController = Navigation.findNavController(this, R.id.nav_host_fragment_container)\r\n        navController.navigate(R.id.fragment_favoritos)\r\n    }\r\n\r\n    /*conexion overflow*/\r\n\r\n    override fun onCreateOptionsMenu(menu: Menu?): Boolean {\r\n        menuInflater.inflate(R.menu.leftoverflow, menu)\r\n        return super.onCreateOptionsMenu(menu)\r\n    }\r\n\r\n    /* Menu lateral */\r\n\r\n    override fun onOptionsItemSelected(item: MenuItem): Boolean {\r\n        when (item.itemId) {\r\n            R.id.item3 -> {\r\n                val navController =\r\n                    Navigation.findNavController(this, R.id.nav_host_fragment_container)\r\n                navController.navigate(R.id.fragment_nosotros)\r\n            }\r\n            R.id.item4 -> favoritos(null)\r\n\r\n            R.id.item6 -> {\r\n                val navController =\r\n                    Navigation.findNavController(this, R.id.nav_host_fragment_container)\r\n                navController.navigate(R.id.fragment_carrito)\r\n            }\r\n            R.id.item7 -> {\r\n                val navController =\r\n                    Navigation.findNavController(this, R.id.nav_host_fragment_container)\r\n                navController.navigate(R.id.fragment_repartidor)\r\n            }\r\n\r\n        }\r\n        return super.onOptionsItemSelected(item)\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/MainActivity.kt b/app/src/main/java/com/example/ecogaia/MainActivity.kt
+--- a/app/src/main/java/com/example/ecogaia/MainActivity.kt	(revision 6991189c1815a3c0328482b01d209da8e6d1e25a)
++++ b/app/src/main/java/com/example/ecogaia/MainActivity.kt	(date 1686080571164)
+@@ -17,7 +17,6 @@
+ import org.json.JSONObject
+ 
+ class MainActivity : AppCompatActivity() {
+-
+     private lateinit var appBarCondiguration: AppBarConfiguration
+     private lateinit var user: JSONObject
+     private lateinit var url: String
+@@ -35,7 +34,7 @@
+         /// Session
+         bundle = Bundle()
+         this.user = JSONObject(intent.getStringExtra("user").toString())
+-        this.url = "http://192.168.251.2:8080/"
++        this.url = "http://192.168.215.2:8080/"
+         bundle.putString("user", this.user.toString())
+         bundle.putString("url", this.url)
+         intent.putExtras(bundle)
+@@ -87,24 +86,22 @@
+ 
+     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+         when (item.itemId) {
+-            R.id.item3 -> {
++            R.id.item1 -> {
+                 val navController =
+                     Navigation.findNavController(this, R.id.nav_host_fragment_container)
+                 navController.navigate(R.id.fragment_nosotros)
+             }
+-            R.id.item4 -> favoritos(null)
+-
+-            R.id.item6 -> {
++            R.id.item2 -> favoritos(null)
++            R.id.item3 -> {
+                 val navController =
+                     Navigation.findNavController(this, R.id.nav_host_fragment_container)
+-                navController.navigate(R.id.fragment_carrito)
++                navController.navigate(R.id.fragment_categorias)
+             }
+-            R.id.item7 -> {
++            R.id.item4 -> {
+                 val navController =
+                     Navigation.findNavController(this, R.id.nav_host_fragment_container)
+-                navController.navigate(R.id.fragment_repartidor)
++                navController.navigate(R.id.fragment_carrito)
+             }
+-
+         }
+         return super.onOptionsItemSelected(item)
+     }
+Index: app/src/main/java/com/example/ecogaia/Adapter/RepartidorAdaptador.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ecogaia.Adapter\r\n\r\nimport android.util.Log\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport android.widget.TextView\r\nimport androidx.recyclerview.widget.RecyclerView\r\nimport com.example.ecogaia.R\r\nimport org.json.JSONObject\r\n\r\nclass RepartidorAdaptador(\r\n    private val repList: ArrayList<JSONObject>,\r\n    private val repartidorListener: RepartidorListener,\r\n) : RecyclerView.Adapter<RepartidorAdaptador.ViewHoler>() {\r\n    inner class ViewHoler(view: View) : RecyclerView.ViewHolder(view) {\r\n        var comp_Usuario: TextView = view.findViewById(R.id.Nombre)\r\n        var cuerpo: TextView = view.findViewById(R.id.informacion)\r\n\r\n\r\n        fun bind(tips: JSONObject) {\r\n            var info: String = tips.getString(\"cuerpo\")\r\n\r\n            if (info.length > 150) {\r\n                cuerpo.text = info.slice(0..150) + \"...\"\r\n            } else {\r\n                cuerpo.text = info\r\n            }\r\n            comp_Usuario.text = tips.getString(\"comp_usuario\")\r\n        }\r\n    }\r\n\r\n    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHoler(\r\n        LayoutInflater.from(parent.context).inflate(R.layout.item_blog, parent, false)\r\n    )\r\n\r\n    override fun getItemCount() = this.blogList.size\r\n\r\n    override fun onBindViewHolder(holder: ViewHoler, position: Int) {\r\n        val tips = blogList[position]\r\n        try {\r\n            holder.bind(tips)\r\n            holder.itemView.setOnClickListener {\r\n                BlogListener.onBlogListener(tips, position)\r\n            }\r\n        } catch (e: Exception) {\r\n            Log.w(\"ERROR\", e)\r\n        }\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/Adapter/RepartidorAdaptador.kt b/app/src/main/java/com/example/ecogaia/Adapter/RepartidorAdaptador.kt
+--- a/app/src/main/java/com/example/ecogaia/Adapter/RepartidorAdaptador.kt	(revision 6991189c1815a3c0328482b01d209da8e6d1e25a)
++++ b/app/src/main/java/com/example/ecogaia/Adapter/RepartidorAdaptador.kt	(date 1686080844897)
+@@ -14,30 +14,18 @@
+     private val repartidorListener: RepartidorListener,
+ ) : RecyclerView.Adapter<RepartidorAdaptador.ViewHoler>() {
+     inner class ViewHoler(view: View) : RecyclerView.ViewHolder(view) {
+-        var comp_Usuario: TextView = view.findViewById(R.id.Nombre)
+-        var cuerpo: TextView = view.findViewById(R.id.informacion)
+-
+ 
+-        fun bind(tips: JSONObject) {
+-            var info: String = tips.getString("cuerpo")
+-
+-            if (info.length > 150) {
+-                cuerpo.text = info.slice(0..150) + "..."
+-            } else {
+-                cuerpo.text = info
+-            }
+-            comp_Usuario.text = tips.getString("comp_usuario")
+-        }
++        var dis_nombre: TextView = view.findViewById(R.id.)
+     }
+ 
+     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHoler(
+         LayoutInflater.from(parent.context).inflate(R.layout.item_blog, parent, false)
+     )
+ 
+-    override fun getItemCount() = this.blogList.size
++    override fun getItemCount() = this.repList.size
+ 
+     override fun onBindViewHolder(holder: ViewHoler, position: Int) {
+-        val tips = blogList[position]
++        val tips = repList[position]
+         try {
+             holder.bind(tips)
+             holder.itemView.setOnClickListener {
+Index: app/src/main/res/layout/fragment_favoritos.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    android:background=\"@drawable/fondo7\"\r\n    tools:context=\".UI.fragment_favoritos\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"700dp\"\r\n        android:background=\"@drawable/shape_form\"\r\n        android:layout_margin=\"30dp\"\r\n        android:orientation=\"vertical\">\r\n        <LinearLayout\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:background=\"@drawable/shape_form2\"\r\n            android:layout_margin=\"20dp\"\r\n            android:layout_gravity=\"center\">\r\n            <ImageView\r\n                android:layout_width=\"100dp\"\r\n                android:layout_height=\"100dp\"\r\n                android:layout_margin=\"10dp\"\r\n                android:src=\"@drawable/extraterrestres\"/>\r\n        </LinearLayout>\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"500dp\"\r\n            android:background=\"@drawable/shape_carrito\"\r\n            android:layout_margin=\"10dp\"\r\n            android:orientation=\"vertical\"\r\n            >\r\n            <ScrollView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"470dp\">\r\n                <androidx.recyclerview.widget.RecyclerView\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"20dp\"\r\n                    android:layout_marginTop=\"10dp\"\r\n                    android:layout_marginBottom=\"30dp\"\r\n                    app:layoutManager=\"androidx.recyclerview.widget.LinearLayoutManager\"\r\n                    tools:listitem=\"@layout/item_favoritos\"\r\n                    android:id=\"@+id/favoritos_recycler\"/>\r\n            </ScrollView>\r\n        </LinearLayout>\r\n    </LinearLayout>\r\n    <RelativeLayout\r\n        android:id=\"@+id/rl_FavoritosList\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"800dp\"  >\r\n\r\n        <View\r\n            android:id=\"@+id/view_favoritosList\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:alpha=\"0.5\"\r\n            android:background=\"@color/verde_botones\" />\r\n\r\n        <ProgressBar\r\n            android:id=\"@+id/pgbar_favoritosList\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n<<<<<<< HEAD\r\n            android:indeterminateTint=\"@color/verde_iconos\"/>\r\n=======\r\n            android:indeterminateTint=\"@color/verde_claro\"/>\r\n>>>>>>> de9b055d9973715ce5de3e0d0a3c4c17a3146b50\r\n\r\n    </RelativeLayout>\r\n\r\n</FrameLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_favoritos.xml b/app/src/main/res/layout/fragment_favoritos.xml
+--- a/app/src/main/res/layout/fragment_favoritos.xml	(revision 6991189c1815a3c0328482b01d209da8e6d1e25a)
++++ b/app/src/main/res/layout/fragment_favoritos.xml	(date 1686080620810)
+@@ -64,11 +64,7 @@
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerInParent="true"
+-<<<<<<< HEAD
+             android:indeterminateTint="@color/verde_iconos"/>
+-=======
+-            android:indeterminateTint="@color/verde_claro"/>
+->>>>>>> de9b055d9973715ce5de3e0d0a3c4c17a3146b50
+ 
+     </RelativeLayout>
+ 
+Index: app/src/main/java/com/example/ecogaia/UI/fragment_login.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ecogaia\r\n\r\nimport android.content.Intent\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport androidx.fragment.app.Fragment\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport android.widget.Button\r\nimport android.widget.EditText\r\nimport android.widget.Toast\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport androidx.core.os.bundleOf\r\nimport androidx.navigation.Navigation\r\nimport com.android.volley.Request\r\nimport com.android.volley.toolbox.StringRequest\r\nimport com.android.volley.toolbox.Volley\r\nimport org.json.JSONArray\r\n\r\n\r\nclass fragment_login : AppCompatActivity() {\r\n\r\n     var confirUsuario: String? = null\r\n     var confirContraseña: String? = null\r\n     var conUsuario: EditText? = null\r\n     var conContraseña: EditText? = null\r\n     var buttonLogin: Button? = null\r\n\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.fragment_login)\r\n        this.conUsuario = findViewById(R.id.usuario)\r\n        this.conContraseña = findViewById(R.id.contrasenia)\r\n        this.buttonLogin = findViewById(R.id.login)\r\n\r\n        this.buttonLogin?.setOnClickListener() {\r\n            Log.w(\"usario\", this.conUsuario?.text.toString())\r\n            Log.w(\"contrasenia\", this.conContraseña?.text.toString())\r\n\r\n            if (this.conUsuario!!.text.isEmpty() || this.conUsuario!!.text.isEmpty()){\r\n                Toast.makeText(this, \"Debes Completar Todos Los Campos\", Toast.LENGTH_LONG).show()\r\n            } else {\r\n                val url = \"http://192.168.251.2:8080/validarUsuario/\"+this.conUsuario?.text+\"/\"+this.conContraseña?.text\r\n                val queue = Volley.newRequestQueue(this)\r\n                val resultGet = StringRequest (Request.Method.GET, url, { response ->\r\n                    if(response != \"Usuario o contraseña incorrectos\"){\r\n                        var intent = Intent(this, MainActivity::class.java)\r\n                        intent.putExtra(\"user\",response)\r\n                        startActivity(intent)\r\n                    } else {\r\n                        Toast.makeText(this,response, Toast.LENGTH_LONG).show()\r\n                    }\r\n                }, { error ->\r\n                    Log.w(\"String Error\", error)\r\n                } )\r\n\r\n                queue.add(resultGet)\r\n            }\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/UI/fragment_login.kt b/app/src/main/java/com/example/ecogaia/UI/fragment_login.kt
+--- a/app/src/main/java/com/example/ecogaia/UI/fragment_login.kt	(revision 6991189c1815a3c0328482b01d209da8e6d1e25a)
++++ b/app/src/main/java/com/example/ecogaia/UI/fragment_login.kt	(date 1686080571191)
+@@ -21,8 +21,6 @@
+ 
+ class fragment_login : AppCompatActivity() {
+ 
+-     var confirUsuario: String? = null
+-     var confirContraseña: String? = null
+      var conUsuario: EditText? = null
+      var conContraseña: EditText? = null
+      var buttonLogin: Button? = null
+@@ -42,7 +40,7 @@
+             if (this.conUsuario!!.text.isEmpty() || this.conUsuario!!.text.isEmpty()){
+                 Toast.makeText(this, "Debes Completar Todos Los Campos", Toast.LENGTH_LONG).show()
+             } else {
+-                val url = "http://192.168.251.2:8080/validarUsuario/"+this.conUsuario?.text+"/"+this.conContraseña?.text
++                val url = "http://192.168.215.2:8080/validarUsuario/"+this.conUsuario?.text+"/"+this.conContraseña?.text
+                 val queue = Volley.newRequestQueue(this)
+                 val resultGet = StringRequest (Request.Method.GET, url, { response ->
+                     if(response != "Usuario o contraseña incorrectos"){
+Index: app/src/main/res/layout/activity_insertarblog.xml
+===================================================================
+diff --git a/app/src/main/res/layout/activity_insertarblog.xml b/app/src/main/res/layout/activity_insertarblog.xml
+deleted file mode 100644
+--- a/app/src/main/res/layout/activity_insertarblog.xml	(revision 6991189c1815a3c0328482b01d209da8e6d1e25a)
++++ /dev/null	(revision 6991189c1815a3c0328482b01d209da8e6d1e25a)
+@@ -1,82 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-
+-    tools:context=".Activity_Insertarblog">
+-
+-    <androidx.cardview.widget.CardView
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:background="@drawable/fondo7"
+-        android:elevation="15dp"
+-        >
+-
+-        <Button
+-            android:background="@drawable/shape_form"
+-            android:id="@+id/btninicio"
+-            android:layout_width="65dp"
+-            android:textColor="@color/verde_claro"
+-            android:layout_height="30dp"
+-            android:layout_marginTop="20dp"
+-            android:layout_marginLeft="20dp"
+-            android:text="Inicio">
+-        </Button>
+-
+-        <LinearLayout
+-            android:layout_width="340dp"
+-            android:layout_height="350dp"
+-            android:orientation="vertical"
+-            android:background="@drawable/shape_registrar"
+-            android:layout_marginTop="70dp"
+-            android:layout_marginLeft="20dp">
+-
+-
+-
+-
+-            <LinearLayout
+-                android:layout_height="300dp"
+-                android:layout_width="310dp"
+-                android:layout_marginLeft="15dp"
+-                android:layout_marginTop="20dp"
+-
+-                android:orientation="vertical"
+-                android:padding="20dp">
+-
+-                <EditText
+-                    android:id="@+id/txtTitulo"
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="50dp"
+-                    android:ems="10"
+-                    android:inputType="text"
+-                    android:text="Ingrese el nombre"></EditText>
+-
+-                <EditText
+-                    android:id="@+id/txtCorreo"
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="10dp"
+-                    android:ems="100"
+-                    android:hint="Ingrese la descripcion"
+-                    android:inputType="text"></EditText>
+-
+-
+-
+-                <Button
+-                    android:id="@+id/btnReg"
+-                    android:layout_width="100dp"
+-                    android:layout_height="wrap_content"
+-                    android:layout_marginTop="20dp"
+-                    android:background="@drawable/shape_form"
+-                    android:onClick="clickAddUsuario"
+-                    android:text="Agregar"
+-                    android:textColor="@color/verde_claro"/>
+-
+-            </LinearLayout>
+-        </LinearLayout>
+-    </androidx.cardview.widget.CardView>
+-
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
