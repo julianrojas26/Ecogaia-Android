@@ -27,21 +27,14 @@
         android:background="@drawable/shape_carrito"
         android:padding="5dp">
 
-        <EditText
-            android:layout_width="266dp"
+        <SearchView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Buscar"
-            android:layout_marginLeft="10dp"
             android:inputType="text"
-            android:textColor="@color/verde_iconos" />
+            android:textColor="@color/verde_iconos"
+            android:id="@+id/search_prod"/>
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/buscar">
 
-        </ImageView>
     </LinearLayout>
 
     <RelativeLayout

@@ -12,7 +12,11 @@ import com.example.ecogaia.adapter.BlogListener
 import com.example.ecogaia.R
 import org.json.JSONObject
 
-class BlogAdaptador(private val blogList: ArrayList<JSONObject>, private val blogListener: BlogListener): RecyclerView.Adapter<BlogAdaptador.ViewHoler>(),Filterable {
+class BlogAdaptador(
+    private val blogList: ArrayList<JSONObject>,
+    private val blogListener: BlogListener):
+    RecyclerView.Adapter<BlogAdaptador.ViewHoler>(),
+    Filterable {
 
     private var filteredList: ArrayList<JSONObject> = blogList
 
@@ -44,7 +48,7 @@ class BlogAdaptador(private val blogList: ArrayList<JSONObject>, private val blo
         try {
             holder.bind(tips)
             holder.itemView.setOnClickListener{
-                blogListener.onBlogListener(tips, position)
+                blogListener.onBlogCliked(tips, position)
             }
         } catch (e: Exception) {
             Log.w("ERROR", "NO")

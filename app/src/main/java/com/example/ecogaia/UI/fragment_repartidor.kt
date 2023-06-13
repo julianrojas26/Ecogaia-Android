@@ -71,7 +71,7 @@ class fragment_repartidor : Fragment(), BlogListener {
         return ll
     }
 
-    override fun onBlogListener(tips: JSONObject, position: Int) {
+    override fun onBlogCliked(tips: JSONObject, position: Int) {
         val bundle = bundleOf("tips" to tips.toString())
         findNavController().navigate(
             R.id.fragment_detalle_blog, bundle

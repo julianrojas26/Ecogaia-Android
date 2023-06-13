@@ -131,7 +131,7 @@ class fragment_blog : Fragment(), BlogListener {
     }
 
 
-    override fun onBlogListener(tips: JSONObject, position: Int) {
+    override fun onBlogCliked(tips: JSONObject, position: Int) {
         val bundle = bundleOf("tips" to tips.toString())
         findNavController().navigate(
             R.id.fragment_detalle_blog, bundle

@@ -5,16 +5,21 @@ import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.TextView
 import com.example.ecogaia.R
 import org.json.JSONObject
+import com.example.ecogaia.adapter.ProductosListener
 
 class ProductosAdaptador(
-    var context: Context?,
-    var ProductosList: ArrayList<JSONObject>,
-    var ProductosListener: ProductosListener,
-) :
-    BaseAdapter() {
+    private val context: Context?,
+    private val ProductosList: ArrayList<JSONObject>,
+    private val productosListener: ProductosListener
+):
+    BaseAdapter(), Filterable {
+    private var filteredList: ArrayList<JSONObject> = ProductosList
+
 
     override fun getCount(): Int {
         return ProductosList.size
@@ -48,7 +53,7 @@ class ProductosAdaptador(
 
         try {
             view.setOnClickListener {
-                ProductosListener.onProductosCliked(producto, p0)
+                productosListener.onProductosCliked(producto, p0)
                 Log.w("PRODUCTOS", producto.toString() + p0.toString())
             }
         } catch (e: Exception) {
@@ -56,6 +61,31 @@ class ProductosAdaptador(
         }
 
         return view
+    }
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val filteredResults = ArrayList<JSONObject>()
+
+                for (jsonObject in ProductosList) {
+                    val nombre = jsonObject.optString("prod_Nombre", "")
+
+                    if (nombre.contains(constraint.toString(), true)) {
+                        filteredResults.add(jsonObject)
+                    }
+                }
+
+                val results = FilterResults()
+                results.values = filteredResults
+                return results
+            }
+
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                filteredList = results?.values as ArrayList<JSONObject>
+                notifyDataSetChanged()
+
+            }
+        }
     }
 
 }
