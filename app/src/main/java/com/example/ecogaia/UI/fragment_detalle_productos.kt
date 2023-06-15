@@ -1,14 +1,20 @@
 package com.example.ecogaia.UI
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import android.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.example.ecogaia.R
 import org.json.JSONObject
 
@@ -39,25 +45,42 @@ class fragment_detalle_productos : DialogFragment() {
         this.categoria_prod = ll.findViewById(R.id.categoria_produ)
         this.precio_prod = ll.findViewById(R.id.precio_produ)
 
-        var addCarrito: ImageButton = ll.findViewById(R.id.addCar)
 
-        addCarrito.setOnClickListener() {
-
-        }
         return ll
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val bundle = activity?.intent?.extras
+        val ip = bundle!!.getString("url").toString()
+        val  user = JSONObject(bundle!!.getString("user"))
+
         val Usuario: String = "7"
         this.tbProdDets.navigationIcon = ContextCompat.getDrawable(view.context, R.drawable.close)
 
         val tips = JSONObject(arguments?.getString("productos"))
 
+        val queue = Volley.newRequestQueue(this.context)
+
         this.nombre_prod.text = tips.getString("prod_Nombre")
         this.categoria_prod.text = tips.getString("prod_Categoria")
         this.precio_prod.text = tips.getString("prod_Precio")
+
+        var addCarrito: ImageButton = view.findViewById(R.id.addCar)
+
+        addCarrito.setOnClickListener() {
+            val  url = ip + "insertarCarrito/" + user.getString("res") + "/" + tips.getString("prod_Codigo") + "/1"
+            val resultPost = object : StringRequest(Request.Method.POST, url,
+                Response.Listener<String> { response ->
+                    Toast.makeText(this.context, response, Toast.LENGTH_LONG).show()
+                }, Response.ErrorListener { error ->
+                    Toast.makeText(this.context, error.toString(), Toast.LENGTH_LONG).show()
+                }
+            ){
+            }
+            queue.add(resultPost)
+        }
     }
 
     override fun onStart() {

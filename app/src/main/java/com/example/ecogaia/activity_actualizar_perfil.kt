@@ -55,6 +55,11 @@ class activity_actualizar_perfil : AppCompatActivity() {
 
     }
 
+    fun inicio (view: View) {
+        val i = Intent(this, MainActivity::class.java).apply {  }
+        startActivity(i)
+    }
+
 
      fun clickActualizarPerfil( view: View){
          val bundle = intent.extras

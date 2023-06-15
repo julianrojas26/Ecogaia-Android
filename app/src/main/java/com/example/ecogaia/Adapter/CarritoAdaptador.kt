@@ -15,13 +15,11 @@ class CarritoAdaptador(
 ) : RecyclerView.Adapter<CarritoAdaptador.ViewHolder>() {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var cot_fecha = view.findViewById<TextView>(R.id.fecha_carrito)
         var cot_cantidad = view.findViewById<TextView>(R.id.cantidad_carrito)
         var cot_nombre = view.findViewById<TextView>(R.id.nombre_carrito)
         var cot_total = view.findViewById<TextView>(R.id.total_carrito)
 
         fun bind(carrito: JSONObject) {
-            cot_fecha.text = carrito.getString("Venta_Fecha")
             cot_cantidad.text = carrito.getString("cantidad")
             cot_nombre.text = carrito.getString("Prod_Nombre")
             cot_total.text = carrito.getString("total")

@@ -82,5 +82,17 @@
 
     </RelativeLayout>
 
+    <Button
+        android:id="@+id/btnComprar"
+        android:layout_width="190dp"
+        android:layout_height="60dp"
+        android:background="@drawable/shape_form2"
+        android:layout_marginBottom = "80dp"
+        android:layout_gravity="center|bottom"
+        android:gravity="center"
+        android:text="COMPRAR"
+        android:textColor="@color/verde_claro">
+
+    </Button>
 
 </FrameLayout>
