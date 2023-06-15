@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
-import com.example.ecogaia.Models.tips
 import com.example.ecogaia.R
 import org.json.JSONObject
 
