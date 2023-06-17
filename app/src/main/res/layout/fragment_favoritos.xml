@@ -9,7 +9,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="700dp"
+=======
+        android:layout_height="570dp"
+        android:background="@drawable/shape_form"
+>>>>>>> 6c13fc623e83864ec339f958dd0ec9f17785bb50
         android:layout_margin="30dp"
         android:background="@drawable/shape_form"
         android:orientation="vertical">
@@ -37,8 +42,12 @@
 
             <ScrollView
                 android:layout_width="match_parent"
+<<<<<<< HEAD
                 android:layout_height="470dp">
 
+=======
+                android:layout_height="380dp">
+>>>>>>> 6c13fc623e83864ec339f958dd0ec9f17785bb50
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/favoritos_recycler"
                     android:layout_width="match_parent"
@@ -68,9 +77,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+<<<<<<< HEAD
             android:indeterminateTint="@color/verde_iconos" />
 
 
+=======
+            android:indeterminateTint="@color/verde_iconos"/>
+>>>>>>> 6c13fc623e83864ec339f958dd0ec9f17785bb50
     </RelativeLayout>
 
 </FrameLayout>

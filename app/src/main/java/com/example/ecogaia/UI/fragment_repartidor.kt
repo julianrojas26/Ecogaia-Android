@@ -16,20 +16,18 @@ import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.ecogaia.R
-import com.example.ecogaia.Adapter.BlogAdaptador
-import com.example.ecogaia.Adapter.BlogListener
-import com.example.ecogaia.Adapter.RepartidorAdaptador
-import com.example.ecogaia.Adapter.RepartidorListener
+import com.example.ecogaia.adapter.BlogAdaptador
+import com.example.ecogaia.adapter.BlogListener
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 
 
-class fragment_repartidor : Fragment(), RepartidorListener {
+class fragment_repartidor : Fragment(), BlogListener {
     private lateinit var recycler: RecyclerView
     private lateinit var viewAlpha: View
     private lateinit var pgbar: ProgressBar
-    private lateinit var rlReptList: RelativeLayout
+    private lateinit var rlProductList: RelativeLayout
     private lateinit var repartidor: ArrayList<JSONObject>
 
     override fun onCreateView(
@@ -39,11 +37,10 @@ class fragment_repartidor : Fragment(), RepartidorListener {
     ): View? {
         val bundle = activity?.intent?.extras
         val ip = bundle!!.getString("url")
-        val user = JSONObject(bundle!!.getString("user"))
 
         val ll = inflater.inflate(R.layout.fragment_repartidor, container, false)
 
-        val url = ip + "distribuir/" + user.getString("res")
+        val url = ip + "listarRepartidor"
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
@@ -57,7 +54,7 @@ class fragment_repartidor : Fragment(), RepartidorListener {
                     i++
                 }
                 Log.d("REPARTIDOR", this.repartidor.toString())
-                this.recycler.adapter= RepartidorAdaptador(this.repartidor, this)
+                this.recycler.adapter= BlogAdaptador(this.repartidor, this)
                 this.viewAlpha.visibility= View.INVISIBLE
                 this.pgbar.visibility = View.INVISIBLE
             }catch (e: JSONException) {
@@ -67,17 +64,17 @@ class fragment_repartidor : Fragment(), RepartidorListener {
             Log.w("jsonError", error)
         })
         queue.add(stringRequest)
-        this.recycler = ll.findViewById(R.id.recycler_repartidor)
-        this.viewAlpha = ll.findViewById(R.id.view_repartidorList)
-        this.pgbar = ll.findViewById(R.id.pgbar_repartidorList)
-        this.rlReptList = ll.findViewById(R.id.rl_RepartidorList)
+        this.recycler = ll.findViewById(R.id.recycler_blog)
+        this.viewAlpha = ll.findViewById(R.id.view_blogList)
+        this.pgbar = ll.findViewById(R.id.pgbar_blogsList)
+        this.rlProductList = ll.findViewById(R.id.rl_BlogList)
         return ll
     }
 
-    override fun onRepartidorListener(rep: JSONObject, position: Int) {
-        val bundle = bundleOf("dis" to rep.toString())
+    override fun onBlogCliked(tips: JSONObject, position: Int) {
+        val bundle = bundleOf("tips" to tips.toString())
         findNavController().navigate(
-            R.id.fragment_detalle_repartidor, bundle
+            R.id.fragment_detalle_blog, bundle
         )
     }
 }

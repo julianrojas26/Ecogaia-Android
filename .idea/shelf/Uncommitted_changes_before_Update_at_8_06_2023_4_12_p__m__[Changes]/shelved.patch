@@ -1,0 +1,101 @@
+Index: app/src/main/java/com/example/ecogaia/UI/fragment_detalleProductos.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ecogaia.UI\r\n\r\nimport android.os.Bundle\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport android.widget.TextView\r\nimport android.widget.Toolbar\r\nimport androidx.core.content.ContextCompat\r\nimport androidx.fragment.app.DialogFragment\r\nimport com.example.ecogaia.R\r\nimport org.json.JSONObject\r\n\r\nclass fragment_detalleProductos : DialogFragment() {\r\n    private lateinit var tbProdDets : Toolbar\r\n    private lateinit var nombre_prod : TextView\r\n    private lateinit var categoria_prod: TextView\r\n    private lateinit var precio_prod: TextView\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setStyle(STYLE_NORMAL, R.style.FullScreenDialogStyle)\r\n    }\r\n\r\n    override fun onCreateView(\r\n        inflater: LayoutInflater,\r\n        container: ViewGroup?,\r\n        savedInstanceState: Bundle?\r\n    ): View? {\r\n        val ll = inflater.inflate(R.layout.fragment_detalle_productos, container, false)\r\n        this.tbProdDets = ll.findViewById(R.id.tbProdDets)\r\n        this.tbProdDets.setNavigationOnClickListener{\r\n            dismiss()\r\n        }\r\n\r\n        this.nombre_prod = ll.findViewById(R.id.nombre_produ)\r\n        this.categoria_prod = ll.findViewById(R.id.categoria_produ)\r\n        this.precio_prod = ll.findViewById(R.id.precio_produ)\r\n\r\n        return ll\r\n    }\r\n\r\n    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {\r\n        super.onViewCreated(view, savedInstanceState)\r\n\r\n        this.tbProdDets.navigationIcon = ContextCompat.getDrawable(view.context, R.drawable.close)\r\n\r\n        val tips = JSONObject(arguments?.getString(\"productos\"))\r\n\r\n        this.nombre_prod.text = tips.getString(\"prod_Nombre\")\r\n        this.categoria_prod.text = tips.getString(\"prod_Categoria\")\r\n        this.precio_prod.text = tips.getString(\"favoritos\")\r\n    }\r\n\r\n    override fun onStart() {\r\n        super.onStart()\r\n        dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)\r\n    }\r\n}
+===================================================================
+diff --git a/app/src/main/java/com/example/ecogaia/UI/fragment_detalleProductos.kt b/app/src/main/java/com/example/ecogaia/UI/fragment_detalleProductos.kt
+--- a/app/src/main/java/com/example/ecogaia/UI/fragment_detalleProductos.kt	
++++ b/app/src/main/java/com/example/ecogaia/UI/fragment_detalleProductos.kt	
+@@ -1,21 +1,27 @@
+ package com.example.ecogaia.UI
+ 
+ import android.os.Bundle
++import android.util.Log
+ import android.view.LayoutInflater
+ import android.view.View
+ import android.view.ViewGroup
+-import android.widget.TextView
+-import android.widget.Toolbar
++import android.widget.*
+ import androidx.core.content.ContextCompat
+ import androidx.fragment.app.DialogFragment
++import com.android.volley.Request
++import com.android.volley.Response
++import com.android.volley.toolbox.StringRequest
++import com.android.volley.toolbox.Volley
+ import com.example.ecogaia.R
+ import org.json.JSONObject
+ 
+ class fragment_detalleProductos : DialogFragment() {
+-    private lateinit var tbProdDets : Toolbar
+-    private lateinit var nombre_prod : TextView
++    private lateinit var tbProdDets: Toolbar
++    private lateinit var nombre_prod: TextView
+     private lateinit var categoria_prod: TextView
+     private lateinit var precio_prod: TextView
++    private lateinit var button: ImageButton
++
+ 
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+@@ -29,27 +35,59 @@
+     ): View? {
+         val ll = inflater.inflate(R.layout.fragment_detalle_productos, container, false)
+         this.tbProdDets = ll.findViewById(R.id.tbProdDets)
+-        this.tbProdDets.setNavigationOnClickListener{
++        this.tbProdDets.setNavigationOnClickListener {
+             dismiss()
+         }
+ 
+         this.nombre_prod = ll.findViewById(R.id.nombre_produ)
+         this.categoria_prod = ll.findViewById(R.id.categoria_produ)
+         this.precio_prod = ll.findViewById(R.id.precio_produ)
++        this.button = ll.findViewById(R.id.btn_Star)
+ 
+         return ll
+     }
+ 
++
++
++
++
++
+     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+         super.onViewCreated(view, savedInstanceState)
+ 
++        val id_usuario = "7"
++
+         this.tbProdDets.navigationIcon = ContextCompat.getDrawable(view.context, R.drawable.close)
+ 
+         val tips = JSONObject(arguments?.getString("productos"))
+ 
++        Log.w("TIPS", tips.toString())
+         this.nombre_prod.text = tips.getString("prod_Nombre")
+         this.categoria_prod.text = tips.getString("prod_Categoria")
+         this.precio_prod.text = tips.getString("favoritos")
++
++        val codigo = tips.getString("prod_Codigo")
++
++        this.button.setOnClickListener(){
++            val url = "http://192.168.43.224:8080/insertarFavoritos/"+codigo+"/"+id_usuario
++            val queue = Volley.newRequestQueue(this.context)
++            val resultadoPost = object : StringRequest(
++                Request.Method.POST, url,
++                Response.Listener<String> { response ->
++                    Toast.makeText(this.context, "Favorito agregado exitosamente", Toast.LENGTH_LONG).show()
++                }, Response.ErrorListener { error ->
++                    Toast.makeText(this.context, "Favorito No agregado $error", Toast.LENGTH_LONG).show()
++                }
++            ) {
++
++            }
++            val con = resultadoPost.bodyContentType
++            Log.e("a", "$con")
++            queue.add(resultadoPost)
++        }
++
++
++
+     }
+ 
+     override fun onStart() {

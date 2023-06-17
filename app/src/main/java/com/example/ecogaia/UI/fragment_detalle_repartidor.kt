@@ -11,6 +11,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
+<<<<<<< HEAD
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
@@ -18,6 +19,8 @@ import com.android.volley.toolbox.Volley
 import com.example.ecogaia.Adapter.GestionarAdaptador
 import com.example.ecogaia.Adapter.ItemRepAdaptador
 import com.example.ecogaia.Models.tips
+=======
+>>>>>>> 6c13fc623e83864ec339f958dd0ec9f17785bb50
 import com.example.ecogaia.R
 import org.json.JSONArray
 import org.json.JSONException

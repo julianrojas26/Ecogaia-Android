@@ -2,14 +2,12 @@ package com.example.ecogaia.UI
 
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
-import androidx.core.os.bundleOf
-import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
@@ -32,15 +30,11 @@ class fragment_favoritos : Fragment(), FavoritosListener {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View? {
-        val bundle = activity?.intent?.extras
-        val ip = bundle!!.getString("url").toString()
-        val user = JSONObject(bundle!!.getString("user"))
-
+        Log.d("FavoritosFragment", "Entered to onCreateView")
         val ll = inflater.inflate(R.layout.fragment_favoritos, container, false)
-
-        val url = ip +"favoritosUsuario/"+ user.getString("res")
+        val url = "http://192.168.212.2:8080/listarFavoritos"
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
@@ -53,12 +47,11 @@ class fragment_favoritos : Fragment(), FavoritosListener {
                     favoritos.add(jsonArray[i] as JSONObject)
                     i++
                 }
-                Log.d("FAVORITOS", this.favoritos.toString())
-                this.recycler.adapter = FavoritosAdaptador(this.favoritos, this)
-                this.viewAlpha.visibility = View.INVISIBLE
+                Log.d("FavoritosFragment", this.favoritos.toString())
+                this.recycler.adapter= FavoritosAdaptador(this.favoritos, this)
+                this.viewAlpha.visibility= View.INVISIBLE
                 this.pgbar.visibility = View.INVISIBLE
-            } catch (e: JSONException) {
-                Log.w("ERROR", e)
+            }catch (e:JSONException) {
             }
         }, { error ->
             Log.w("jsonError", error)
@@ -71,10 +64,5 @@ class fragment_favoritos : Fragment(), FavoritosListener {
         return ll
     }
 
-    override fun onFavoritosClicked(favoritos: JSONObject, position: Int) {
-        val bundle = bundleOf("productos" to favoritos.toString())
-        findNavController().navigate(
-            R.id.fragment_detalleProductos, bundle
-        )
-    }
+
 }
