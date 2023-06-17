@@ -33,29 +33,26 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="10dp">
             </SearchView>
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="300dp"
                 android:layout_height="210dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/shape_carrito"
                 >
 
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
                 android:layout_width="300dp"
                 android:layout_height="210dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/shape_carrito"
                 >
 
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
                 android:layout_width="300dp"
                 android:layout_height="210dp"
-                android:background="@drawable/shape_carrito"
                 >
 
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
     </LinearLayout>

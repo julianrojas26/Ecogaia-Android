@@ -67,7 +67,9 @@ class fragment_detalle_productos : DialogFragment() {
         this.categoria_prod.text = tips.getString("prod_Categoria")
         this.precio_prod.text = tips.getString("prod_Precio")
 
-        var addCarrito: ImageButton = view.findViewById(R.id.addCar)
+        val addCarrito: ImageButton = view.findViewById(R.id.addCar)
+
+        val addFav: ImageButton = view.findViewById(R.id.addFav)
 
         addCarrito.setOnClickListener() {
             val  url = ip + "insertarCarrito/" + user.getString("res") + "/" + tips.getString("prod_Codigo") + "/1"
@@ -80,6 +82,29 @@ class fragment_detalle_productos : DialogFragment() {
             ){
             }
             queue.add(resultPost)
+        }
+
+        addFav.setOnClickListener() {
+            var url = ip + "usuario/"+ user.getString("res")
+            val getPost = object : StringRequest (Request.Method.GET, url,
+                Response.Listener<String>{ response ->
+                    var user = JSONObject(response)
+                    val id = user.getString("id_usuario")
+                    url = ip + "insertarFavoritos/" + tips.getString("prod_Codigo") + "/" + id
+
+                    val postRequest = StringRequest(Request.Method.POST, url,
+                    Response.Listener<String>{ response ->
+                        Toast.makeText(this.context, response, Toast.LENGTH_LONG).show()
+                    }, Response.ErrorListener { error ->
+                        Toast.makeText(this.context, error.stackTraceToString(), Toast.LENGTH_LONG).show()
+                    })
+                    queue.add(postRequest)
+                }, Response.ErrorListener { error ->
+                    Toast.makeText(this.context, error.toString(), Toast.LENGTH_LONG).show()
+                }
+            ){
+            }
+            queue.add(getPost)
         }
     }
 

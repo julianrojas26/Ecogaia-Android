@@ -17,8 +17,8 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.ecogaia.Adapter.CarritoAdaptador
-import com.example.ecogaia.Adapter.CarritoListener
+import com.example.ecogaia.adapter.CarritoAdaptador
+import com.example.ecogaia.adapter.CarritoListener
 import com.example.ecogaia.R
 import org.json.JSONArray
 import org.json.JSONException

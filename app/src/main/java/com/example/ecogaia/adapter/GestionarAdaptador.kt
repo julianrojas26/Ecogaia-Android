@@ -1,4 +1,4 @@
-package com.example.ecogaia.Adapter
+package com.example.ecogaia.adapter
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -18,7 +18,7 @@ class GestionarAdaptador(
             var ges_codigo: TextView = view.findViewById(R.id.codigo_gestionar)
             var ges_nombre: TextView = view.findViewById(R.id.nombre_gestionar)
             var ges_categoria: TextView = view.findViewById(R.id.categoria_gestionar)
-            var ges_cantidad: TextView = view.findViewById(R.id.categoria_gestionar)
+            var ges_cantidad: TextView = view.findViewById(R.id.cantidad_gestionar)
             var ges_precio: TextView = view.findViewById(R.id.precio_gestionar)
 
 

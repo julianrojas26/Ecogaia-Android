@@ -119,4 +119,9 @@
         android:name="com.example.ecogaia.UI.fragment_detalle_carrito"
         android:label="fragment_detalle_carrito"
         tools:layout="@layout/fragment_detalle_carrito" />
+    <fragment
+        android:id="@+id/fragment_estadisticas"
+        android:name="com.example.ecogaia.fragment_estadisticas"
+        android:label="fragment_estadisticas"
+        tools:layout="@layout/fragment_estadisticas" />
 </navigation>

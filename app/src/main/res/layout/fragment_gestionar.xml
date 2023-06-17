@@ -15,7 +15,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="720dp">
+            android:layout_height="734dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_gestionar"
