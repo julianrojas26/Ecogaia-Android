@@ -35,7 +35,9 @@ class MainActivity : AppCompatActivity() {
         /// Session
         bundle = Bundle()
         this.user = JSONObject(intent.getStringExtra("user").toString())
-        this.url = "http://192.168.160.2:8080/"
+
+        this.url = "http://192.168.1.78:8080/"
+
         bundle.putString("user", this.user.toString())
         bundle.putString("url", this.url)
         intent.putExtras(bundle)
@@ -83,12 +85,6 @@ class MainActivity : AppCompatActivity() {
         navController.navigate(R.id.fragment_favoritos)
     }
 
-    fun endSession (view: View?) {
-        val i = Intent(this, fragment_login::class.java).apply {  }
-        startActivity(i)
-        finish()
-    }
-
     /*conexion overflow*/
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -99,7 +95,8 @@ class MainActivity : AppCompatActivity() {
     /* Menu lateral */
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
+
+         when (item.itemId) {
             R.id.item1 -> {
                 val navController =
                     Navigation.findNavController(this, R.id.nav_host_fragment_container)
@@ -118,13 +115,17 @@ class MainActivity : AppCompatActivity() {
                 navController.navigate(R.id.fragment_repartidor)
             }
 
+            R.id.item4 -> {
+                val navController =
+                    Navigation.findNavController(this, R.id.nav_host_fragment_container)
+                navController.navigate(R.id.fragment_repartidor)
+            }
+
             R.id.item5 -> {
                 val navController =
                     Navigation.findNavController(this, R.id.nav_host_fragment_container)
                 navController.navigate(R.id.fragment_gestionar)
             }
-
-            R.id.item6 -> endSession(null)
 
         }
         return super.onOptionsItemSelected(item)
