@@ -25,8 +25,6 @@ class activity_agregar_blog : AppCompatActivity() {
         cuerpo = findViewById(R.id.textcuerpo)
     }
 
-
-
     fun clickAddProducts(view: View) {
         val bundle = intent.extras
         val ip = bundle!!.getString("url").toString()
@@ -36,18 +34,17 @@ class activity_agregar_blog : AppCompatActivity() {
         Log.w("url", ip)
 
         val url = ip +"insertarTip/" + user.getString("res")
-
         val queue = Volley.newRequestQueue(this)
         val resultPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response ->
                 Toast.makeText(this, "Tip Creado exitosamente", Toast.LENGTH_LONG).show()
+                finish()
             }, Response.ErrorListener { error ->
                 Toast.makeText(this, "Tip No Creado $error", Toast.LENGTH_LONG).show()
             }
         ) {
             override fun getParams(): MutableMap<String, String>? {
                 val params = HashMap<String, String>()
-                params.put("comp_usuario", nombre?.text.toString())
                 params.put("titulo", titulo?.text.toString())
                 params.put("cuerpo", cuerpo?.text.toString())
                 params.put("usuario", "0")
@@ -56,5 +53,6 @@ class activity_agregar_blog : AppCompatActivity() {
             }
         }
         queue.add(resultPost)
+
     }
 }

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="3dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/shape_table">
+
+            <TextView
+                android:id="@+id/codigo_gestionar"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="1"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"></TextView>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="43dp"
+                android:background="@color/verde_claro" />
+
+            <TextView
+                android:id="@+id/nombre_gestionar"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:text="Suavisante para ropa biogar"
+                android:textColor="@color/black"
+                android:textSize="15sp"></TextView>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="43dp"
+                android:background="@color/verde_claro" />
+
+            <TextView
+                android:id="@+id/categoria_gestionar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:text="Hogar"
+                android:textColor="@color/black"
+                android:textSize="15sp"></TextView>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="43dp"
+                android:background="@color/verde_claro" />
+
+            <TextView
+                android:id="@+id/cantidad_gestionar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:text="111"
+                android:layout_marginRight="8dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"></TextView>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="43dp"
+                android:background="@color/verde_claro" />
+
+            <TextView
+                android:id="@+id/precio_gestionar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:text="36000"
+                android:textColor="@color/black"
+                android:textSize="15sp"></TextView>
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</FrameLayout>

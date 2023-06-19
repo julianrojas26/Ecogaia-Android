@@ -33,11 +33,14 @@ class fragment_carrito : Fragment(), CarritoListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val bundle = activity?.intent?.extras
+        val ip = bundle!!.getString("url")
+        val user = bundle!!.getString("user")
+
         val ll = inflater.inflate(R.layout.fragment_carrito, container, false)
 
-        val id_Usuario = 9;
+        val url = ip + "cotizacionesUsuario/"+ user
 
-        val url = activity?.intent?.getStringExtra("url") + "cotizacionesUsuario/"+id_Usuario
 
         val queue = Volley.newRequestQueue(this.context)
 

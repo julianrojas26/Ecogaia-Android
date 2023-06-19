@@ -4,36 +4,42 @@
 
 
     <item
-        android:id="@+id/item1"
-        android:icon="@drawable/carrito_pro"
-        android:title="Inicio de sesion"
-        app:showAsAction="never" />
+        android:id="@+id/btnMore"
+        android:icon="@drawable/tres_puntos"
+        android:title="Más"
+        app:showAsAction="always">
 
-    <item
-        android:id="@+id/item2"
-        android:title="Registro"
-        android:icon="@drawable/book"
-        app:showAsAction="never"/>
-    <item
-        android:id="@+id/item3"
-        android:title="Nosotros"
-        android:icon="@drawable/person"
-        app:showAsAction="never" />
+        <menu>
 
-    <item
-        android:id="@+id/item4"
-        android:title="Favoritos"
-        android:icon="@drawable/start"
-        app:showAsAction="never" />
+            <item
+                android:id="@+id/item1"
+                android:title="Nosotros"
+                android:icon="@drawable/people"/>
 
-    <item android:id="@+id/item6"
-        android:title="Carrito"
-        android:icon="@drawable/carrito"
-        app:showAsAction="never" />
+            <item
+                android:id="@+id/item2"
+                android:title="Favoritos"
+                android:icon="@drawable/star" />
 
-    <item android:id="@+id/item7"
-        android:title="Repartidor"
-        android:icon="@drawable/person"
-        app:showAsAction="never" />
+            <item android:id="@+id/item3"
+                android:title="Carrito"
+                android:icon="@drawable/carrito" />
+
+            <item android:id="@+id/item4"
+                android:title="Repartidor"
+                android:icon="@drawable/delivery"/>
+
+            <item android:id="@+id/item5"
+                android:title="Gestionar"
+                android:icon="@drawable/emoji_people" />
+
+            <item android:id="@+id/item6"
+                android:title="Cerrar Sesion"
+                android:icon="@drawable/logout"/>
+
+
+        </menu>
+
+    </item>
 
 </menu>

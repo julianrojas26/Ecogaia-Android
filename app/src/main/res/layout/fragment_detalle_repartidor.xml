@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".UI.fragment_detalle_repartidor">
 
     <androidx.cardview.widget.CardView
@@ -79,10 +80,50 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
 
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="720dp">
 
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_item_repartidor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_detalle_repartidor" />
+
+                </ScrollView>
+
+            </LinearLayout>
 
         </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_itemRepList"
+            android:layout_width="match_parent"
+            android:layout_height="800dp">
+
+            <View
+                android:id="@+id/view_itemRepList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.5"
+                android:background="@color/verde_botones" />
+
+            <ProgressBar
+                android:id="@+id/pgbar_itemRepList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminateTint="@color/verde_claro" />
+
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 
