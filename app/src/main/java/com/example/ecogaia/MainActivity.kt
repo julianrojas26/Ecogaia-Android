@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         /// Session
         bundle = Bundle()
         this.user = JSONObject(intent.getStringExtra("user").toString())
-        this.url = "http://192.168.1.66:8080/"
+        this.url = "http://192.168.140.131:8080/"
 
 
         bundle.putString("user", this.user.toString())
