@@ -55,6 +55,12 @@ class activity_actualizar_perfil : AppCompatActivity() {
 
     }
 
+    fun inicio (view: View) {
+        finish()
+        val i = Intent(this, MainActivity::class.java).apply {  }
+        startActivity(i)
+    }
+
 
      fun clickActualizarPerfil( view: View){
          val bundle = intent.extras
@@ -69,6 +75,7 @@ class activity_actualizar_perfil : AppCompatActivity() {
          val resultPost = object : StringRequest(Request.Method.PUT, url,
              Response.Listener<String> { response ->
                  Toast.makeText(this, "Se Actualizo Correctamente", Toast.LENGTH_LONG).show()
+                 finish()
              }, Response.ErrorListener { error ->
                  Toast.makeText(this, "No se pudo Actualizar $error", Toast.LENGTH_LONG).show()
              }

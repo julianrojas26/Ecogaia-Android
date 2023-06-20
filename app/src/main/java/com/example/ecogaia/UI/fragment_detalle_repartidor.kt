@@ -8,11 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
+import android.widget.TextView
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.DialogFragment
+
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.ecogaia.Adapter.ItemRepAdaptador
+import com.example.ecogaia.adapter.GestionarAdaptador
+import com.example.ecogaia.adapter.ItemRepAdaptador
 import com.example.ecogaia.R
 import org.json.JSONArray
 import org.json.JSONException
@@ -35,10 +40,20 @@ class fragment_detalle_repartidor : Fragment() {
     ): View? {
         val bundle = activity?.intent?.extras
         val ip = bundle!!.getString("url")
+        val user = JSONObject(bundle!!.getString("user"))
+
+        val dis = JSONObject(arguments?.getString("dis"))
 
         val ll = inflater.inflate(R.layout.fragment_detalle_repartidor, container, false)
 
-        val url = ip + "listarProducto"
+        var usu_nombre: TextView = ll.findViewById(R.id.detalle_rep_usu)
+        usu_nombre.text = dis.getString("usu_nombre")
+        var usu_direccion: TextView = ll.findViewById(R.id.detale_rep_direccion)
+        usu_direccion.text = dis.getString("usu_direccion")
+        var usu_telefono: TextView = ll.findViewById(R.id.detalle_rep_telefono)
+        usu_telefono.text = dis.getString("usu_telefono")
+
+        val url = ip + "ventasRepartidor/" + user.getString("res") + "/" + dis.getString("id_Usuario")
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->

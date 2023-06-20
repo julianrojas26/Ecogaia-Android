@@ -1,22 +1,25 @@
 package com.example.ecogaia.UI
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import android.widget.RelativeLayout
+import android.widget.*
 import androidx.core.os.bundleOf
+import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
+import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.ecogaia.adapter.CarritoAdaptador
+import com.example.ecogaia.adapter.CarritoListener
 import com.example.ecogaia.R
-import com.example.ecogaia.Adapter.CarritoAdaptador
-import com.example.ecogaia.Adapter.CarritoListener
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -31,34 +34,37 @@ class fragment_carrito : Fragment(), CarritoListener {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         val bundle = activity?.intent?.extras
         val ip = bundle!!.getString("url")
-        val user = bundle!!.getString("user")
+        val user = JSONObject(bundle!!.getString("user"))
 
         val ll = inflater.inflate(R.layout.fragment_carrito, container, false)
 
-        val url = ip + "cotizacionesUsuario/"+ user
+        var btnComprar = ll.findViewById<Button>(R.id.btnComprar)
 
-
+        val url = ip + "cotizacionesUsuario/" + user.getString("res")
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
             val jsonArray = JSONArray(response)
             this.carrito = ArrayList()
+            var total = 0;
             try {
                 var i = 0
                 val l = jsonArray.length()
                 while (i < l) {
                     carrito.add(jsonArray[i] as JSONObject)
+                    total+= carrito[i].getString("total").toInt()
                     i++
                 }
+                ll.findViewById<TextView>(R.id.carritoTotal).text = total.toString()
                 Log.d("CARRITO", this.carrito.toString())
-                this.recycler.adapter= CarritoAdaptador(this.carrito, this)
-                this.viewAlpha.visibility= View.INVISIBLE
+                this.recycler.adapter = CarritoAdaptador(this.carrito, this)
+                this.viewAlpha.visibility = View.INVISIBLE
                 this.pgbar.visibility = View.INVISIBLE
-            }catch (e:JSONException) {
+            } catch (e: JSONException) {
                 Log.w("ERROR", e)
             }
         }, { error ->
@@ -69,13 +75,28 @@ class fragment_carrito : Fragment(), CarritoListener {
         this.viewAlpha = ll.findViewById(R.id.view_carritoList)
         this.pgbar = ll.findViewById(R.id.pgbar_carritoList)
         this.rl_CarritoList = ll.findViewById(R.id.rl_CarritoList)
+
+        btnComprar.setOnClickListener() {
+            val url = ip + "compra/" + user.getString("res")
+            val queue = Volley.newRequestQueue(this.context)
+
+            val postRequets = StringRequest(Request.Method.GET, url,
+                Response.Listener<String> { response ->
+                    Toast.makeText(this.context, response, Toast.LENGTH_LONG).show()
+                }, Response.ErrorListener { error ->
+                    Toast.makeText(this.context, error.toString(), Toast.LENGTH_LONG).show()
+                }
+            )
+            queue.add(postRequets)
+        }
         return ll
     }
 
-    override fun onCarritoCliked(carrito: JSONObject, position: Int){
-        val bundle = bundleOf("carrito" to carrito.toString())
+    override fun onCarritoCliked(carrito: JSONObject, position: Int) {
+        val bundle = Bundle()
+        bundle.putString("carrito", carrito.toString())
         findNavController().navigate(
-            R.id.fragment_detalleProductos, bundle
+            R.id.fragment_detalle_carrito, bundle
         )
     }
 }
