@@ -24,6 +24,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        supportActionBar?.apply {
+            setDefaultDisplayHomeAsUpEnabled(true)
+        }
+
         val host: NavHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment?
                 ?: return
@@ -74,6 +79,13 @@ class MainActivity : AppCompatActivity() {
     fun favoritos(view: View?) {
         val navController = Navigation.findNavController(this, R.id.nav_host_fragment_container)
         navController.navigate(R.id.fragment_favoritos)
+    }
+
+    /*Funcion flecha ActioBar*/
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     /*conexion overflow*/
