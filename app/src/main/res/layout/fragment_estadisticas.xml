@@ -6,54 +6,58 @@
     tools:context=".fragment_estadisticas"
     android:background="@drawable/fondo7">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_marginTop="25dp"
             android:layout_height="wrap_content"
             android:text="Estadisticas"
             android:textAlignment="center"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textColor="@color/verde_claro"
             android:textStyle="bold"
             android:layout_marginBottom="10dp">
         </TextView>
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
-            <SearchView
-                android:layout_width="290dp"
-                android:layout_height="35dp"
-                android:background="@drawable/shape_form2"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="10dp">
-            </SearchView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="300dp"
-                android:layout_height="210dp"
-                android:layout_marginBottom="10dp"
-                >
+            android:layout_height="650dp"
+            android:layout_marginTop="80dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ventas Anuales"
+                    android:textColor="@color/verde_claro"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="10dp" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="300dp"
+                    android:layout_height="210dp"
+                    android:layout_marginBottom="10dp"
+                    >
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/bar_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="300dp"
+                    android:layout_height="210dp"
+                    android:layout_marginBottom="10dp"
+                    >
 
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="300dp"
-                android:layout_height="210dp"
-                android:layout_marginBottom="10dp"
-                >
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="300dp"
+                    android:layout_height="210dp"
+                    >
 
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="300dp"
-                android:layout_height="210dp"
-                >
+                </androidx.cardview.widget.CardView>
 
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-    </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
 </FrameLayout>

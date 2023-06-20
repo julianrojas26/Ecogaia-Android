@@ -1,16 +1,16 @@
 package com.example.ecogaia.UI
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ProgressBar
-import android.widget.RelativeLayout
-import android.widget.Toast
+import android.widget.*
 import androidx.core.os.bundleOf
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -50,13 +50,16 @@ class fragment_carrito : Fragment(), CarritoListener {
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
             val jsonArray = JSONArray(response)
             this.carrito = ArrayList()
+            var total = 0;
             try {
                 var i = 0
                 val l = jsonArray.length()
                 while (i < l) {
                     carrito.add(jsonArray[i] as JSONObject)
+                    total+= carrito[i].getString("total").toInt()
                     i++
                 }
+                ll.findViewById<TextView>(R.id.carritoTotal).text = total.toString()
                 Log.d("CARRITO", this.carrito.toString())
                 this.recycler.adapter = CarritoAdaptador(this.carrito, this)
                 this.viewAlpha.visibility = View.INVISIBLE
@@ -90,7 +93,8 @@ class fragment_carrito : Fragment(), CarritoListener {
     }
 
     override fun onCarritoCliked(carrito: JSONObject, position: Int) {
-        val bundle = bundleOf("carrito" to carrito.toString())
+        val bundle = Bundle()
+        bundle.putString("carrito", carrito.toString())
         findNavController().navigate(
             R.id.fragment_detalle_carrito, bundle
         )

@@ -15,6 +15,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.ecogaia.adapter.CarritoListener
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.json.JSONObject
 
@@ -76,6 +77,7 @@ class MainActivity : AppCompatActivity() {
 
     fun addProduct(view: View?) {
         val i = Intent(this, activity_agregar_producto::class.java).apply { }
+        i.putExtras(bundle)
         startActivity(i)
     }
 

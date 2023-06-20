@@ -29,9 +29,6 @@ class activity_agregar_blog : AppCompatActivity() {
         val ip = bundle!!.getString("url").toString()
         val user = JSONObject(bundle!!.getString("user"))
 
-        Log.w("user", user.toString())
-        Log.w("url", ip)
-
         val url = ip +"insertarTip/" + user.getString("res")
         val queue = Volley.newRequestQueue(this)
         val resultPost = object : StringRequest(Request.Method.POST, url,

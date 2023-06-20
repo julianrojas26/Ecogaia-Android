@@ -56,7 +56,6 @@ class fragment_detalle_productos : DialogFragment() {
         val ip = bundle!!.getString("url").toString()
         val  user = JSONObject(bundle!!.getString("user"))
 
-        val Usuario: String = "7"
         this.tbProdDets.navigationIcon = ContextCompat.getDrawable(view.context, R.drawable.close)
 
         val tips = JSONObject(arguments?.getString("productos"))
@@ -75,7 +74,11 @@ class fragment_detalle_productos : DialogFragment() {
             val  url = ip + "insertarCarrito/" + user.getString("res") + "/" + tips.getString("prod_Codigo") + "/1"
             val resultPost = object : StringRequest(Request.Method.POST, url,
                 Response.Listener<String> { response ->
-                    Toast.makeText(this.context, response, Toast.LENGTH_LONG).show()
+                    if (response == "true") {
+                        Toast.makeText(this.context, "El producto se agrego a carrito", Toast.LENGTH_LONG).show()
+                    } else if (response == "false") {
+                        Toast.makeText(this.context, "El producto se elimino de carrito", Toast.LENGTH_LONG).show()
+                    }
                 }, Response.ErrorListener { error ->
                     Toast.makeText(this.context, error.toString(), Toast.LENGTH_LONG).show()
                 }
@@ -94,7 +97,11 @@ class fragment_detalle_productos : DialogFragment() {
 
                     val postRequest = StringRequest(Request.Method.POST, url,
                     Response.Listener<String>{ response ->
-                        Toast.makeText(this.context, response, Toast.LENGTH_LONG).show()
+                        if (response == "true") {
+                            Toast.makeText(this.context, "El producto se agrego a favoritos", Toast.LENGTH_LONG).show()
+                        } else if (response == "false") {
+                            Toast.makeText(this.context, "El producto se elimino de favoritos", Toast.LENGTH_LONG).show()
+                        }
                     }, Response.ErrorListener { error ->
                         Toast.makeText(this.context, error.stackTraceToString(), Toast.LENGTH_LONG).show()
                     })

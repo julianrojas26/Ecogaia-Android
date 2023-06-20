@@ -10,6 +10,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import org.json.JSONObject
 
 class activity_agregar_producto : AppCompatActivity() {
     var txtNombre: EditText? = null
@@ -28,11 +29,15 @@ class activity_agregar_producto : AppCompatActivity() {
     }
 
     fun clickAddProducts(view: View) {
-        val url = intent?.getStringExtra("url")+"insertarProducto"
+        val bundle = intent.extras
+        val ip = bundle!!.getString("url").toString()
+
+        val url = ip + "insertarProducto"
         val queue = Volley.newRequestQueue(this)
         val resultPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response ->
                 Toast.makeText(this, "Producto Creado exitosamente", Toast.LENGTH_LONG).show()
+                finish()
             }, Response.ErrorListener { error ->
                 Toast.makeText(this, "Producto No Creado $error", Toast.LENGTH_LONG).show()
             }

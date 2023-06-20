@@ -36,10 +36,11 @@ class fragment_repartidor : Fragment(), RepartidorListener {
     ): View? {
         val bundle = activity?.intent?.extras
         val ip = bundle!!.getString("url")
+        val user = JSONObject(bundle!!.getString("user"))
 
         val ll = inflater.inflate(R.layout.fragment_repartidor, container, false)
 
-        val url = ip + "listarRepartidor"
+        val url = ip + "distribuir/" + user.getString("res")
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->

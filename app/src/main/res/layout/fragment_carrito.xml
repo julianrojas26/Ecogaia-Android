@@ -37,15 +37,34 @@
                 android:background="@drawable/buscar"/>
         </LinearLayout>
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="top|center"
-            android:layout_marginTop="20dp"
-            android:text="Total:    $_______"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20dp"></TextView>
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="20dp"
+                android:text="Total:   $"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp"></TextView>
+            <TextView
+                android:id="@+id/carritoTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="20dp"
+                android:text=" ______"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp"></TextView>
+        </LinearLayout>
     </LinearLayout>
 
     <ScrollView

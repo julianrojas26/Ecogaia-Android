@@ -43,4 +43,6 @@ class CarritoAdaptador(
             Log.w("imagen_producto", "No se cargo la imagen")
         }
     }
+
+
 }

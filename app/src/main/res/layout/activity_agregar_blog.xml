@@ -12,37 +12,6 @@
         android:background="@drawable/fondo7"
         android:orientation="vertical">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Toolbar
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:background="@color/beige">
-
-                <ImageView
-                    android:layout_width="230dp"
-                    android:layout_height="70dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/logo"></ImageView>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:src="@drawable/menu"></ImageView>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginRight="30dp"
-                    android:src="@drawable/trespuntos"></ImageView>
-            </Toolbar>
-
-        </com.google.android.material.appbar.AppBarLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
