@@ -10,8 +10,8 @@ import com.example.ecogaia.R
 import org.json.JSONObject
 
 class GestionarAdaptador(
-
     private val gesList: ArrayList<JSONObject>,
+    private val gestionarListener: GestionarListener
     ) : RecyclerView.Adapter<GestionarAdaptador.ViewHoler>() {
         inner class ViewHoler(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -48,7 +48,9 @@ class GestionarAdaptador(
             val ges = gesList[position]
             try {
                 holder.bind(ges)
-
+                holder.itemView.setOnClickListener {
+                    gestionarListener.onInvetarioClicked(ges, position)
+                }
             } catch (e: Exception) {
                 Log.w("ERROR", e)
             }

@@ -19,7 +19,7 @@ import org.json.JSONException
 import org.json.JSONObject
 
 
-class fragment_gestionar : Fragment(){
+class fragment_gestionar : Fragment(), GestionarListener{
     private lateinit var recycler: RecyclerView
     private lateinit var viewAlpha: View
     private lateinit var pgbar: ProgressBar
@@ -50,7 +50,7 @@ class fragment_gestionar : Fragment(){
                     i++
                 }
                 Log.d("REPARTIDOR", this.gestionar.toString())
-                this.recycler.adapter= GestionarAdaptador(this.gestionar)
+                this.recycler.adapter= GestionarAdaptador(this.gestionar, this)
                 this.viewAlpha.visibility= View.INVISIBLE
                 this.pgbar.visibility = View.INVISIBLE
             }catch (e: JSONException) {
@@ -67,7 +67,7 @@ class fragment_gestionar : Fragment(){
         return ll
     }
 
-
-
-
+    override fun onInvetarioClicked (prod: JSONObject, position: Int) {
+           Log.w("INVENTARIO", prod.getString("prod_Nombre").toString())
+    }
 }

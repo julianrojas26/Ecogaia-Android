@@ -1,5 +1,7 @@
 package com.example.ecogaia.adapter
 
-interface GestionarListener {
+import org.json.JSONObject
 
+interface GestionarListener {
+    fun onInvetarioClicked (prod: JSONObject, position: Int)
 }
