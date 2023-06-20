@@ -2,7 +2,6 @@ package com.example.ecogaia.UI
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +9,7 @@ import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import android.widget.SearchView
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,8 +17,8 @@ import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.ecogaia.R
-import com.example.ecogaia.Adapter.BlogAdaptador
-import com.example.ecogaia.Adapter.BlogListener
+import com.example.ecogaia.adapter.BlogAdaptador
+import com.example.ecogaia.adapter.BlogListener
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -37,7 +37,7 @@ class fragment_blog : Fragment(), BlogListener {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         val bundle = activity?.intent?.extras
         val ip = bundle!!.getString("url")
@@ -58,10 +58,10 @@ class fragment_blog : Fragment(), BlogListener {
                     i++
                 }
                 Log.d("BLOG", this.blog.toString())
-                this.recycler.adapter= BlogAdaptador(this.blog, this)
-                this.viewAlpha.visibility= View.INVISIBLE
+                this.recycler.adapter = BlogAdaptador(this.blog, this)
+                this.viewAlpha.visibility = View.INVISIBLE
                 this.pgbar.visibility = View.INVISIBLE
-            }catch (e: JSONException) {
+            } catch (e: JSONException) {
             }
         }, { error ->
             Log.w("jsonError", error)
@@ -93,7 +93,10 @@ class fragment_blog : Fragment(), BlogListener {
             override fun onQueryTextChange(newText: String?): Boolean {
                 val userInput = newText?.trim() ?: ""
                 Log.w("MENSAJE", userInput)
-                val url = ip + "tituloTip/" + userInput
+                var url = ip + "tituloTip/" + userInput
+                if (userInput.isEmpty() || userInput == "") {
+                    url = ip + "listarTip"
+                }
                 searchBlog(url)
                 return true
             }
@@ -103,8 +106,7 @@ class fragment_blog : Fragment(), BlogListener {
     }
 
 
-    fun searchBlog (url:String) {
-
+    fun searchBlog(url: String) {
         val queue = Volley.newRequestQueue(context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
@@ -118,11 +120,11 @@ class fragment_blog : Fragment(), BlogListener {
                     i++
                 }
                 Log.d("BLOG2", blog.toString())
-                this.recycler.adapter= BlogAdaptador(blog, this)
+                this.recycler.adapter = BlogAdaptador(blog, this)
                 recycler.adapter!!.notifyDataSetChanged()
-                this.viewAlpha.visibility= View.INVISIBLE
+                this.viewAlpha.visibility = View.INVISIBLE
                 this.pgbar.visibility = View.INVISIBLE
-            }catch (e: JSONException) {
+            } catch (e: JSONException) {
             }
         }, { error ->
             Log.w("jsonError", error)

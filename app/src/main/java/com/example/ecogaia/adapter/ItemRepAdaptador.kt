@@ -14,7 +14,6 @@ class ItemRepAdaptador(
     private val repList: ArrayList<JSONObject>,
     ) : RecyclerView.Adapter<ItemRepAdaptador.ViewHoler>() {
         inner class ViewHoler(view: View) : RecyclerView.ViewHolder(view) {
-
             var item_dis_nombre: TextView = view.findViewById(R.id.item_dis_nombre)
             var item_dis_cate: TextView = view.findViewById(R.id.item_dis_cate)
             var item_dis_cant: TextView = view.findViewById(R.id.item_dis_cant)
@@ -30,8 +29,8 @@ class ItemRepAdaptador(
                     item_dis_nombre.text = nombre
                 }
 
-                item_dis_cate.text = rep.getString("prod_Categoria")
-                item_dis_cant.text = rep.getString("prod_Cantidad")
+                item_dis_cate.text = rep.getString("prod_categoria")
+                item_dis_cant.text = rep.getString("prod_cantidad")
                 item_dis_precio.text = rep.getString("prod_precio")
             }
         }

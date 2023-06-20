@@ -11,6 +11,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import org.json.JSONObject
 
 class activity_usuario : AppCompatActivity() {
     var txtNombre: EditText? = null
@@ -30,16 +31,19 @@ class activity_usuario : AppCompatActivity() {
         txtDireccion = findViewById(R.id.txtDireccion)
         txtContra = findViewById(R.id.txtContra)
         txtTelefono = findViewById(R.id.txtTelefono)
-        txtRol = findViewById(R.id.txtrol)
     }
 
     fun clickAddUsuario(view: View) {
-        val url = intent?.getStringExtra("url")+"insertarUsuario"
+        val bundle = intent.extras
+        val ip = bundle!!.getString("url").toString()
+
+        val url = ip +"insertarUsuario"
 
         val queue = Volley.newRequestQueue(this)
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response ->
                 Toast.makeText(this, "Usuario Creado exitosamente", Toast.LENGTH_LONG).show()
+                finish()
             }, Response.ErrorListener { error ->
                 Toast.makeText(this, "Usuario No Creado $error", Toast.LENGTH_LONG).show()
             }
@@ -52,7 +56,6 @@ class activity_usuario : AppCompatActivity() {
                 params.put("usu_correo", txtCorreo?.text.toString())
                 params.put("usu_direccion", txtDireccion?.text.toString())
                 params.put("usu_telefono", txtTelefono?.text.toString())
-                params.put("rol", txtRol?.text.toString())
                 return params
                 Log.e("params", "$params")
             }
@@ -63,8 +66,7 @@ class activity_usuario : AppCompatActivity() {
     }
 
     fun inicio(view: View?) {
-        val i = Intent(this, MainActivity::class.java).apply {  }
-        startActivity(i)
+        finish()
     }
 
 }

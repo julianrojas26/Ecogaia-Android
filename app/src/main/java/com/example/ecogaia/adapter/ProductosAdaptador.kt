@@ -1,4 +1,4 @@
-package com.example.ecogaia.Adapter
+package com.example.ecogaia.adapter
 
 import android.content.Context
 import android.util.Log
@@ -10,7 +10,7 @@ import android.widget.Filterable
 import android.widget.TextView
 import com.example.ecogaia.R
 import org.json.JSONObject
-import com.example.ecogaia.Adapter.ProductosListener
+import com.example.ecogaia.adapter.ProductosListener
 
 class ProductosAdaptador(
     private val context: Context?,

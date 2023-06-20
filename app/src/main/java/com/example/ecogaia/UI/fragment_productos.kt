@@ -12,12 +12,11 @@ import android.widget.SearchView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.ecogaia.Adapter.ProductosAdaptador
-import com.example.ecogaia.Adapter.ProductosListener
+import com.example.ecogaia.adapter.ProductosAdaptador
+import com.example.ecogaia.adapter.ProductosListener
 import com.example.ecogaia.R
 import org.json.JSONArray
 import org.json.JSONException
@@ -86,8 +85,10 @@ class fragment_productos : Fragment(), ProductosListener {
             }
             override fun onQueryTextChange(newText: String?): Boolean {
                 val userInput = newText?.trim() ?: ""
-                Log.w("MENSAJE", userInput)
-                val url = ip + "nombreProducto/" + userInput
+                var url = ip + "nombreProducto/" + userInput
+                if (userInput.isEmpty() || userInput == "") {
+                    url = ip + "listarProducto"
+                }
                 searchProd(url)
                 return true
             }
