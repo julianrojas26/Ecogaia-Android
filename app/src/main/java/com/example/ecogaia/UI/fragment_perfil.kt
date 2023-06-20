@@ -29,10 +29,11 @@ class fragment_perfil : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         val bundle = activity?.intent?.extras
-        val user:JSONObject = JSONObject(bundle!!.getString("user"))
+        val user = JSONObject(bundle!!.getString("user"))
         val ip = bundle!!.getString("url")
 
         val ll = inflater.inflate(R.layout.fragment_perfil, container, false)
+
         this.nombre = ll.findViewById(R.id.usu_nombre)
         this.correo = ll.findViewById(R.id.usu_correo)
         this.direccion = ll.findViewById(R.id.usu_direccion)
@@ -40,6 +41,7 @@ class fragment_perfil : Fragment() {
         this.telefono = ll.findViewById(R.id.usu_telefono)
 
         val url = ip + "usuario/"+user.getString("res")
+
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->

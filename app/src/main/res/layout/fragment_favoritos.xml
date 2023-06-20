@@ -1,64 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/fondo7"
     tools:context=".UI.fragment_favoritos">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="570dp"
-        android:background="@drawable/shape_form"
+        android:layout_height="700dp"
         android:layout_margin="30dp"
+        android:background="@drawable/shape_form"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/shape_form2"
+            android:layout_gravity="center"
             android:layout_margin="20dp"
-            android:layout_gravity="center">
+            android:background="@drawable/shape_form2">
+
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="10dp"
-                android:src="@drawable/extraterrestres"/>
+                android:src="@drawable/extraterrestres" />
         </LinearLayout>
-        <SearchView
-            android:id="@+id/searchViewFavoritos"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:hint="Buscar"
-            android:inputType="text"
-            android:textColor="@color/verde_iconos" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="500dp"
-            android:background="@drawable/shape_carrito"
             android:layout_margin="10dp"
-            android:orientation="vertical"
-            >
+            android:background="@drawable/shape_carrito"
+            android:orientation="vertical">
+
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="360dp">
+                android:layout_height="470dp">
+
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/favoritos_recycler"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="30dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_favoritos"
-                    android:id="@+id/favoritos_recycler"/>
+                    tools:listitem="@layout/item_favoritos" />
             </ScrollView>
         </LinearLayout>
     </LinearLayout>
+
     <RelativeLayout
         android:id="@+id/rl_FavoritosList"
         android:layout_width="match_parent"
-        android:layout_height="800dp"  >
+        android:layout_height="800dp">
 
         <View
             android:id="@+id/view_favoritosList"
@@ -72,7 +68,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:indeterminateTint="@color/verde_iconos"/>
+            android:indeterminateTint="@color/verde_iconos" />
+
+
     </RelativeLayout>
 
 </FrameLayout>

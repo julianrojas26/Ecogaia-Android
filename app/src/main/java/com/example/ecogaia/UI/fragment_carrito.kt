@@ -39,7 +39,9 @@ class fragment_carrito : Fragment(), CarritoListener {
 
         val ll = inflater.inflate(R.layout.fragment_carrito, container, false)
 
-        val url = ip + "cotizacionesUsuario/" + user
+        val url = ip + "cotizacionesUsuario/"+ user
+
+
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->

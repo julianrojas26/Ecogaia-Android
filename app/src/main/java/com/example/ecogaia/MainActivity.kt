@@ -24,6 +24,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        supportActionBar?.apply {
+            setDefaultDisplayHomeAsUpEnabled(true)
+        }
+
         val host: NavHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment?
                 ?: return
@@ -34,7 +39,8 @@ class MainActivity : AppCompatActivity() {
         /// Session
         bundle = Bundle()
         this.user = JSONObject(intent.getStringExtra("user").toString())
-        this.url = "http://192.168.1.10:8080/"
+
+        this.url = "http://192.168.1.7:8080/"
         bundle.putString("user", this.user.toString())
         bundle.putString("url", this.url)
         intent.putExtras(bundle)
@@ -75,6 +81,13 @@ class MainActivity : AppCompatActivity() {
         navController.navigate(R.id.fragment_favoritos)
     }
 
+    /*Funcion flecha ActioBar*/
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
     /*conexion overflow*/
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -85,7 +98,8 @@ class MainActivity : AppCompatActivity() {
     /* Menu lateral */
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
+
+         when (item.itemId) {
             R.id.item1 -> {
                 val navController =
                     Navigation.findNavController(this, R.id.nav_host_fragment_container)
@@ -102,6 +116,19 @@ class MainActivity : AppCompatActivity() {
                     Navigation.findNavController(this, R.id.nav_host_fragment_container)
                 navController.navigate(R.id.fragment_repartidor)
             }
+
+            R.id.item4 -> {
+                val navController =
+                    Navigation.findNavController(this, R.id.nav_host_fragment_container)
+                navController.navigate(R.id.fragment_repartidor)
+            }
+
+            R.id.item5 -> {
+                val navController =
+                    Navigation.findNavController(this, R.id.nav_host_fragment_container)
+                navController.navigate(R.id.fragment_gestionar)
+            }
+
         }
         return super.onOptionsItemSelected(item)
     }

@@ -21,7 +21,8 @@
                 android:id="@+id/recycler_gestionar"
                 android:layout_width="match_parent"
                 android:layout_height="680dp"
-                android:layout_marginTop="70dp"
+                android:layout_marginBottom="200dp"
+                android:layout_marginTop="140dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_gestionar" />
 
@@ -43,6 +44,50 @@
         android:textStyle="bold">
 
     </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="80dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/agregar_gestionar"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_form2"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Agregar"
+            android:textColor="@color/verde_claro"></Button>
+
+        <Button
+            android:id="@+id/actualizar_gestionar"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_form2"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:text="Actualizar"
+            android:textColor="@color/verde_claro"></Button>
+
+        <Button
+            android:id="@+id/eliminar_gestionar"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_form2"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Eliminar"
+            android:textColor="@color/verde_claro"></Button>
+
+    </LinearLayout>
 
 
     <RelativeLayout
