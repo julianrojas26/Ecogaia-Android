@@ -1,4 +1,4 @@
-package com.example.ecogaia.adapter
+package com.example.ecogaia.Adapter
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.Filter
 import android.widget.Filterable
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ecogaia.adapter.BlogListener
+import com.example.ecogaia.Adapter.BlogListener
 import com.example.ecogaia.R
 import org.json.JSONObject
 

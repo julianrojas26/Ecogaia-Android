@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.ecogaia.Adapter.FavoritosListener
 import com.example.ecogaia.R
 import org.json.JSONObject
 

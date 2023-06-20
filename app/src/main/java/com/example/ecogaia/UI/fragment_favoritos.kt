@@ -6,10 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import android.widget.RelativeLayout
+import android.widget.*
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
+import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.ecogaia.Adapter.FavoritosAdaptador
@@ -27,6 +29,10 @@ class fragment_favoritos : Fragment(), FavoritosListener {
     private lateinit var rlProductList: RelativeLayout
     private lateinit var favoritos: ArrayList<JSONObject>
 
+    var codigo_prod : EditText?= null
+    var id_usuario = "7"
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -34,7 +40,7 @@ class fragment_favoritos : Fragment(), FavoritosListener {
     ): View? {
         Log.d("FavoritosFragment", "Entered to onCreateView")
         val ll = inflater.inflate(R.layout.fragment_favoritos, container, false)
-        val url = "http://192.168.212.2:8080/listarFavoritos"
+        val url = "http://192.168.1.10:8080/listarFavoritos"
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
@@ -61,8 +67,11 @@ class fragment_favoritos : Fragment(), FavoritosListener {
         this.viewAlpha = ll.findViewById(R.id.view_favoritosList)
         this.pgbar = ll.findViewById(R.id.pgbar_favoritosList)
         this.rlProductList = ll.findViewById(R.id.rl_FavoritosList)
+
         return ll
     }
+
+
 
 
 }
