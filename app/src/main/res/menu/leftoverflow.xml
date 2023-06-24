@@ -3,42 +3,44 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/item1"
-        android:title="Nosotros"
-        android:icon="@drawable/person"
-        app:showAsAction="never" />
+        android:id="@+id/menu_overflow"
+        android:title="Mas"
+        android:icon="@drawable/tres_puntos"
+        app:showAsAction="always">
 
-    <item
-        android:id="@+id/item2"
-        android:title="Favoritos"
-        android:icon="@drawable/start"
-        app:showAsAction="never" />
+        <menu>
+            <item
+                android:id="@+id/item1"
+                android:title="Nosotros"
+                android:icon="@drawable/people"/>
 
-    <item android:id="@+id/item3"
-        android:title="Carrito"
-        android:icon="@drawable/carrito"
-        app:showAsAction="never" />
+            <item
+                android:id="@+id/item2"
+                android:title="Favoritos"
+                android:icon="@drawable/star"/>
 
-    <item android:id="@+id/item4"
-        android:title="Repartidor"
-        android:icon="@drawable/person"
-        app:showAsAction="never" />
+            <item android:id="@+id/item3"
+                android:title="Carrito"
+                android:icon="@drawable/carrito"/>
 
-    <item android:id="@+id/item5"
-        android:title="Gestionar"
-        android:icon="@drawable/person"
-        app:showAsAction="never" />
+            <item android:id="@+id/item4"
+                android:title="Repartidor"
+                android:icon="@drawable/delivery"/>
 
-    <item android:id="@+id/item6"
-        android:title="Estadisticas"
-        android:icon="@drawable/person"
-        app:showAsAction="never" />
+            <item android:id="@+id/item5"
+                android:title="Gestionar"
+                android:icon="@drawable/emoji_people"/>
 
-    <item android:id="@+id/item7"
-        android:title="Cerrar Sesion"
-        android:icon="@drawable/person"
-        app:showAsAction="never" />
+            <item android:id="@+id/item6"
+                android:title="Estadisticas"
+                android:icon="@drawable/estadisticas"/>
 
+            <item android:id="@+id/item7"
+                android:title="Cerrar Sesion"
+                android:icon="@drawable/logout"/>
+
+        </menu>
+    </item>
 
 
 </menu>
