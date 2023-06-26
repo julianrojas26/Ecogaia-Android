@@ -23,11 +23,11 @@ class fragment_home : Fragment() {
     ): View? {
         val imageList = ArrayList<SlideModel>()
 
-        imageList.add(SlideModel ("https://pixabay.com/illustrations/promo-sale-discount-8061855/",
+        imageList.add(SlideModel ("https://pixabay.com/photos/bird-whitethroat-flowers-bloom-7881393/",
             "Gato negro"))
-        imageList.add(SlideModel(R.drawable.promo2,
+        imageList.add(SlideModel("https://pixabay.com/illustrations/promo-product-sale-8061857/",
             "Golden"))
-        imageList.add(SlideModel(R.drawable.promo3,
+        imageList.add(SlideModel("https://pixabay.com/illustrations/sale-shopping-promo-8061856/",
             "Capibara"))
 
 

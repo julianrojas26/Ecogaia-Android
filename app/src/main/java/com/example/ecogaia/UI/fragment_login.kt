@@ -42,17 +42,10 @@ class fragment_login : AppCompatActivity() {
             if (this.conUsuario!!.text.isEmpty() || this.conUsuario!!.text.isEmpty()){
                 Toast.makeText(this, "Debes Completar Todos Los Campos", Toast.LENGTH_LONG).show()
             } else {
-<<<<<<< HEAD
 
-                val url = "http://192.168.140.131:8080/validarUsuario/"+this.conUsuario?.text+"/"+this.conContraseña?.text
 
-=======
-<<<<<<< HEAD
-                val url = "http://192.168.1.78:8080/validarUsuario/"+this.conUsuario?.text+"/"+this.conContraseña?.text
-=======
-                val url = "http://192.168.43.209:8080/validarUsuario/"+this.conUsuario?.text+"/"+this.conContraseña?.text
->>>>>>> 6c13fc623e83864ec339f958dd0ec9f17785bb50
->>>>>>> 46327b69e9d582aee1aac73a02f51ef264e5a854
+                val url = "http://192.168.1.9:8080/validarUsuario/"+this.conUsuario?.text+"/"+this.conContraseña?.text
+
                 val queue = Volley.newRequestQueue(this)
                 val resultGet = StringRequest (Request.Method.GET, url, { response ->
                     if(response != "Usuario o contraseña incorrectos"){
