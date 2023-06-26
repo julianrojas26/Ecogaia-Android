@@ -74,7 +74,11 @@
         android:id="@+id/fragment_carrito"
         android:name="com.example.ecogaia.UI.fragment_carrito"
         android:label="fragment_carrito"
-        tools:layout="@layout/fragment_carrito" />
+        tools:layout="@layout/fragment_carrito" >
+        <action
+            android:id="@+id/action_fragment_carrito_to_fragment_detalle_carrito"
+            app:destination="@id/fragment_detalle_carrito" />
+    </fragment>
 
     <fragment
         android:id="@+id/fragment_nosotros"
@@ -110,4 +114,14 @@
         android:name="com.example.ecogaia.UI.fragment_gestionar"
         android:label="fragment_gestionar"
         tools:layout="@layout/fragment_gestionar" />
+    <dialog
+        android:id="@+id/fragment_detalle_carrito"
+        android:name="com.example.ecogaia.UI.fragment_detalle_carrito"
+        android:label="fragment_detalle_carrito"
+        tools:layout="@layout/fragment_detalle_carrito" />
+    <fragment
+        android:id="@+id/fragment_estadisticas"
+        android:name="com.example.ecogaia.fragment_estadisticas"
+        android:label="fragment_estadisticas"
+        tools:layout="@layout/fragment_estadisticas" />
 </navigation>

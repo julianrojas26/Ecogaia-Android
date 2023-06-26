@@ -42,7 +42,7 @@ class fragment_home : Fragment() {
 
 
         categoryMascotas.setOnClickListener() {
-            val bundle = bundleOf("Categoria" to "Maternidad")
+            val bundle = bundleOf("Categoria" to "Mascotas")
             val navController = Navigation.findNavController(ll)
             navController.navigate(R.id.fragment_categorias, bundle)
         }

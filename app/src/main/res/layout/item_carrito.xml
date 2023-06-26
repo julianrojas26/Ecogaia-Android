@@ -15,24 +15,6 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/fecha_carrito"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="18dp"
-                    android:text="20 de julio del 2023"
-                    android:textSize="15dp">
-
-                </TextView>
-
-            </LinearLayout>
-
-            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -47,17 +29,18 @@
                     android:layout_marginBottom="30dp"
                     android:src="@drawable/hands"></ImageView>
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    >
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:layout_marginTop="25dp"
+                        android:layout_gravity="center">
 
                         <TextView
                             android:id="@+id/nombre_carrito"
@@ -71,6 +54,7 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:text="@string/descripcion"></TextView>
+<<<<<<< HEAD
 
                     </LinearLayout>
 
@@ -86,10 +70,13 @@
                             android:layout_marginTop="15dp"
                             android:src="@drawable/mas"></ImageView>
 
+=======
+>>>>>>> 99bab4a4a29e7fa855c0bf43da4993f2498dfa91
                         <TextView
                             android:id="@+id/cantidad_carrito"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+<<<<<<< HEAD
                             android:layout_marginLeft="15dp"
                             android:layout_marginTop="20dp"
                             android:text="_____"></TextView>
@@ -102,6 +89,10 @@
                             android:layout_marginTop="13dp"
                             android:src="@drawable/menos"></ImageView>
 
+=======
+                            android:text="Cantidad"
+                            />
+>>>>>>> 99bab4a4a29e7fa855c0bf43da4993f2498dfa91
                     </LinearLayout>
 
                 </LinearLayout>

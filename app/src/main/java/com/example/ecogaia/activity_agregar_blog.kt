@@ -20,7 +20,6 @@ class activity_agregar_blog : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_blog)
-        nombre = findViewById(R.id.textNombre)
         titulo = findViewById(R.id.texttitulo)
         cuerpo = findViewById(R.id.textcuerpo)
     }
@@ -29,9 +28,6 @@ class activity_agregar_blog : AppCompatActivity() {
         val bundle = intent.extras
         val ip = bundle!!.getString("url").toString()
         val user = JSONObject(bundle!!.getString("user"))
-
-        Log.w("user", user.toString())
-        Log.w("url", ip)
 
         val url = ip +"insertarTip/" + user.getString("res")
         val queue = Volley.newRequestQueue(this)

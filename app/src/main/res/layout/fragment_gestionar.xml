@@ -13,38 +13,54 @@
         android:layout_margin="10dp"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/nombre_gestionar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center"
+            android:layout_marginTop="20dp"
+            android:text="Inventario"
+            android:textColor="@color/verde_iconos"
+            android:textSize="35sp"
+            android:textStyle="bold"/>
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="720dp">
+            android:layout_height="500dp"
+            android:layout_marginBottom="10dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_gestionar"
                 android:layout_width="match_parent"
                 android:layout_height="680dp"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="10dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_gestionar" />
 
         </ScrollView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            >
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="agregar"
+                android:onClick="addProduct"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="eliminar"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="editar"
+                />
+        </LinearLayout>
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/nombre_gestionar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|center"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="8dp"
-        android:text="Inventario"
-        android:textColor="@color/verde_iconos"
-        android:textSize="35sp"
-        android:textStyle="bold">
-
-    </TextView>
-
-
     <RelativeLayout
         android:id="@+id/rl_GestionarList"
         android:layout_width="match_parent"
@@ -65,6 +81,5 @@
             android:indeterminateTint="@color/verde_claro" />
 
     </RelativeLayout>
-
 
 </FrameLayout>
