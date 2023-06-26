@@ -23,14 +23,13 @@ class fragment_home : Fragment() {
     ): View? {
         val imageList = ArrayList<SlideModel>()
 
-        imageList.add(SlideModel("https://cdn.pixabay.com/photo/2017/03/27/14/09/black-cat-2178983_1280.jpg",
+        imageList.add(SlideModel ("https://pixabay.com/photos/bird-whitethroat-flowers-bloom-7881393/",
             "Gato negro"))
-        imageList.add(SlideModel("https://cdn.pixabay.com/photo/2017/09/15/19/49/dog-2753369_1280.jpg",
+        imageList.add(SlideModel("https://pixabay.com/illustrations/promo-product-sale-8061857/",
             "Golden"))
-        imageList.add(SlideModel("https://cdn.pixabay.com/photo/2014/05/18/19/10/capybara-347253_1280.jpg",
+        imageList.add(SlideModel("https://pixabay.com/illustrations/sale-shopping-promo-8061856/",
             "Capibara"))
-        imageList.add(SlideModel("https://cdn.pixabay.com/photo/2019/07/19/19/41/meerkat-4349513_1280.jpg",
-            "Suricata "))
+
 
         val ll = inflater.inflate(R.layout.fragment_home, container, false)
         val imageSlider = ll.findViewById<ImageSlider>(R.id.image_slider)
