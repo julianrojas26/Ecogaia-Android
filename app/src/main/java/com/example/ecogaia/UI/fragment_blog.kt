@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import android.widget.SearchView
+import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -97,7 +98,7 @@ class fragment_blog : Fragment(), BlogListener {
                 if (userInput.isEmpty() || userInput == "") {
                     url = ip + "listarTip"
                 }
-                searchBlog(url)
+                searchBlog(url, userInput)
                 return true
             }
         })
@@ -106,8 +107,9 @@ class fragment_blog : Fragment(), BlogListener {
     }
 
 
-    fun searchBlog(url: String) {
+    fun searchBlog(url: String, input: String) {
         val queue = Volley.newRequestQueue(context)
+        var message = view!!.findViewById<TextView>(R.id.messageBlogs)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
             val jsonArray = JSONArray(response)
@@ -118,6 +120,11 @@ class fragment_blog : Fragment(), BlogListener {
                 while (i < l) {
                     blog.add(jsonArray[i] as JSONObject)
                     i++
+                }
+                if (blog.isEmpty()) {
+                    message.text = "No se blogs con la busqueda de \"$input\""
+                } else {
+                    message.text = ""
                 }
                 Log.d("BLOG2", blog.toString())
                 this.recycler.adapter = BlogAdaptador(blog, this)

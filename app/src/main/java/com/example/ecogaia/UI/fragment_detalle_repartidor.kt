@@ -9,14 +9,11 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import android.widget.TextView
-import androidx.core.content.ContextCompat
-import androidx.fragment.app.DialogFragment
 
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.ecogaia.adapter.GestionarAdaptador
 import com.example.ecogaia.adapter.ItemRepAdaptador
 import com.example.ecogaia.R
 import org.json.JSONArray
