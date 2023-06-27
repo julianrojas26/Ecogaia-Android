@@ -94,7 +94,7 @@ class fragment_favoritos : Fragment(), FavoritosListener {
                 Log.w("MENSAJE", userInput)
                 var url = ip + "NombreFavorito/" + user.getString("res") + "/" + userInput
                 if (userInput.isEmpty() || userInput == "") {
-                    url = ip + "listarFavoritos"
+                    url =  ip +"favoritosUsuario/"+ user.getString("res")
                 }
                 searchFav(url)
                 return true
