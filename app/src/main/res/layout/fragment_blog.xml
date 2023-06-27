@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/fondo7"
-    tools:context=".UI.fragment_blog"
-    >
+    tools:context=".UI.fragment_blog">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="680dp"
-            android:layout_marginTop="70dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_blog"
-            android:id="@+id/recycler_blog"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_blog"
+        android:layout_width="match_parent"
+        android:layout_height="680dp"
+        android:layout_marginTop="110dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_blog" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_carrito"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
+        android:background="@drawable/shape_carrito"
         android:padding="5dp">
 
         <SearchView
@@ -33,10 +33,27 @@
             android:textColor="@color/verde_iconos" />
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="30dp"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/messageBlogs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
     <RelativeLayout
         android:id="@+id/rl_BlogList"
         android:layout_width="match_parent"
-        android:layout_height="800dp"  >
+        android:layout_height="800dp">
 
         <View
             android:id="@+id/view_blogList"
@@ -50,19 +67,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:indeterminateTint="@color/verde_claro"/>
+            android:indeterminateTint="@color/verde_claro" />
 
     </RelativeLayout>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addBlog"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_gravity="end|bottom"
-        app:backgroundTint="@color/azul_icono"
-        android:src="@drawable/add"
-        android:layout_marginBottom="80dp"
         android:layout_marginRight="20dp"
+        android:layout_marginBottom="80dp"
         android:onClick="addBlog"
-        />
+        android:src="@drawable/add"
+        app:backgroundTint="@color/azul_icono" />
 
 </FrameLayout>

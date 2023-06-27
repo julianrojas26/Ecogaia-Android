@@ -136,7 +136,9 @@ class fragment_favoritos : Fragment(), FavoritosListener {
 
 
     override fun onFavoritosClicked(favoritos: JSONObject, position: Int) {
-        val bundle = bundleOf("productos" to favoritos.toString())
+        val bundle = Bundle()
+        bundle.putString("productos", favoritos.toString())
+        bundle.putString("abridor", "fragment_favoritos")
         findNavController().navigate(
             R.id.fragment_detalleProductos, bundle
         )
