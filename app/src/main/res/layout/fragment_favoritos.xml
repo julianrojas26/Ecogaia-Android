@@ -38,10 +38,7 @@
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="470dp">
-<<<<<<< HEAD
 
-=======
->>>>>>> 99bab4a4a29e7fa855c0bf43da4993f2498dfa91
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/favoritos_recycler"
                     android:layout_width="match_parent"
@@ -73,10 +70,6 @@
             android:layout_centerInParent="true"
             android:indeterminateTint="@color/verde_iconos" />
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 99bab4a4a29e7fa855c0bf43da4993f2498dfa91
     </RelativeLayout>
 
 </FrameLayout>
