@@ -11,7 +11,7 @@
         android:id="@+id/products_recycler"
         android:layout_width="wrap_content"
         android:layout_height="670dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="110dp"
         android:columnWidth="150dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         android:numColumns="2"
@@ -34,8 +34,25 @@
             android:textColor="@color/verde_iconos"
             android:id="@+id/search_prod"/>
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="30dp"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/messageProductos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAlignment="center"/>
 
     </LinearLayout>
+
+
 
     <RelativeLayout
         android:id="@+id/rl_ProductsList"
