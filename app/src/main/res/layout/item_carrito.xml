@@ -54,7 +54,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:text="@string/descripcion"></TextView>
-<<<<<<< HEAD
 
                     </LinearLayout>
 
@@ -70,13 +69,11 @@
                             android:layout_marginTop="15dp"
                             android:src="@drawable/mas"></ImageView>
 
-=======
->>>>>>> 99bab4a4a29e7fa855c0bf43da4993f2498dfa91
+
                         <TextView
                             android:id="@+id/cantidad_carrito"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-<<<<<<< HEAD
                             android:layout_marginLeft="15dp"
                             android:layout_marginTop="20dp"
                             android:text="_____"></TextView>
@@ -89,10 +86,7 @@
                             android:layout_marginTop="13dp"
                             android:src="@drawable/menos"></ImageView>
 
-=======
-                            android:text="Cantidad"
-                            />
->>>>>>> 99bab4a4a29e7fa855c0bf43da4993f2498dfa91
+
                     </LinearLayout>
 
                 </LinearLayout>
