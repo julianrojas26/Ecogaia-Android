@@ -9,23 +9,12 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import android.widget.TextView
-import androidx.core.content.ContextCompat
-import androidx.fragment.app.DialogFragment
-<<<<<<< HEAD
-=======
 
->>>>>>> 99bab4a4a29e7fa855c0bf43da4993f2498dfa91
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-<<<<<<< HEAD
-import com.example.ecogaia.Adapter.GestionarAdaptador
-import com.example.ecogaia.Adapter.ItemRepAdaptador
-=======
-import com.example.ecogaia.adapter.GestionarAdaptador
 import com.example.ecogaia.adapter.ItemRepAdaptador
->>>>>>> 99bab4a4a29e7fa855c0bf43da4993f2498dfa91
 import com.example.ecogaia.R
 import org.json.JSONArray
 import org.json.JSONException

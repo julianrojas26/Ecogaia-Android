@@ -5,10 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridView
-import android.widget.ProgressBar
-import android.widget.RelativeLayout
-import android.widget.SearchView
+import android.widget.*
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -89,16 +86,18 @@ class fragment_productos : Fragment(), ProductosListener {
                 if (userInput.isEmpty() || userInput == "") {
                     url = ip + "listarProducto"
                 }
-                searchProd(url)
+                searchProd(url, userInput)
                 return true
             }
         })
 
         return ll
     }
-    fun searchProd (url:String) {
+
+    fun searchProd (url:String, input:String) {
 
         val queue = Volley.newRequestQueue(context)
+        var message = view!!.findViewById<TextView>(R.id.messageProductos)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
             val jsonArray = JSONArray(response)
@@ -109,6 +108,11 @@ class fragment_productos : Fragment(), ProductosListener {
                 while (i < l) {
                     productos.add(jsonArray[i] as JSONObject)
                     i++
+                }
+                if (productos.isEmpty()) {
+                    message.text = "No se productos con la busqueda de \"$input\""
+                } else {
+                    message.text = ""
                 }
                 Log.d("PROD2", productos.toString())
                 this.adapter = ProductosAdaptador(this.context, productos,this)
@@ -125,7 +129,9 @@ class fragment_productos : Fragment(), ProductosListener {
     }
 
     override fun onProductosCliked(productos: JSONObject, position: Int) {
-        val bundle = bundleOf("productos" to productos.toString())
+        val bundle = Bundle()
+        bundle.putString("productos", productos.toString())
+        bundle.putString("abridor", "fragment_productos")
         findNavController().navigate(
             R.id.fragment_detalleProductos, bundle
         )

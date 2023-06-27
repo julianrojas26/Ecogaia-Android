@@ -44,14 +44,9 @@ class MainActivity : AppCompatActivity() {
         bundle = Bundle()
 
         this.user = JSONObject(intent.getStringExtra("user").toString())
-<<<<<<< HEAD
-
-        this.url = "http://192.168.1.9:8080/"
-=======
         this.rol = user.getString("rol")
 
-        this.url = "http://192.168.1.7:8080/"
->>>>>>> 99bab4a4a29e7fa855c0bf43da4993f2498dfa91
+        this.url = "http://192.168.0.11:8080/"
 
         bundle.putString("user", this.user.toString())
         bundle.putString("url", this.url)
@@ -147,26 +142,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.item2 -> favoritos(null)
 
-<<<<<<< HEAD
-         when (item.itemId) {
-            R.id.item1 -> {
-                val navController =
-                    Navigation.findNavController(this, R.id.nav_host_fragment_container)
-                navController.navigate(R.id.fragment_nosotros)
-            }
-            R.id.item2 -> favoritos(null)
-            R.id.item3 -> {
-                val navController =
-                    Navigation.findNavController(this, R.id.nav_host_fragment_container)
-                navController.navigate(R.id.fragment_carrito)
-            }
-            R.id.item4 -> {
-                val navController =
-                    Navigation.findNavController(this, R.id.nav_host_fragment_container)
-                navController.navigate(R.id.fragment_repartidor)
-            }
-
-=======
                 R.id.item3 -> {
                     val navController =
                         Navigation.findNavController(this, R.id.nav_host_fragment_container)
@@ -178,7 +153,6 @@ class MainActivity : AppCompatActivity() {
                         Navigation.findNavController(this, R.id.nav_host_fragment_container)
                     navController.navigate(R.id.fragment_repartidor)
                 }
->>>>>>> 99bab4a4a29e7fa855c0bf43da4993f2498dfa91
 
                 R.id.item5 -> {
                     val navController =
@@ -186,8 +160,6 @@ class MainActivity : AppCompatActivity() {
                     navController.navigate(R.id.fragment_gestionar)
                 }
 
-<<<<<<< HEAD
-=======
                 R.id.item6 -> {
                     val navController =
                         Navigation.findNavController(this, R.id.nav_host_fragment_container)
@@ -195,7 +167,6 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.item7 -> endSession(null)
->>>>>>> 99bab4a4a29e7fa855c0bf43da4993f2498dfa91
         }
         return super.onOptionsItemSelected(item)
     }

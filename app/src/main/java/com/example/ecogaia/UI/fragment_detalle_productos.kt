@@ -1,5 +1,6 @@
 package com.example.ecogaia.UI
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,13 +11,17 @@ import android.widget.TextView
 import android.widget.Toast
 import android.widget.Toolbar
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.toDrawable
 import androidx.fragment.app.DialogFragment
+import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.ecogaia.R
 import org.json.JSONObject
+import com.example.ecogaia.UI.fragment_productos
+import org.json.JSONArray
 
 class fragment_detalle_productos : DialogFragment() {
     private lateinit var tbProdDets: Toolbar
@@ -56,19 +61,39 @@ class fragment_detalle_productos : DialogFragment() {
         val ip = bundle!!.getString("url").toString()
         val  user = JSONObject(bundle!!.getString("user"))
 
+        var addCarrito: ImageButton = view.findViewById(R.id.addCar)
+        var addFav: ImageButton = view.findViewById(R.id.addFav)
+
         this.tbProdDets.navigationIcon = ContextCompat.getDrawable(view.context, R.drawable.close)
 
         val tips = JSONObject(arguments?.getString("productos"))
 
         val queue = Volley.newRequestQueue(this.context)
 
+        val url = ip + "favoritosUsuario/" + user.getString("res")
+
+        val StringRequest = StringRequest(Request.Method.GET, url, { response ->
+            val jsonArray = JSONArray(response)
+            var i = 0
+            val l = jsonArray.length()
+            while (i < l) {
+                val prod = jsonArray[i] as JSONObject
+                /// prod.getString("prod_Codigo")
+                if (prod.getString("prod_Codigo") == tips.getString("prod_Codigo")) {
+                    var star = R.drawable.solid_star
+                    addFav.setImageResource(star)
+                }
+                i++
+            }
+        }, { error ->
+            Toast.makeText(this.context, error.toString(), Toast.LENGTH_LONG).show()
+        })
+
+        queue.add(StringRequest)
+
         this.nombre_prod.text = tips.getString("prod_Nombre")
         this.categoria_prod.text = tips.getString("prod_Categoria")
         this.precio_prod.text = tips.getString("prod_Precio")
-
-        val addCarrito: ImageButton = view.findViewById(R.id.addCar)
-
-        val addFav: ImageButton = view.findViewById(R.id.addFav)
 
         addCarrito.setOnClickListener() {
             val  url = ip + "insertarCarrito/" + user.getString("res") + "/" + tips.getString("prod_Codigo") + "/1"
@@ -112,6 +137,22 @@ class fragment_detalle_productos : DialogFragment() {
             ){
             }
             queue.add(getPost)
+        }
+    }
+
+    override fun onDismiss(dialog: DialogInterface) {
+        super.onDismiss(dialog)
+        val abridor = arguments?.getString("abridor")
+        if (abridor == "fragment_productos") {
+            onDestroy()
+            findNavController().navigate(
+                R.id.recycler_productos
+            )
+        } else if (abridor == "fragment_favoritos") {
+            onDestroy()
+            findNavController().navigate(
+                R.id.fragment_favoritos
+            )
         }
     }
 

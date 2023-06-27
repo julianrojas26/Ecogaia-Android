@@ -34,7 +34,7 @@ class fragment_login : AppCompatActivity() {
         this.conContraseña = findViewById(R.id.contrasenia)
         this.buttonLogin = findViewById(R.id.login)
         val registrarse = findViewById<Button>(R.id.registrarse)
-        val url = "http://192.168.1.7:8080/"
+        val url = "http://192.168.0.11:8080/"
 
         registrarse.setOnClickListener() {
             val i = Intent(this, activity_usuario::class.java).apply {  }
@@ -51,14 +51,9 @@ class fragment_login : AppCompatActivity() {
             if (this.conUsuario!!.text.isEmpty() || this.conUsuario!!.text.isEmpty()){
                 Toast.makeText(this, "Debes Completar Todos Los Campos", Toast.LENGTH_LONG).show()
             } else {
-<<<<<<< HEAD
 
-
-                val url = "http://192.168.1.9:8080/validarUsuario/"+this.conUsuario?.text+"/"+this.conContraseña?.text
-
-=======
                 val url = url + "validarUsuario/"+this.conUsuario?.text+"/"+this.conContraseña?.text
->>>>>>> 99bab4a4a29e7fa855c0bf43da4993f2498dfa91
+
                 val queue = Volley.newRequestQueue(this)
                 val resultGet = StringRequest (Request.Method.GET, url, { response ->
                     if(JSONObject(response).getString("error") == "null"){
