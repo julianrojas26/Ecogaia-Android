@@ -94,9 +94,9 @@ class fragment_carrito : Fragment(), CarritoListener {
             override fun onQueryTextChange(newText: String?): Boolean {
                 val userInput = newText?.trim() ?: ""
                 Log.w("MENSAJE", userInput)
-                var url = ip + "NombreFavorito/" + user.getString("res") + "/" + userInput
+                var url = ip + "NombreProdCar/" + user.getString("res") + "/" + userInput
                 if (userInput.isEmpty() || userInput == "") {
-                    url =  ip +"favoritosUsuario/"+ user.getString("res")
+                    url =  ip +"productosCarrito/"+ user.getString("res")
                 }
                 searchCarr(url)
                 return true
