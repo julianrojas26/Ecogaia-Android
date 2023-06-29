@@ -78,10 +78,6 @@
             android:layout_centerInParent="true"
             android:indeterminateTint="@color/verde_iconos" />
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d43dc0281207d8dc0492b7b0c2ae6dcafc18037e
     </RelativeLayout>
 
 </FrameLayout>
