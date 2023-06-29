@@ -31,7 +31,7 @@
             android:id="@+id/searchViewFavoritos"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_gravity="center"
             android:hint="Buscar"
             android:inputType="text"
             android:textColor="@color/verde_botones" />

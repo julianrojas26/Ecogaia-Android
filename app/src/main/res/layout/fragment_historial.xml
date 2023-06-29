@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo7"
-    tools:context=" ">
+    tools:context=".UI.fragment_historial">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,31 +40,32 @@
                 android:layout_height="470dp">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/favoritos_recycler"
+                    android:id="@+id/historial_recycler"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="30dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                     />
+                    tools:listitem="@layout/item_historial"
+                    />
             </ScrollView>
         </LinearLayout>
     </LinearLayout>
 
     <RelativeLayout
-        android:id="@+id/rl_FavoritosList"
+        android:id="@+id/rl_historialList"
         android:layout_width="match_parent"
         android:layout_height="800dp">
 
         <View
-            android:id="@+id/view_favoritosList"
+            android:id="@+id/view_historialList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0.5"
             android:background="@color/verde_botones" />
 
         <ProgressBar
-            android:id="@+id/pgbar_favoritosList"
+            android:id="@+id/pgbar_historialList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"

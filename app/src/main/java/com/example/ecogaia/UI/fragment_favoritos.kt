@@ -93,7 +93,7 @@ class fragment_favoritos : Fragment(), FavoritosListener, DialogListener {
             override fun onQueryTextChange(newText: String?): Boolean {
                 val userInput = newText?.trim() ?: ""
                 Log.w("MENSAJE", userInput)
-                var url = ip + "NombreFavorito/" + user.getString("res") + "/" + userInput
+                var url = ip + "nombreFavorito/" + user.getString("res") + "/" + userInput
                 if (userInput.isEmpty() || userInput == "") {
                     url =  ip +"favoritosUsuario/"+ user.getString("res")
                 }
