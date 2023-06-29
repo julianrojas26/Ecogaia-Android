@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
+import android.widget.SearchView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
@@ -29,6 +31,8 @@ class fragment_favoritos : Fragment(), FavoritosListener, DialogListener {
     private lateinit var pgbar: ProgressBar
     private lateinit var rlProductList: RelativeLayout
     private lateinit var favoritos: ArrayList<JSONObject>
+    private lateinit var searchView: SearchView
+    private lateinit var adapter: FavoritosAdaptador
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -69,8 +73,68 @@ class fragment_favoritos : Fragment(), FavoritosListener, DialogListener {
         this.viewAlpha = ll.findViewById(R.id.view_favoritosList)
         this.pgbar = ll.findViewById(R.id.pgbar_favoritosList)
         this.rlProductList = ll.findViewById(R.id.rl_FavoritosList)
+
+        this.favoritos = ArrayList()
+
+        searchView = ll.findViewById(R.id.searchViewFavoritos)
+
+
+        // Configurar el RecyclerView
+        recycler.layoutManager = LinearLayoutManager(requireContext())
+        adapter = FavoritosAdaptador(this.favoritos, this)
+        recycler.adapter = adapter
+
+        // Configurar la barra de búsqueda
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                val userInput = newText?.trim() ?: ""
+                Log.w("MENSAJE", userInput)
+                var url = ip + "NombreFavorito/" + user.getString("res") + "/" + userInput
+                if (userInput.isEmpty() || userInput == "") {
+                    url =  ip +"favoritosUsuario/"+ user.getString("res")
+                }
+                searchFav(url)
+                return true
+            }
+        })
+
         return ll
     }
+
+
+    fun searchFav(url: String) {
+        val queue = Volley.newRequestQueue(context)
+
+        val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+            val jsonArray = JSONArray(response)
+            try {
+                var i = 0
+                val l = jsonArray.length()
+                favoritos.clear()
+                while (i < l) {
+                    favoritos.add(jsonArray[i] as JSONObject)
+                    i++
+                }
+                Log.d("FAV2", favoritos.toString())
+                this.recycler.adapter = FavoritosAdaptador(favoritos, this)
+                recycler.adapter!!.notifyDataSetChanged()
+                this.viewAlpha.visibility = View.INVISIBLE
+                this.pgbar.visibility = View.INVISIBLE
+            } catch (e: JSONException) {
+            }
+        }, { error ->
+            Log.w("jsonError", error)
+        })
+        queue.add(stringRequest)
+    }
+
+
+
+
 
     override fun onFavoritosClicked(favoritos: JSONObject, position: Int) {
         val bundle = Bundle()

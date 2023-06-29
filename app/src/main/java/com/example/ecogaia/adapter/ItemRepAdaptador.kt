@@ -1,4 +1,4 @@
-package com.example.ecogaia.adapter
+package com.example.ecogaia.Adapter
 
 import android.util.Log
 import android.view.LayoutInflater
