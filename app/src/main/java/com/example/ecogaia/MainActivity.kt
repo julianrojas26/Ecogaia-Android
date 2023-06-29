@@ -1,17 +1,21 @@
 package com.example.ecogaia
 
+import android.content.ClipData
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.view.menu.MenuView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.ecogaia.adapter.CarritoListener
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.json.JSONObject
 
@@ -42,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         this.user = JSONObject(intent.getStringExtra("user").toString())
         this.rol = user.getString("rol")
 
-        this.url = "http://192.168.135.224:8080/"
+        this.url = "http://192.168.1.65:8080/"
 
         bundle.putString("user", this.user.toString())
         bundle.putString("url", this.url)
@@ -79,12 +83,6 @@ class MainActivity : AppCompatActivity() {
 
     fun addusuario(view: View) {
         val i = Intent(this, activity_usuario::class.java).apply { }
-        i.putExtras(bundle)
-        startActivity(i)
-    }
-
-    fun addBlog(view: View) {
-        val i = Intent(this, activity_agregar_blog::class.java).apply { }
         i.putExtras(bundle)
         startActivity(i)
     }

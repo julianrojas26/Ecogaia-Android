@@ -21,6 +21,7 @@ import com.android.volley.toolbox.Volley
 import com.example.ecogaia.R
 import org.json.JSONObject
 import com.example.ecogaia.UI.fragment_productos
+import com.example.ecogaia.adapter.DialogListener
 import org.json.JSONArray
 
 class fragment_detalle_productos : DialogFragment() {
@@ -28,6 +29,11 @@ class fragment_detalle_productos : DialogFragment() {
     private lateinit var nombre_prod: TextView
     private lateinit var categoria_prod: TextView
     private lateinit var precio_prod: TextView
+    private var listener: DialogListener? = null
+
+    fun setDialogListener(dialogListener: DialogListener) {
+        listener = dialogListener
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -124,8 +130,12 @@ class fragment_detalle_productos : DialogFragment() {
                     Response.Listener<String>{ response ->
                         if (response == "true") {
                             Toast.makeText(this.context, "El producto se agrego a favoritos", Toast.LENGTH_LONG).show()
+                            var star = R.drawable.solid_star
+                            addFav.setImageResource(star)
                         } else if (response == "false") {
                             Toast.makeText(this.context, "El producto se elimino de favoritos", Toast.LENGTH_LONG).show()
+                            var star = R.drawable.un_fav
+                            addFav.setImageResource(star)
                         }
                     }, Response.ErrorListener { error ->
                         Toast.makeText(this.context, error.stackTraceToString(), Toast.LENGTH_LONG).show()
@@ -142,23 +152,6 @@ class fragment_detalle_productos : DialogFragment() {
 
     override fun onDismiss(dialog: DialogInterface) {
         super.onDismiss(dialog)
-        val abridor = arguments?.getString("abridor")
-        if (abridor == "fragment_productos") {
-            onDestroy()
-            findNavController().navigate(
-                R.id.recycler_productos
-            )
-        } else if (abridor == "fragment_favoritos") {
-            onDestroy()
-            findNavController().navigate(
-                R.id.fragment_favoritos
-            )
-        }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.MATCH_PARENT)
+        listener?.onDialogClosed()
     }
 }

@@ -122,7 +122,7 @@
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:hint="Ingrese una Contraseña"
-                            android:inputType="text"></EditText>
+                            android:inputType="textPassword"></EditText>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
