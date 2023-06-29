@@ -12,6 +12,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.Response
@@ -31,6 +32,9 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
     private lateinit var pgbar: ProgressBar
     private lateinit var rl_CarritoList: RelativeLayout
     private lateinit var carrito: ArrayList<JSONObject>
+    private lateinit var searchView: SearchView
+    private lateinit var adapter: CarritoAdaptador
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -76,6 +80,33 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
         this.viewAlpha = ll.findViewById(R.id.view_carritoList)
         this.pgbar = ll.findViewById(R.id.pgbar_carritoList)
         this.rl_CarritoList = ll.findViewById(R.id.rl_CarritoList)
+
+        this.carrito = ArrayList()
+
+        searchView = ll.findViewById(R.id.Search_carrito)
+
+        // Configurar el RecyclerView
+        recycler.layoutManager = LinearLayoutManager(requireContext())
+        adapter = CarritoAdaptador(this.carrito, this)
+        recycler.adapter = adapter
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                val userInput = newText?.trim() ?: ""
+                Log.w("MENSAJE", userInput)
+                var url = ip + "NombreProdCar/" + user.getString("res") + "/" + userInput
+                if (userInput.isEmpty() || userInput == "") {
+                    url =  ip +"favoritosUsuario/"+ user.getString("res")
+                }
+                searchCarr(url)
+                return true
+            }
+        })
+
 
         btnComprar.setOnClickListener() {
             val url = ip + "compra/" + user.getString("res")
@@ -135,6 +166,31 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
             Log.w("jsonError", error)
         })
 
+        queue.add(stringRequest)
+    }
+    fun searchCarr(url: String) {
+        val queue = Volley.newRequestQueue(context)
+
+        val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+            val jsonArray = JSONArray(response)
+            try {
+                var i = 0
+                val l = jsonArray.length()
+                carrito.clear()
+                while (i < l) {
+                    carrito.add(jsonArray[i] as JSONObject)
+                    i++
+                }
+                Log.d("CAR2", carrito.toString())
+                this.recycler.adapter = CarritoAdaptador(carrito, this)
+                recycler.adapter!!.notifyDataSetChanged()
+                this.viewAlpha.visibility = View.INVISIBLE
+                this.pgbar.visibility = View.INVISIBLE
+            } catch (e: JSONException) {
+            }
+        }, { error ->
+            Log.w("jsonError", error)
+        })
         queue.add(stringRequest)
     }
 }
