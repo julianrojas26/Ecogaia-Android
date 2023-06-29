@@ -13,19 +13,33 @@
         app:cardBackgroundColor="@color/transparent"
         app:cardElevation="0dp">
 
+
         <LinearLayout
             android:layout_width="360dp"
-            android:layout_height="630dp"
+            android:layout_height="680dp"
             android:layout_marginTop="30dp"
             android:layout_gravity="top|center"
             android:background="@drawable/shape_form"
             android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/btnCompra"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="280dp"
+                android:layout_marginTop="30dp"
+                android:src ="@drawable/historial2"
+                android:onClick="Compra"
+                android:text="Compras"
+                android:textColor="@color/verde_claro">
+
+            </ImageView>
+
             <LinearLayout
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
+
                 android:background="@drawable/highico">
 
                 <ImageView
@@ -40,20 +54,23 @@
 
             </LinearLayout>
 
+
             <Button
                 android:id="@+id/btnFavoritos"
                 android:layout_width="110dp"
                 android:layout_height="40dp"
-                android:layout_gravity="right"
+                android:layout_marginLeft="5dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/shape_form"
-                android:gravity="center"
                 android:onClick="favoritos"
                 android:padding="10dp"
                 android:text="Favoritos"
                 android:textColor="@color/verde_claro">
 
             </Button>
+
+
+
 
             <LinearLayout
                 android:layout_width="320dp"

@@ -48,7 +48,11 @@ class MainActivity : AppCompatActivity() {
         this.user = JSONObject(intent.getStringExtra("user").toString())
         this.rol = user.getString("rol")
 
+<<<<<<< HEAD
         this.url = "http://192.168.1.67:8080/"
+=======
+        this.url = "http://192.168.1.65:8080/"
+>>>>>>> 3f8e95bf517126e9400f8ea413b7d5d63771cd8e
 
         bundle.putString("user", this.user.toString())
         bundle.putString("url", this.url)
@@ -85,12 +89,6 @@ class MainActivity : AppCompatActivity() {
 
     fun addusuario(view: View) {
         val i = Intent(this, activity_usuario::class.java).apply { }
-        i.putExtras(bundle)
-        startActivity(i)
-    }
-
-    fun addBlog(view: View) {
-        val i = Intent(this, activity_agregar_blog::class.java).apply { }
         i.putExtras(bundle)
         startActivity(i)
     }

@@ -10,12 +10,18 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.ecogaia.adapter.DialogListener
 import org.json.JSONObject
 
 class activity_agregar_blog : AppCompatActivity() {
     var nombre: EditText? = null
     var titulo: EditText? = null
     var cuerpo: EditText? = null
+    var listener: DialogListener? = null
+
+    fun setDialog (dialogListener: DialogListener) {
+        this.listener = dialogListener
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +40,7 @@ class activity_agregar_blog : AppCompatActivity() {
         val resultPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response ->
                 Toast.makeText(this, "Tip Creado exitosamente", Toast.LENGTH_LONG).show()
+                listener?.onDialogClosed()
                 finish()
             }, Response.ErrorListener { error ->
                 Toast.makeText(this, "Tip No Creado $error", Toast.LENGTH_LONG).show()
@@ -51,4 +58,6 @@ class activity_agregar_blog : AppCompatActivity() {
         queue.add(resultPost)
 
     }
+
+
 }

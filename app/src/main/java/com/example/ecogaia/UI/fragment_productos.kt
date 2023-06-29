@@ -15,11 +15,12 @@ import com.android.volley.toolbox.Volley
 import com.example.ecogaia.adapter.ProductosAdaptador
 import com.example.ecogaia.adapter.ProductosListener
 import com.example.ecogaia.R
+import com.example.ecogaia.adapter.DialogListener
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 
-class fragment_productos : Fragment(), ProductosListener {
+class fragment_productos : Fragment(), ProductosListener, DialogListener {
     private lateinit var recycler: GridView
     private lateinit var viewAlpha: View
     private lateinit var pgbar: ProgressBar
@@ -131,9 +132,40 @@ class fragment_productos : Fragment(), ProductosListener {
     override fun onProductosCliked(productos: JSONObject, position: Int) {
         val bundle = Bundle()
         bundle.putString("productos", productos.toString())
-        bundle.putString("abridor", "fragment_productos")
-        findNavController().navigate(
-            R.id.fragment_detalleProductos, bundle
-        )
+        val dialog = fragment_detalle_productos()
+        dialog.setDialogListener(this)
+        dialog.arguments = bundle
+        dialog.show(childFragmentManager.beginTransaction(), "dialog")
     }
+
+    override fun onDialogClosed() {
+        val bundle = activity?.intent?.extras
+        val ip = bundle!!.getString("url")
+        val url = ip + "listarProducto"
+        val queue = Volley.newRequestQueue(this.context)
+
+        val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+            val jsonArray = JSONArray(response)
+            this.productos.clear()
+            try {
+                var i = 0
+                val l = jsonArray.length()
+                while (i < l) {
+                    productos += (jsonArray[i] as JSONObject)
+                    i++
+                }
+                Log.d("PRODUCTOS", this.productos.toString())
+                this.recycler.adapter= ProductosAdaptador(this.context,this.productos, this)
+                this.viewAlpha.visibility= View.INVISIBLE
+                this.pgbar.visibility = View.INVISIBLE
+            }catch (e:JSONException) {
+                Log.w("ERROR", e)
+            }
+        }, { error ->
+            Log.w("jsonError", error)
+        })
+        queue.add(stringRequest)
+    }
+
+
 }

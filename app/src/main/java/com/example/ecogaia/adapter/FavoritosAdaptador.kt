@@ -4,15 +4,24 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+
 import com.example.ecogaia.R
+import com.example.ecogaia.adapter.FavoritosListener
 import org.json.JSONObject
 
 class FavoritosAdaptador(
     private val favoritosList: ArrayList<JSONObject>,
     private val favoritosListener: FavoritosListener,
-) : RecyclerView.Adapter<FavoritosAdaptador.ViewHoler>() {
+) : RecyclerView.Adapter<FavoritosAdaptador.ViewHoler>(),
+Filterable{
+
+    private var filteredList: ArrayList<JSONObject> = favoritosList
+
+
     inner class ViewHoler(view: View) : RecyclerView.ViewHolder(view) {
         var fav_nombre: TextView = view.findViewById(R.id.nombre_favoritos)
         var fav_cantidad: TextView = view.findViewById(R.id.cantidad_favoritos)
@@ -44,6 +53,30 @@ class FavoritosAdaptador(
             }
         } catch (e: Exception) {
             Log.w("ERROR", e)
+        }
+    }
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val filteredResults = ArrayList<JSONObject>()
+
+                for (jsonObject in favoritosList) {
+                    val nombre = jsonObject.optString("prod_Nombre", "")
+
+                    if (nombre.contains(constraint.toString(), true)) {
+                        filteredResults.add(jsonObject)
+                    }
+                }
+
+                val results = FilterResults()
+                results.values = filteredResults
+                return results
+            }
+
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                filteredList = results?.values as ArrayList<JSONObject>
+                notifyDataSetChanged()
+            }
         }
     }
 

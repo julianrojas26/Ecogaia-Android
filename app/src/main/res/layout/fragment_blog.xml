@@ -78,7 +78,6 @@
         android:layout_gravity="end|bottom"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="80dp"
-        android:onClick="addBlog"
         android:src="@drawable/add"
         app:backgroundTint="@color/azul_icono" />
 
