@@ -17,12 +17,13 @@ import com.android.volley.toolbox.Volley
 import com.example.ecogaia.adapter.FavoritosAdaptador
 import com.example.ecogaia.adapter.FavoritosListener
 import com.example.ecogaia.R
+import com.example.ecogaia.adapter.DialogListener
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 
 
-class fragment_favoritos : Fragment(), FavoritosListener {
+class fragment_favoritos : Fragment(), FavoritosListener, DialogListener {
     private lateinit var recycler: RecyclerView
     private lateinit var viewAlpha: View
     private lateinit var pgbar: ProgressBar
@@ -74,9 +75,40 @@ class fragment_favoritos : Fragment(), FavoritosListener {
     override fun onFavoritosClicked(favoritos: JSONObject, position: Int) {
         val bundle = Bundle()
         bundle.putString("productos", favoritos.toString())
-        bundle.putString("abridor", "fragment_favoritos")
-        findNavController().navigate(
-            R.id.fragment_detalleProductos, bundle
-        )
+        val dialog = fragment_detalle_productos()
+        dialog.setDialogListener(this)
+        dialog.arguments = bundle
+        dialog.show(childFragmentManager.beginTransaction(), "dialog")
+    }
+
+    override fun onDialogClosed() {
+        val bundle = activity?.intent?.extras
+        val ip = bundle!!.getString("url").toString()
+        val user = JSONObject(bundle!!.getString("user"))
+
+        val url = ip +"favoritosUsuario/"+ user.getString("res")
+        val queue = Volley.newRequestQueue(this.context)
+
+        val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+            val jsonArray = JSONArray(response)
+            this.favoritos.clear()
+            try {
+                var i = 0
+                val l = jsonArray.length()
+                while (i < l) {
+                    favoritos.add(jsonArray[i] as JSONObject)
+                    i++
+                }
+                Log.d("FAVORITOS", this.favoritos.toString())
+                this.recycler.adapter = FavoritosAdaptador(this.favoritos, this)
+                this.viewAlpha.visibility = View.INVISIBLE
+                this.pgbar.visibility = View.INVISIBLE
+            } catch (e: JSONException) {
+                Log.w("ERROR", e)
+            }
+        }, { error ->
+            Log.w("jsonError", error)
+        })
+        queue.add(stringRequest)
     }
 }

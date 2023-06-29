@@ -1,14 +1,12 @@
 package com.example.ecogaia.UI
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import android.widget.RelativeLayout
-import android.widget.SearchView
-import android.widget.TextView
+import android.widget.*
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -17,15 +15,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.ecogaia.MainActivity
 import com.example.ecogaia.R
+import com.example.ecogaia.activity_agregar_blog
 import com.example.ecogaia.adapter.BlogAdaptador
 import com.example.ecogaia.adapter.BlogListener
+import com.example.ecogaia.adapter.DialogListener
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 
 
-class fragment_blog : Fragment(), BlogListener {
+class fragment_blog : Fragment(), BlogListener, DialogListener {
     private lateinit var recycler: RecyclerView
     private lateinit var viewAlpha: View
     private lateinit var pgbar: ProgressBar
@@ -103,6 +105,14 @@ class fragment_blog : Fragment(), BlogListener {
             }
         })
 
+        val button = ll.findViewById<FloatingActionButton>(R.id.addBlog)
+
+        button.setOnClickListener() {
+            val i = Intent(context, activity_agregar_blog::class.java)
+
+            startActivity(i)
+        }
+
         return ll
     }
 
@@ -145,5 +155,9 @@ class fragment_blog : Fragment(), BlogListener {
         findNavController().navigate(
             R.id.fragment_detalle_blog, bundle
         )
+    }
+
+    override fun onDialogClosed() {
+        Log.w("AAA", "SI FUNCIONES")
     }
 }

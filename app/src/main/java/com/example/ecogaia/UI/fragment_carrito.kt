@@ -20,11 +20,12 @@ import com.android.volley.toolbox.Volley
 import com.example.ecogaia.adapter.CarritoAdaptador
 import com.example.ecogaia.adapter.CarritoListener
 import com.example.ecogaia.R
+import com.example.ecogaia.adapter.DialogListener
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 
-class fragment_carrito : Fragment(), CarritoListener {
+class fragment_carrito : Fragment(), CarritoListener, DialogListener {
     private lateinit var recycler: RecyclerView
     private lateinit var viewAlpha: View
     private lateinit var pgbar: ProgressBar
@@ -95,8 +96,45 @@ class fragment_carrito : Fragment(), CarritoListener {
     override fun onCarritoCliked(carrito: JSONObject, position: Int) {
         val bundle = Bundle()
         bundle.putString("carrito", carrito.toString())
-        findNavController().navigate(
-            R.id.fragment_detalle_carrito, bundle
-        )
+        val dialog = fragment_detalle_carrito()
+        dialog.setDialogListener(this)
+        dialog.arguments = bundle
+        dialog.show(childFragmentManager.beginTransaction(), "dialog")
+    }
+
+    override fun onDialogClosed() {
+        val bundle = activity?.intent?.extras
+        val ip = bundle!!.getString("url")
+        val user = JSONObject(bundle!!.getString("user"))
+
+
+        val url = ip + "cotizacionesUsuario/" + user.getString("res")
+        val queue = Volley.newRequestQueue(this.context)
+
+        val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+            val jsonArray = JSONArray(response)
+            this.carrito.clear()
+            var total = 0;
+            try {
+                var i = 0
+                val l = jsonArray.length()
+                while (i < l) {
+                    carrito.add(jsonArray[i] as JSONObject)
+                    total+= carrito[i].getString("total").toInt()
+                    i++
+                }
+                view?.findViewById<TextView>(R.id.carritoTotal)?.text = total.toString()
+                Log.d("CARRITO", this.carrito.toString())
+                this.recycler.adapter = CarritoAdaptador(this.carrito, this)
+                this.viewAlpha.visibility = View.INVISIBLE
+                this.pgbar.visibility = View.INVISIBLE
+            } catch (e: JSONException) {
+                Log.w("ERROR", e)
+            }
+        }, { error ->
+            Log.w("jsonError", error)
+        })
+
+        queue.add(stringRequest)
     }
 }
