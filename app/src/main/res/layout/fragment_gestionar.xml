@@ -26,8 +26,7 @@
                 android:textStyle="bold" />
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:layout_marginBottom="10dp">
+                android:layout_height="500dp">
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_gestionar_productos"
                     android:layout_width="match_parent"
@@ -41,20 +40,38 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:orientation="horizontal">
+
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="addProduct"
-                    android:text="agregar" />
+                    android:text="agregar"
+                    android:background="@drawable/shape_form2"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/verde_claro"/>
+
                 <Button
                     android:id="@+id/DeleteProduct"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="eliminar" />
+                    android:text="eliminar"
+                    android:background="@drawable/shape_form2"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/verde_claro"/>
+
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="editar" />
+                    android:text="editar"
+                    android:background="@drawable/shape_form2"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/verde_claro"/>
+
             </LinearLayout>
             <ScrollView
                 android:layout_width="match_parent"
@@ -73,20 +90,38 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:orientation="horizontal">
+
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="addusuario"
-                    android:text="agregar" />
+                    android:text="agregar"
+                    android:background="@drawable/shape_form2"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/verde_claro"/>
+
                 <Button
                     android:id="@+id/DeleteUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="eliminar" />
+                    android:text="eliminar"
+                    android:background="@drawable/shape_form2"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/verde_claro"/>
+
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="editar" />
+                    android:text="editar"
+                    android:background="@drawable/shape_form2"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/verde_claro"/>
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

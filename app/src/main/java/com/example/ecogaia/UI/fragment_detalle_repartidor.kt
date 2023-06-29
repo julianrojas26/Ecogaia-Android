@@ -6,9 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import android.widget.RelativeLayout
-import android.widget.TextView
+import android.widget.*
 
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -35,13 +33,29 @@ class fragment_detalle_repartidor : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val ll = inflater.inflate(R.layout.fragment_detalle_repartidor, container, false)
+
+        val swtch = ll.findViewById<Switch>(R.id.switch_rep) as Switch
+
+        swtch.setOnClickListener{
+
+            if(swtch.isChecked){
+
+                Toast.makeText(this.context,"Switch is On", Toast.LENGTH_LONG).show()
+            }
+            else{
+                Toast.makeText(this.context,"Switch is off", Toast.LENGTH_LONG).show()
+            }
+        }
+
+
+
         val bundle = activity?.intent?.extras
         val ip = bundle!!.getString("url")
         val user = JSONObject(bundle!!.getString("user"))
 
         val dis = JSONObject(arguments?.getString("dis"))
-
-        val ll = inflater.inflate(R.layout.fragment_detalle_repartidor, container, false)
 
         var usu_nombre: TextView = ll.findViewById(R.id.detalle_rep_usu)
         usu_nombre.text = dis.getString("usu_nombre")
