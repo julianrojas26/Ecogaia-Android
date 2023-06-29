@@ -32,8 +32,8 @@
             </com.google.android.material.appbar.AppBarLayout>
 
             <ImageView
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:src="@drawable/aceite_escencial"
                 android:layout_gravity="center">
             </ImageView>
@@ -100,7 +100,7 @@
                     android:layout_height="35dp"
                     android:layout_marginLeft="10dp"
                     android:background="@color/transparent"
-                    android:src="@drawable/mas"></ImageButton>
+                    android:src="@drawable"></ImageButton>
 
             </LinearLayout>
 
