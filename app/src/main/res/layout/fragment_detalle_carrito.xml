@@ -11,9 +11,9 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="400dp"
-            android:background="@drawable/shape_form2"
+            android:layout_width="250dp"
+            android:layout_height="300dp"
+            android:background="@drawable/shape_form"
             android:layout_gravity="center"
             android:orientation="vertical">
 
@@ -45,8 +45,17 @@
                 android:textStyle="bold"
                 android:text="Aceite Esencial"
                 android:textColor="@color/verde_claro"
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:layout_marginTop="10dp"
+                android:layout_gravity="center">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categoria"
+                android:textSize="13dp"
+                android:textColor="@color/gray"
+
                 android:layout_gravity="center">
             </TextView>
 
@@ -55,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Precio total"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:textColor="@color/black"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center">
@@ -66,13 +75,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_gravity="center"
-                android:layout_marginTop="15dp">
+                >
             </LinearLayout>
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:layout_gravity="center|bottom">
@@ -96,11 +105,11 @@
 
                 <ImageButton
                     android:id="@+id/mas"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
                     android:background="@color/transparent"
-                    android:src="@drawable"></ImageButton>
+                    android:src="@drawable/mas"></ImageButton>
 
             </LinearLayout>
 
