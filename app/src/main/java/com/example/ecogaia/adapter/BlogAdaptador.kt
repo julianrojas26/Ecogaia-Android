@@ -8,7 +8,6 @@ import android.widget.Filter
 import android.widget.Filterable
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ecogaia.adapter.BlogListener
 import com.example.ecogaia.R
 import org.json.JSONObject
 

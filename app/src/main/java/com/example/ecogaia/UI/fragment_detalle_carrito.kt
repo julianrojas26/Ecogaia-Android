@@ -19,6 +19,7 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.ecogaia.R
 import com.example.ecogaia.adapter.CarritoListener
+import com.example.ecogaia.adapter.DialogListener
 import org.json.JSONObject
 
 class fragment_detalle_carrito () : DialogFragment() {
@@ -26,7 +27,11 @@ class fragment_detalle_carrito () : DialogFragment() {
     private lateinit var nombre_prod: TextView
     private lateinit var cantidad: TextView
     private lateinit var precio_prod: TextView
+    private var listener: DialogListener? = null
 
+    fun setDialogListener (dialogListener: DialogListener) {
+        this.listener = dialogListener
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -121,9 +126,6 @@ class fragment_detalle_carrito () : DialogFragment() {
 
     override fun onDismiss(dialog: DialogInterface) {
         super.onDismiss(dialog)
-        onDestroy()
-        findNavController().navigate(
-            R.id.fragment_carrito
-        )
+        listener?.onDialogClosed()
     }
 }
