@@ -33,7 +33,7 @@
                 android:layout_width="340dp"
                 android:layout_height="600dp"
                 android:orientation="vertical"
-                android:background="@drawable/shape_registrar">
+                android:background="@drawable/shape_form">
                 <LinearLayout
                     android:layout_width="80dp"
                     android:layout_height="80dp"
