@@ -34,14 +34,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="560dp"
             android:layout_margin="10dp"
             android:background="@drawable/shape_carrito"
             android:orientation="vertical">
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="470dp">
+                android:layout_height="540dp">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/historial_recycler"
