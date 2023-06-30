@@ -68,7 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/shape_form2"
+                android:background="@drawable/shape_form"
                 android:onClick="clickAddProducts"
                 android:text="Agregar"></Button>
 

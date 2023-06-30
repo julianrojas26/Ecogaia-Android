@@ -18,14 +18,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:background="@drawable/shape_form2">
+            android:layout_margin="20dp">
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/extraterrestres" />
+            <TextView
+                android:id="@+id/detalle_rep_usu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Historial de Compras "
+                android:textColor="@color/verde_claro"
+                android:textSize="30sp"
+                >
+
+            </TextView>
         </LinearLayout>
 
         <LinearLayout
