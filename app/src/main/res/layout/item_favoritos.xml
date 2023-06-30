@@ -16,13 +16,8 @@
         <LinearLayout
             android:layout_width="310dp"
             android:layout_height="120dp"
-<<<<<<< HEAD
             android:layout_margin="8dp"
             android:background="@drawable/shape_form2"
-=======
-            android:9layout_margin="8dp"
-            android:background="@drawable/shape_form"
->>>>>>> f63ee8b5cd6d50de2b86110375a23a801cde2b51
             android:orientation="horizontal"
             android:padding="1dp"
             android:layout_gravity="center">
