@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".UI.fragment_detalle_repartidor">
+    tools:context=".UI.fragment_detalle_historial">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -13,22 +13,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="680dp"
+            android:layout_gravity="center|top"
             android:layout_margin="10dp"
             android:background="@drawable/shape_form2"
-            android:layout_gravity="center|top"
             android:orientation="vertical">
-
-
 
             <LinearLayout
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_marginTop = "40dp"
-                android:layout_marginBottom = "10dp"
-                android:orientation="vertical"
                 android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/highico"
                 android:gravity="center"
-                android:background="@drawable/highico">
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="80dp"
@@ -47,19 +45,18 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/detalle_rep_usu"
+                    android:id="@+id/rep_nombre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nombre de usuario "
                     android:textColor="@color/verde_claro"
                     android:textSize="16sp"
-
                     android:textStyle="bold">
 
                 </TextView>
 
                 <TextView
-                    android:id="@+id/detale_rep_direccion"
+                    android:id="@+id/compra_estado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -70,7 +67,7 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/detalle_rep_telefono"
+                    android:id="@+id/telefono_compra"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -98,7 +95,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        tools:listitem="@layout/item_historial" />
+                        tools:listitem="@layout/item_detalle_repartidor" />
 
                 </ScrollView>
 
@@ -107,19 +104,19 @@
         </LinearLayout>
 
         <RelativeLayout
-            android:id="@+id/rl_itemRepList"
+            android:id="@+id/rl_itemCompList"
             android:layout_width="match_parent"
             android:layout_height="800dp">
 
             <View
-                android:id="@+id/view_itemRepList"
+                android:id="@+id/view_itemCompList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:alpha="0.5"
                 android:background="@color/verde_botones" />
 
             <ProgressBar
-                android:id="@+id/pgbar_itemRepList"
+                android:id="@+id/pgbar_itemCompList"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"

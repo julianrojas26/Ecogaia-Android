@@ -47,8 +47,12 @@ class MainActivity : AppCompatActivity() {
 
         this.user = JSONObject(intent.getStringExtra("user").toString())
         this.rol = user.getString("rol")
+<<<<<<< HEAD
 
         this.url = "http://192.168.1.67:8080/"
+=======
+        this.url = "http://192.168.100.2:8080/"
+>>>>>>> d9a0a8f60a8ffbcf9e9e86e4ce2a51c367ff7ef7
 
         bundle.putString("user", this.user.toString())
         bundle.putString("url", this.url)

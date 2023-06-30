@@ -67,6 +67,7 @@ class fragment_detalle_carrito () : DialogFragment() {
         val tips = JSONObject(arguments!!.getString("carrito"))
 
         this.nombre_prod.text = tips.getString("Prod_Nombre")
+        this.nombre_prod
         this.cantidad.text = tips.getString("cantidad")
         this.precio_prod.text = tips.getString("total")
 

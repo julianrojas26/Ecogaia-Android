@@ -22,12 +22,12 @@
             android:padding="5dp">
 
             <SearchView
+                android:id="@+id/Search_carrito"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Buscar"
                 android:inputType="text"
                 android:textColor="@color/verde_iconos"
-                android:id="@+id/Search_carrito"
 
                 />
 
@@ -40,8 +40,8 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="5dp"
-            >
+            android:padding="5dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -50,7 +50,8 @@
                 android:text="Total:   $"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="20dp"/>
+                android:textSize="20dp" />
+
             <TextView
                 android:id="@+id/carritoTotal"
                 android:layout_width="wrap_content"
@@ -60,7 +61,7 @@
                 android:text=" ______"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="20dp"/>
+                android:textSize="20dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -115,6 +116,7 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnComprar"
+<<<<<<< HEAD
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_gravity="end|bottom"
@@ -122,5 +124,17 @@
         android:layout_marginBottom="80dp"
         android:src="@drawable/pesos"
         app:backgroundTint="@color/azul_icono" />
+=======
+        android:layout_width="190dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/shape_form2"
+        android:gravity="center"
+        android:text="COMPRAR"
+        android:textColor="@color/verde_claro">
+
+    </Button>
+>>>>>>> d9a0a8f60a8ffbcf9e9e86e4ce2a51c367ff7ef7
 
 </FrameLayout>
