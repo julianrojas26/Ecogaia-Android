@@ -8,6 +8,7 @@ import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
@@ -71,6 +72,10 @@ class fragment_historial: Fragment(), comprasListener{
     }
 
     override fun onHistorialClicked(compras: JSONObject, position: Int) {
-        super.onHistorialClicked(compras, position)
+        val bundle = Bundle()
+        bundle.putString("dis", compras.toString())
+        findNavController().navigate(
+            R.id.fragment_detalle_historial, bundle
+        )
     }
 }

@@ -128,5 +128,14 @@
         android:id="@+id/fragment_historial"
         android:name="com.example.ecogaia.UI.fragment_historial"
         android:label="fragment_historial"
-        tools:layout="@layout/fragment_historial" />
+        tools:layout="@layout/fragment_historial" >
+        <action
+            android:id="@+id/action_fragment_historial_to_fragment_detalle_historial"
+            app:destination="@id/fragment_detalle_historial" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_detalle_historial"
+        android:name="com.example.ecogaia.UI.fragment_detalle_historial"
+        android:label="fragment_detalle_historial"
+        tools:layout="@layout/fragment_detalle_historial" />
 </navigation>
