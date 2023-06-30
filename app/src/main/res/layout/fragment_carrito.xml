@@ -69,12 +69,27 @@
         android:layout_height="600dp"
         android:layout_marginTop="140dp">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/carrito_recycler"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_carrito" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/carrito_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_carrito" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
     </ScrollView>
 
     <RelativeLayout
@@ -98,17 +113,14 @@
 
     </RelativeLayout>
 
-    <Button
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnComprar"
-        android:layout_width="190dp"
-        android:layout_height="60dp"
-        android:background="@drawable/shape_form2"
-        android:layout_marginBottom = "80dp"
-        android:layout_gravity="center|bottom"
-        android:gravity="center"
-        android:text="COMPRAR"
-        android:textColor="@color/verde_claro">
-
-    </Button>
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_gravity="end|bottom"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="80dp"
+        android:src="@drawable/pesos"
+        app:backgroundTint="@color/azul_icono" />
 
 </FrameLayout>

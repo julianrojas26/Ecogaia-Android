@@ -69,6 +69,13 @@
             android:layout_centerInParent="true"
             android:indeterminateTint="@color/verde_claro" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
     </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -80,5 +87,12 @@
         android:layout_marginBottom="80dp"
         android:src="@drawable/add"
         app:backgroundTint="@color/azul_icono" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical">
+
+    </LinearLayout>
 
 </FrameLayout>

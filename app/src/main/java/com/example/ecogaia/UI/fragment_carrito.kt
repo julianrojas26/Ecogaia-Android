@@ -22,6 +22,7 @@ import com.example.ecogaia.adapter.CarritoAdaptador
 import com.example.ecogaia.adapter.CarritoListener
 import com.example.ecogaia.R
 import com.example.ecogaia.adapter.DialogListener
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -47,7 +48,7 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
 
         val ll = inflater.inflate(R.layout.fragment_carrito, container, false)
 
-        var btnComprar = ll.findViewById<Button>(R.id.btnComprar)
+        var btnComprar = ll.findViewById<FloatingActionButton>(R.id.btnComprar)
 
         val url = ip + "cotizacionesUsuario/" + user.getString("res")
         val queue = Volley.newRequestQueue(this.context)
@@ -100,7 +101,7 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
                 Log.w("MENSAJE", userInput)
                 var url = ip + "NombreProdCar/" + user.getString("res") + "/" + userInput
                 if (userInput.isEmpty() || userInput == "") {
-                    url =  ip +"favoritosUsuario/"+ user.getString("res")
+                    url =  ip +"cotizacionesUsuario/"+ user.getString("res")
                 }
                 searchCarr(url)
                 return true
