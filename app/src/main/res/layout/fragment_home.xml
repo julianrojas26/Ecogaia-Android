@@ -59,11 +59,11 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="155dp"
                         android:alpha="0.8"
-                        android:background="@color/beige"
+                        android:background="@color/fondo"
                         android:gravity="center"
                         android:text="Mascotas"
                         android:textColor="@color/black"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp" />
 
                 </RelativeLayout>
 
@@ -90,14 +90,14 @@
                     <TextView
                         android:layout_width="310dp"
                         android:layout_height="40dp"
-                        android:alpha="0.8"
-                        android:gravity="center"
                         android:layout_gravity="center"
+                        android:layout_marginTop="155dp"
+                        android:alpha="0.8"
+                        android:background="@color/fondo"
+                        android:gravity="center"
                         android:text="Maquillaje"
                         android:textColor="@color/black"
-                        android:background="@color/beige"
-                        android:textSize="20sp"
-                        android:layout_marginTop="155dp"/>
+                        android:textSize="20sp"/>
 
                 </RelativeLayout>
 
@@ -129,7 +129,7 @@
                         android:layout_gravity="center"
                         android:text="Aseo hogar"
                         android:textColor="@color/black"
-                        android:background="@color/beige"
+                        android:background="@color/fondo"
                         android:textSize="20sp"
                         android:layout_marginTop="155dp"/>
 
@@ -163,7 +163,7 @@
                         android:layout_gravity="center"
                         android:text="Higiene Personal"
                         android:textColor="@color/black"
-                        android:background="@color/beige"
+                        android:background="@color/fondo"
                         android:textSize="20sp"
                         android:layout_marginTop="155dp"/>
 

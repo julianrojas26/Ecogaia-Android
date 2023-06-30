@@ -51,7 +51,6 @@
                 android:layout_gravity="center">
 
             </TextView>
-<<<<<<< HEAD
 
             <TextView
                 android:layout_width="wrap_content"
@@ -59,11 +58,8 @@
                 android:text="Categoria"
                 android:textSize="13dp"
                 android:textColor="@color/gray"
-
                 android:layout_gravity="center">
             </TextView>
-=======
->>>>>>> d9a0a8f60a8ffbcf9e9e86e4ce2a51c367ff7ef7
 
             <TextView
                 android:id = "@+id/total_carrito_detalle"

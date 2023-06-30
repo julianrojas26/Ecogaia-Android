@@ -17,11 +17,7 @@
             android:layout_width="310dp"
             android:layout_height="120dp"
             android:layout_margin="8dp"
-<<<<<<< HEAD
             android:background="@drawable/shape_form2"
-=======
-            android:background="@drawable/shape_form"
->>>>>>> d9a0a8f60a8ffbcf9e9e86e4ce2a51c367ff7ef7
             android:orientation="horizontal"
             android:padding="1dp"
             android:layout_gravity="center">

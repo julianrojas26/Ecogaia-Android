@@ -34,13 +34,8 @@ class fragment_login : AppCompatActivity() {
         this.conContraseña = findViewById(R.id.contrasenia)
         this.buttonLogin = findViewById(R.id.login)
         val registrarse = findViewById<Button>(R.id.registrarse)
-<<<<<<< HEAD
 
-        val url = "http://192.168.1.67:8080/"
-
-=======
-        val url = "http://192.168.100.2:8080/"
->>>>>>> d9a0a8f60a8ffbcf9e9e86e4ce2a51c367ff7ef7
+        val url = "http://192.168.244.97:8080/"
 
         registrarse.setOnClickListener() {
             val i = Intent(this, activity_usuario::class.java).apply {  }
