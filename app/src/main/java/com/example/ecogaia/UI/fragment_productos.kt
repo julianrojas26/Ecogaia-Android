@@ -28,6 +28,12 @@ class fragment_productos : Fragment(), ProductosListener, DialogListener {
     private lateinit var productos: ArrayList<JSONObject>
     private lateinit var adapter: ProductosAdaptador
     private lateinit var searchView: SearchView
+    private lateinit var dropdownContentLayout: LinearLayout
+    private lateinit var dropdownButton: Button
+    private lateinit var OrByName: Button
+    private lateinit var OrByPrice: Button
+    private lateinit var OrByCat: Button
+
 
 
     override fun onCreateView(
@@ -36,12 +42,92 @@ class fragment_productos : Fragment(), ProductosListener, DialogListener {
         savedInstanceState: Bundle?
     ): View? {
         val ll = inflater.inflate(R.layout.fragment_productos, container, false)
-
         val bundle = activity?.intent?.extras
         val ip = bundle!!.getString("url")
         val url = ip + "listarProducto"
         val queue = Volley.newRequestQueue(this.context)
+        dropdownContentLayout = ll.findViewById(R.id.llDropdownContent)
+        dropdownButton = ll.findViewById(R.id.btnDropdown)
+        OrByPrice = ll.findViewById(R.id.OrByPrice)
+        OrByName = ll.findViewById(R.id.OrByName)
+        OrByCat = ll.findViewById(R.id.OrByCat)
 
+        OrByName.setOnClickListener(){
+            val url = ip + "ordenarProdNombre"
+            val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+                val jsonArray = JSONArray(response)
+                this.productos.clear()
+                try {
+                    var i = 0
+                    val l = jsonArray.length()
+                    while (i < l) {
+                        productos += (jsonArray[i] as JSONObject)
+                        i++
+                    }
+                    Log.d("PRODUCTOS", this.productos.toString())
+                    this.recycler.adapter= ProductosAdaptador(this.context,this.productos, this)
+                    this.viewAlpha.visibility= View.INVISIBLE
+                    this.pgbar.visibility = View.INVISIBLE
+                }catch (e:JSONException) {
+                    Log.w("ERROR", e)
+                }
+            }, { error ->
+                Log.w("jsonError", error)
+            })
+            queue.add(stringRequest)
+        }
+        OrByCat.setOnClickListener(){
+            val url = ip + "ordenarProdCategoria"
+            val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+                val jsonArray = JSONArray(response)
+                this.productos.clear()
+                try {
+                    var i = 0
+                    val l = jsonArray.length()
+                    while (i < l) {
+                        productos += (jsonArray[i] as JSONObject)
+                        i++
+                    }
+                    Log.d("PRODUCTOS", this.productos.toString())
+                    this.recycler.adapter= ProductosAdaptador(this.context,this.productos, this)
+                    this.viewAlpha.visibility= View.INVISIBLE
+                    this.pgbar.visibility = View.INVISIBLE
+                }catch (e:JSONException) {
+                    Log.w("ERROR", e)
+                }
+            }, { error ->
+                Log.w("jsonError", error)
+            })
+            queue.add(stringRequest)
+        }
+        OrByPrice.setOnClickListener(){
+            val url = ip + "ordenarProdPrecio"
+            val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+                val jsonArray = JSONArray(response)
+                this.productos.clear()
+                try {
+                    var i = 0
+                    val l = jsonArray.length()
+                    while (i < l) {
+                        productos += (jsonArray[i] as JSONObject)
+                        i++
+                    }
+                    Log.d("PRODUCTOS", this.productos.toString())
+                    this.recycler.adapter= ProductosAdaptador(this.context,this.productos, this)
+                    this.viewAlpha.visibility= View.INVISIBLE
+                    this.pgbar.visibility = View.INVISIBLE
+                }catch (e:JSONException) {
+                    Log.w("ERROR", e)
+                }
+            }, { error ->
+                Log.w("jsonError", error)
+            })
+            queue.add(stringRequest)
+        }
+
+        dropdownButton.setOnClickListener {
+            toggleDropdown()
+        }
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
             val jsonArray = JSONArray(response)
             this.productos = ArrayList()
@@ -165,6 +251,14 @@ class fragment_productos : Fragment(), ProductosListener, DialogListener {
             Log.w("jsonError", error)
         })
         queue.add(stringRequest)
+    }
+
+    private fun toggleDropdown() {
+        if (dropdownContentLayout.visibility == View.VISIBLE) {
+            dropdownContentLayout.visibility = View.GONE
+        } else {
+            dropdownContentLayout.visibility = View.VISIBLE
+        }
     }
 
 

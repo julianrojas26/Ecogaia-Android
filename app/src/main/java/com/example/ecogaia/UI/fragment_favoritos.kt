@@ -5,9 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import android.widget.RelativeLayout
-import android.widget.SearchView
+import android.widget.*
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -20,6 +18,7 @@ import com.example.ecogaia.adapter.FavoritosAdaptador
 import com.example.ecogaia.adapter.FavoritosListener
 import com.example.ecogaia.R
 import com.example.ecogaia.adapter.DialogListener
+import com.example.ecogaia.adapter.ProductosAdaptador
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -33,6 +32,11 @@ class fragment_favoritos : Fragment(), FavoritosListener, DialogListener {
     private lateinit var favoritos: ArrayList<JSONObject>
     private lateinit var searchView: SearchView
     private lateinit var adapter: FavoritosAdaptador
+    private lateinit var dropdownContentLayoutFav: LinearLayout
+    private lateinit var dropdownButtonFav: Button
+    private lateinit var OrByNameFav: Button
+    private lateinit var OrByPriceFav: Button
+    private lateinit var OrByCatFav: Button
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,6 +51,91 @@ class fragment_favoritos : Fragment(), FavoritosListener, DialogListener {
 
         val url = ip +"favoritosUsuario/"+ user.getString("res")
         val queue = Volley.newRequestQueue(this.context)
+
+        dropdownContentLayoutFav = ll.findViewById(R.id.llDropdownContentFav)
+        dropdownButtonFav = ll.findViewById(R.id.btnDropdownFav)
+        OrByPriceFav = ll.findViewById(R.id.OrByPriceFav)
+        OrByNameFav = ll.findViewById(R.id.OrByNameFav)
+        OrByCatFav = ll.findViewById(R.id.OrByCatFav)
+
+        OrByNameFav.setOnClickListener(){
+            val url = ip + "ordenarFavNombre/" + user.getString("res")
+            val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+                val jsonArray = JSONArray(response)
+                this.favoritos.clear()
+                try {
+                    var i = 0
+                    val l = jsonArray.length()
+                    while (i < l) {
+                        favoritos += (jsonArray[i] as JSONObject)
+                        i++
+                    }
+                    Log.d("FAVORITOS", this.favoritos.toString())
+                    this.recycler.adapter= FavoritosAdaptador(this.favoritos, this)
+                    this.viewAlpha.visibility= View.INVISIBLE
+                    this.pgbar.visibility = View.INVISIBLE
+                }catch (e:JSONException) {
+                    Log.w("ERROR", e)
+                }
+            }, { error ->
+                Log.w("jsonError", error)
+            })
+            queue.add(stringRequest)
+        }
+        OrByCatFav.setOnClickListener(){
+            val url = ip + "ordenarFavCategoria/" + user.getString("res")
+            val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+                val jsonArray = JSONArray(response)
+                this.favoritos.clear()
+                try {
+                    var i = 0
+                    val l = jsonArray.length()
+                    while (i < l) {
+                        favoritos += (jsonArray[i] as JSONObject)
+                        i++
+                    }
+                    Log.d("FAVORITOS", this.favoritos.toString())
+                    this.recycler.adapter= FavoritosAdaptador(this.favoritos, this)
+                    this.viewAlpha.visibility= View.INVISIBLE
+                    this.pgbar.visibility = View.INVISIBLE
+                }catch (e:JSONException) {
+                    Log.w("ERROR", e)
+                }
+            }, { error ->
+                Log.w("jsonError", error)
+            })
+            queue.add(stringRequest)
+        }
+        OrByPriceFav.setOnClickListener(){
+            val url = ip + "ordenarFavPrecio/" + user.getString("res")
+            val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+                val jsonArray = JSONArray(response)
+                this.favoritos.clear()
+                try {
+                    var i = 0
+                    val l = jsonArray.length()
+                    while (i < l) {
+                        favoritos += (jsonArray[i] as JSONObject)
+                        i++
+                    }
+                    Log.d("FAVORITOS", this.favoritos.toString())
+                    this.recycler.adapter= FavoritosAdaptador(this.favoritos, this)
+                    this.viewAlpha.visibility= View.INVISIBLE
+                    this.pgbar.visibility = View.INVISIBLE
+                }catch (e:JSONException) {
+                    Log.w("ERROR", e)
+                }
+            }, { error ->
+                Log.w("jsonError", error)
+            })
+            queue.add(stringRequest)
+        }
+
+        dropdownButtonFav.setOnClickListener {
+            toggleDropdownFav()
+        }
+
+
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
             val jsonArray = JSONArray(response)
@@ -175,4 +264,12 @@ class fragment_favoritos : Fragment(), FavoritosListener, DialogListener {
         })
         queue.add(stringRequest)
     }
+    private fun toggleDropdownFav() {
+        if (dropdownContentLayoutFav.visibility == View.VISIBLE) {
+            dropdownContentLayoutFav.visibility = View.GONE
+        } else {
+            dropdownContentLayoutFav.visibility = View.VISIBLE
+        }
+    }
+
 }

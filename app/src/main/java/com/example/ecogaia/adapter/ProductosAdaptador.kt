@@ -15,7 +15,8 @@ import com.example.ecogaia.adapter.ProductosListener
 class ProductosAdaptador(
     private val context: Context?,
     private val ProductosList: ArrayList<JSONObject>,
-    private val productosListener: ProductosListener
+    private val productosListener: ProductosListener,
+
 ):
     BaseAdapter(), Filterable {
     private var filteredList: ArrayList<JSONObject> = ProductosList

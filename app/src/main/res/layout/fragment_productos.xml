@@ -24,15 +24,70 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
-        android:background="@drawable/shape_carrito"
         android:padding="5dp">
 
         <SearchView
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:inputType="text"
+            android:background="@drawable/shape_carrito"
             android:textColor="@color/verde_iconos"
             android:id="@+id/search_prod"/>
+
+        <LinearLayout
+            android:id="@+id/llContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Botón desplegable -->
+            <Button
+                android:id="@+id/btnDropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Order"
+                android:onClick="toggleDropdown"
+                android:background="@drawable/shape_carrito"
+                />
+
+            <!-- Lista de elementos (inicialmente oculta) -->
+            <LinearLayout
+                android:id="@+id/llDropdownContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <!-- Aquí puedes agregar los elementos de tu lista -->
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="A-Z"
+                    android:id="@+id/OrByName"
+                    android:background="@drawable/shape_carrito"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Categoria"
+                    android:id="@+id/OrByCat"
+                    android:background="@drawable/shape_carrito"
+                    />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Precio"
+                    android:id="@+id/OrByPrice"
+                    android:background="@drawable/shape_carrito"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
 
     </LinearLayout>
     <LinearLayout

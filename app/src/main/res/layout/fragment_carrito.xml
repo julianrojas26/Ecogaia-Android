@@ -17,19 +17,20 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:background="@drawable/shape_carrito"
             android:orientation="horizontal"
             android:padding="5dp">
 
             <SearchView
-                android:layout_width="match_parent"
+                android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:hint="Buscar"
+                android:background="@drawable/shape_carrito"
                 android:inputType="text"
                 android:textColor="@color/verde_iconos"
                 android:id="@+id/Search_carrito"
 
                 />
+
 
 
         </LinearLayout>
@@ -110,5 +111,66 @@
         android:textColor="@color/verde_claro">
 
     </Button>
+    <LinearLayout
+        android:id="@+id/llContainerCar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <!-- Botón desplegable -->
+
+        <Button
+            android:id="@+id/btnDropdownCar"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:text="Order"
+            android:onClick="toggleDropdown"
+            android:layout_marginTop = "35dp"
+            android:layout_marginRight = "25dp"
+
+            android:layout_gravity="right|top"
+            android:gravity="center"
+
+            />
+        <!-- Lista de elementos (inicialmente oculta) -->
+
+        <LinearLayout
+            android:id="@+id/llDropdownContentCar"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginRight = "25dp"
+            android:layout_gravity="right|top"
+            android:background="@color/verde_claro"
+            android:orientation="vertical">
+
+            <!-- Aquí puedes agregar los elementos de tu lista -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="A-Z"
+                android:id="@+id/OrByNameCar"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Cantidad"
+                android:id="@+id/OrByCantCar"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Total"
+                android:id="@+id/OrByTotalCar"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </FrameLayout>
