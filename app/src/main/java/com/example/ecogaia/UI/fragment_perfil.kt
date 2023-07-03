@@ -5,10 +5,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
@@ -55,6 +58,13 @@ class fragment_perfil : Fragment() {
             Log.w("jsonError", error)
         })
         queue.add(stringRequest)
+
+        val compras = ll.findViewById<ImageButton>(R.id.compras)
+
+        compras.setOnClickListener() {
+            val navController = Navigation.findNavController(activity!!, R.id.nav_host_fragment_container)
+            navController.navigate(R.id.fragment_historial)
+        }
         return ll
     }
 

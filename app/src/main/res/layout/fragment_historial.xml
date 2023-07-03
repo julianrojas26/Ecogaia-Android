@@ -5,66 +5,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo7"
-    tools:context=" ">
+    tools:context=".UI.fragment_historial">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="700dp"
+        android:layout_height="580dp"
         android:layout_margin="30dp"
-        android:background="@drawable/shape_form"
+        android:background="@drawable/shape_form2"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:background="@drawable/shape_form2">
+            android:layout_marginTop="20dp">
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/extraterrestres" />
+            <TextView
+                android:id="@+id/detalle_rep_usu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Compras "
+                android:textColor="@color/verde_claro"
+                android:textSize="33sp"
+                android:textStyle="bold"
+                >
+
+            </TextView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="470dp"
             android:layout_margin="10dp"
             android:background="@drawable/shape_carrito"
             android:orientation="vertical">
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="470dp">
+                android:layout_height="540dp">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/favoritos_recycler"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="30dp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                     />
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/historial_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="30dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_historial" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+                </LinearLayout>
+
             </ScrollView>
         </LinearLayout>
+
     </LinearLayout>
 
     <RelativeLayout
-        android:id="@+id/rl_FavoritosList"
+        android:id="@+id/rl_historialList"
         android:layout_width="match_parent"
         android:layout_height="800dp">
 
         <View
-            android:id="@+id/view_favoritosList"
+            android:id="@+id/view_historialList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0.5"
             android:background="@color/verde_botones" />
 
         <ProgressBar
-            android:id="@+id/pgbar_favoritosList"
+            android:id="@+id/pgbar_historialList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"

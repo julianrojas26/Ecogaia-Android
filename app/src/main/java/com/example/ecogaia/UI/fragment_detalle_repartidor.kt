@@ -2,28 +2,23 @@ package com.example.ecogaia.UI
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import android.widget.RelativeLayout
-import android.widget.TextView
-
+import android.widget.*
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.ecogaia.Adapter.ItemRepAdaptador
 import com.example.ecogaia.R
+import com.example.ecogaia.adapter.ItemRepAdaptador
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 
 
 class fragment_detalle_repartidor : Fragment() {
-
-
     private lateinit var recycler: RecyclerView
     private lateinit var viewAlpha: View
     private lateinit var pgbar: ProgressBar
@@ -33,15 +28,27 @@ class fragment_detalle_repartidor : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
+
+        val ll = inflater.inflate(R.layout.fragment_detalle_repartidor, container, false)
+
+        val swtch = ll.findViewById<Switch>(R.id.switch_rep) as Switch
+
+        swtch.setOnClickListener {
+
+            if (swtch.isChecked) {
+
+                Toast.makeText(this.context, "Switch is On", Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(this.context, "Switch is off", Toast.LENGTH_LONG).show()
+            }
+        }
+
         val bundle = activity?.intent?.extras
         val ip = bundle!!.getString("url")
         val user = JSONObject(bundle!!.getString("user"))
-
         val dis = JSONObject(arguments?.getString("dis"))
-
-        val ll = inflater.inflate(R.layout.fragment_detalle_repartidor, container, false)
 
         var usu_nombre: TextView = ll.findViewById(R.id.detalle_rep_usu)
         usu_nombre.text = dis.getString("usu_nombre")
@@ -50,12 +57,13 @@ class fragment_detalle_repartidor : Fragment() {
         var usu_telefono: TextView = ll.findViewById(R.id.detalle_rep_telefono)
         usu_telefono.text = dis.getString("usu_telefono")
 
-        val url = ip + "ventasRepartidor/" + user.getString("res") + "/" + dis.getString("id_Usuario")
+        val url =
+            ip + "ventasRepartidor/" + user.getString("res") + "/" + dis.getString("id_Usuario")
         val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
             val jsonArray = JSONArray(response)
-            this. itemRepartidor= ArrayList()
+            this.itemRepartidor = ArrayList()
             try {
                 var i = 0
                 val l = jsonArray.length()
@@ -64,10 +72,10 @@ class fragment_detalle_repartidor : Fragment() {
                     i++
                 }
                 Log.d("REPARTIDOR", this.itemRepartidor.toString())
-                this.recycler.adapter= ItemRepAdaptador(this.itemRepartidor)
-                this.viewAlpha.visibility= View.INVISIBLE
+                this.recycler.adapter = ItemRepAdaptador(this.itemRepartidor)
+                this.viewAlpha.visibility = View.INVISIBLE
                 this.pgbar.visibility = View.INVISIBLE
-            }catch (e: JSONException) {
+            } catch (e: JSONException) {
                 Log.w("ERROR", e)
             }
         }, { error ->

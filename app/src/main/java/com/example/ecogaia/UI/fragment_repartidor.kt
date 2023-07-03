@@ -34,6 +34,7 @@ class fragment_repartidor : Fragment(), RepartidorListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val bundle = activity?.intent?.extras
         val ip = bundle!!.getString("url")
         val user = JSONObject(bundle!!.getString("user"))

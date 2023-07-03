@@ -13,9 +13,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             android:orientation="vertical">
             <TextView
-                android:id="@+id/nombre_gestionar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top|center"
@@ -24,15 +24,101 @@
                 android:textColor="@color/verde_iconos"
                 android:textSize="35sp"
                 android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/shape_titulos_invt">
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="ID"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" ></TextView>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="43dp"
+                    android:background="@color/verde_claro" />
+
+                <TextView
+                    android:layout_width="165dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="Nombre"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"></TextView>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="43dp"
+                    android:background="@color/verde_claro" />
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="Cat"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"></TextView>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="43dp"
+                    android:background="@color/verde_claro" />
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:text="Can"
+                    android:layout_marginRight="8dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"></TextView>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="43dp"
+                    android:background="@color/verde_claro" />
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="$"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"></TextView>
+
+            </LinearLayout>
+
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:layout_marginBottom="10dp">
+                android:layout_height="500dp">
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_gestionar_productos"
                     android:layout_width="match_parent"
                     android:layout_height="680dp"
-                    android:layout_marginTop="10dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/item_gestionar_productos" />
             </ScrollView>
@@ -40,22 +126,130 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="40dp">
+
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="addProduct"
-                    android:text="agregar" />
+                    android:text="agregar"
+                    android:background="@drawable/shape_form2"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/verde_claro"/>
+
                 <Button
                     android:id="@+id/DeleteProduct"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="eliminar" />
+                    android:text="eliminar"
+                    android:background="@drawable/shape_form2"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/verde_claro"/>
+
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="editar" />
+                    android:text="editar"
+                    android:background="@drawable/shape_form2"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/verde_claro"/>
+
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/nombre_ges_usuarios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:text="Usuarios"
+                android:textColor="@color/verde_iconos"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/shape_titulos_invt">
+
+                <TextView
+                    android:id="@+id/id_usuario"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="1"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"></TextView>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="43dp"
+                    android:background="@color/verde_claro" />
+
+                <TextView
+                    android:id="@+id/correo_usuario"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="Correo"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"></TextView>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="43dp"
+                    android:background="@color/verde_claro" />
+
+                <TextView
+                    android:id="@+id/rol_usuario"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="Rol"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"></TextView>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="43dp"
+                    android:background="@color/verde_claro" />
+
+                <TextView
+                    android:id="@+id/contrasenia_usuario"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:text="Contraseña"
+                    android:layout_marginRight="8dp"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"></TextView>
+
+
+            </LinearLayout>
+
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="500dp"
@@ -64,7 +258,6 @@
                     android:id="@+id/recycler_gestionar_usuarios"
                     android:layout_width="match_parent"
                     android:layout_height="680dp"
-                    android:layout_marginTop="10dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/item_gestionar_usuarios" />
             </ScrollView>
@@ -72,28 +265,57 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_margin="20dp">
+
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="addusuario"
-                    android:text="agregar" />
+                    android:text="agregar"
+                    android:background="@drawable/shape_form2"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/verde_claro"/>
+
                 <Button
                     android:id="@+id/DeleteUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="eliminar" />
+                    android:text="eliminar"
+                    android:background="@drawable/shape_form2"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/verde_claro"/>
+
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="editar" />
+                    android:text="editar"
+                    android:background="@drawable/shape_form2"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/verde_claro"/>
+
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
         </LinearLayout>
+
     </ScrollView>
     <RelativeLayout
         android:id="@+id/rl_GestionarList"
         android:layout_width="match_parent"
         android:layout_height="800dp">
+
         <View
             android:id="@+id/view_gestionarList"
             android:layout_width="match_parent"
@@ -107,4 +329,5 @@
             android:layout_centerInParent="true"
             android:indeterminateTint="@color/verde_claro" />
     </RelativeLayout>
+
 </FrameLayout>

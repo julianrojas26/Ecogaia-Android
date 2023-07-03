@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.view.menu.MenuView
@@ -30,6 +31,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+
         val host: NavHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment?
                 ?: return
@@ -46,7 +50,9 @@ class MainActivity : AppCompatActivity() {
         this.user = JSONObject(intent.getStringExtra("user").toString())
         this.rol = user.getString("rol")
 
-        this.url = "http://192.168.101.8:8080/"
+
+        this.url = "http://192.168.244.97:8080/"
+
 
         bundle.putString("user", this.user.toString())
         bundle.putString("url", this.url)

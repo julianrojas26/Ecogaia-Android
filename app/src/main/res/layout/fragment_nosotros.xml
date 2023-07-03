@@ -5,27 +5,27 @@
     android:layout_height="match_parent"
     tools:context=".fragment_nosotros">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@drawable/fondo7">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nosotros"
+                android:background="@drawable/sales"
+                android:textColor="@color/verde_claro"
+                android:textSize="30dp"
+                android:textAlignment="center"
+                android:paddingTop="25dp"
+                android:paddingBottom="15dp"
+
+            ></TextView>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nosotros"
-            android:background="@drawable/sales"
-            android:textColor="@color/verde_claro"
-            android:textSize="30dp"
-            android:textAlignment="center"
-            android:paddingTop="25dp"
-            android:paddingBottom="15dp"
-
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:paddingTop="35dp"
             android:layout_margin="20dp"
             android:text="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.">
 
@@ -33,11 +33,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-
-            >
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -45,9 +41,11 @@
                 android:text="Misión"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:gravity="center_vertical"
+                android:background="@color/beige"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
                 android:textColor="@color/verde_claro"
-                android:background="@drawable/shape_nosotrostit"
+
                 >
 
             </TextView>
@@ -85,8 +83,14 @@
 
             </TextView>
 
-        </LinearLayout>
-    </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical">
+
+            </LinearLayout>
 
 
 </FrameLayout>

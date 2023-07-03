@@ -15,9 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.ecogaia.MainActivity
 import com.example.ecogaia.R
-import com.example.ecogaia.activity_agregar_blog
 import com.example.ecogaia.adapter.BlogAdaptador
 import com.example.ecogaia.adapter.BlogListener
 import com.example.ecogaia.adapter.DialogListener
@@ -27,7 +25,7 @@ import org.json.JSONException
 import org.json.JSONObject
 
 
-class fragment_blog : Fragment(), BlogListener, DialogListener {
+class fragment_blog : Fragment(), BlogListener {
     private lateinit var recycler: RecyclerView
     private lateinit var viewAlpha: View
     private lateinit var pgbar: ProgressBar
@@ -108,9 +106,12 @@ class fragment_blog : Fragment(), BlogListener, DialogListener {
         val button = ll.findViewById<FloatingActionButton>(R.id.addBlog)
 
         button.setOnClickListener() {
-            val i = Intent(context, activity_agregar_blog::class.java)
-
-            startActivity(i)
+            val fragment = fragment_agregar_blog()
+            val fragmentManager = requireActivity().supportFragmentManager
+            val transaction = fragmentManager.beginTransaction()
+            transaction.replace(this.id, fragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
         }
 
         return ll
@@ -155,9 +156,5 @@ class fragment_blog : Fragment(), BlogListener, DialogListener {
         findNavController().navigate(
             R.id.fragment_detalle_blog, bundle
         )
-    }
-
-    override fun onDialogClosed() {
-        Log.w("AAA", "SI FUNCIONES")
     }
 }

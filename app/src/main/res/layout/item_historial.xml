@@ -35,7 +35,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/nombre_favoritos"
+                    android:id="@+id/fecha_compra"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textColor="@color/gray"
@@ -43,19 +43,19 @@
                     android:text="27/06/2023" />
 
                 <TextView
-                    android:id="@+id/cantidad_favoritos"
+                    android:id="@+id/repartidor_compra"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
                     android:text="Nombre repartidor" />
 
                 <TextView
-                    android:id="@+id/precio_favoritos"
+                    android:id="@+id/estado_compra"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
-                    android:text="Telefono" />
+                    android:text="Estado" />
 
             </LinearLayout>
 
