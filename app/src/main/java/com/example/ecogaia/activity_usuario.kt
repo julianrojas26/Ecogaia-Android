@@ -60,8 +60,6 @@ class activity_usuario : AppCompatActivity() {
                 Log.e("params", "$params")
             }
         }
-        val con = resultadoPost.bodyContentType
-        Log.e("a", "$con")
         queue.add(resultadoPost)
     }
 

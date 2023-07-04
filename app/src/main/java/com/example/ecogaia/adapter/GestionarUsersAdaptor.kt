@@ -1,5 +1,6 @@
 package com.example.ecogaia.adapter
 
+import android.annotation.SuppressLint
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -13,8 +14,9 @@ class GestionarUsersAdaptor(
     private val gesList: ArrayList<JSONObject>,
     private val gestionarUsersListener: GestionarUsersListener,
 ) : RecyclerView.Adapter<GestionarUsersAdaptor.ViewHoler>() {
-    inner class ViewHoler(view: View) : RecyclerView.ViewHolder(view) {
+    private var selectedItemPosition: Int = -1
 
+    inner class ViewHoler(view: View) : RecyclerView.ViewHolder(view) {
         var id_usuario: TextView = view.findViewById(R.id.id_usuario)
         var usu_rol: TextView = view.findViewById(R.id.rol_usuario)
         var usu_contrasenia: TextView = view.findViewById(R.id.contrasenia_usuario)
@@ -36,12 +38,25 @@ class GestionarUsersAdaptor(
 
     override fun getItemCount() = this.gesList.size
 
-    override fun onBindViewHolder(holder: ViewHoler, position: Int) {
+    override fun onBindViewHolder(holder: ViewHoler, @SuppressLint("RecyclerView") position: Int) {
         val ges = gesList[position]
+        var item = holder.itemView
+
+        if (position == selectedItemPosition) {
+            if (item.background == null) {
+                item.setBackgroundColor(R.color.black)
+            } else {
+                item.background = null
+            }
+        } else {
+            item.background = null
+        }
         try {
             holder.bind(ges)
             holder.itemView.setOnClickListener {
                 gestionarUsersListener.onUserClicked(ges, position)
+                selectedItemPosition = position
+                notifyDataSetChanged()
             }
         } catch (e: Exception) {
             Log.w("ERROR", e)

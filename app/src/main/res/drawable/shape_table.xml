@@ -7,5 +7,5 @@
         >
     </stroke>
 
-    <solid android:color="@color/beige"></solid>
+    <solid android:color="@color/transparent"></solid>
 </shape>

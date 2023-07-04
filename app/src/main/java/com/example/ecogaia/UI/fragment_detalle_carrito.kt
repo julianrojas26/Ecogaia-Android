@@ -67,7 +67,6 @@ class fragment_detalle_carrito () : DialogFragment() {
         val tips = JSONObject(arguments!!.getString("carrito"))
 
         this.nombre_prod.text = tips.getString("Prod_Nombre")
-        this.nombre_prod
         this.cantidad.text = tips.getString("cantidad")
         this.precio_prod.text = tips.getString("total")
 
@@ -82,7 +81,7 @@ class fragment_detalle_carrito () : DialogFragment() {
                         Toast.makeText(this.context, "Se añadio una unidad de " + tips.getString("Prod_Nombre"), Toast.LENGTH_LONG).show()
                         val cantidadNueva = this.cantidad.text.toString().toInt() + 1;
                         var precioNuevo = this.precio_prod.text.toString().toInt();
-                        this.precio_prod.text = (precioNuevo + tips.getString("total").toString().toInt()).toString();
+                        this.precio_prod.text = (precioNuevo + tips.getString("prod_precio").toString().toInt()).toString();
                         this.cantidad.text = cantidadNueva.toString();
                     } else if (response == "false") {
                         Toast.makeText(this.context, "El producto no tiene mas unidades disponibles", Toast.LENGTH_LONG).show()
@@ -104,7 +103,7 @@ class fragment_detalle_carrito () : DialogFragment() {
                         Toast.makeText(this.context, "Se elimino una unidad de " + tips.getString("Prod_Nombre"), Toast.LENGTH_LONG).show()
                         val cantidadNueva = this.cantidad.text.toString().toInt() - 1;
                         var precioNuevo = this.precio_prod.text.toString().toInt();
-                        this.precio_prod.text = (precioNuevo + tips.getString("total").toString().toInt()).toString();
+                        this.precio_prod.text = (precioNuevo - tips.getString("prod_precio").toString().toInt()).toString();
                         this.cantidad.text = cantidadNueva.toString();
                     } else if (response == "false") {
                         Toast.makeText(this.context, "Producto eliminado de carrito", Toast.LENGTH_LONG).show()
