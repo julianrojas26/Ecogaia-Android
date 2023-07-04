@@ -27,7 +27,7 @@ class BlogAdaptador(
             var info: String = tips.getString("cuerpo")
 
             if (info.length > 150) {
-                cuerpo.text = info.slice(0..150) + "..."
+                cuerpo.text = info.slice(0..100) + "..."
             } else {
                 cuerpo.text = info
             }

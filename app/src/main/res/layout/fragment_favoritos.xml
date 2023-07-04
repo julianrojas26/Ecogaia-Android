@@ -9,8 +9,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="700dp"
-        android:layout_margin="30dp"
+        android:layout_height="590dp"
+        android:layout_margin="20dp"
         android:background="@drawable/shape_form"
         android:orientation="vertical">
 
@@ -18,43 +18,115 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:background="@drawable/shape_form2">
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shape_favoritos2">
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:layout_margin="10dp"
                 android:src="@drawable/extraterrestres" />
         </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_margin="15dp">
         <SearchView
             android:id="@+id/searchViewFavoritos"
-            android:layout_width="320dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="Buscar"
             android:inputType="text"
             android:textColor="@color/verde_botones" />
+        <LinearLayout
+            android:id="@+id/llContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <!-- Botón desplegable -->
+            <Button
+                android:id="@+id/btnDropdownFav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Order"
+                android:onClick="toggleDropdown"
+                android:background="@drawable/shape_carrito"
+                />
+
+            <!-- Lista de elementos (inicialmente oculta) -->
+            <LinearLayout
+                android:id="@+id/llDropdownContentFav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <!-- Aquí puedes agregar los elementos de tu lista -->
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="A-Z"
+                    android:id="@+id/OrByNameFav"
+                    android:background="@drawable/shape_carrito"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Categoria"
+                    android:id="@+id/OrByCatFav"
+                    android:background="@drawable/shape_carrito"
+                    />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Precio"
+                    android:id="@+id/OrByPriceFav"
+                    android:background="@drawable/shape_carrito"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="380dp"
             android:layout_margin="10dp"
-            android:background="@drawable/shape_carrito"
+            android:background="@drawable/shape_favoritos"
             android:orientation="vertical">
 
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="470dp">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/favoritos_recycler"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="30dp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_favoritos" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/favoritos_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="370dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_favoritos" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:orientation="vertical">
+                    </LinearLayout>
+
+                </LinearLayout>
+
             </ScrollView>
         </LinearLayout>
     </LinearLayout>
