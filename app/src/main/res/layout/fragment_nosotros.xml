@@ -43,19 +43,18 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Misión"
+                android:text="Mision"
+                android:background="@color/beige"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:background="@color/beige"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp"
                 android:textColor="@color/verde_claro"
 
                 >
-
             </TextView>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="match_parent"
                 android:padding="30dp"
                 android:background="@drawable/shape_nosotros"
@@ -68,17 +67,19 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="30dp"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:padding="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_nosotrostit"
                 android:text="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.">
             </TextView>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Visión"
-                android:background="@color/beige"
                 android:layout_marginTop="20dp"
+                android:background="@color/beige"
                 android:layout_marginLeft="10dp"
                 android:gravity="center_vertical"
                 android:paddingLeft="20dp"
