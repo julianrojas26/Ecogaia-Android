@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
+import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -28,6 +29,7 @@ class fragment_repartidor : Fragment(), RepartidorListener {
     private lateinit var pgbar: ProgressBar
     private lateinit var rlProductList: RelativeLayout
     private lateinit var repartidor: ArrayList<JSONObject>
+    private lateinit var textViewMensaje: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,6 +56,11 @@ class fragment_repartidor : Fragment(), RepartidorListener {
                     repartidor.add(jsonArray[i] as JSONObject)
                     i++
                 }
+                if (repartidor.isEmpty()) {
+                    textViewMensaje.text = "No tienes pedidos aún "
+                } else {
+                    textViewMensaje.text = ""
+                }
                 Log.d("REPARTIDOR", this.repartidor.toString())
                 this.recycler.adapter= RepartidorAdaptador(this.repartidor, this)
                 this.viewAlpha.visibility= View.INVISIBLE
@@ -69,6 +76,8 @@ class fragment_repartidor : Fragment(), RepartidorListener {
         this.viewAlpha = ll.findViewById(R.id.view_repartidorList)
         this.pgbar = ll.findViewById(R.id.pgbar_repartidorList)
         this.rlProductList = ll.findViewById(R.id.rl_RepartidorList)
+        textViewMensaje = ll.findViewById(R.id.textViewMensaje)
+
         return ll
     }
 

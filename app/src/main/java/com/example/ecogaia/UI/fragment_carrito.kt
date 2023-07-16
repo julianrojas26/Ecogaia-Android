@@ -40,6 +40,8 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
     private lateinit var OrByNameCar: Button
     private lateinit var OrByTotalCar: Button
     private lateinit var OrByCantCar: Button
+    private lateinit var textViewMensaje: TextView
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -62,6 +64,8 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
         OrByTotalCar = ll.findViewById(R.id.OrByTotalCar)
         OrByNameCar = ll.findViewById(R.id.OrByNameCar)
         OrByCantCar = ll.findViewById(R.id.OrByCantCar)
+        textViewMensaje = ll.findViewById(R.id.textViewMensaje)
+
 
         OrByNameCar.setOnClickListener(){
             val url = ip + "ordenarCarNombre/" + user.getString("res")
@@ -75,6 +79,7 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
                         carrito += (jsonArray[i] as JSONObject)
                         i++
                     }
+
                     Log.d("CARRITOO", this.carrito.toString())
                     this.recycler.adapter= CarritoAdaptador(this.carrito, this)
                     this.viewAlpha.visibility= View.INVISIBLE
@@ -152,6 +157,11 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
                     i++
                 }
                 ll.findViewById<TextView>(R.id.carritoTotal).text = total.toString()
+                if (carrito.isEmpty()) {
+                    textViewMensaje.text = "No hay productos en tu carrito"
+                } else {
+                    textViewMensaje.text = ""
+                }
                 Log.d("CARRITO", this.carrito.toString())
                 this.recycler.adapter = CarritoAdaptador(this.carrito, this)
                 this.viewAlpha.visibility = View.INVISIBLE

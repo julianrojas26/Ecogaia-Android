@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         this.rol = user.getString("rol")
 
 
-        this.url = "http://192.168.244.97:8080/"
+        this.url = "http://192.168.1.10:8080/"
 
 
         bundle.putString("user", this.user.toString())
@@ -159,14 +159,20 @@ class MainActivity : AppCompatActivity() {
                         Navigation.findNavController(this, R.id.nav_host_fragment_container)
                     navController.navigate(R.id.fragment_gestionar)
                 }
-
                 R.id.item6 -> {
+                    val navController =
+                        Navigation.findNavController(this, R.id.nav_host_fragment_container)
+                    navController.navigate(R.id.gestionarUsuariosFragment)
+                }
+
+
+                R.id.item7 -> {
                     val navController =
                         Navigation.findNavController(this, R.id.nav_host_fragment_container)
                     navController.navigate(R.id.fragment_estadisticas)
                 }
 
-                R.id.item7 -> endSession(null)
+                R.id.item8 -> endSession(null)
         }
         return super.onOptionsItemSelected(item)
     }

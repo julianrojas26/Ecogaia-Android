@@ -37,6 +37,8 @@ class fragment_favoritos : Fragment(), FavoritosListener, DialogListener {
     private lateinit var OrByNameFav: Button
     private lateinit var OrByPriceFav: Button
     private lateinit var OrByCatFav: Button
+    private lateinit var textViewMensaje: TextView
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -52,11 +54,12 @@ class fragment_favoritos : Fragment(), FavoritosListener, DialogListener {
         val url = ip +"favoritosUsuario/"+ user.getString("res")
         val queue = Volley.newRequestQueue(this.context)
 
-        dropdownContentLayoutFav = ll.findViewById(R.id.llDropdownContentFav)
+        dropdownContentLayoutFav = ll.findViewById(R.id.llDropdownContentTFav)
         dropdownButtonFav = ll.findViewById(R.id.btnDropdownFav)
         OrByPriceFav = ll.findViewById(R.id.OrByPriceFav)
         OrByNameFav = ll.findViewById(R.id.OrByNameFav)
         OrByCatFav = ll.findViewById(R.id.OrByCatFav)
+        textViewMensaje = ll.findViewById(R.id.textViewMensaje)
 
         OrByNameFav.setOnClickListener(){
             val url = ip + "ordenarFavNombre/" + user.getString("res")
@@ -146,6 +149,11 @@ class fragment_favoritos : Fragment(), FavoritosListener, DialogListener {
                 while (i < l) {
                     favoritos.add(jsonArray[i] as JSONObject)
                     i++
+                }
+                if (favoritos.isEmpty()) {
+                    textViewMensaje.text = "No hay favoritos aún"
+                } else {
+                    textViewMensaje.text = ""
                 }
                 Log.d("FAVORITOS", this.favoritos.toString())
                 this.recycler.adapter = FavoritosAdaptador(this.favoritos, this)

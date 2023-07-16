@@ -26,7 +26,7 @@
                 android:paddingTop="25dp"
                 android:paddingBottom="15dp"
 
-            ></TextView>
+            />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

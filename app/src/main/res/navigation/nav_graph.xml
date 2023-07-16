@@ -138,4 +138,11 @@
         android:name="com.example.ecogaia.UI.fragment_detalle_historial"
         android:label="fragment_detalle_historial"
         tools:layout="@layout/fragment_detalle_historial" />
+    <fragment
+        android:id="@+id/gestionarUsuariosFragment"
+        android:name="com.example.ecogaia.UI.GestionarUsuariosFragment"
+        android:label="fragment_gestionar_usuarios"
+        tools:layout="@layout/fragment_gestionar_usuarios" />
+
+
 </navigation>
