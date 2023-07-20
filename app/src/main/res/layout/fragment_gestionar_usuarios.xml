@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo7"
-    tools:context=".UI.fragment_gestionar">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".UI.GestionarUsuariosFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,12 +13,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <TextView
+                android:id="@+id/nombre_ges_usuarios"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top|center"
-                android:layout_marginTop="20dp"
-                android:text="Inventario"
+                android:text="Usuarios"
                 android:textColor="@color/verde_iconos"
                 android:textSize="35sp"
                 android:textStyle="bold" />
@@ -28,38 +28,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="20dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:layout_marginTop="15dp"
                 android:background="@drawable/shape_titulos_invt">
 
                 <TextView
+                    android:id="@+id/id_usuario"
                     android:layout_width="20dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="ID"
                     android:gravity="center"
+                    android:text="1"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="43dp"
-                    android:background="@color/verde_claro" />
-
-                <TextView
-                    android:layout_width="165dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:text="Nombre"
-                    android:textColor="@color/black"
                     android:textSize="15sp"/>
 
                 <View
@@ -68,15 +53,33 @@
                     android:background="@color/verde_claro" />
 
                 <TextView
+                    android:id="@+id/correo_usuario"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="Correo"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="43dp"
+                    android:background="@color/verde_claro" />
+
+                <TextView
+                    android:id="@+id/rol_usuario"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:gravity="center"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:text="Cat"
+                    android:text="Rol"
                     android:textColor="@color/black"
-                    android:textSize="15sp"/>
+                    android:textSize="13sp"/>
 
                 <View
                     android:layout_width="1dp"
@@ -84,48 +87,35 @@
                     android:background="@color/verde_claro" />
 
                 <TextView
-                    android:layout_width="30dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
-                    android:text="Can"
-                    android:layout_marginRight="8dp"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"/>
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="43dp"
-                    android:background="@color/verde_claro" />
-
-                <TextView
-                    android:layout_width="40dp"
+                    android:id="@+id/contrasenia_usuario"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_marginLeft="8dp"
+                    android:text="Contraseña"
                     android:layout_marginRight="8dp"
-                    android:text="$"
                     android:textColor="@color/black"
-                    android:textSize="15sp"/>
+                    android:textSize="12sp"/>
+
 
             </LinearLayout>
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="400dp">
+                android:layout_height="400dp"
+                android:layout_marginBottom="10dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recycler_gestionar_productos"
-                        android:layout_width="match_parent"
-                        android:layout_height="680dp"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        tools:listitem="@layout/item_gestionar_productos" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_gestionar_usuarios"
+                    android:layout_width="match_parent"
+                    android:layout_height="680dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_gestionar_usuarios" />
                 </LinearLayout>
-
             </ScrollView>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -138,7 +128,7 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="addProduct"
+                    android:onClick="addusuario"
                     android:text="agregar"
                     android:background="@drawable/shape_form2"
                     android:paddingLeft="20dp"
@@ -146,7 +136,7 @@
                     android:textColor="@color/verde_claro"/>
 
                 <Button
-                    android:id="@+id/DeleteProduct"
+                    android:id="@+id/DeleteUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="eliminar"
@@ -169,21 +159,21 @@
             </LinearLayout>
 
         </LinearLayout>
-
     </ScrollView>
+
     <RelativeLayout
-        android:id="@+id/rl_GestionarList"
+        android:id="@+id/rl_GestionarUsuariosList"
         android:layout_width="match_parent"
         android:layout_height="800dp">
 
         <View
-            android:id="@+id/view_gestionarList"
+            android:id="@+id/view_gestionarUsuariosList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0.5"
             android:background="@color/verde_botones" />
         <ProgressBar
-            android:id="@+id/pgbar_gestionarList"
+            android:id="@+id/pgbar_gestionarUsuariosList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"

@@ -34,7 +34,7 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
@@ -44,7 +44,7 @@
 
         <SearchView
             android:id="@+id/searchView"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:hint="Buscar"
             android:inputType="text"
@@ -112,6 +112,66 @@
         android:layout_height="200dp"
         android:orientation="vertical">
 
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llContainerTip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+    <!-- Botón desplegable -->
+
+    <Button
+        android:id="@+id/btnDropdownTip"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:text="Order"
+        android:onClick="toggleDropdown"
+        android:layout_marginTop = "28dp"
+        android:layout_marginRight = "25dp"
+        android:layout_gravity="right|top"
+        android:gravity="center"
+
+        />
+    <!-- Lista de elementos (inicialmente oculta) -->
+
+    <LinearLayout
+        android:id="@+id/llDropdownContentTip"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginRight = "25dp"
+        android:layout_gravity="right|top"
+        android:background="@color/verde_claro"
+        android:orientation="vertical">
+
+        <!-- Aquí puedes agregar los elementos de tu lista -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="A-Z"
+            android:id="@+id/OrByAzTip"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Fecha"
+            android:id="@+id/OrByDateTip"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Usuario"
+            android:id="@+id/OrByUsTip"
+            />
+        </LinearLayout>
     </LinearLayout>
 
 </FrameLayout>

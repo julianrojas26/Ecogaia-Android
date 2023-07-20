@@ -19,6 +19,7 @@ import com.example.ecogaia.R
 import com.example.ecogaia.adapter.BlogAdaptador
 import com.example.ecogaia.adapter.BlogListener
 import com.example.ecogaia.adapter.DialogListener
+import com.example.ecogaia.adapter.FavoritosAdaptador
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.json.JSONArray
 import org.json.JSONException
@@ -33,7 +34,11 @@ class fragment_blog : Fragment(), BlogListener {
     private lateinit var blog: ArrayList<JSONObject>
     private lateinit var searchView: SearchView
     private lateinit var adapter: BlogAdaptador
-
+    private lateinit var dropdownContentLayoutTip: LinearLayout
+    private lateinit var dropdownButtonTip: Button
+    private lateinit var OrByAzTip: Button
+    private lateinit var OrByDateTip: Button
+    private lateinit var OrByUsTip: Button
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,6 +53,89 @@ class fragment_blog : Fragment(), BlogListener {
 
         val url = ip + "listarTip"
         val queue = Volley.newRequestQueue(this.context)
+
+
+        dropdownContentLayoutTip = ll.findViewById(R.id.llDropdownContentTip)
+        dropdownButtonTip = ll.findViewById(R.id.btnDropdownTip)
+        OrByAzTip = ll.findViewById(R.id.OrByAzTip)
+        OrByDateTip = ll.findViewById(R.id.OrByDateTip)
+        OrByUsTip = ll.findViewById(R.id.OrByUsTip)
+
+        OrByAzTip.setOnClickListener(){
+            val url = ip + "ordenarTipAz"
+            val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+                val jsonArray = JSONArray(response)
+                this.blog.clear()
+                try {
+                    var i = 0
+                    val l = jsonArray.length()
+                    while (i < l) {
+                        blog += (jsonArray[i] as JSONObject)
+                        i++
+                    }
+                    Log.d("BLOG", this.blog.toString())
+                    this.recycler.adapter= BlogAdaptador(this.blog, this)
+                    this.viewAlpha.visibility= View.INVISIBLE
+                    this.pgbar.visibility = View.INVISIBLE
+                }catch (e:JSONException) {
+                    Log.w("ERROR", e)
+                }
+            }, { error ->
+                Log.w("jsonError", error)
+            })
+            queue.add(stringRequest)
+        }
+        OrByDateTip.setOnClickListener(){
+            val url = ip + "ordenarTipFecha"
+            val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+                val jsonArray = JSONArray(response)
+                this.blog.clear()
+                try {
+                    var i = 0
+                    val l = jsonArray.length()
+                    while (i < l) {
+                        blog += (jsonArray[i] as JSONObject)
+                        i++
+                    }
+                    Log.d("BLOG", this.blog.toString())
+                    this.recycler.adapter= BlogAdaptador(this.blog, this)
+                    this.viewAlpha.visibility= View.INVISIBLE
+                    this.pgbar.visibility = View.INVISIBLE
+                }catch (e:JSONException) {
+                    Log.w("ERROR", e)
+                }
+            }, { error ->
+                Log.w("jsonError", error)
+            })
+            queue.add(stringRequest)
+        }
+        OrByUsTip.setOnClickListener(){
+            val url = ip + "ordenarTipUsuario"
+            val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+                val jsonArray = JSONArray(response)
+                this.blog.clear()
+                try {
+                    var i = 0
+                    val l = jsonArray.length()
+                    while (i < l) {
+                        blog += (jsonArray[i] as JSONObject)
+                        i++
+                    }
+                    Log.d("BLOG", this.blog.toString())
+                    this.recycler.adapter= BlogAdaptador(this.blog, this)
+                    this.viewAlpha.visibility= View.INVISIBLE
+                    this.pgbar.visibility = View.INVISIBLE
+                }catch (e:JSONException) {
+                    Log.w("ERROR", e)
+                }
+            }, { error ->
+                Log.w("jsonError", error)
+            })
+            queue.add(stringRequest)
+        }
+        dropdownButtonTip.setOnClickListener {
+            toggleDropdownTip()
+        }
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
             val jsonArray = JSONArray(response)
@@ -156,5 +244,12 @@ class fragment_blog : Fragment(), BlogListener {
         findNavController().navigate(
             R.id.fragment_detalle_blog, bundle
         )
+    }
+    private fun toggleDropdownTip() {
+        if (dropdownContentLayoutTip.visibility == View.VISIBLE) {
+            dropdownContentLayoutTip.visibility = View.GONE
+        } else {
+            dropdownContentLayoutTip.visibility = View.VISIBLE
+        }
     }
 }

@@ -1,22 +1,28 @@
 package com.example.ecogaia.UI
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.os.bundleOf
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.ecogaia.R
 import com.example.ecogaia.adapter.CarritoAdaptador
 import com.example.ecogaia.adapter.CarritoListener
+import com.example.ecogaia.R
 import com.example.ecogaia.adapter.DialogListener
+import com.example.ecogaia.adapter.FavoritosAdaptador
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -29,6 +35,13 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
     private lateinit var carrito: ArrayList<JSONObject>
     private lateinit var searchView: SearchView
     private lateinit var adapter: CarritoAdaptador
+    private lateinit var dropdownContentLayoutCar: LinearLayout
+    private lateinit var dropdownButtonCar: Button
+    private lateinit var OrByNameCar: Button
+    private lateinit var OrByTotalCar: Button
+    private lateinit var OrByCantCar: Button
+    private lateinit var textViewMensaje: TextView
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,6 +59,91 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
         val url = ip + "cotizacionesUsuario/" + user.getString("res")
         val queue = Volley.newRequestQueue(this.context)
 
+        dropdownContentLayoutCar = ll.findViewById(R.id.llDropdownContentCar)
+        dropdownButtonCar = ll.findViewById(R.id.btnDropdownCar)
+        OrByTotalCar = ll.findViewById(R.id.OrByTotalCar)
+        OrByNameCar = ll.findViewById(R.id.OrByNameCar)
+        OrByCantCar = ll.findViewById(R.id.OrByCantCar)
+        textViewMensaje = ll.findViewById(R.id.textViewMensaje)
+
+
+        OrByNameCar.setOnClickListener(){
+            val url = ip + "ordenarCarNombre/" + user.getString("res")
+            val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+                val jsonArray = JSONArray(response)
+                this.carrito.clear()
+                try {
+                    var i = 0
+                    val l = jsonArray.length()
+                    while (i < l) {
+                        carrito += (jsonArray[i] as JSONObject)
+                        i++
+                    }
+
+                    Log.d("CARRITOO", this.carrito.toString())
+                    this.recycler.adapter= CarritoAdaptador(this.carrito, this)
+                    this.viewAlpha.visibility= View.INVISIBLE
+                    this.pgbar.visibility = View.INVISIBLE
+                }catch (e:JSONException) {
+                    Log.w("ERROR", e)
+                }
+            }, { error ->
+                Log.w("jsonError", error)
+            })
+            queue.add(stringRequest)
+        }
+        OrByCantCar.setOnClickListener(){
+            val url = ip + "ordenarCarCantidad/" + user.getString("res")
+            val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+                val jsonArray = JSONArray(response)
+                this.carrito.clear()
+                try {
+                    var i = 0
+                    val l = jsonArray.length()
+                    while (i < l) {
+                        carrito += (jsonArray[i] as JSONObject)
+                        i++
+                    }
+                    Log.d("CARRITOO", this.carrito.toString())
+                    this.recycler.adapter= CarritoAdaptador(this.carrito, this)
+                    this.viewAlpha.visibility= View.INVISIBLE
+                    this.pgbar.visibility = View.INVISIBLE
+                }catch (e:JSONException) {
+                    Log.w("ERROR", e)
+                }
+            }, { error ->
+                Log.w("jsonError", error)
+            })
+            queue.add(stringRequest)
+        }
+        OrByTotalCar.setOnClickListener(){
+            val url = ip + "ordenarTotalNombre/" + user.getString("res")
+            val stringRequest = StringRequest(Request.Method.GET, url, { response ->
+                val jsonArray = JSONArray(response)
+                this.carrito.clear()
+                try {
+                    var i = 0
+                    val l = jsonArray.length()
+                    while (i < l) {
+                        carrito += (jsonArray[i] as JSONObject)
+                        i++
+                    }
+                    Log.d("CARRITOO", this.carrito.toString())
+                    this.recycler.adapter= CarritoAdaptador(this.carrito, this)
+                    this.viewAlpha.visibility= View.INVISIBLE
+                    this.pgbar.visibility = View.INVISIBLE
+                }catch (e:JSONException) {
+                    Log.w("ERROR", e)
+                }
+            }, { error ->
+                Log.w("jsonError", error)
+            })
+            queue.add(stringRequest)
+        }
+        dropdownButtonCar.setOnClickListener {
+            toggleDropdownCar()
+        }
+
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
             val jsonArray = JSONArray(response)
             this.carrito = ArrayList()
@@ -55,10 +153,15 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
                 val l = jsonArray.length()
                 while (i < l) {
                     carrito.add(jsonArray[i] as JSONObject)
-                    total += carrito[i].getString("total").toInt()
+                    total+= carrito[i].getString("total").toInt()
                     i++
                 }
                 ll.findViewById<TextView>(R.id.carritoTotal).text = total.toString()
+                if (carrito.isEmpty()) {
+                    textViewMensaje.text = "No hay productos en tu carrito"
+                } else {
+                    textViewMensaje.text = ""
+                }
                 Log.d("CARRITO", this.carrito.toString())
                 this.recycler.adapter = CarritoAdaptador(this.carrito, this)
                 this.viewAlpha.visibility = View.INVISIBLE
@@ -92,9 +195,9 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
             override fun onQueryTextChange(newText: String?): Boolean {
                 val userInput = newText?.trim() ?: ""
                 Log.w("MENSAJE", userInput)
-                var url = ip + "nombreProdCar/" + user.getString("res") + "/" + userInput
+                var url = ip + "NombreProdCar/" + user.getString("res") + "/" + userInput
                 if (userInput.isEmpty() || userInput == "") {
-                    url = ip + "cotizacionesUsuario/" + user.getString("res")
+                    url =  ip +"favoritosUsuario/"+ user.getString("res")
                 }
                 searchCarr(url)
                 return true
@@ -145,7 +248,7 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
                 val l = jsonArray.length()
                 while (i < l) {
                     carrito.add(jsonArray[i] as JSONObject)
-                    total += carrito[i].getString("total").toInt()
+                    total+= carrito[i].getString("total").toInt()
                     i++
                 }
                 view?.findViewById<TextView>(R.id.carritoTotal)?.text = total.toString()
@@ -162,7 +265,6 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
 
         queue.add(stringRequest)
     }
-
     fun searchCarr(url: String) {
         val queue = Volley.newRequestQueue(context)
 
@@ -188,5 +290,11 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
         })
         queue.add(stringRequest)
     }
-
+    private fun toggleDropdownCar() {
+        if (dropdownContentLayoutCar.visibility == View.VISIBLE) {
+            dropdownContentLayoutCar.visibility = View.GONE
+        } else {
+            dropdownContentLayoutCar.visibility = View.VISIBLE
+        }
+    }
 }

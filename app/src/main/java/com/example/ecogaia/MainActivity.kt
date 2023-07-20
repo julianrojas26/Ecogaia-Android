@@ -1,10 +1,12 @@
 package com.example.ecogaia
 
+import android.content.ClipData
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.view.menu.MenuView
@@ -47,7 +49,10 @@ class MainActivity : AppCompatActivity() {
 
         this.user = JSONObject(intent.getStringExtra("user").toString())
         this.rol = user.getString("rol")
-        this.url = "https://ecogaiaweb-production.up.railway.app/"
+
+
+        this.url = "http://192.168.1.10:8080/"
+
 
         bundle.putString("user", this.user.toString())
         bundle.putString("url", this.url)
@@ -70,7 +75,7 @@ class MainActivity : AppCompatActivity() {
     /* Navegacion Extra */
 
     fun actualizar(view: View?) {
-        val i = Intent(this@MainActivity, activity_actualizar_perfil::class.java).apply { }
+        val i = Intent(this, activity_actualizar_perfil::class.java).apply { }
         i.putExtras(bundle)
         startActivity(i)
 
@@ -154,14 +159,20 @@ class MainActivity : AppCompatActivity() {
                         Navigation.findNavController(this, R.id.nav_host_fragment_container)
                     navController.navigate(R.id.fragment_gestionar)
                 }
-
                 R.id.item6 -> {
+                    val navController =
+                        Navigation.findNavController(this, R.id.nav_host_fragment_container)
+                    navController.navigate(R.id.gestionarUsuariosFragment)
+                }
+
+
+                R.id.item7 -> {
                     val navController =
                         Navigation.findNavController(this, R.id.nav_host_fragment_container)
                     navController.navigate(R.id.fragment_estadisticas)
                 }
 
-                R.id.item7 -> endSession(null)
+                R.id.item8 -> endSession(null)
         }
         return super.onOptionsItemSelected(item)
     }
