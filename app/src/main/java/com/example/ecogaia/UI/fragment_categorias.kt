@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.GridView
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
+import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -37,6 +38,9 @@ class fragment_categorias : Fragment(), ProductosListener {
 
         val ll = inflater.inflate(R.layout.fragment_categorias, container, false)
         val categoria = arguments?.getString("Categoria")
+
+        val titulo = ll.findViewById<TextView>(R.id.tituloCategoria)
+        titulo.text = categoria
 
         val url = ip + "categoriasProducto/"+categoria
 

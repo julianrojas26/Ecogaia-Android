@@ -32,6 +32,7 @@
             </com.google.android.material.appbar.AppBarLayout>
 
             <ImageView
+                android:id="@+id/carrito_imagen"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/aceite_escencial"

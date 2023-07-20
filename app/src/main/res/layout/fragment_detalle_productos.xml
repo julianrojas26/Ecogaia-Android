@@ -28,6 +28,7 @@
             </com.google.android.material.appbar.AppBarLayout>
 
             <ImageView
+                android:id="@+id/producto_imagen"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_gravity="center"

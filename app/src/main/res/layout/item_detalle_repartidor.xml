@@ -13,6 +13,7 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/item_dis_imagen"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/aceite_escencial"

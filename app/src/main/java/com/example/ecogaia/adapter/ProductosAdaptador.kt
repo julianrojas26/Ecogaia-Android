@@ -4,10 +4,10 @@ import android.content.Context
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.Filter
-import android.widget.Filterable
-import android.widget.TextView
+import android.widget.*
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
 import com.example.ecogaia.R
 import org.json.JSONObject
 import com.example.ecogaia.adapter.ProductosListener
@@ -38,6 +38,7 @@ class ProductosAdaptador(
         var view: View = View.inflate(context, R.layout.item_producto, null)
 
         var prod_nombre: TextView = view.findViewById(R.id.nombre_produ_productos)
+        var prod_imagen: ImageView = view.findViewById(R.id.imagen_produ_productos)
         var prod_precio: TextView = view.findViewById(R.id.precio_produ_productos)
 
         var producto: JSONObject = ProductosList.get(p0)
@@ -51,6 +52,13 @@ class ProductosAdaptador(
             prod_nombre.text = nombres
         }
         prod_precio.text = producto.getString("prod_Precio")
+
+        val imageUrl = producto.getString("prod_Imagen")
+
+        Glide.with(view)
+            .load(imageUrl)
+            .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL))
+            .into(prod_imagen)
 
         try {
             view.setOnClickListener {

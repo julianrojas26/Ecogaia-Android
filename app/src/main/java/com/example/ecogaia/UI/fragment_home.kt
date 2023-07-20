@@ -13,6 +13,8 @@ import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.models.SlideModel
 
 class fragment_home : Fragment() {
+    private lateinit var imageList: ArrayList<SlideModel>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -21,7 +23,7 @@ class fragment_home : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        val imageList = ArrayList<SlideModel>()
+        imageList = ArrayList<SlideModel>()
 
         imageList.add(SlideModel ("https://images.pexels.com/photos/17399258/pexels-photo-17399258.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"))
         imageList.add(SlideModel("https://images.pexels.com/photos/17399371/pexels-photo-17399371.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"))

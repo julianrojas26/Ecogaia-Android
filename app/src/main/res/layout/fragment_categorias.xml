@@ -7,6 +7,18 @@
     android:background="@drawable/fondo7"
     tools:context=".fragment_categorias">
 
+    <TextView
+        android:id="@+id/tituloCategoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"
+        android:text="Titulo"
+        android:textAlignment="center"
+        android:textColor="@color/verde_claro"
+        android:textSize="30sp"
+        android:textStyle="bold"></TextView>
+
     <GridView
         android:id="@+id/categoria_recycler"
         android:layout_width="wrap_content"

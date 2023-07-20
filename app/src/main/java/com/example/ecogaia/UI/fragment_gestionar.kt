@@ -1,5 +1,6 @@
 package com.example.ecogaia.UI
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -21,6 +22,7 @@ import com.example.ecogaia.adapter.GestionarProdsAdaptador
 import com.example.ecogaia.adapter.GestionarProdsListener
 import com.example.ecogaia.adapter.GestionarUsersAdaptor
 import com.example.ecogaia.adapter.GestionarUsersListener
+import com.example.ecogaia.fragment_actualizar_producto
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -45,10 +47,9 @@ class fragment_gestionar : Fragment(), GestionarProdsListener, GestionarUsersLis
         savedInstanceState: Bundle?,
     ): View? {
         val bundle = activity?.intent?.extras
-        val ip = bundle!!.getString("url")
-
         val ll = inflater.inflate(R.layout.fragment_gestionar, container, false)
 
+        val ip = bundle!!.getString("url")
         var url = ip + "listarProducto"
         val queue = Volley.newRequestQueue(this.context)
 
@@ -95,6 +96,20 @@ class fragment_gestionar : Fragment(), GestionarProdsListener, GestionarUsersLis
                 })
                 queue.add(deleteRequest)
 
+            }
+        }
+
+        val act_product = ll.findViewById<Button>(R.id.editarProducto)
+
+        act_product.setOnClickListener() {
+            if (prodId == null) {
+                Toast.makeText(this.context, "Debes seleccionar un usuario", Toast.LENGTH_LONG)
+                    .show()
+            } else {
+                val i = Intent(this.context, fragment_actualizar_producto::class.java)
+                bundle!!.putString("id", this.prodId)
+                i.putExtras(bundle)
+                startActivity(i)
             }
         }
 

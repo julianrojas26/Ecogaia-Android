@@ -7,18 +7,22 @@
     android:background="@drawable/fondo7"
     tools:context=".UI.fragment_productos">
 
-    <GridView
-        android:id="@+id/products_recycler"
-        android:layout_width="wrap_content"
-        android:layout_height="670dp"
-        android:layout_marginTop="110dp"
-        android:columnWidth="150dp"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        android:numColumns="2"
-        android:verticalSpacing="15dp"
-        tools:listitem="@layout/item_producto" >
 
-    </GridView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <GridView
+            android:id="@+id/products_recycler"
+            android:layout_width="wrap_content"
+            android:layout_height="700dp"
+            android:layout_marginTop="110dp"
+            android:paddingBottom="60dp"
+            android:numColumns="2"
+            android:verticalSpacing="12dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/item_producto" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,12 +33,12 @@
         android:padding="5dp">
 
         <SearchView
+            android:id="@+id/search_prod"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:inputType="text"
             android:background="@drawable/shape_carrito"
-            android:textColor="@color/verde_iconos"
-            android:id="@+id/search_prod"/>
+            android:inputType="text"
+            android:textColor="@color/verde_iconos" />
 
         <LinearLayout
             android:id="@+id/llContainer"
@@ -47,51 +51,49 @@
                 android:id="@+id/btnDropdown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Order"
-                android:onClick="toggleDropdown"
                 android:background="@drawable/shape_carrito"
-                />
+                android:onClick="toggleDropdown"
+                android:text="Order" />
 
             <!-- Lista de elementos (inicialmente oculta) -->
             <LinearLayout
                 android:id="@+id/llDropdownContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <!-- Aquí puedes agregar los elementos de tu lista -->
                 <Button
+                    android:id="@+id/OrByName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="A-Z"
-                    android:id="@+id/OrByName"
                     android:background="@drawable/shape_carrito"
-                    />
+                    android:text="A-Z" />
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Categoria"
                     android:id="@+id/OrByCat"
-                    android:background="@drawable/shape_carrito"
-                    />
-                <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="Precio"
-                    android:id="@+id/OrByPrice"
                     android:background="@drawable/shape_carrito"
-                    />
+                    android:text="Categoria" />
+
+                <Button
+                    android:id="@+id/OrByPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shape_carrito"
+                    android:text="Precio" />
             </LinearLayout>
 
         </LinearLayout>
 
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -105,7 +107,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
-            android:textAlignment="center"/>
+            android:textAlignment="center" />
 
     </LinearLayout>
 
@@ -129,7 +131,6 @@
             android:indeterminateTint="@color/verde_iconos" />
 
     </RelativeLayout>
-
 
 
 </FrameLayout>

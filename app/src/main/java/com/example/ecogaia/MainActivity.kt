@@ -1,12 +1,10 @@
 package com.example.ecogaia
 
-import android.content.ClipData
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.view.menu.MenuView
@@ -49,10 +47,7 @@ class MainActivity : AppCompatActivity() {
 
         this.user = JSONObject(intent.getStringExtra("user").toString())
         this.rol = user.getString("rol")
-
-
-        this.url = "http://192.168.244.97:8080/"
-
+        this.url = "https://ecogaiaweb-production.up.railway.app/"
 
         bundle.putString("user", this.user.toString())
         bundle.putString("url", this.url)
@@ -75,7 +70,7 @@ class MainActivity : AppCompatActivity() {
     /* Navegacion Extra */
 
     fun actualizar(view: View?) {
-        val i = Intent(this, activity_actualizar_perfil::class.java).apply { }
+        val i = Intent(this@MainActivity, activity_actualizar_perfil::class.java).apply { }
         i.putExtras(bundle)
         startActivity(i)
 

@@ -31,7 +31,7 @@
                 android:inputType="text"></EditText>
 
             <EditText
-                android:id="@+id/prod_recio"
+                android:id="@+id/prod_precio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -57,20 +57,13 @@
             <Button
                 android:id="@+id/btnUpload"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/shape_form"
-
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_table"
                 android:text="IMAGEN"/>
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp" />
-
             <Button
-                android:id="@+id/btnAdd"
+                android:id="@+id/actProd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"

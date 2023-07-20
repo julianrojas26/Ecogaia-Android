@@ -6,10 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.Toast
-import android.widget.Toolbar
+import android.widget.*
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toDrawable
 import androidx.fragment.app.DialogFragment
@@ -18,6 +15,9 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
 import com.example.ecogaia.R
 import org.json.JSONObject
 import com.example.ecogaia.UI.fragment_productos
@@ -28,6 +28,7 @@ class fragment_detalle_productos : DialogFragment() {
     private lateinit var tbProdDets: Toolbar
     private lateinit var nombre_prod: TextView
     private lateinit var categoria_prod: TextView
+    private lateinit var imagen_prod: ImageView
     private lateinit var precio_prod: TextView
     private var listener: DialogListener? = null
 
@@ -55,7 +56,7 @@ class fragment_detalle_productos : DialogFragment() {
         this.nombre_prod = ll.findViewById(R.id.nombre_produ)
         this.categoria_prod = ll.findViewById(R.id.categoria_produ)
         this.precio_prod = ll.findViewById(R.id.precio_produ)
-
+        this.imagen_prod = ll.findViewById(R.id.producto_imagen)
 
         return ll
     }
@@ -72,7 +73,7 @@ class fragment_detalle_productos : DialogFragment() {
 
         this.tbProdDets.navigationIcon = ContextCompat.getDrawable(view.context, R.drawable.close)
 
-        val tips = JSONObject(arguments?.getString("productos"))
+        val prod = JSONObject(arguments?.getString("productos"))
 
         val queue = Volley.newRequestQueue(this.context)
 
@@ -83,9 +84,9 @@ class fragment_detalle_productos : DialogFragment() {
             var i = 0
             val l = jsonArray.length()
             while (i < l) {
-                val prod = jsonArray[i] as JSONObject
+                val favs = jsonArray[i] as JSONObject
                 /// prod.getString("prod_Codigo")
-                if (prod.getString("prod_Codigo") == tips.getString("prod_Codigo")) {
+                if (prod.getString("prod_Codigo") == favs.getString("prod_Codigo")) {
                     var star = R.drawable.solid_star
                     addFav.setImageResource(star)
                 }
@@ -97,12 +98,19 @@ class fragment_detalle_productos : DialogFragment() {
 
         queue.add(StringRequest)
 
-        this.nombre_prod.text = tips.getString("prod_Nombre")
-        this.categoria_prod.text = tips.getString("prod_Categoria")
-        this.precio_prod.text = tips.getString("prod_Precio")
+        this.nombre_prod.text = prod.getString("prod_Nombre")
+        this.categoria_prod.text = prod.getString("prod_Categoria")
+        this.precio_prod.text = prod.getString("prod_Precio")
+
+        val imageUrl = prod.getString("prod_Imagen")
+
+        Glide.with(this)
+            .load(imageUrl)
+            .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL))
+            .into(this.imagen_prod)
 
         addCarrito.setOnClickListener() {
-            val  url = ip + "insertarCarrito/" + user.getString("res") + "/" + tips.getString("prod_Codigo") + "/1"
+            val  url = ip + "insertarCarrito/" + user.getString("res") + "/" + prod.getString("prod_Codigo") + "/1"
             val resultPost = object : StringRequest(Request.Method.POST, url,
                 Response.Listener<String> { response ->
                     if (response == "true") {
@@ -124,7 +132,7 @@ class fragment_detalle_productos : DialogFragment() {
                 Response.Listener<String>{ response ->
                     var user = JSONObject(response)
                     val id = user.getString("id_usuario")
-                    url = ip + "insertarFavoritos/" + tips.getString("prod_Codigo") + "/" + id
+                    url = ip + "insertarFavoritos/" + prod.getString("prod_Codigo") + "/" + id
 
                     val postRequest = StringRequest(Request.Method.POST, url,
                     Response.Listener<String>{ response ->
