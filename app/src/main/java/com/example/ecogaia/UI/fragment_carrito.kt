@@ -35,11 +35,6 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
     private lateinit var carrito: ArrayList<JSONObject>
     private lateinit var searchView: SearchView
     private lateinit var adapter: CarritoAdaptador
-    private lateinit var dropdownContentLayoutCar: LinearLayout
-    private lateinit var dropdownButtonCar: Button
-    private lateinit var OrByNameCar: Button
-    private lateinit var OrByTotalCar: Button
-    private lateinit var OrByCantCar: Button
     private lateinit var textViewMensaje: TextView
 
 
@@ -58,91 +53,6 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
 
         val url = ip + "cotizacionesUsuario/" + user.getString("res")
         val queue = Volley.newRequestQueue(this.context)
-
-        dropdownContentLayoutCar = ll.findViewById(R.id.llDropdownContentCar)
-        dropdownButtonCar = ll.findViewById(R.id.btnDropdownCar)
-        OrByTotalCar = ll.findViewById(R.id.OrByTotalCar)
-        OrByNameCar = ll.findViewById(R.id.OrByNameCar)
-        OrByCantCar = ll.findViewById(R.id.OrByCantCar)
-        textViewMensaje = ll.findViewById(R.id.textViewMensaje)
-
-
-        OrByNameCar.setOnClickListener(){
-            val url = ip + "ordenarCarNombre/" + user.getString("res")
-            val stringRequest = StringRequest(Request.Method.GET, url, { response ->
-                val jsonArray = JSONArray(response)
-                this.carrito.clear()
-                try {
-                    var i = 0
-                    val l = jsonArray.length()
-                    while (i < l) {
-                        carrito += (jsonArray[i] as JSONObject)
-                        i++
-                    }
-
-                    Log.d("CARRITOO", this.carrito.toString())
-                    this.recycler.adapter= CarritoAdaptador(this.carrito, this)
-                    this.viewAlpha.visibility= View.INVISIBLE
-                    this.pgbar.visibility = View.INVISIBLE
-                }catch (e:JSONException) {
-                    Log.w("ERROR", e)
-                }
-            }, { error ->
-                Log.w("jsonError", error)
-            })
-            queue.add(stringRequest)
-        }
-        OrByCantCar.setOnClickListener(){
-            val url = ip + "ordenarCarCantidad/" + user.getString("res")
-            val stringRequest = StringRequest(Request.Method.GET, url, { response ->
-                val jsonArray = JSONArray(response)
-                this.carrito.clear()
-                try {
-                    var i = 0
-                    val l = jsonArray.length()
-                    while (i < l) {
-                        carrito += (jsonArray[i] as JSONObject)
-                        i++
-                    }
-                    Log.d("CARRITOO", this.carrito.toString())
-                    this.recycler.adapter= CarritoAdaptador(this.carrito, this)
-                    this.viewAlpha.visibility= View.INVISIBLE
-                    this.pgbar.visibility = View.INVISIBLE
-                }catch (e:JSONException) {
-                    Log.w("ERROR", e)
-                }
-            }, { error ->
-                Log.w("jsonError", error)
-            })
-            queue.add(stringRequest)
-        }
-        OrByTotalCar.setOnClickListener(){
-            val url = ip + "ordenarTotalNombre/" + user.getString("res")
-            val stringRequest = StringRequest(Request.Method.GET, url, { response ->
-                val jsonArray = JSONArray(response)
-                this.carrito.clear()
-                try {
-                    var i = 0
-                    val l = jsonArray.length()
-                    while (i < l) {
-                        carrito += (jsonArray[i] as JSONObject)
-                        i++
-                    }
-                    Log.d("CARRITOO", this.carrito.toString())
-                    this.recycler.adapter= CarritoAdaptador(this.carrito, this)
-                    this.viewAlpha.visibility= View.INVISIBLE
-                    this.pgbar.visibility = View.INVISIBLE
-                }catch (e:JSONException) {
-                    Log.w("ERROR", e)
-                }
-            }, { error ->
-                Log.w("jsonError", error)
-            })
-            queue.add(stringRequest)
-        }
-        dropdownButtonCar.setOnClickListener {
-            toggleDropdownCar()
-        }
 
         val stringRequest = StringRequest(Request.Method.GET, url, { response ->
             val jsonArray = JSONArray(response)
@@ -290,11 +200,5 @@ class fragment_carrito : Fragment(), CarritoListener, DialogListener {
         })
         queue.add(stringRequest)
     }
-    private fun toggleDropdownCar() {
-        if (dropdownContentLayoutCar.visibility == View.VISIBLE) {
-            dropdownContentLayoutCar.visibility = View.GONE
-        } else {
-            dropdownContentLayoutCar.visibility = View.VISIBLE
-        }
-    }
+
 }

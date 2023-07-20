@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         this.rol = user.getString("rol")
 
 
-        this.url = "http://192.168.1.10:8080/"
+        this.url = "https://ecogaiaweb-production.up.railway.app/"
 
 
         bundle.putString("user", this.user.toString())

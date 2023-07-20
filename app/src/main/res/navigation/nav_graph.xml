@@ -143,6 +143,11 @@
         android:name="com.example.ecogaia.UI.GestionarUsuariosFragment"
         android:label="fragment_gestionar_usuarios"
         tools:layout="@layout/fragment_gestionar_usuarios" />
+    <fragment
+        android:id="@+id/fragment_actualizar_usuario"
+        android:name="com.example.ecogaia.UI.fragment_actualizar_usuario"
+        android:label="fragment_actualizar_usuario"
+        tools:layout="@layout/fragment_actualizar_usuario" />
 
 
 </navigation>
